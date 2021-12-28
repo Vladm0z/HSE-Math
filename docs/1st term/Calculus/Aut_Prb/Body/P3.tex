@@ -1,0 +1,290 @@
+\newpage
+	\section{ЛИСТ 3}
+		\subsection{1}
+		А)\\
+		\begin{gather*}
+			\lim\limits_{x \to \infty} x(\frac{\pi}{2} - \arctan(x)) = 
+			\lim\limits_{x \to \infty} x(\text{arccot}(x)) = 
+			\lim\limits_{x \to \infty} \frac{\text{arccot}(x)}{\frac{1}{x}} = \\
+			\lim\limits_{x \to \infty} \frac{\frac{x}{1 + x^2}}{\frac{1}{x}} = 
+			\lim\limits_{x \to \infty} \frac{1}{(1 + x^2)\frac{1}{x^2}} = 
+			\lim\limits_{x \to \infty} \frac{1}{\frac{1}{x^2} + 1} = 
+			1
+		\end{gather*}
+		Б)\\
+		\begin{comment}
+		\begin{gather*}
+			\lim\limits_{x \to 0} \frac{\cos\sin(x) - \cos(x)}{x^4} = 
+			\lim\limits_{x \to 0} \frac{-\sin\sin(x) \cdot \cos(x) + \sin(x)}{4x^3} = 
+			\lim\limits_{x \to 0} \frac{-\cos\sin(x) \cdot \cos^2(x) + \sin(x) \cdot \sin\sin(x) + \cos(x)}{12x^2} =\\
+			\lim\limits_{x \to 0} \bigg( \frac{\cos(x) - \cos(x)^2 \cdot \cos\sin(x)}{12x^2} + \frac{\sin(x) \cdot \sin\sin(x)}{12x^2} \bigg) =\\
+			\lim\limits_{x \to 0} \frac{\cos(x) - \cos^2(x) \cdot \cos\sin(x)}{12x^2} +
+			\lim\limits_{x \to 0} \frac{\sin(x) \cdot \sin\sin(x)}{12x^2} = \\
+			\lim\limits_{x \to 0} \frac{-\sin(x) + 2\cos(x) \cdot \sin(x) \cdot \cos\sin(x) + \sin\sin(x) \cdot \cos^3(x)}{24x} + 
+			\lim\limits_{x \to 0} \frac{\cos(x) \cdot \sin\sin(x) + \sin(x) \cdot \cos\sin(x) \cdot \cos(x)}{24x} =\\
+			\lim\limits_{x \to 0} -\frac{\sin(x)}{24x} +
+			\lim\limits_{x \to 0} \frac{2\cos(x)}{24} \cdot
+			\lim\limits_{x \to 0} \frac{\sin(x)}{x} \cdot
+			\lim\limits_{x \to 0} \cos\sin(x) +
+			\lim\limits_{x \to 0} \frac{\sin\sin(x) \cdot \cos^3(x)}{24x} +\\
+			\lim\limits_{x \to 0} \frac{-\sin(x) \cdot \sin\sin(x) + \cos^2(x) \cdot \cos\sin(x) + \cos(x) \cdot \cos\sin(x) \cdot \cos(x)}{24} =\\
+			-\frac{1}{24} + \frac{1}{12} + 
+			\lim\limits_{x \to 0} \frac{\cos\sin(x) \cdot \cos^4(x) + \sin\sin(x) \cdot 3\sin^2(x)}{24} +\\
+			\lim\limits_{x \to 0} \bigg( \frac{-\sin(x) \cdot \sin\sin(x) + \cos^2(x) \cdot \cos\sin(x)}{24} + \\ \frac{\cos(x) \cdot \cos\sin(x) \cdot \cos(x) - \sin(x) \cdot \sin\sin(x) \cdot \cos^2(x) - \cos\sin(x) \cdot \sin(x)}{24} \bigg)=\\
+			-\frac{1}{24} + \frac{1}{12} + \frac{1}{24} + \frac{1+1}{24} = \frac{1}{12} + \frac{1}{12} = \frac{1}{6}
+		\end{gather*}
+		\end{comment}
+		\begin{gather*}
+			\lim\limits_{x \to 0} \frac{\cos\sin(x) - \cos(x)}{x^4} = 
+			\lim\limits_{x \to 0} \frac{\cos(x - \frac{x^3}{3!} + \frac{x^5}{5!} - \ldots) - \cos(x)}{x^4} = \\
+			\frac{1 - \frac{(x - \frac{x^3}{3!} + \ldots)^2}{2!} + \frac{(x - \ldots)^4}{4!} - \ldots - (1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \ldots)}{x^4} = \\
+			\lim\limits_{x \to 0} \frac{x^4 \cdot (\frac{1}{3!} + \frac{1}{4!} - \frac{1}{4!}) + x^2 \cdot (-\frac{1}{2!} + \frac{1}{2!}) + (\text{степени $>4$})}{x^4} = \\
+			\lim\limits_{x \to 0} \frac{x^4 \cdot \frac{1}{3!} + (\text{степени $>4$})}{x^4} = 
+			\frac{1}{6}
+		\end{gather*}
+		В)\\
+		\begin{gather*}
+			\lim\limits_{x \to 0} (\cot(x))^{\sin(x)} = 
+			\lim\limits_{x \to 0} e^{\sin(x) \ln \cot(x)} = 
+			e^{\lim\limits_{x \to 0} \sin(x) \ln \cot(x)}
+		\end{gather*}
+	 	рассмотрим $\lim\limits_{x \to 0} \bigg( \sin(x) \ln \cot(x) \bigg)$:
+	 	\begin{gather*}
+	 		\lim\limits_{x \to 0} \bigg( \sin(x) \ln \cot(x) \bigg) = 
+	 		\lim\limits_{x \to 0} \frac{\ln \cot(x)}{\frac{1}{\sin(x)}} =
+	 		\lim\limits_{x \to 0} \bigg( \frac{1}{\cot(x)} \cdot -\frac{1}{\sin^2(x)} \cdot \frac{1}{\frac{1}{\sin^2(x)} \cdot \cos(x)} \bigg) = 
+	 		\lim\limits_{x \to 0} \frac{\sin(x)}{\cos^2(x)} = 
+	 		\frac{0}{1} = 
+	 		0
+	 	\end{gather*}
+		вернемся к изначальной задаче:
+		\begin{gather*}
+			e^{\lim\limits_{x \to 0} \sin(x) \ln \cot(x)} = e^{0} = 1
+		\end{gather*}
+		Ответ: а)$1\quad$ б)$\frac{1}{6}\quad$ в)$1$
+		
+		\subsection{2}
+		
+		\subsection{3}
+		А)Б)\\
+		Рассмотрим $\alpha = \frac{1}{2}$:\\
+		Заметим, что 
+		\begin{gather*}
+			\lim\limits_{x \to 0} \frac{x^2 - \sin^2(x)}{x^2 \cdot \sin^2(x)} = \frac{1}{3} \quad \text{по правилу Лопиталя}
+		\end{gather*}
+		Откуда
+		\begin{gather*}
+			\lim\limits_{n \to \infty} \bigg( \frac{1}{a^2_{n+1}} - \frac{1}{a^2_{n}} \bigg) = \frac{1}{3}
+		\end{gather*}
+		Теперь докажем что:
+		\begin{gather*}
+			\lim\limits_{n \to \infty} na^2_n = 3
+		\end{gather*}
+		Доказательство:\\
+		Докажем более общий факт:\\
+		если
+		\begin{gather*}
+			\lim\limits_{n \to \infty} (a_{n+1} - a_{n}) = a
+		\end{gather*}
+		то
+		\begin{gather*}
+			\lim\limits_{n \to \infty} \frac{a_n}{n} = a
+		\end{gather*}
+		Это можно доказать с помощью теоремы Штольца, в которой $x_n$ заменим на $a_{n}$, а $y_n$ заменим на $n$:\\
+		Формулировка:\\
+		Пусть $x_n$ и $y_n$ -- две последовательности вещественных чисел, причём $y_n$ положительна, неограничена и строго возрастает (хотя бы начиная с некоторого члена).\\
+		Тогда, если существует предел
+		$\lim\limits_{n \to \infty} \frac{x_n - x_{n-1}}{y_n - y_{n-1}}$
+		то существует и предел
+		$\lim\limits_{n \to \infty} \frac{x_n}{y_n}$
+		причём эти пределы равны.\\
+		Доказательство:\\
+		Допустим сначала, что предел равен конечному числу $L$, тогда для любого заданного $\varepsilon > 0$ существует такой номер $N > 0$, что при $n > N$ будет иметь место:
+		\begin{gather*}
+			L - \frac{\varepsilon}{2} < \frac{x_n - x_{n-1}}{y_n - y_{n-1}} < L + \frac{\varepsilon}{2}
+		\end{gather*}		
+		Значит, для любого $n > N$ все дроби:
+		\begin{gather*}
+			\frac{x_{N+1} - x_N}{y_{N+1} - y_N}, \frac{x_{N+2} - x_{N+1}}{y_{N+2} - y_{N+1}},...,\frac{x_n - x_{n-1}}{y_n - y_{n-1}}
+		\end{gather*}
+		лежат между этими же границами. Так как знаменатели этих дробей положительны (в силу строго возрастания последовательности $y_n$), то, по свойству медианты, между теми же границами содержится и дробь:
+		\begin{gather*}
+			\frac{x_n - x_N}{y_n - y_N}
+		\end{gather*}
+		числитель которой есть сумма числителей написанных выше дробей, а знаменатель — сумма всех знаменателей. Итак, при $n > N$:
+		\begin{gather*}
+			\left| \frac{x_n - x_N}{y_n - y_N} - L \right| < \frac{\varepsilon}{2}
+		\end{gather*}
+		Теперь рассмотрим следующее тождество (проверяемое непосредственно):
+		\begin{gather*}
+			\frac{x_n}{y_n} - L = \frac{x_N - L y_N}{y_n} + \left( 1 - \frac{y_N}{y_n} \right) \left( \frac{x_n - x_N}{y_n - y_N} - L \right)
+		\end{gather*}
+		откуда имеем
+		\begin{gather*}
+			\left| \frac{x_n}{y_n} - L \right| \le \left| \frac{x_N - L y_N}{y_n} \right| + \left| \frac{x_n - x_N}{y_n - y_N} - L \right| 
+		\end{gather*}
+		Второе слагаемое при $n > N$ становится меньше $\frac{\varepsilon}{2}$, первое слагаемое также станет меньше $\frac{\varepsilon}{2}$, при $n > M$, где $M$ — некоторый достаточно большой номер, в силу того, что $y_n \to +\infty$. Если взять $M > N$, то при $n > M$ будем иметь
+		\begin{gather*}
+			\left | \frac{x_n}{y_n} - L \right | < \varepsilon
+		\end{gather*}
+		что и доказывает наше утверждение.
+		
+		Случай бесконечного предела можно свести к конечному. Пусть, для определённости:
+		\begin{gather*}
+			\lim\limits_{n \to \infty} \frac{x_n - x_{n-1}}{y_n - y_{n-1}} = +\infty
+		\end{gather*}
+		из этого следует, что при достаточно больших $n$:
+		$x_n - x_{n-1} > y_n - y_{n-1}$ и
+		$\lim\limits_{n \to \infty} x_n = +\infty$,
+		причём последовательность $x_n$ строго возрастает (начиная с определённого номера). В этом случае, доказанную часть теоремы можно применить к обратному отношению $y_n \over x_n$:
+		\begin{gather*}
+			\lim\limits_{n \to \infty} \frac{y_n}{x_n} = \lim\limits_{n \to \infty} \frac{y_n - y_{n-1}}{x_n - x_{n-1}} = 0
+		\end{gather*}
+		откуда и следует, что:
+		\begin{gather*}
+			\lim\limits_{n \to \infty} \frac{x_n}{y_n} = + \infty
+		\end{gather*}
+		Теорема доказана, откуда $\lim\limits_{x \to \infty} na^2_n = 3$, то есть $\lim\limits_{x \to \infty} \sqrt{n}a_n = \sqrt{3}$, что и требовалось
+		
+		\subsection{4}
+		А)\\
+		Заметим, что у уравнений вида $x^3 - kx - 1 = 0$ ровно $1$ корень при всех отрицательных $k$ (так как функция $x^3 - kx - 1$ будет монотонной и неограниченной), а также при всех $k < 1$, так как на интервале $[-1, 0)$ выражение $x^3 - kx$ будет меньше $1$, в силу того, что $kx \leqslant 1$ и $x^3 > 0$. На интервале $(-\infty, 1)$ функция монотонно возрастает, так как производная ($= 3x^2 - k$) больше $0$.\\
+		Поэтому есть только одна функция, удовлетворяющая условию при $a = k$. Докажем, что она непрерывна.\\
+		Заметим, что она монотонна, ведь при замене $k$ на $k+d$ выражение $\alpha^3 - (k+d)\alpha - 1$ уменьшается, откуда, единственный корень $\beta$ уравнения $x^3 - (k+d)x - 1 = 0$ больше, чем $\alpha$. При этом для любого значения $\gamma$, лежащего между $\alpha$ и $\beta$, существует $y$, такой что $\gamma$ является корнем соответствующего уравнения (потому что $\gamma^3 - y\gamma - 1$ непрерывно, и при $y = k$ оно меньше $0$, а при $y = k+d$ -- наоборот), откуда и следует непрерывность функции.
+		\\
+		Б)\\
+		\\
+		В)\\
+		\\
+		
+		\subsection{5}
+		Пусть $m = 27$, тогда задача имеет вид: $\ln\cos \frac{1}{m + 5}$.\\
+		Посчитаем сперва $\cos \frac{1}{m + 5}$
+		\begin{gather*}
+			\cos x =  1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \cdots = \sum_{n=0}^{\infty} {(-1)^n}\frac{x^{2n}}{(2n)!}, x\in\mathbb{C}\\
+			\cos(\frac{1}{32}) = \sum_{n=0}^{\infty} {(-1)^n}\frac{\frac{1}{32}^{2n}}{(2n)!} = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} =
+			1 - \frac{\frac{1}{32}^2}{2!} + \frac{\frac{1}{32}^4}{4!} - \ldots \approx \\
+			1 - \frac{\frac{1}{32}^2}{2!} + \frac{\frac{1}{32}^4}{4!} \approx 0.9995117
+		\end{gather*}
+		А теперь посчитаем логарифм от полученного значения
+		\begin{gather*}
+			\ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \ldots = \sum\limits^{\infty}_{n=0} \frac{(-1)^n x^{n+1}}{(n+1)} =  \sum\limits^{\infty}_{n=1} \frac{(- 1)^{n-1}x^n}{n} \quad \text{для $-1 < x < 1$}\\
+			\ln(0.9995117) = \ln(1 - 0.0004883) = \sum\limits^{\infty}_{n=1} \frac{(- 1)^{n-1} 0.0004883^n}{n} = \\
+			0.0004883 - \frac{0.0004883^2}{2} + \frac{0.0004883^3}{3} - \ldots \approx 0.0004883 - \frac{0.0004883^2}{2} + \frac{0.0004883^3}{3} \approx \\
+			0.0004883
+		\end{gather*}
+		Откуда первые две значащие цифры это $4,\ 8$
+		
+		\subsection{6}
+		Заметим, что $f'(x) = \alpha \ \Leftrightarrow \ \lim\limits_{t \to 0} \frac{1}{t} (f(t+x) - f(x)) = \alpha$, откуда в некоторой окресности нуля выражение $\frac{1}{t} (f(t+x) - f(x)) > 0$, поэтому при $t > 0:\ f(t+x) - f(x) > 0$ и наоборот. Но это и означает, что функция возрастает.
+		
+		\subsection{7}
+		А)\\
+		Возьмем минимальное $y = c$ и будем двигать вверх эту горизонтальную прямую. разность площадей верхнего и нижнего многоугольника меняется непрерывно, так как это разность непрерывных функций ( пусть $f_1$ -- площадь нижнего многоугольника, а $f_2$ -- площадь верхнего, тогда обе эти функции непрерывны, откуда $f = (f_1 - f_2)$ также непрерывна). Заметим, что если площадь всего многоугольника $S$ то значения $f$ лежат в $[S,\ -S]$. Тогда, так как $0 \in [S,\ -S]$ то $\exists c:\ f(c) = 0$\\
+		\\
+		Б)\\
+		Пусть $S$ -- окружность с центром $(0,0) \in \mathbb{R}^2$, внутри которой лежат $M_1$ и $M_2$ ( $M_1$ и $M_2$ ограничены $\Rightarrow$ она существует ). Изменим масштаб так, чтобы диаметр $S$ стал равен $1$. Для $\forall x\in S$ рассмотрим диаметр $D_x$ проходящий через $x$. Пусть $L_t$ -- перпендикуляр к $D_x$, проходящий через точку на $D_x$, расположенную на расстоянии $t$ от $x$.\\
+		Пусть $S_1(t)$ -- площадь части $M_1$, лежащей по одну сторону от $L_t$, что и $x$. Аналогично определим $S_2(t)$ для $M_2$. Заметим, что $S_1(0) = S_2(1) = 0$. Очевидно, что $S_1(t),\ S_2(t)$ -- непрерывные функции, отображающие $l$ в $\mathbb{R}$. Пусть $f:\ l \to \mathbb{R}$ это $f(t) = S_1(t) - S_2(t)$, это непрерывная функция и $f(0)f(1) \leqslant 0$. Откуда существует $t \in l:\ f(t)=0$ либо на отрезке $[a,b]$, либо в одной точке $c$. В первом случае определим $h_1(x) = \frac{a+b}{2}$, во втором случае $h_1(x) = c$.\\
+		То есть перпендикуляр к $D_x$, проходящий через точку на $D_x$, расстояние от которой до $x$ равно $h_1(x)$, делит площадь $M_1$ пополам. Заметим, что $h_1(-x) = 1-h_1(x)$ и $h_1:\ S \to l$ -- непрерывная функция.\\
+		Аналогично определим $h_2:\ S \to l$, где вместо $M_1$ действие происходит на $M_2$.\\
+		Теперь определим $h(x)= h_1(x) - h_2(x)$. Так как $h_1(x)$ и $h_2(x)$ непрерывны, то и $h(x)$ непрерывна. Заметим, что $h(x) = -h(-x)\ \forall x\in S$. Но также есть и точка $y:\ h(y) = h(-y)$. Значит $h(y) = 0$ и $h_1(y) = h_2(y)$ и перпендикуляр к $D_y$, расстояние от которой до $y$ равно $h_1(y)$, делит пополам $M_1$ и $M_2$, что и требовалось доказать.
+		\\
+		
+		\subsection{8}
+		
+		\subsection{9}
+		А)\\
+		\\
+		Б)\\
+		\\
+		
+		\subsection{10}
+		$f:\ (p,q) \to \mathbb{R}$ выпуклая и дифференцируемая
+		А)$f:\ (p,q) \to \mathbb{R}$ выпуклая\\
+		Любая касательная не выше графика 
+		$l(x) = f(a) + f'(a)(x - a)$, также $f(x)$ выпуклая $\Rightarrow \ f''(x) > 0$
+		\begin{gather*}
+			f(x) - l(x) = f(x) - f(a) - f'(a)(x - a)
+		\end{gather*}
+		По теорема Лагранжа на $(a,x)\ \exists c:\ \frac{f(x) - f(a)}{x - a} = f'(c)$
+		\begin{gather*}
+			f(x) - l(x) = (f'(c) - f'(a))(x - a)\\
+			\\
+			1)\ a = x\ f(x) = l(x)\\
+			2)\ a < x\ f'(a) \leqslant f(c) \ \Rightarrow \ f(x) - l(x) \geqslant 0\\
+			3)\ a > x\ \text{аналогично}\\
+		\end{gather*}
+		Что и требовалось
+		\\
+		Б) $f'(x) > 0\quad f'(x_1) \leqslant f'(x_2)$ если $x_1 \leqslant x_2$\\
+		\begin{gather*}
+			\alpha_1 x_1 + \alpha_2 x_2 = x \quad \alpha_1 + \alpha_2 = 1 \ \Rightarrow \ \alpha_1 = \frac{x_2 - x}{x_2 - x_1} \quad \alpha_2 = \frac{x - x_1}{x_2 - x_1}\\
+			f(\alpha_1 x_1 + \alpha_2 x_2) = f(x) \leqslant \frac{x_2 - x}{x_2 + x_1} f(x_1) + \frac{x - x_1}{x_2 + x_1} f(x_2)\\
+			(x_2 - x) + (x - x_1) = x_2 - x_1\\
+			f(x)(x_2 - x_1) = f(x_1) (x_2 - x) + f(x_2)(x - x_1) \leqslant (x_2 - x) f(x_1) + (x - x_1) f(x_2)\\
+		\end{gather*}
+		Откуда
+		\begin{gather*}	
+			\frac{f(x) - f(x_1)}{x - x_1} \leqslant \frac{f(x_2) - f(x)}{x_2 - x} \ \Rightarrow \\
+			x \to x_1: \quad f'(x_1) = \frac{f(x_1) - f(x_1)}{x_1 - x_1} \leqslant \frac{f(x_2) - f(x_1)}{x_2 - x_1}\\
+			x \to x_2: \quad \frac{f(x_2) - f(x_1)}{x_2 - x_1} \leqslant \frac{f(x_2) - f(x_2)}{x_2 - x_2} = f'(x_2)\\
+		\end{gather*}
+		Следовательно
+		\begin{gather*}
+			f'(x_1) \leqslant \frac{f(x_2) - f(x_1)}{x_2 - x_1} \leqslant f'(x_2)
+		\end{gather*}
+		Что и требовалось\\
+		\\
+		В)\\
+		Обратно
+		\begin{gather*}
+			a < x_1 < x_2 < b \ \text{откуда по Т.Лагранжа о среднем значении} \\ \frac{f(x) - f(x_1)}{x - x_1} = f'(c_1);\ \frac{f(x_2) - f(x)}{x_2 - x} = f'(c_2),\ \text{где}\ x_1<c_1<x<c_2<x_2\\
+			f'(c_1) \leqslant f'(c_2) \ \Rightarrow \ \frac{f(x) - f(x_1)}{x - x_1} \leqslant \frac{f(x_2) - f(x)}{x_2 - x}\\
+			\alpha x_1 + (1 - \alpha) x_2 = \alpha (x_1 - x_2) + x_2,\ \text{тогда если}\ x_1 < x_2,\ \text{то и}\ x_1<x<x_2\\
+		\end{gather*}
+		Что и требовалось
+		\\
+		
+		\subsection{11}
+		А)\\
+		\begin{gather*}
+			f\bigg( \frac{x_1}{n} + \frac{n-1}{n} \bigg( \frac{x_2 + \ldots + x_n}{n-1} \bigg) \bigg) \leqslant
+			\frac{f(x_1)}{n} + \frac{n-1}{n} f \bigg( \frac{x_2 + \ldots + x_n}{n-1} \bigg) \leqslant \\
+			\frac{f(x_1)}{n} + \frac{n-1}{n} f \bigg( \frac{x_2}{n-1} + \frac{n-2}{n-1}\frac{x_3 + \ldots + x_n}{n-2} \bigg) \leqslant
+			\ldots \leqslant 
+			\frac{f(x_1)}{n} + \frac{f(x_2)}{n} + \frac{n-2}{n} f \bigg( \frac{x_3 + \ldots + x_n}{n-2} \bigg) \leqslant \\
+			\ldots \leqslant
+			\frac{f(x_1)}{n} + \ldots + \frac{f(x_{n-2})}{n} + \frac{2}{n} f \bigg( \frac{x_{n-1} + x_{n}}{2} \bigg) \leqslant
+			\frac{f(x_1)}{n} + \ldots + \frac{f(x_{n-2})}{n} + \frac{2}{n} \bigg( f  \frac{x_{n-1}}{2} + f \frac{x_{n}}{2} \bigg) = \\
+			\frac{f(x_1) + \ldots + f(x_n)}{n}	
+		\end{gather*}
+		\\
+		Б)\\
+		Используем неравенство из (а) для выпуклой формы\\
+		$f(x) = x^2$
+		\begin{gather*}
+			\bigg( \frac{x_1 + \ldots + x_n}{n} \bigg) \leqslant \frac{x^2_1 + \ldots + x^2_n}{n}\\
+			\frac{x_1 + \ldots + x_n}{n} \leqslant \sqrt{\frac{x^2_1 + \ldots + x^2_n}{n}}
+		\end{gather*}
+		\\
+		В)\\
+		$f(x) = \log_a(x)$
+		\begin{gather*}
+			\log \bigg(\frac{x_1 + \ldots + x_n}{n} \bigg) \geqslant \frac{\log_a(x_1) + \ldots + \log_a(x_n)}{n}\\
+			\text{так как $\log_a(x)$ - вогнутая функция}\\
+			\frac{\log_a(x_1) + \ldots + \log_a(x_n)}{n} = \log_a(x_1 \cdot \ldots \cdot x_n)^{\frac{1}{n}} =
+			\log_a{\sqrt{x_1 \cdot \ldots \cdot x_n}}
+		\end{gather*}
+		Откуда:
+		\begin{gather*}
+			\frac{x_1 + \ldots + x_n}{n} \geqslant \sqrt{x_1 \cdot \ldots \cdot x_n}
+		\end{gather*}
+		что и требовалось
+		\\
+		
+		\subsection{12}
+		По условию окружность должна лежать в $y \geqslant x^2$, то есть внутри параболы $y = x^2$. Также она доржна содержать точку $(0,0)$. Тогда в силу того, что $y = x^2$ симметрична относительно $x = 0$, и на $y = x^2$ также лежит и требуемая точка $(0,0)$, окружность касается параболы в точке $(0,0)$. Тогда уравнение окружности имеет вид $(x - a)^2 - (y - b)^2 = r^2$, где $a = 0,\ b = r$. То есть $x^2 + (y - r)^2 = r^2 \ \Leftrightarrow \ x^2 + y^2 - 2yr = 0$. Откуда $r = \frac{x^2 + y^2}{2y} \leqslant \frac{y + y^2}{2y} = \frac{y + 1}{2}\quad y\in [0; +\infty )$, следовательно $r \leqslant \frac{1}{2}$. Заметим, что при $r = \frac{1}{2}$ требования условия выполнены.
+		
+		
+		\subsection{13}
+		

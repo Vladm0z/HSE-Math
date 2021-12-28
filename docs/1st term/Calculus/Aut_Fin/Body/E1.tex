@@ -1,0 +1,564 @@
+\newpage		
+	\section{Задачи для подготовки к экзамену}
+		\subsection{}
+		\begin{enumerate}
+			\item $\lim\limits_{x \to +\infty} x^{a} \exp(-x) = 0$
+			\item $\lim\limits_{x \to +\infty} x^{a} \exp(x) = +\infty$
+			\item $\lim\limits_{x \to +0} x^{a}(\ln x)^{b}=0$ при $a > 0$
+			\item $\lim\limits_{x \to +0} x^{a}(\ln x)^{b}=0$ при $a < 0$
+			\item $\lim\limits_{0 \to +\infty} x^{x} = \lim\limits_{0 \to +\infty} \exp(x \ln x)$
+				\begin{gather*}
+					\text{пусть}\ t = -\ln x \\
+					\Rightarrow \\
+					x = e^{-t} \Rightarrow x \ln x = e^{-t} (-t) = \lim\limits_{t \to +\infty} \frac{-t}{1 +t + \frac{t^2}{2!} + \frac{t^3}{3!} + \ldots} = \lim\limits_{t \to +\infty} \frac{-t}{\frac{1}{t} + 1 + t + \frac{t^2}{2!} + \frac{t^3}{3!} + \ldots} = 0\\
+					\lim\limits_{x \to +0} \exp(x \ln x) = \exp(0) = 1
+				\end{gather*}
+			\item $\lim\limits_{x \to +0} x^{x^{x} - 1} = 1$	
+		\end{enumerate}		
+			
+% ------------------------------------------------------------------------------------------------------------ 
+	
+		\subsection{}
+		\begin{enumerate}
+		\item $\lim \limits_{x \to + \infty} \frac{x^{1 / x}}{\exp \left(1 / x^{2}\right)}$\\		
+			\begin{gather*}
+				\lim \limits_{x \to + \infty} e^{ - \frac{1}{x^2}} x^{\frac{1}{x}} = 
+				\frac{\lim \limits_{x \to + \infty} x^{\frac{1}{x}}}{\lim \limits_{x \to + \infty} e^{\frac{1}{x^2}}} = 
+				\frac{\lim \limits_{x \to + \infty} x^{\frac{1}{x}}}{\exp (\lim \limits_{x \to + \infty} \frac{1}{x^2})} = \\
+				\frac{\lim \limits_{x \to + \infty} x^{\frac{1}{x}}}{\exp \frac{1}{\lim \limits_{x \to + \infty} x^2}} = 
+				\frac{\lim \limits_{x \to + \infty} x^{\frac{1}{x}}}{e^{\frac{1}{\infty^2}}} = 
+				\frac{\lim \limits_{x \to + \infty} x^{\frac{1}{x}}}{1} = 
+				\lim \limits_{x \to + \infty} x^{\frac{1}{x}} = \\
+				\lim \limits_{x \to + \infty} \exp\log(x^{\frac{1}{x}}) = 
+				\lim \limits_{x \to + \infty} \exp \frac{\log(x)}{x} = \\
+				\exp \lim \limits_{x \to + \infty} \frac{\log(x)}{x} = 
+				\exp (0) = 1			
+			\end{gather*}
+		
+		\item $\lim \limits_{x \to + 0} \ln x \cdot x^{x^{x}}$
+		
+		\item $\lim \limits_{n \to \infty} \frac{n!}{2^{n^{2}}}$\\
+			\begin{gather*}
+				\lim \limits_{n \to \infty} \frac{n!}{2^{n^{2}}} = 
+				\lim \limits_{n \to \infty} \bigg( \frac{1}{2^{n}} \cdot \ldots \cdot \frac{n}{2^{n}} \bigg) \leqslant
+				\lim \limits_{n \to \infty} \bigg( \frac{n}{2^{n}} \cdot \ldots \cdot \frac{n}{2^{n}} \bigg) = 
+				\lim \limits_{n \to \infty} \bigg( \frac{n}{2^{n}} \bigg)^{n}\\
+				\lim \limits_{n \to \infty} \frac{a_{n + 1}}{a_{n}} = 
+				\lim \limits_{n \to \infty} \frac{(n + 1)! \cdot 2^{n^2}}{n! \cdot 2^{{n + 1}^2}} = 
+				\lim \limits_{n \to \infty} \frac{n + 1}{2^{2(n + 1) - 1}} = 
+				\lim \limits_{n \to \infty} \frac{n + 1}{2^{2n + 1}} = 0
+			\end{gather*}
+		
+		\item $\lim \limits_{n \to \infty}(n!)^{1 / n}$
+		
+		\item $\lim \limits_{n \to \infty}(n!)^{1 / n^{2}}$
+		
+		\end{enumerate}
+		
+% ------------------------------------------------------------------------------------------------------------ 
+
+		\subsection{}
+		\begin{enumerate}
+		\item $\lim \limits_{x \to 0} \frac{\sin x - \tan x}{\arcsin x - \arctan x}$
+			\begin{gather*}
+				\text{по Лопиталю}\\
+				\lim \limits_{x \to 0} - \frac{\sqrt{1 - x^2}(x^2 + 1)(\cos(x) - \frac{1}{\cos(x)^2})}{ - 1 - x^2 + \sqrt{1 - x^2}} = 
+				 - 1 \cdot \lim \limits_{x \to 0} \sqrt{1 - x^2}(x^2 + 1) \cdot \lim \limits_{x \to 0} \frac{\cos(x) - \frac{1}{\cos(x)^2}}{ - 1 - x^2 + \sqrt{1 - x^2}} = \\
+				 - 1 \cdot 1 \cdot \lim \limits_{x \to 0} \frac{\cos(x) - \frac{1}{\cos(x)^2}}{ - 1 - x^2 + \sqrt{1 - x^2}} = 
+				 - \lim \limits_{x \to 0} \frac{\cos(x)^3 - 1}{\cos(x)^2 \big( - 1 - x^2 + \sqrt{1 - x^2} \big)} = \\
+				 - \lim \limits_{x \to 0} \frac{1}{\cos(x)^2} \cdot \lim \limits_{x \to 0} \frac{\cos(x)^3 - 1}{ - 1 - x^2 + \sqrt{1 - x^2}} = 
+				 - \lim \limits_{x \to 0} \frac{\cos(x)^3 - 1}{ - 1 - x^2 + \sqrt{1 - x^2}} = \\
+				 - \lim \limits_{x \to 0} \frac{1}{x^2} \cdot \frac{x^2 (\cos(x)^3 - 1)}{ - 1 - x^2 + \sqrt{1 - x^2}} = 
+				 - \lim \limits_{x \to 0} \frac{\cos(x)^3 - 1}{x^2} \cdot \frac{x^2}{ - 1 - x^2 + \sqrt{1 - x^2}} = \\
+				 - \lim \limits_{x \to 0} \frac{\cos(x)^3 - 1}{x^2} \cdot \lim \limits_{x \to 0} \frac{x^2}{ - 1 - x^2 + \sqrt{1 - x^2}} = 
+				 - \lim \limits_{x \to 0} - \frac{3\cos(x)^2\sin(x)}{2x} \cdot \lim \limits_{x \to 0} \frac{x^2}{ - 1 - x^2 + \sqrt{1 - x^2}} = \\
+				 - 1 \cdot - \frac{3}{2} \lim \limits_{x \to 0} \frac{\sin(x)}{x} \cdot \lim \limits_{x \to 0} \cos(x)^2 \cdot \lim \limits_{x \to 0} \frac{x^2}{ - 1 - x^2 + \sqrt{1 - x^2}} = \\
+				 - 1 \cdot - \frac{3}{2} \cdot 1 \cdot 1 \cdot \lim \limits_{x \to 0} \frac{x^2}{ - 1 - x^2 + \sqrt{1 - x^2}} = 
+				\frac{3}{2} \cdot \lim \limits_{x \to 0} \frac{x^2}{ - 1 - x^2 + \sqrt{1 - x^2}} = \\
+				\frac{3}{2} \cdot \lim \limits_{x \to 0} \frac{1}{1 - \frac{\sqrt{1 - x^2} - 1}{x^2}} = 
+				\frac{3}{2} \cdot \frac{1}{\lim \limits_{x \to 0} \bigg( 1 - \frac{\sqrt{1 - x^2} - 1}{x^2} \bigg)} = 
+				\frac{3}{2} \cdot \frac{1}{1 - \lim \limits_{x \to 0} \bigg(\frac{\sqrt{1 - x^2} - 1}{x^2} \bigg)} = \\
+				\frac{3}{2} \cdot \frac{1}{1 - \lim \limits_{x \to 0} \frac{(\sqrt{1 - x^2} - 1)(\sqrt{1 - x^2} + 1)}{x^2(\sqrt{1 - x^2} + 1)}} = 
+				\frac{3}{2} \cdot \frac{1}{1 - \lim \limits_{x \to 0} \frac{(\sqrt{1 - x^2} - 1)(\sqrt{1 - x^2} + 1)}{x^2(\sqrt{1 - x^2} + 1)}} = 
+				\frac{3}{2} \cdot \frac{1}{1 - \lim \limits_{x \to 0} - \frac{1}{\sqrt{1 - x^2} + 1}} = \\
+				\frac{3}{2} \cdot - \frac{1}{1 - ( - \frac{1}{1 + 1})} = 
+				\frac{3}{2} \cdot - \frac{1}{1 - ( - \frac{1}{2})} = 
+				\frac{3}{2} \cdot - \frac{2}{3} = 
+				 - 1 
+			\end{gather*}
+			\textbf{второй вариант решения}\\
+			\begin{gather*}
+				\sin x = x - \frac{x^{3}}{3!} + \frac{x^{5}}{5!} - \ldots\\
+				\tan x = x + \frac{x^{3}}{3} + \frac{2x^{5}}{15} + \ldots\\
+				\arcsin x = x + \frac{x^{3}}{6} + \frac{3x^{5}}{40} + \ldots\\
+				\arctan x = x - \frac{x^{3}}{3} + \frac{x^{5}}{5} - \ldots
+			\end{gather*}
+			
+			Подставим это в предел:\\
+			\begin{gather*}
+				\lim\limits_{x \to 0}\frac{\sin(x) - \tan(x)}{\arcsin(x) - \arctan(x)} = 
+				\lim\limits_{x \to 0}\frac{x - \frac{x^{3}}{3!} + \frac{x^{5}}{5!} - \ldots - (x + \frac{x^{3}}{3} + \frac{2x^{5}}{15} + \ldots)}{x + \frac{x^{3}}{6} + \frac{3x^{5}}{40} + \ldots - (x - \frac{x^{3}}{3} + \frac{x^{5}}{5} - \ldots)} = \\
+				\lim\limits_{x \to 0}\frac{x - x - \frac{3x^{3}}{3!} + x^5(\ldots)}{x - x + \frac{3x^{3}}{3!} + x^5(\ldots)} = 
+				\lim\limits_{x \to 0}\frac{ - \frac{3}{3!} + x^2(\ldots)}{\frac{3}{3!} + x^2(\ldots)} = - 1
+			\end{gather*}
+			
+		\item $\lim \limits_{x \to 0} \frac{\exp (\sin x) - \exp (\text{tan} x)}{\ln (1 + \sin x) - \ln (1 + \text{tan} x)}$
+		
+		\item $\lim \limits_{x \to 0} \frac{\ln \sin x}{\ln \text{tan} x}$
+			\begin{gather*}
+				\text{по Лопиталю}\\
+				\lim \limits_{x \to 0} \frac{\ln \sin x}{\ln \text{tan} x} = 
+				\lim \limits_{x \to 0} \frac{\frac{\cos(x)}{\sin(x)}}{\frac{\frac{1}{\cos(x)^2}}{\text{tan}(x)}} = 
+				\lim \limits_{x \to 0} \frac{\cos(x) \text{tan}(x)}{\sin(x) \frac{1}{\cos(x)^2}} = 
+				\lim \limits_{x \to 0} \frac{\cos(x)^3 \text{tan}(x)}{\sin(x)} = \\
+				\lim \limits_{x \to 0} \frac{\cos(x)^3 \frac{\sin(x)}{\cos(x)}}{\sin(x)} = 
+				\lim \limits_{x \to 0} \frac{\cos(x)^2 \sin(x)}{\sin(x)} = 
+				\lim \limits_{x \to 0} \cos(x)^2 = 1
+			\end{gather*}
+		
+			\textbf{второй вариант решения}\\
+			\begin{gather*}
+				\sin x = x - \frac{x^{3}}{3!} + \frac{x^{5}}{5!} - \ldots\\
+				\tan x = x + \frac{x^{3}}{3} + \frac{2x^{5}}{15} + \ldots\\
+				\ln(1 + x) = x - \frac{x^{2}}{2} + \frac{x^{3}}{3} - \ldots
+			\end{gather*}
+			Подставим это в предел:\\
+			\begin{gather*}
+				\lim\limits_{x \to 0}\frac{\ln(\sin(x))}{\ln(\tan(x))} = \\ 
+				\lim\limits_{x \to 0}\frac{\ln(x - \frac{x^{3}}{3!} + \frac{x^{5}}{5!} - \ldots)}{\ln(x + \frac{x^{3}}{3} + \frac{2x^{5}}{15} + \ldots)} = \\ 
+				\lim\limits_{x \to 0}\frac{\ln(x(1 - \frac{x^{2}}{3!} + \frac{x^{4}}{5!} - \ldots)}{\ln(x(1 + \frac{x^{2}}{3} + \frac{2x^{4}}{15} + \ldots)} = \\ 
+				\lim\limits_{x \to 0}\frac{\ln(x) + \ln(1 - \frac{x^{2}}{3!} + \frac{x^{4}}{5!} - \ldots)}{\ln(x) + \ln(1 + \frac{x^{2}}{3} + \frac{2x^{4}}{15} + \ldots)} = \\ 
+				\lim\limits_{x \to 0}\frac{\ln(1 + (x - 1)) + \ln(1 + ( - \frac{x^{2}}{3!} + \frac{x^{4}}{5!} - \ldots))}{\ln(1 + (x - 1)) + \ln(1 + \frac{x^{2}}{3} + \frac{2x^{4}}{15} + \ldots)} = \\ 
+				\lim\limits_{x \to 0}\frac{x - 1 - \frac{(x - 1)^{2}}{2} + \frac{(x - 1)^{3}}{3} - \ldots + ( - \frac{x^{2}}{3!} + \frac{x^{4}}{5!} - \ldots) - \frac{( - \frac{x^{2}}{3!} + \frac{x^{4}}{5!} - \ldots)^{2}}{2} + \frac{( - \frac{x^{2}}{3!} + \frac{x^{4}}{5!} - \ldots)^{3}}{3} - \ldots)}{x - 1 - \frac{(x - 1)^{2}}{2} + \frac{(x - 1)^{3}}{3} - \ldots + \frac{x^{2}}{3} + \frac{2x^{4}}{15} + \ldots - \frac{(\frac{x^{2}}{3} + \frac{2x^{4}}{15} + \ldots)^{2}}{2} + \frac{(\frac{x^{2}}{3} + \frac{2x^{4}}{15} + \ldots)^{3}}{3} - \ldots)} = \\ 
+				\lim\limits_{x \to 0}\frac{x - 1 + \frac{(x - 1)^{2}}{2} + \frac{(x - 1)^{3}}{3} + x^2(\ldots)}{x - 1 + \frac{(x - 1)^{2}}{2} + \frac{(x - 1)^{3}}{3} + x^2(\ldots)} = \\ 
+				\frac{ - 1 + \frac{1}{2} - \frac{1}{3}}{ - 1 + \frac{1}{2} - \frac{1}{3}} = 1
+			\end{gather*}
+		\end{enumerate}
+		
+% ------------------------------------------------------------------------------------------------------------ 
+
+		\subsection{}
+		\begin{enumerate}
+		\item $f(x)=\exp (\frac{1}{x})-\frac{2}{\pi}\arctan(x),\ a=+\infty$
+			\begin{gather*}
+				f(x) = \exp(\frac{1}{x}) - \frac{2}{\pi}\arctan(x)\\
+				\frac{1}{x} = t \Leftrightarrow t \to 0\\
+				\exp(t) - \frac{2\pi}{\pi 2} = \exp(x) - 1\\
+				\exp(t) = 1 + t + \text{o}(t^2)\\
+				\lim\limits_{t \to 0}\frac{1}{t^{\alpha}}(1 + t + o(t^2) - 1) = \lim\limits_{t \to 0}\frac{1}{t^{\alpha - 1}}\\
+				\alpha >1,\ \lim\limits_{t \to 0}\frac{1}{t^{\alpha - 1}} = \infty\\
+				\alpha <1,\ \lim\limits_{t \to 0}\frac{1}{t^{\alpha - 1}} = 0
+			\end{gather*}
+			
+		\item $f(x)$ наименьший положительный корень $\tan(t)=(1+x) t, a=+0$
+		\item
+			\begin{gather*}
+				f(x) = \sin(\tan x) - \tan(\sin x),\ a = 0\\
+				\sin x = x - \frac{x^{3}}{3!} + \frac{x^{5}}{5!} - \ldots\\
+				\tan x = x + \frac{x^{3}}{3} + \frac{2x^{5}}{15} + \ldots\\
+				\\
+				\lim\limits_{x \to a} x^a \Big( \sin(\tan x) - \tan(\sin x) \Big) = \\
+				\lim\limits_{x \to a} x^a \Big( \sin(x + \frac{x^{3}}{3} + \frac{2x^{5}}{15} + \ldots) - \tan(x - \frac{x^{3}}{3!} + \frac{x^{5}}{5!} - \ldots) \Big) = \\
+				\lim\limits_{x \to a} x^a \Bigg( \Big((x + \frac{x^{3}}{3} + \frac{2x^{5}}{15} + \ldots) - \frac{(x + \frac{x^{3}}{3} + \frac{2x^{5}}{15} + \ldots)^{3}}{3!} + \frac{(x + \frac{x^{3}}{3} + \frac{2x^{5}}{15} + \ldots)^{5}}{5!} - \ldots \Big) - \\
+				\Big((x - \frac{x^{3}}{3!} + \frac{x^{5}}{5!} - \ldots) + \frac{(x - \frac{x^{3}}{3!} + \frac{x^{5}}{5!} - \ldots)^{3}}{3} + \frac{2(x - \frac{x^{3}}{3!} + \frac{x^{5}}{5!} - \ldots)^{5}}{15} + \ldots \Big) \Bigg) = \\
+				\lim\limits_{x \to a} x^a \Bigg( \Big( x + \frac{1}{6}x^3 - \frac{1}{40}x^5 - \frac{55}{1008}x^7 - \ldots \Big) - \Big( x + \frac{1}{6}x^3 - \frac{1}{40}x^5 - \frac{107}{5040}x^7 - \ldots \Big) \Bigg) = \\
+				\lim\limits_{x \to a} x^a (\frac{107}{5040}x^7 - \frac{55}{1008}x^7 + \ldots) = \\
+				\lim\limits_{x \to a} x^a ( - \frac{1}{30}x^7 + \ldots) = \\
+				\lim\limits_{x \to a} x^{7 + a} ( - \frac{1}{30} + \ldots)\\
+				\\
+				\alpha> - 7:\quad \lim\limits_{x\to 0}x^{\alpha}(\sin(\tan(x)) - \tan(\sin(x))) = 0\\
+				\alpha = - 7:\quad \lim\limits_{x\to 0}x^{\alpha}(\sin(\tan(x)) - \tan(\sin(x))) = - \frac{1}{30}\\
+				\alpha< - 7:\quad \lim\limits_{x\to 0}x^{\alpha}(\sin(\tan(x)) - \tan(\sin(x))) = \infty 
+			\end{gather*}
+		\item 
+			\begin{gather*}
+				y^{2} = R^{2} - 2Rr + r^{2} - r^{2} = 1 - 2r\\
+				y = r \cdot \tan(\frac{x}{2})\\
+				\\
+				\text{Приравняем:}\ r^{2} \cdot \tan^{2}(\frac{x}{2}) + 2r - 1 = 0\\
+				r = \frac{ - 1 + \sqrt{1 + \tan^{2}(\frac{x}{2})}}{\tan^{2}(\frac{x}{2})}\\
+				f(x) = \pi r^2 = \pi \frac{1 - 2 \sqrt{1 + \tan^{2}(\frac{x}{2})} + 1 + \tan^{2}(\frac{x}{2})}{\tan^{4}(\frac{x}{2})}\\
+				\tan^{2}(\frac{x}{2}) = \frac{x^2}{4} + \frac{x^4}{24} + \ldots\\
+				\sqrt{1 + \tan^{2}(\frac{x}{2})} = 1 + \frac{x^2}{8} + \frac{5x^4}{384} + \ldots\\ 
+				\lim\limits_{x\to 0}f(x) = \pi \lim\limits_{x\to 0}r \lim\limits_{x\to 0}r = \frac{\pi}{4}\\
+				\lim\limits_{x\to 0} x^{\alpha}f(x) = \lim\limits_{x\to 0} x^{\alpha} \frac{\pi}{4}\\
+				\\
+				\alpha >0\quad \lim\limits_{x\to 0} x^{\alpha} \frac{\pi}{4} = 0\\
+				\alpha <0\quad \lim\limits_{x\to 0} x^{\alpha} \frac{\pi}{4} = + \infty\\
+				\alpha = 0\quad \lim\limits_{x\to 0} x^{0} \frac{\pi}{4} = \frac{\pi}{4}
+			\end{gather*}
+		\item
+			\begin{gather*}
+				h(x) = x^2\\
+				h^{\prime}(x) = 2x\\
+				2x_0 (x - x_0) + x_0^2 = 2x_0 x - x_0^2\\
+				\tan(\phi) = 2x_0\\
+				4x_0^2 + 1 = \frac{1}{\cos^2(\phi)}\
+				\cos^2(\phi) = \frac{1}{4x_0^2 + 1}\\
+				\sin^2(\phi) = \frac{4x_0^2}{4x_0^2 + 1}\\
+				\sin(\phi) = \frac{2x_0}{\sqrt{4x_0^2 + 1}}\\
+				\\
+				f(x) = \frac{2x_0^3}{\sqrt{4x_0^2 + 1}} = \frac{2x^3}{\sqrt{4x_0^2 + 1}}\\
+				\alpha > - 3\quad \lim\limits_{x\to 0} x^{\alpha} \frac{2x^3}{\sqrt{4x^2 + 1}} = 0\\
+				\alpha < - 3\quad \lim\limits_{x\to 0} x^{\alpha} \frac{2x^3}{\sqrt{4x^2 + 1}} = \lim\limits_{x\to 0} \frac{2x^3}{\sqrt{4x^2 + 1} x^{ - \alpha}} = \lim\limits_{x\to 0} \frac{2}{\sqrt{4x^2 + 1} x^{ - \alpha - 3}} = \infty\\
+				\alpha = - 3\quad \lim\limits_{x\to 0} \frac{2x^3}{x^3 \sqrt{4x^2 + 1}} = 2
+			\end{gather*} 
+		\item 		
+		\end{enumerate}
+		
+% ------------------------------------------------------------------------------------------------------------ 
+
+		\subsection{}
+		\begin{enumerate}
+		\item
+			\begin{gather*}
+				\frac{1}{x^2 + x - 2} = \frac{1}{(x + 2)(x - 1)} = \frac{1}{3} \Big( \frac{1}{x - 1} + \frac{1}{x + 2} \Big)\\
+				\frac{1}{x - a} = - \frac{1}{a - x} = - \Big( \frac{1}{a} + \frac{1}{a^2}x + \frac{1}{a^3}x^2 + \ldots \Big) = - \sum_{k = 1}^{ + \infty} \frac{1}{a^k}x^{k - 1}\\
+				\text{откуда}\\
+				\frac{1}{x^2 + x - 2} = 
+				\frac{1}{3} \Big( \frac{1}{x - 1} + \frac{1}{x + 2} \Big) = 
+				\frac{1}{3} \Big( - \Big( \sum_{k = 1}^{ + \infty} \frac{1}{1^k}x^{k - 1} \Big) + - \Big( \sum_{k = 1}^{ + \infty} \frac{1}{( - 2)^k}x^{k - 1} \Big) \Big) = \\
+				\frac{1}{3} \Big( - \Big( 1 + x + x^2 + \ldots \Big) + - \Big( - \frac{1}{2} + \frac{1}{2^2}x + - \frac{1}{2^3}x^2 + \ldots \Big) \Big) = \\
+				\frac{1}{3} \Big( - 1 - x - x^2 + \ldots + \Big( \frac{1}{2} - \frac{1}{2^2}x + \frac{1}{2^3}x^2 + \ldots \Big) \Big) = \\
+				\frac{1}{3} \Big( - \frac{3}{2} - \frac{3}{4}x - \frac{9}{8}x^2 - \frac{15}{16}x^3 - \ldots \Big) = - \frac{1}{2} - \frac{1}{4}x - \frac{3}{8}x^2 - \frac{5}{16}x^3 - \ldots = - \sum_{k = 1}^{ + \infty} \frac{2^k + ( - 1)^{k}}{2^k}x^{k - 1}
+			\end{gather*} 
+		\item 
+			\begin{gather*}
+				f(x) = f(a) + \frac{f^{\prime}(a)}{1!}(x - a) + \frac{f^{\prime\prime}(a)}{2!}(x - a)^2 + \frac{f^{\prime\prime\prime}(a)}{3!}(x - a)^3 + \ldots\\
+				\\
+				f(x) = \frac{1}{x^2 + x + 2} = \\
+				f(0) + \frac{f^{\prime}(0)}{1!}(x - 0) +  + \frac{f^{\prime\prime}(0)}{2!}(x - 0)^2 + \frac{f^{\prime\prime\prime}(0)}{3!}(x - 0)^3 + \ldots = \\
+				f(0) + \frac{f^{\prime}(0)}{1!}x +  + \frac{f^{\prime\prime}(0)}{2!}x^2 + \frac{f^{\prime\prime\prime}(0)}{3!}x^3 + \ldots = \\
+				\frac{1}{2} + \frac{-\frac{1}{4}}{1!}x + \frac{-\frac{1}{4}}{2!}x^2 + \frac{\frac{9}{8}}{3!}x^3 + \frac{-\frac{3}{4}}{4!}x^4 + \ldots = \\
+				\frac{1}{2} - \frac{1}{4}x - \frac{1}{8}x^2 + \frac{3}{16}x^3 - \frac{1}{32}x^4 + \ldots 
+			\end{gather*}
+		\item
+			\begin{gather*}
+				f(x) = \sin^{3}x = \frac{1}{4} \Big(3\sin(x) - \sin(3x)\Big) = \\
+				\frac{1}{4} \Big(3(x - \frac{x^{3}}{3!} + \frac{x^{5}}{5!} - \ldots) - ((3x) - \frac{(3x)^{3}}{3!} + \frac{(3x)^{5}}{5!} - \ldots)\Big) = \\
+				\frac{1}{4} \Big((3x - \frac{3}{3!}x^{3} + \frac{3}{5!}x^{5} - \ldots) - ((3x) - \frac{(3x)^{3}}{3!} + \frac{(3x)^{5}}{5!} - \ldots)\Big) = \\
+				\frac{1}{4} \Big( x^{3} - \frac{1}{2}x^{5} + \frac{13}{120}x^{7} - \ldots \Big) = \\
+				-\frac{3}{4} \sum_{k = 1}^{+\infty} \frac{(-1)^{k} (3^{2k} - 1)}{(2k + 1)!} x^{2k + 1} 
+			\end{gather*} 
+		\end{enumerate}
+		
+% ------------------------------------------------------------------------------------------------------------ 
+
+		\subsection{}
+		Формула Тейлора:
+		\begin{gather*}
+			f(x) = f(x_0) + f^{\prime}(x_0)(x - x_0) + \frac{f^{(2)}(x_0)}{2!}(x - x_0)^2 + \ldots + \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n
+		\end{gather*}
+		При $x_0 = 0$ Формула Маклорена:
+		\begin{gather*}
+			f(x) = f(0) + f^{\prime}(0)x + \frac{f^{(2)}(0)}{2!}x^2 + \ldots + \frac{f^{(n)}(0)}{n!}x^n + R_n(x)
+		\end{gather*}
+		У четной функции все производные нечетного порядка являются нечетными функциями, откуда они $ = 0$ в точке $x = 0$\\
+		Аналогично у нечетной функции все произведения четного порядка $ = 0$, в точке $x = 0$
+		\begin{enumerate}
+		\item $f$ и $g$ - нечетные бесконечно дифференцируемые функции на $\mathbb{R}$, причём $f^{\prime}(0) = g^{\prime}(0) = 1$. Докажите, что $\lim\limits_{x\to 0}\frac{f(g(x)) - g(f(x))}{x^6} = 0$
+			\begin{gather*}
+				\lim \limits_{x \to 0} \frac{f(g(x)) - g(f(x))}{x^6} = 0 \quad f^{\prime}(0) = g^{\prime}(0) = 1\\
+				f(g(x)) = f(0) + \frac{f^{\prime}(0)}{1!}g(x) + \frac{f^{(3)}(0)}{3!}g^{3}(x) + \ldots\\
+				f(g(x)) - g(f(x)) = \Big(f(0) + g(x) + \frac{f^{(3)}(0)}{3!}g^{3} + \ldots \Big) - \Big( g(0) + f(x) + \frac{g^{(3)}(0)}{3!}f^{3} + \ldots \Big) = \\
+				\Big( \frac{g^{(3)}}{3!}x^3 + \frac{g^{(5)}}{5!}x^5 + \ldots + \frac{f^3(0)}{3!}(g(0) + x + \frac{g^{(3)}(0)}{3!}x^3 + \ldots)^3 + \frac{f^5(0)}{5!}(g(0) + x \ldots)^5 + \ldots \Big) - \\
+				\Big( \frac{f^{(3)}}{3!}x^3 + \frac{f^{(5)}}{5!}x^5 + \ldots + \frac{g^3(0)}{3!}(f(0) + x + \frac{f^{(3)}(0)}{3!}x^3 + \ldots)^3 + \frac{g^5(0)}{5!}(f(0) + x \ldots)^5 + \ldots \Big)
+			\end{gather*}
+			Так как $f(x), g(x)$ -- нечетные функции, то $f(0) = g(0) = 0$
+			\begin{gather*}
+				\Big(
+				\frac{g^{(3)}(0)}{3!}x^3 + \frac{g^{(5)}(0)}{5!}x^5 + \ldots
+				 + \frac{f^{(3)}(0)}{3!}x^3 + \frac{f^{(5)}(0)}{5!}x^5 + \ldots
+				 + \frac{g^{(3)}(0) f^{(3)}(0)}{3!3!}x^6 
+				\Big)
+				 - \\
+				\Big(
+				\frac{f^{(3)}(0)}{3!}x^3 + \frac{f^{(5)}(0)}{5!}x^5 + \ldots
+				 + \frac{g^{(3)}(0)}{3!}x^3 + \frac{g^{(5)}(0)}{5!}x^5 + \ldots
+				 + \frac{g^{(3)}(0) f^{(3)}(0)}{3!3!}x^6
+				\Big)
+				 = 0
+			\end{gather*}
+			Под $^{\prime \prime}\ldots^{\prime \prime}\ $ записаны многочлены степени $>6$\\
+			Тогда
+			\begin{gather*}
+				\lim \limits_{x \to 0} \frac{f(g(x)) - g(f(x))}{x^6} = 0
+			\end{gather*}
+		\item $f$ и $g$ - бесконечно дифференцируемые функции на $\mathbb{R}$, причём $f(0) = g(0) = 0$ и $f^{\prime}(0) = g^{\prime}(0) = 1$. Докажите, что $\lim\limits_{x\to 0}\frac{f(g(x)) - g(f(x))}{x^3} = 0$
+			\begin{gather*}
+				f(g(x)) - g(f(x)) = f(0) + g(0) + x + \frac{g^{(2)}(0)}{2!}x^2 + \frac{g^{(3)}(0)}{3!}x^3 + \ldots\\ + \frac{f^{(2)}(0)}{2!} \Big( g(0) + x + \frac{g^{(2)}(0)}{2!}x^2 + \ldots \Big)^{2} + \frac{f^{(3)}(0)}{3!} \Big( g(0) + x + \frac{g^{(2)}(0)}{2!}x^2 + \ldots \Big)^{3} + \ldots\\ - g(0) - f(0) - x - \frac{f^{(2)}(0)}{2!} x^2 - \frac{f^{(3)}(0)}{3!} x^3 - \ldots\\ - \frac{g^{(2)}(0)}{2!} \Big( f(0) + x + \frac{f^{(2)}(0)}{2!}x^2 + \ldots \Big)^{2} - \frac{g^{(3)}(0)}{3!} \Big( f(0) + x + \frac{f^{(2)}(0)}{2!}x^2 + \ldots \Big)^{3} - \ldots = \\
+				\frac{g^{(2)}(0)}{2!}x^{2} + \frac{g^{(3)}(0)}{3!}x^{3} + \ldots + \frac{f^{(2)}(0)}{2!}x^{2} + \frac{f^{(2)}(0) g^{(2)}(0)}{2!2!}x^{3} + \ldots\\ + \frac{f^{(3)}(0)}{3!}x^{3} - \frac{f^{(2)}(0)}{2!}x^{2} - \frac{f^{(3)}(0)}{3!}x^{3} - \ldots - \frac{g^{(2)}(0)}{2!}x^{2} - \frac{g^{(2)}(0)f^{(3)}(0)}{2!2!}x^{3} - \ldots - \frac{g^{(3)}(0)}{3!}x^{3} = 0\\
+				\Rightarrow\\
+				\lim\limits_{x \to 0} \frac{f(g(x)) - g(f(x))}{x^3} = 0
+			\end{gather*}
+		\item $f$ и $g$ - четные бесконечно дифференцируемые функции на $\mathbb{R}$, причём $f^{\prime \prime}(0) = g^{\prime \prime}(0) = 2$. Докажите, что $\lim\limits_{x\to 0}\frac{f(g(x)) - g(f(x))}{x^7} = 0$
+		\end{enumerate}
+		
+% ------------------------------------------------------------------------------------------------------------ 
+		
+		\subsection{}
+		\begin{enumerate}
+		\item Найдите $f^{(2020)} (0)$, если $f(x) = \sin(x^{20} + x^{2000})$
+			\begin{gather*}
+				f(x) = \sin(x^{20} + x^{2000}) = x^{20} + x^{2000} - \frac{(x^{20} + x^{2000})^3}{3!} + \frac{(x^{20} + x^{2000})^5}{5!} - \ldots
+			\end{gather*}
+			$f^{(2020)}(\alpha) = 0$ при $\alpha = n \cdot x^{(2020)}$\\
+			$2020 = 20 \cdot 101$ Тогда найдем знак у $\frac{101 + 1}{2} = 51$ члена ряда.
+			\begin{gather*}
+				\frac{(x^{20} + x^{2000})^{101}}{101!} = \frac{x^{2020}}{101!} + \ldots\\
+				f^{(2020)}(\frac{x^{2020}}{101!}) = \frac{2020!}{101!}\\
+				f^{(2020)}(0) = \frac{2020!}{101!}
+			\end{gather*}
+		\item Найдите $f^{(4)} (0)$, если $f(x) = \frac{1}{t^3 - t^2 + 1}$
+		\item Найдите $f(0)$, $f^{\prime}(0)$, $f^{\prime \prime}(0)$, если $f(x)$ - наименьший неотрицательный корень уравнения $xt^3 - 3t + x = 0$
+		\end{enumerate}
+			
+% ------------------------------------------------------------------------------------------------------------ 	
+		
+		\subsection{}
+		\begin{enumerate}
+		\item 
+			\begin{gather*}
+				y \to x\\
+				\lim\limits_{x \to 0}\frac{x}{x} = 1\\
+				\\
+				y \to \frac{x}{2}\\
+				\lim\limits_{x \to 0}\frac{x}{\frac{x}{2}} = 2
+			\end{gather*}
+			Следовательно предела не существует.
+		
+		\item 
+		
+		\item 
+			\begin{gather*}
+				y \to x\\
+				\lim\limits_{x \to 0}2x\ln(\sqrt{2}x) = 
+				\lim\limits_{x \to 0}\frac{(\ln(\sqrt{2}x)^{\prime}}{(\frac{1}{2x})^{\prime}} = 
+				\lim\limits_{x \to 0}\frac{\frac{1}{x}}{2( - \frac{1}{4x^2})} = 0
+				\\
+				y \to 2x\\
+				\lim\limits_{x \to 0}2x\ln(\sqrt{5}x) = 
+				\lim\limits_{x \to 0}\frac{(\ln(\sqrt{5}x)^{\prime}}{(\frac{1}{2x})^{\prime}} = 0
+			\end{gather*}
+			Следовательно, предел равен $0$
+		
+		\item 
+			\begin{gather*}
+				y \to x\\
+				\lim\limits_{x \to 0}2x^2\ln(\sqrt{2}x) = 
+				\lim\limits_{x \to 0}\frac{(\ln(\sqrt{2}x)^{\prime}}{(\frac{1}{2x^2})^{\prime}} = 
+				\lim\limits_{x \to 0}\frac{\frac{1}{x}}{2( - \frac{1}{x^3})} = 0\\
+				\\
+				y \to 2x\\
+				\lim\limits_{x \to 0} 2x^2 \ln(\sqrt{5}x) = 
+				\lim\limits_{x \to 0}\frac{(\ln(\sqrt{5}x)^{\prime}}{(\frac{1}{2x^2})^{\prime}} = 0
+			\end{gather*}		
+			Следовательно, предел равен $0$
+		
+		\item 
+			\begin{gather*}
+				y \to x\\
+				\lim\limits_{x \to 0}\frac{\sin(x)}{\sqrt{2}x} = \frac{1}{\sqrt{2}}\\
+				\\
+				y \to 2x\\
+				\lim\limits_{x \to 0}\frac{\sin(x)}{\sqrt{5}x} = \frac{1}{\sqrt{5}}
+			\end{gather*}
+			Следовательно предела не существует.
+		
+		\item 
+			\begin{gather*}
+				\lim\limits_{(x,y) \to (0,0)}\frac{\sin(x) + \sin(y)}{x + y} = 
+				\lim\limits_{(x,y) \to (0,0)} \frac{2\sin(\frac{x + y}{2}) \cos(\frac{x - y}{2})}{\frac{x + y}{2}} = 
+				\lim\limits_{(x,y) \to (0,0)}\cos(\frac{x - y}{2}) = 1	
+			\end{gather*}
+		
+		\item 
+			\begin{gather*}	
+			\end{gather*}
+		\end{enumerate}
+		
+% ------------------------------------------------------------------------------------------------------------ 
+
+		\subsection{}
+		\begin{enumerate}
+		\item $A = \{x^2 + ax\ |\ x \in ( - 1; 1) \}$\\
+			$y = x^2 + ax$
+			Рассмотрим два диапазона:\\
+			\\
+			$x_0 \in ( - 1; 1)$\\
+			\begin{gather*}
+				x_0 \in \left[ - 1; 1\right)\\
+				a \in \left[0; 2\right) \Rightarrow \text{inf} A = - \frac{a^2}{4}\\
+				\text{sup} A = y(1) = 1 + a\\
+				x_0 \in \left(0; 1\right) \Rightarrow a \in \left( - 2; 0\right)\quad \text{inf} A = - \frac{a^2}{4}\\
+				\text{sup} A = y( - 1) = 1 - a\\
+			\end{gather*}
+			$x_0 \in \left( - \infty, - 1 \right] \cup \left[ 1, + \infty \right)$\\
+			\begin{gather*}
+				x_0 \in \left( - \infty, - 1 \right] \Rightarrow a \in \left[ 2, + \infty \right]\\
+				\text{inf} A = y( - 1) = 1 - a\\
+				\text{sup} A = y(1) = 1 + a\\
+				x_0 \in \left[ 1, + \infty \right) \Rightarrow a \in \left[ - \infty, - 2 \right]\\
+				\text{inf} A = y(1) = 1 + a\\
+				\text{sup} A = y( - 1) = 1 - a\\
+			\end{gather*}
+			Ответ:
+			\begin{gather*}
+				\text{при}\ a \in \left( - \infty, - 2 \right]\\
+				\qquad \text{inf} A = 1 + a\\
+				\qquad \text{sup} A = 1 - a\\
+				\text{при}\ a \in \left[ 2, + \infty \right)\\
+				\qquad \text{inf} A = 1 - a\\
+				\qquad \text{sup} A = 1 + a\\
+				\text{при}\ a \in \left( - 2, 0 \right)\\
+				\qquad \text{inf} A = \frac{a^2}{4}\\
+				\qquad \text{sup} A = 1 + a\\
+				\text{при}\ a \in \left[ 0,2 \right)\\
+				\qquad \text{inf} A = - \frac{a^2}{4}\\
+				\qquad \text{sup} A = 1 + a
+			\end{gather*}
+		\item $A = \{t \sin(t)\ |\ - a<t<a \}$\\		
+		
+		\item $A = \{\frac{\sin(x)}{x}\ |\ x>0 \}$\\
+			\begin{gather*}
+				y = \frac{\sin(x)}{x} \qquad y^{\prime} = - \frac{\sin(x)}{x^2} + \frac{\cos(x)}{x} = 0
+			\end{gather*}
+			НАйдем $\text{mf} A $, так как при $x > \frac{3\pi}{2}$: $\sin(x) \in [ - 1; 1]$, а знаменатель будет увеличиваться ($\frac{\sin(x)}{x} \to 0$), то $\text{mf} A \ne y(x)$ при $x > \frac{3\pi}{2}$ и $\text{sup} A \ne y(x)$ при $x > \frac{\pi}{2}$.\\
+			Тогда рассмотрим функцию при $x \in (0; \frac{3\pi}{2})$\\
+			$\text{sup} A = \lim \limits_{x \to 0} \frac{\sin(x)}{x} = 1$\\
+			$\text{inf} A = \frac{\sin(\arctan(x) + \pi)}{\arctan(x) + \pi}$ при $x = \tan(x)$ и $x = \arctan(x) + \pi$
+		\end{enumerate}
+		
+% ------------------------------------------------------------------------------------------------------------ 
+
+		\subsection{}
+		\begin{enumerate}
+		\item $x^4 + px + 1 = 0$\\
+			Сделаем замену
+			\begin{gather*}
+				x^4 = - px - 1\\
+				y_1 = x^4,\ y_2 = - px - 1
+			\end{gather*}
+			Тогда уравнение касательной
+			\begin{gather*}
+				y_0 = 4x^3_0 (x - x_0) + x^4_0 = - px - 1\\
+				\begin{cases}
+					4x^3_0 = - p\\
+					 - 3x^4_0 = - 1
+				\end{cases}
+				\quad
+				\begin{cases}
+					p = \mp \frac{4}{3^{\frac{3}{4}}}\\
+					x = \pm \frac{1}{3^{\frac{3}{4}}}
+				\end{cases}
+			\end{gather*}
+			Тогда:\\
+			При $p \in ( - \frac{4}{3^{\frac{3}{4}}}; \frac{4}{3^{\frac{3}{4}}})$ -- $0$ решений\\
+			При $p = - \frac{4}{3^{\frac{3}{4}}}; \frac{4}{3^{\frac{3}{4}}}$ -- $1$ решение\\
+			При остальных $p$ существует 2 решения 
+		\item $x^3 + px + q = 0$
+		\item $x^5 + px^3 + q = 0$
+		\item $\ln(x) = a\sqrt{x}$ 
+			\begin{gather*}
+				y = \ln(x) - a \sqrt{x} = 0\\
+				y^{\prime} = \frac{1}{x} - \frac{a}{\sqrt{x}} = 0\\
+				1 - a\sqrt{x} = 0 \Rightarrow \sqrt{x} = \frac{1}{a} > 0 \Rightarrow x = \frac{1}{x^2}\\
+				\\
+				a > 0\\
+				\text{крит. точка}\ x = \frac{1}{a^{2}}\\
+				\text{2 решения}\ y \frac{1}{a^2} > 0\\
+				-\ln a^2 - a \cdot \frac{1}{a} > 0\\
+				2\ln a + 1 < 0\\
+				\ln a < -\frac{1}{2}\\
+				a < e^{-\frac{1}{2}} = \frac{1}{\sqrt{e}}\\
+				\text{1 решение}\ y \frac{1}{a^{2}} \leqslant 0\\
+				a \geqslant \frac{1}{\sqrt{e}}\\
+				\\
+				a \leqslant 0\\
+				\text{критических точек нет, следовательно функция монотонно возрастает, то есть есть ровно одно решение}
+			\end{gather*}
+			Ответ:
+			\begin{gather*}
+				\text{1 решение}\ a \in \left(-\infty, 0\right] \cup \left[\frac{1}{\sqrt{e}}, +\infty \right)\\
+				\text{2 решение}\ a \in \left(0, \frac{1}{\sqrt{e}} \right)
+			\end{gather*} 
+		\end{enumerate}
+		
+% ------------------------------------------------------------------------------------------------------------ 
+
+		\subsection{}
+		Сколько касательных к графику функции $f$ проходит через точку $(a,b)$ на плоскости? 
+		\begin{enumerate}
+		\item 
+			Касательных к графику функции $f$ существует столько же, сколько различных решений имеет уравнение $b = f(x) + f^{\prime}(x)(a - x)$.
+				
+		\item
+			\begin{gather*}
+				f^{\prime}(x) = 3x^2 - 3\\
+				y = x_0^3 - 3x_0 + (3x_0^2 - 3)(x - x_0) = - 2x_0^3 + 3x_0^2x - 3x\\
+				 - 3 = - 2x_0^3 + 3x_0^2 - 3\\
+				2x_0^3 - 3x_0^2 = 0\\
+				x_0 = 0\quad x_0 = \frac{3}{2}
+			\end{gather*}
+			Две касательных. 
+			
+		\item
+			\begin{gather*}
+				f^{\prime}(x) = \ln(x) + 1\\
+				y = x_0\ln(x_0) + (\ln(x_0) + 1)(x - x_0) = x\ln(x_0) + x - x_0\\
+				x_0 = 1
+			\end{gather*}
+			Одна касательная.
+		\end{enumerate}
+		
+% ------------------------------------------------------------------------------------------------------------ 
+
+		\subsection{}Вычислите с точностью до двух знаков после точки
+		\begin{enumerate}
+		\item $\sin(\cos\frac{1}{10})$\\
+			Разложим в ряд Тейлора:\\
+			\begin{gather*}
+				\cos(x) = 1 - \frac{x^{2}}{2!} + \frac{x^{4}}{4!} - \frac{x^{6}}{6!} + \ldots\\
+				\sin(x) = x - \frac{x^{3}}{3!} + \frac{x^{5}}{5!} - \ldots
+			\end{gather*}
+			Подставим:\\
+			\begin{gather*}
+				\cos(\frac{1}{10}) = 1 - 0,04 + 0,0024 - 0,00072 + \ldots \approx 1 - 0,04 + 0,0024 - 0,00072 \approx 0,96128\\
+				\sin(0,96128) = 0,96128 - \frac{0,96128^{3}}{3!} + \frac{0,96128^{5}}{5!} - \ldots \approx 0,96128 - \frac{0,96128^{3}}{3!} + \frac{0,96128^{5}}{5!} \approx 0,82
+			\end{gather*}
+			
+		\item $\cos(\ln\frac{11}{10})$\\
+			Разложим в ряд Тейлора:\\
+			\begin{gather*}
+				\ln(1 + x) = x - \frac{x^{2}}{2!} + \frac{x^{3}}{3!} - \ldots\\
+				\cos(x) = 1 - \frac{x^{2}}{2!} + \frac{x^{4}}{4!} - \frac{x^{6}}{6!} + \ldots
+			\end{gather*}
+			Подставим:\\
+			\begin{gather*}
+				\ln(1.1) = \ln(1 + 0.1) = 0.1 - \frac{0.1^{2}}{2!} + \frac{0.1^{3}}{3!} + \ldots = 0.1 - \frac{0.1^{2}}{2!} + \frac{0.1^{3}}{3!} = 0.095\\
+				\cos(0.095) = 0.095 - \frac{0.095^{2}}{2!} + \frac{0.095^{4}}{4!} - \frac{0.095^{6}}{6!} + \ldots = 0.095 - \frac{0.095^{2}}{2!} + \frac{0.095^{4}}{4!} - \frac{0.095^{6}}{6!} = 0.9955
+			\end{gather*}		
+		\end{enumerate}
+		
+% ------------------------------------------------------------------------------------------------------------ 
+
+		\subsection{}
+		Вычислите $\exp(x)$, где	
+		\begin{enumerate}
+		\item $x = 2$\\
+			Разложим в ряд Тейлора:\\
+			$\exp(x) = 1 + x + \frac{x^{2}}{2!} + \frac{x^{3}}{3!} + \frac{x^{4}}{4!} + \ldots$\\
+			Подставим соответствующие значения:\\
+			\begin{gather*}
+				\exp(2) = 1 + 2 + \frac{2^2}{2} + \ldots \approx 1 + 2 + \frac{2^2}{2} + \ldots + \frac{2^{8}}{8!} = 7.39
+			\end{gather*}
+		
+		\item $x = \frac{5}{2}$\\
+			\begin{gather*}
+				\exp(\frac{5}{2}) = 1 + \frac{5}{2} + \frac{{\frac{5}{2}}^2}{2} + \ldots \approx 1 + \frac{5}{2} + \frac{{\frac{5}{2}}^2}{2} + \ldots + \frac{{\frac{5}{2}}^{10}}{10!} \approx 12.18
+			\end{gather*}
+		\item $x = 4$\\
+			\begin{gather*}
+				\exp(4) = 1 + 4 + \frac{4^2}{2} + \ldots \approx 1 + 4 + \frac{4^2}{2} + \ldots + \frac{4^{16}}{16!} \approx 54.59
+			\end{gather*}
+		\end{enumerate}

@@ -1,0 +1,162 @@
+	\section{ЛИСТ 1}
+		\subsection{1}
+		A)\\
+		\begin{gather*}
+			\{ a_1, a_2, ... \} \quad a_n = 3 + \frac{1}{10} + \frac{4}{10^2} + ... + \frac{\pi_n}{10^n}
+		\end{gather*}
+		Очевидно, что верхняя грань $= \pi$, т.к. если верхняя грань $= b < \pi$, то будем сравнивать эти два числа поразрядно, пусть они не совпали впервые в $k$ разряде, тогда заметим, что $a_k > b$ - противоречие\\
+		Нижняя грань $= 3.1$, т.к. в множестве $\{ a_1, a_2, ... \}$ есть $a_1 = 3.1$ и $\forall i\in \mathbb{N}: \quad a_i \geq a_1$
+		\\
+		B)\\
+		\begin{gather*}
+			\{ \sin(n) | n = 1, 2, ... \}
+		\end{gather*}
+		Заметим, что $\sin(\frac{\pi}{2}) = 1$ и $\sin(\frac{3\pi}{2}) = -1$, \\
+		далее заметим, что $\sin(\frac{5^n \pi}{2}) = 1$ и $\sin(\frac{5^n 3\pi}{2}) = -1$\\ 
+		Пусть $b_x = \biggl[\frac{5^x \pi}{2}\biggl]$ и $c_x = \biggl[\frac{5^x 3\pi}{2}\biggl]$\\
+		Тогда $\lim_{x\to\infty} \sin(b_x) = 1$ и $\lim_{x\to\infty} \sin(c_x) = -1$\\
+		Тогда точная нижняя грань $= -1$ и точная нижняя грань $= 1$
+		
+		\subsection{2}
+		Пусть не так. Пусть $s = |r^2 - a| > 0$. Определим $t = min \{ \frac{s}{4r}, \frac{s}{4}, 1 \}$. В таком случае $|2tr| \leqslant \frac{s}{4}$; $|t| \leqslant 1, |t| \leqslant \frac{s}{4} \Rightarrow |t^2| \leqslant \frac{s}{4}$. Значит, $|(r \pm t)^2 - r^2| = |\pm 2rt - t^2| \leqslant |2rt| + |t^2| \leqslant \frac{2s}{4} + \frac{s}{4} < s$. Значит, $(r-t)^2, r^2, (r+t)^2$ лежат по одну сторону от $a$. Но если они все меньше $a$, то получаем, что $r+t \in R_a$, а если больше $a$, то $r-t$ тоже является верхней гранью множества $R_a$. В обоих случаях получаем противоречие с тем, что $r$ - супремум.
+		
+		
+		\subsection{3}
+		A)\\
+		Пусть $a_i$ - $i-\text{тый}$ член последовательности.\\ 
+		Заметим, что для $n \geq a^2: \quad \frac{a_{n+1}}{a_{n} } < \frac{1}{a}$, из чего следует, что если $a_{a^2} = A$, то $a_i < \frac{A}{a^{i-a^2} }$ при $i \geq a^2$, из чего следует, что для $\forall \epsilon > 0 \quad \exists \delta : \quad \forall n > \delta : \quad a_n < \epsilon $ (т.к. это равносильно тому, что $\lim_{n \to \infty} \frac{1}{a^n} = 0$)
+		\\ \\
+		B)\\
+		Пусть $a_i$ - $i-\text{тый}$ член последовательности.\\
+		Заметим, что для $n \geq 3: \quad a_n < \frac{1}{2^{\frac{n-1}{2} } }$ (т.к. $n! < n^{\frac{n+1}{2}} * {\frac{n}{2}}^{\frac{n-1}{2}}$), из чего $\frac{n!}{n^n} < \frac{1}{2^{\frac{n-1}{2}}}$, поэтому, применив теорему о милиционерах для этой функции и для $b_n = 0$ и $c_n = \frac{1}{2^\frac{n-1}{2}}$, получаем, что $\lim_{n \to \infty} a_i = 0$
+		\\ \\					
+		C)\\
+		Пусть $a_i$ - $i-\text{тый}$ член последовательности.\\ 
+		Заметим, что $k*(n-k) \leq (\frac{n}{2})^2$ при $k < \frac{n}{2} \qquad (k*(n-k)) = (\frac{n}{2} - (\frac{n}{2} - k)) * (\frac{n}{2} + (\frac{n}{2} - k)) = (\frac{n}{2})^2 - (\frac{n}{2} - k)^2$, из чего следует, что $\frac{n!}{(\frac{n}{2})^n} \leq \frac{n*(n-1)*1}{(\frac{n}{2})^3} = \frac{2(n-1)}{(\frac{n}{2})^2} = \frac{8n-8}{n^2} = b_n$, в свою очередь очевидно, что $b_n \to 0$, в следствие чего можно применить теорему о милиционерах для $a_n$ и пары $b_n$ и $c_n = 0$, из чего следует, что $\lim_{n \to \infty} a_n = 0$
+		
+		\subsection{4}
+		\begin{gather*}
+			\lim_{x\to 1} \biggl(\frac{m}{1 - x^m} - \frac{n}{1 - x^n}\biggl)
+		\end{gather*}
+		Решение:
+		\begin{gather*}
+			\lim_{x\to 1} \biggl(
+				\frac{m}{1 - x^m} - 
+				\frac{n}{1 - x^n}
+			\biggl) = \\
+			\lim_{x\to 1} \biggl(
+				\frac{m}{1 - x^m} - \frac{1}{1-x} - 
+				\frac{n}{1 - x^n} + \frac{1}{1-x}
+			\biggl) = \\ 
+			\\
+			\lim_{x\to 1} \biggl(
+				\frac{(1-x^{m-1}) + (1-x^{m-2}) + ... + (1 - x) + (1 - 1)}{1 - x^m} - 
+				\frac{(1-x^{n-1}) + (1-x^{n-2}) + ... + (1 - x) + (1 - 1)}{1 - x^n}
+			\biggl) = \\ 
+			\\
+			\lim_{x\to 1} \biggl(
+				\frac{(1-x^{m-1}) + (1-x^{m-2}) + ... + (1 - x) + (1 - 1)}{(1 - x)(x^{m-1} + ... + 1)} - 
+				\frac{(1-x^{n-1}) + (1-x^{n-2}) + ... + (1 - x) + (1 - 1)}{(1 - x)(x^{n-1} + ... + 1)}
+			\biggl) = \\ 
+			\\
+			\lim_{x\to 1} \biggl(
+				\frac{(1 + x + ... + x^{m-2}) + (1 + x + ... + x^{m-3}) + ... + 1}{(x^{m-1} + ... + 1)} - 
+				\frac{(1 + x + ... + x^{n-2}) + (1 + x + ... + x^{n-3}) + ... + 1}{(x^{n-1} + ... + 1)}
+			\biggl) = \\ 
+			\\	
+			\frac{(m - 1) + (m - 2) + ... + 1}{m} - 
+			\frac{(n - 1) + (n - 2) + ... + 1}{n} = \\  
+			\frac{m(m - 1)}{2m} - 
+			\frac{n(n - 1)}{2n} = \frac{m - n}{2}	
+		\end{gather*}
+
+		\subsection{5}
+		Пусть $a_i$ - i-\text{тый} член последовательности.\\
+		Тогда:
+		\begin{gather*}
+		a_n = 1 + q + ... + q^n = \frac{1 - q^n}{1 - q} = \frac{1}{1-q} - \frac{q^n}{1-q}
+		\end{gather*}
+		\begin{gather*}
+		|q| < 1 \Longrightarrow \lim_{n\to\infty} q^n = 0 \Longrightarrow \lim_{n\to\infty} \frac{q^n}{1-q} = 0 
+		\end{gather*}
+		\begin{gather*}
+		\Longrightarrow \lim_{n\to\infty} a_n = \lim_{n\to\infty} \frac{1}{1-q} - \lim_{n\to\infty} \frac{q^n}{1-q} = \frac{1}{1-q} - 0
+		\end{gather*}
+		Что и требовалось доказать \\
+		При $q \geq 1$ $a_n$ неограниченно возрастает, т.к. $a_{n+1} - a_{n} > 1$ . При $q \leq -1$ $a_{2n}$ неограниченно возрастает, т.к. $a_{n+2} - a_{n} = q^{n+2} + q^{n+1} > q^2 + q$\\
+		Для комплексных $q$ есть предел при $|q| < 1$, т.к. модуль последовательных сумм меняется не более чем на $|q|^k$, из чего следует что модули чисел из последовательности имеют предел.\\
+		При комплексных $|q| \geq 1$ предела нет.
+		
+		\subsection{6}
+		Заметим, что если $a_n^{(2)}$ имеет предел, то и для $\forall a_n^{(k)}$ при $k \geq 2$ это верно, т.к. последовательности ограничены пределом $a_n^{(2)}$.\\
+		Докажем, что $a_n^{(2)}$ ограничена: заметим, что $\frac{1}{2^2} + \frac{1}{3^2} < \frac{1}{2}$, $\frac{1}{4^2} + \frac{1}{5^2} + \frac{1}{6^2} + \frac{1}{7^2} < \frac{1}{4}$, ... $\frac{1}{{(2^k)}^2} + \frac{1}{(2^k + 1)^2} + ... + \frac{1}{2^{2k+1} - 1} < \frac{1}{2^k}$, из чего следует, что $a_n^{(2)} < 1 + \frac{1}{2} + \frac{1}{4} + ... < 2$.\\
+		$a_n^{(2)}$ ограничена и монотонна, из чего у неё есть предел.\\
+		Заметим, что $\lim_{n \to +\infty} a_n^{(1)} = \infty$ , т.к. $\frac{1}{2} \geq \frac{1}{2}$, $\frac{1}{3} + \frac{1}{4} \geq \frac{1}{4} * 2 = \frac{1}{2}$, ... , $\frac{1}{2^n + 1} + ... + \frac{1}{2^{n+1}} \geq \frac{1}{2^{n+1}} * 2^{n} = \frac{1}{2}$ из чего следует, что $a_n^{(1)}$ неограничена.
+		
+		\subsection{7}
+		A)\\
+		Очевидно, что корни будут существовать при дост. малых $a$, т.к. $D = b^2 - 4ac$ будет $>0$. Предположим, что $b > 0$. Будем считать, что $x_1(a) < x_2(a)$. Тогда $\lim\limits_{a \rightarrow 0}x_1(a) = \lim\limits_{a \rightarrow 0} \frac{b - \sqrt{b^2 - 4ac}}{2a} = \lim\limits_{a \rightarrow 0} \frac{4ac}{2a(b + \sqrt{b^2 - 4ac})} = \lim\limits_{a \rightarrow 0} \frac{2c}{b+\sqrt{b^2-4ac}} = \frac{2c}{b + \sqrt{\lim\limits_{a \rightarrow 0} (b^2 - 4ac)} } = \frac{c}{b}$; $\lim\limits_{a \rightarrow 0} x_2(a) = \lim\limits_{a \rightarrow 0} \frac {b + \sqrt{b^2 - 4ac}}{2a} = \pm\infty$, так как $|\frac {b + \sqrt{b^2 - 4ac}}{2a}| \geqslant |\frac{b}{2a}|$.\\
+		\\
+		B)\\
+		(Продолжаем работать в предположении $b > 0$.) Так как $\lim\limits_{a \rightarrow 0} x_1(a)$ существует, то $\lim\limits_{a \rightarrow 0} a\,x_1(a) = 0$; $\lim\limits_{a \rightarrow 0} a\,x_2(a) = \lim\limits_{a \rightarrow 0} \frac{b+\sqrt{b^2 - 4ac}}{2} = b$.\\
+		Легко видеть, что при домножении $a, b, c$ на $(-1)$ корни не изменятся (разве что их порядок). Значит, $\lim\limits_{a \rightarrow 0}x_1(a) = \lim\limits_{-a \rightarrow 0}x_1(-a) = \frac{-c}{-b} = \frac{c}{b}$ $\lim\limits_{-a \rightarrow 0} -a\,x_2(-a) = -b \Rightarrow \lim\limits_{a \rightarrow 0} a\,x_2(a) = b$.\\
+		\\
+		Ответ: A) $\{\frac{c}{b}, \pm\infty\}$; B) $\{0, b\}$.
+		
+		\subsection{8}
+		A)\\
+		\begin{gather*}
+		a_1 = 1 \quad a_{n+1} = 1 + \frac{1}{a_n} 
+		\end{gather*}
+		Заметим, что $a_2 = \frac{2}{1} = \frac{F_3}{F_2}$ (где $F_{n+1} = F_{n} + F_{n-1}$ и $F_1 = F_2 = 1$) и $a_n = 1 + \frac{F_{n-1}}{F_{n}} = \frac{F_{n-1} + F_{n}}{F_{n}} = \frac{F_{n+1}}{F_{n}}$.\\
+		Тогда вспомним формулу Бине: 
+		\begin{gather*}
+		F_n = \frac{(\frac{1 + \sqrt{5}}{2})^n - (\frac{1 - \sqrt{5}}{2})^n}{\sqrt{5}}
+		\end{gather*}
+		И рассмотрим $\lim_{n \to \infty}a_n$
+		\begin{gather*}
+		\lim_{n \to \infty}a_n = \lim_{n \to \infty} \frac{F_{n+1}}{F_{n}} = 
+		\lim_{n \to \infty} \frac{\frac{(\frac{1 + \sqrt{5}}{2})^{n+1} - (\frac{1 - \sqrt{5}}{2})^{n+1}}{\sqrt{5}}}{\frac{(\frac{1 + \sqrt{5}}{2})^n - (\frac{1 - \sqrt{5}}{2})^n}{\sqrt{5}}} = 
+		\lim_{n \to \infty} \frac{(\frac{1 + \sqrt{5}}{2})^{n+1} - (\frac{1 - \sqrt{5}}{2})^{n+1}}{(\frac{1 + \sqrt{5}}{2})^n - (\frac{1 - \sqrt{5}}{2})^n}
+		\end{gather*}
+		Пусть $a = \frac{1 + \sqrt{5}}{2}$ и $b = \frac{1 - \sqrt{5}}{2}$
+		\begin{gather*}
+		\lim_{n \to \infty} \frac{(\frac{1 + \sqrt{5}}{2})^{n+1} - (\frac{1 - \sqrt{5}}{2})^{n+1}}{(\frac{1 + \sqrt{5}}{2})^n - (\frac{1 - \sqrt{5}}{2})^n} = 
+		\lim_{n \to \infty} \frac{a^{n+1} - b^{n+1}}{a^n - b^n} = 
+		\lim_{n \to \infty} \frac{(a - b)(a^{n} + ... + b^{n})}{(a - b)(a^{n-1} + ... + b^{n-1})} = \\
+		\lim_{n \to \infty} \frac{a^{n} + ... + b^{n}}{a^{n-1} + ... + b^{n-1}} = 
+		\lim_{n \to \infty} \biggl( \frac{a^{n} + ... + ab^{n-1}}{a^{n-1} + ... + b^{n-1}}  + \frac{b^{n}}{a^{n-1} + ... + b^{n-1}} \biggl)= \\
+		\lim_{n \to \infty} \biggl( \frac{a * (a^{n-1} + ... + b^{n-1})}{a^{n-1} + ... + b^{n-1}}  + \frac{b^{n}}{a^{n-1} + ... + b^{n-1}} \biggl)= 
+		\lim_{n \to \infty} \biggl( a  + \frac{b^{n}}{a^{n-1} + ... + b^{n-1}} \biggl)= 
+		\lim_{n \to \infty} \biggl( a  + \frac{b^{n}}{\frac{a^{n} - b^{n}}{a - b}} \biggl)= \\
+		a  + \lim_{n \to \infty} \biggl(\frac{b^{n}(a - b)}{a^{n} - b^{n}} \biggl)= 
+		a  + \frac{1}{\lim_{n \to \infty} \biggl(\frac{a^{n} - b^{n}}{b^{n}} \biggl)}= 
+		a  + \frac{1}{\lim_{n \to \infty} \biggl(\frac{a^{n}}{b^{n}} - 1 \biggl)}= 
+		a  + \frac{1}{\lim_{n \to \infty} \biggl(\frac{a}{b}^{n} - 1 \biggl)}= \\
+		a  + \frac{1}{\lim_{n \to \infty} \biggl(\frac{\frac{1 + \sqrt{5}}{2}}{\frac{1 - \sqrt{5}}{2}}^{n} - 1 \biggl)}= 
+		a + 0 =
+		a = \frac{1 + \sqrt{5}}{2}
+		\end{gather*}
+		\\ \\
+		B)\\
+		\begin{gather*}
+		a_1 = 0 \quad a_{n+1} = \sqrt{2 + a_n}
+		\end{gather*}
+		Заметим, что $a_n < 2$, докажем это по индукции. \\
+		База:\\
+		$n = 1: \quad \sqrt{2} < 2$\\ 
+		Переход:\\
+		$a_{n+1} = \sqrt{2 + a_n} < 2 \Longleftrightarrow 2 + a_n < 4 \Longleftrightarrow a_n < 2$, что является предположением индукции.\\
+		Заметим, что $a_{n+1} > a_n$, т.к. это равносильно $\sqrt{2 + a_n} > a_n \Longleftrightarrow 2 + a_n > a_n^2 \Longleftrightarrow a_n^2 < a_n*2 < a_n + 2$, поэтому $a_n$ возрастает и ограничена $\Longrightarrow$ она имеет предел. \\
+		Докажем, что $\lim_{n\to+\infty} a_n = 2: \quad (\lim a_n)^2= \lim a_n + 2 \quad \Longrightarrow \quad \lim a_n = 2 \quad|\quad -1$, но очевидно $-1$ не является пределом, т.к. $\forall n:\quad a_n > 0$, поэтому $\lim_{n\to+\infty} a_n = 2$
+		\\ \\
+		C)\\
+		Заметим, что по неравенству Коши(среднее арифметическое и среднее геометрическое) $a_{n+1} = \frac{a_{n} + \frac{p}{a_{n}}}{2} \geqslant \sqrt{p}$. Заметим также, что если $a_{n} \geqslant \sqrt{p}$, то $a_{n+1} = \frac{a_n + \frac{p}{a_n}}{2} \leqslant \frac{a_n + a_n}{2} = a_n $, то есть начиная с $n=2$ последовательность $\{a_n\}$ нестрого убывает и ограничена снизу, значит, она имеет предел. Пусть $\lim\limits_{n \rightarrow \infty} a_n = A $. Тогда $A \geqslant 0$ и (выполним переход к пределу в рекуррентном соотношении) $A = \frac{A + \frac{p}{A}}{2} \Rightarrow A = \sqrt{p}$
+		\\
+		\subsection{9}
+		\begin{gather*}
+		\lim_{n \to \infty}\lim_{m \to \infty} \cos^m(2 \pi n ! x)
+		\end{gather*}
+		Заметим, что если $x$ - иррационально, то $|cos(2\pi n!x)| < 1$, т.к. $cos x = \pm 1$ при $x = \pi k$ для целых $k$, а $2 * n!x$ очевидно не целое, из чего следует, что $\forall n \quad lim_{m \to \infty} cos^m(2\pi n!x) = 0 $, из чего $lim_{n \to \infty} lim_{m \to \infty} cos^m(2\pi n!x) = 0$\\
+		Если же $x$ - рационально, то $x = \frac{p}{q}$, значит, что для $n > q: \quad cos(2\pi n!x) = 1$, т.к. $2 * n! x$ - целое и чётное, поэтому для $n > q$: \\
+		$\quad \lim_{m \to \infty} \cos^m(2\pi n!x) = 1 \quad \Longrightarrow \quad \lim_{n \to \infty} \lim_{m \to \infty} \cos^m(2\pi n!x) = 1$.\\
