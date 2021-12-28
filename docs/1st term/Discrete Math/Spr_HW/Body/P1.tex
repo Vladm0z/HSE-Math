@@ -1,0 +1,128 @@
+\newpage		
+\section*{Домашнее задание 1}
+	\subsection*{Задача 1}
+	\noindent
+	\textbf{Условие}\\
+	Найдите число способов переставить буквы вашей фамилии так, чтобы порядок гласных букв бы не изменился.
+	\vskip 0.1in
+	\noindent
+	\textbf{Решение}\\
+	Мозговой -- 8 букв, 3 гласных\\
+	$\frac{8!}{3!} = 6720$
+	\vskip 0.1in
+	\noindent
+	Ответ: 6720
+	
+	
+	\subsection*{Задача 2}
+	\noindent
+	\textbf{Условие}\\
+	Последовательность $a_{n}$ задана рекуррентным соотношением
+	\begin{gather*}
+		a_{n}=2 a_{n-2}+a_{n-3}
+	\end{gather*}
+	и начальными условиями
+	\begin{gather*}
+		a_{0}=3, \quad a_{1}=0, \quad a_{2}=4
+	\end{gather*}
+	\begin{enumerate}
+	\item[а)] Найдите производящую функцию этой последовательности.
+	\item[б)] Найдите $a_{n}$ явно (т.е. представьте его в виде выражения от $n$ и $\lambda^{n}$, где $\lambda \in \mathbb{R}$).
+	\end{enumerate}
+	\textbf{Решение}
+	\begin{gather*}
+		\begin{aligned}
+			A & = 3 + 0 \cdot x + 4 \cdot x^{2} + 3 \cdot x^{3} + 8 \cdot x^{4} + 10 \cdot x^{5} + \cdots \\
+			-2x^2 A & = 0 + 0 \cdot x + 6 \cdot x^{2} + 0 \cdot x^{3} + 8 \cdot x^{4} + 6 \cdot x^{5} + \cdots\\
+			-x^3 A & = 0 + 0 \cdot x + 0 \cdot x^{2} + 3 \cdot x^{3} + 0 \cdot x^{4} + 4 \cdot x^{5} + \cdots\\
+			\hline
+			(1 - 2x^2 -x^3) A & = 3 + 0 \cdot x - 2 \cdot x^{2} + 0 \cdot x^{3} + 0 \cdot x^{4} + 0 \cdot x^{5} + \cdots\\
+		\end{aligned}\\
+		\\
+		A = 
+		\frac{3 - 2x^2}{1 - 2x^2 - x^3}
+	\end{gather*}
+	Найдем корни характеристического уравнения $x^3 = 2x + 1$, это:
+	\begin{gather*}
+		x_1 = -1\\
+		x_2 = \frac{1 + \sqrt{5}}{2}\\
+		x_3 = \frac{1 - \sqrt{5}}{2}
+	\end{gather*}
+	Следовательно $a_n = A_1 (-1)^n + A_2 \left(\frac{1 + \sqrt{5}}{2}\right)^n + A_3 \left(\frac{1 - \sqrt{5}}{2}\right)^n$,\\
+	Найдем $A_1, A_2, A_3$:
+	\begin{gather*}
+		\begin{cases}
+			A_1 + A_2 + A_3 = 3\\
+			-A_1 + \frac{1 + \sqrt{5}}{2} A_2 + \frac{1 - \sqrt{5}}{2} A_3 = 0\\
+			A_1 + \left(\frac{1 + \sqrt{5}}{2}\right)^2 A_2 + \left(\frac{1 - \sqrt{5}}{2}\right)^2 A_3 = 4
+		\end{cases}
+	\end{gather*}
+	Решив систему, получим: $A_1 = 1,\ A_2 = 1,\ A_3 = 1$\\
+	\\
+	Следовательно $a_n = (-1)^n + \left(\frac{1 + \sqrt{5}}{2}\right)^n + \left(\frac{1 - \sqrt{5}}{2}\right)^n$
+	\vskip 0.1in
+	\noindent
+	Ответ:
+	\begin{enumerate}
+	\item[a)] $\frac{3 - 2x^2}{1 - 2x^2 - x^3}$
+	\item[б)] $a_n = (-1)^n + \left(\frac{1 + \sqrt{5}}{2}\right)^n + \left(\frac{1 - \sqrt{5}}{2}\right)^n$
+	\end{enumerate}
+	
+	
+	\newpage
+	\subsection*{Задача 3}
+	\noindent
+	\textbf{Условие}\\
+	Найдите сумму $\sum\limits_{k=1}^{n}(-1)^{k} k^{2}{n \choose k}$, где $n \geqslant 1$
+	\vskip 0.1in
+	\noindent
+	\textbf{Решение}
+	Пусть $n \geqslant 3$
+	\begin{gather*}
+		\sum\limits^{n}_{k=1} (-1)^{k} k^2 {n \choose k} = 
+		\sum\limits^{n}_{k=1} (-1)^{k} nk {{n-1} \choose {k-1}} = 
+		n \sum\limits^{n}_{k=1} (-1)^{k} k{{n-1} \choose {k-1}} =\\ 
+		n \sum\limits^{n}_{k=1} (-1)^{k} (k-1){{n-1} \choose {k-1}} + 
+		n \sum\limits^{n}_{k=1} (-1)^{k} {{n-1} \choose {k-1}} =\\
+		n \sum\limits^{n}_{k=1} (-1)^{k} (k-1){{n-1} \choose {k-1}} =
+		n \sum\limits^{n-1}_{k=2} (-1)^{k} (n-1) {{n-2} \choose {k-2}} =\\
+		n(n-1) \sum\limits^{n-1}_{k=2} (-1)^{k} {{n-2} \choose {k-2}} = 
+		n(n-1) \sum\limits^{n-2}_{k=2} (-1)^{k-2} {{n-2} \choose {k-2}} = 
+		0
+	\end{gather*}
+	При $n = 2$: $4{{2} \choose {2}} - {{2} \choose {1}} = 2$\\
+	\\
+	При $n = 1$: $-{{1} \choose {1}} = -1$
+	\vskip 0.1in
+	\noindent
+	Ответ:\\ при $n \geqslant 3$ будет 0,\\ при $n = 2$ будет $2$,\\ при $n = 1$ будет $-1$
+	
+	
+	
+	\subsection*{Задача 4}
+	\noindent
+	\textbf{Условие}\\
+	Найдите производящую функцию последовательности $nC_n$, где через $C_n$ обозначено $n$-е число Каталана
+	\vskip 0.1in
+	\noindent
+	\textbf{Решение}\\
+	Мы знаем производящую функцию чисел Каталана:	
+	\begin{gather*}
+	\sum_{n=0}^{\infty} C_n x^n = \frac{1 - \sqrt{1-4x}}{2x} 
+	\end{gather*}
+	Тогда 
+	\begin{gather*}
+	x\frac{d}{d x}\sum_{n=0}^{\infty} C_n x^n = x \sum_{n=0}^{\infty} nC_n x^{n-1} =  
+	\sum_{n=0}^{\infty}nC_n x^n
+	\end{gather*}
+	Таким образом, мы приходим к ответу
+	\begin{gather*}
+		\sum\limits_{n=0}^{\infty}nC_n x^n = x\frac{d}{d x}\left(\frac{1 - \sqrt{1-4x}}{2x}\right) = x \frac{\frac{-4}{2\sqrt{1-4x}}-2(1-\sqrt{1-4x})}
+		{4x^2}=\frac{-1-\sqrt{1-4x}+1-4x}{2x} =
+		-2-\frac{\sqrt{1-4x}}{2x}
+	\end{gather*}
+	\vskip 0.1in
+	\noindent
+	Ответ: $\sum\limits_{n=0}^{\infty}nC_n x^n = -2-\frac{\sqrt{1-4x}}{2x}$
+	
+	
