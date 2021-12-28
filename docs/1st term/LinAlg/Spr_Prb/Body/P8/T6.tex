@@ -1,0 +1,42 @@
+\subsection*{ГЛ8 6*}
+Каждое биективное линейное преобразование $F \in \text{GL}(V)$ евклидова пространства $V$ допускает единственное разложение $F = GS$, в котором оператор $G \in O(V)$ ортогонален и $S \in \text{GL}(V)$ самосопряжен и имеет собственные значения(следствие из сингулярного разложения)\\
+Тогда так как
+\begin{gather}
+	G^{\times}G = id,\ S^{\times} = S
+\end{gather} 
+То
+\begin{gather*}
+	F^{\times}F = S^{\times}G^{\times}GS = S^2
+\end{gather*}
+\begin{enumerate}
+\item[($\Leftarrow$)]
+	При $F = GS = SG$ выполнено
+	\begin{gather*}
+		FF^{\times} = GSS^{\times}G^{\times} = GSS^{\times}G^{\times} = SGS^{\times}G^{\times} = SSGG^{\times} = S^2\\
+		F^{\times}F = S^{\times}G^{\times}GS = S^2\\
+		\Rightarrow F^{\times}F = FF^{\times}
+	\end{gather*}
+\item[($\Rightarrow$)]
+	Пусть компоненты не транзитивны и оператор нормален
+	\begin{gather*}
+		F^{\times}F = FF^{\times}\\
+		GS \ne SG\\
+		\begin{cases}
+			F^{\times}F = S^{\times}G^{\times}GS = S^2\\
+			FF^{\times} = GS^2G^{\times}
+		\end{cases}\\
+		\Rightarrow S^2 = GS^2G^{\times}				
+	\end{gather*}
+\end{enumerate}
+Тогда так как $G$ ортогонален, то 
+\begin{gather*}
+	(a_1,a_2) = (Ga_1, Ga_2) = (a_1, G^{\times}Ga_2)\\
+	\Rightarrow G^{\times}G = id
+	\Rightarrow G^{\times} = G^{-1}
+\end{gather*}
+Тогда из $S^2 = GS^2G^{\times}$ следует что
+\begin{gather*}
+	G^{-1}S^2 = S^2G^{\times} \Rightarrow G^{\times}S = SG^{\times} \Rightarrow GS = SG
+\end{gather*}
+Откуда следует что предположение было неверным.
+		

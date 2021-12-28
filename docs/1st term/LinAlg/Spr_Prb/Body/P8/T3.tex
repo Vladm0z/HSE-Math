@@ -1,0 +1,54 @@
+\subsection*{ГЛ8 3}
+\subsubsection*{\textbf{А}}
+$(u_i, fu_i) = (fu_i)_i\ \Rightarrow Bu(f) = \sum\limits^{n}_{i=1} (fu_i)_i$\\
+Выберем новый ортогональный базис\\
+$v_j = \sum\limits^{n}_{i=1} x_{ij}u_i\qquad \sum\limits^{n}_{i=1} x^{2}_{ij} = 1$\\
+$(v_1, fv_1) = \sum\limits^{n}_{i=1} x^2_{i1} (u_i, fu_i)$\\
+$Bu(f) = \sum\limits^{n}_{j=1}x^2_{1j}(u_1,fu_1) + \sum\limits^{n}_{j=1} x^2_{2j} (u_2, fu_2) + \ldots + \sum\limits^{n}_{j=1} x^2_{nj} (u_n, fu_n)\ \Rightarrow$ не зависит
+	
+\subsubsection*{\textbf{Б}}
+Сформулируем вспомогательную теорему:\\
+$\forall$ самосопряженного оператора $F$ в $E^n$ существует ортонормальный базис, состоящий из собственных векторов $F$\\
+(теорема о нормальном базисе), доказательство приведено в 12 лекции\\ %если найду время, то я ее сюда кину
+\\
+Согласно теореме и пункту (А) выберем в $V$ базис, состоящий из собственных векторов\\
+$f:\ V \to V$ каждому собственному значению сопоставим собственный вектор\\
+Откуда $fu_i = \lambda_{i} u_i\quad \forall i = 1, \ldots, n\qquad \Rightarrow (u_i, fu_i) = \lambda_{i}$, где $u_i$ имеет вид $(0, \ldots, \underset{i}{1}, \ldots, 0)$\\
+$\max_u B_u(A) = \sum\limits^{r}_{j = 1} \alpha_j$ так как $\alpha_{1} \geqslant \ldots \geqslant \alpha_{n}$\\
+		
+		
+\subsubsection*{\textbf{В}}
+Единичная сфера $\sum\limits^{r}_{i=1} x^2_i = 1$\\
+$x = \sum\limits^{r}_{i=1} x_i u_i$\\
+$qf(x) = (x_1 u_1 + \ldots + x_r u_r, \lambda_1 x_1 u_1 + \ldots + \lambda_r x_r u_r) = \lambda_1 x^2_1 + \ldots + \lambda_r x^2_r$\\
+$x^2_1 + \ldots + x^2_r = 1\ \Rightarrow\ x^2_i = 1 - (x_1^2 + \ldots + x^2_{i-1} + x^2_{i+1} + \ldots + x^2_r)$\\
+Найдем экстремумы функции $(\frac{d}{dx_i}\quad i = 1, \ldots, r)$\\
+$qf(x) = \lambda_1 + (\lambda_2 - \lambda_1)x^2_2 + \ldots + (\lambda_r - \lambda_1)x^2_r$
+$\lambda_2 = \lambda_1$ или $x_2 = 0$ откуда $qf(x) = \lambda_1 (x^2_1 + x^2_2)$, а так как $x^2_1 = 1 - x^2_2$ откуда $qf(x) = \lambda_1$
+\begin{gather*}
+	\begin{cases}
+		2(\lambda_2 - \lambda_1)x_2 = 0\\
+		2(\lambda_3 - \lambda_1)x_3 = 0\\
+		\ldots\\
+		2(\lambda_r - \lambda_1)x_r = 0
+	\end{cases}
+\end{gather*}
+Следовательно экстремум достигается при 
+\begin{gather*}
+	\begin{cases}
+		x_i = 1\quad \forall i = 1, \ldots, r\\
+		x_j = 0\quad \text{для всех остальных } x
+	\end{cases}
+\end{gather*}
+и равен $qf(x) = \lambda_i$ откуда $m_u(f) = \lambda_{\min}$ из $\lambda_j$ -- собстенные значения собственных векторов подпространства $U$\\
+$\max m_u(f) = \lambda_{n-r+1}$ (собственные значения в подпространстве $\lambda_n, \lambda_{n-1}, \ldots$)\\
+$\min_W M_W (f) = \lambda_{n-r+1}$ ($\min$ собственные значения $\lambda_1, \ldots, \lambda_{n-r+1}$)
+	
+		
+\subsubsection*{\textbf{Г}}
+$u = \sum\limits^{n-1}_{i = 1} x_i u_i$\\
+$(u, fu) = \lambda_1 x^2_1 + \ldots + \lambda_{n-1} x^2_{n-1}$\\
+$(u, Fu) = (x_1 u _1 + \ldots + x_{n-1} u_{n-1},\ x_1 h(u_1) + \ldots + x_{n-1} h(u_{n-1}))$\\
+$(u, fu) = (u, hu)$ откуда $h$ имеет те же собственные значения что и $f$\\
+$\lambda_{n}$ значение у $h$: либо 0, либо $-\lambda_{n}$, так как у $h$ те же базисные вектора $e_1, \ldots, e_{n-1}$ что и у $f$ 
+	
