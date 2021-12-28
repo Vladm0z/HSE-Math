@@ -1,0 +1,201 @@
+\newpage
+	{\large \hspace{3cm} \begin{center} Домашнее задание 18 $\bullet$ Мозговой Владислав \end{center} }
+	\vspace{-1.5ex}
+	\hrulefill
+	
+	\fontsize{12pt}{4.5mm}\selectfont
+	\vspace{-3ex}
+	\hrulefill
+	\newline
+
+	\section{}
+		\subsection*{\textbf{Задача 1}}
+		Пусть $G$ -- факторгруппа свободной абелевой группы $\mathbb{Z}^{4}$ по подгруппе порождённой строками матрицы
+		\begin{gather*}
+			\begin{bmatrix}
+				{-130} & {245} & {0} & {120} \\
+				{-10} & {5} & {0} & {0} \\
+				{60} & {-80} & {20} & {-60} \\
+				{-60} & {120} & {0} & {60}
+			\end{bmatrix}
+		\end{gather*}
+		\subsubsection*{\textbf{А}}
+		\textbf{Условие}\\
+		Разложите G в прямую сумму циклических\\
+		\\
+		\textbf{Решение}\\
+		$A = \langle a_1, a_2, a_3, a_4 \rangle$
+		\begin{gather*}
+			\begin{bmatrix}
+				{-130} & {245} & {0} & {120} \\
+				{-10} & {5} & {0} & {0} \\
+				{60} & {-80} & {20} & {-60} \\
+				{-60} & {120} & {0} & {60}
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				{-130} & {245} & {0} & {120} \\
+				{-10} & {5} & {0} & {0} \\
+				{0} & {0} & {20} & {0} \\
+				{-60} & {120} & {0} & {60}
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				{-10} & {5} & {0} & {120} \\
+				{-10} & {5} & {0} & {0} \\
+				{0} & {0} & {20} & {0} \\
+				{0} & {0} & {0} & {60}
+			\end{bmatrix}
+			=\\
+			\begin{bmatrix}
+				{-5} & {5} & {0} & {0} \\
+				{-5} & {5} & {0} & {0} \\
+				{0} & {0} & {20} & {0} \\
+				{0} & {0} & {0} & {60}
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				{-5} & {0} & {0} & {0} \\
+				{-5} & {0} & {0} & {0} \\
+				{0} & {0} & {20} & {0} \\
+				{0} & {0} & {0} & {60}
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				{5} & {0} & {0} & {0} \\
+				{0} & {0} & {20} & {0} \\
+				{0} & {0} & {0} & {60}
+			\end{bmatrix}
+		\end{gather*}
+		$A \simeq \mathbb{Z}_5 \oplus \mathbb{Z}_20 \oplus \mathbb{Z}_60 \oplus \mathbb{Z}$\\
+		
+		\subsubsection*{\textbf{Б}}
+		\textbf{Условие}\\
+		Разложите G в прямую сумму примарных циклически\\
+		\\
+		\textbf{Решение}\\
+		$A \simeq \mathbb{Z}_{2^4} \oplus \mathbb{Z}_{3} \oplus \mathbb{Z}_{5^3}$\\
+		
+		\subsubsection*{\textbf{В}}
+		\textbf{Условие}\\
+		Чему равен максимальный возможный порядок её элементов\\
+		\\
+		\textbf{Решение}\\
+		Рассмотрим элементы вида $[\alpha, \beta, \gamma, 0]$\\
+		Пусть $A^{\prime} = \mathbb{Z}_5 \oplus \mathbb{Z}_20 \oplus \mathbb{Z}_60$\\
+		Тогда порядок элемента $[\alpha, \beta, \gamma, 0]$ в $A$ равен порядку элемента $[\alpha, \beta, \gamma]$ в $A^{\prime}$\\
+		$[\alpha, \beta, \gamma]$ -- НОК порядков $\alpha$ в $\mathbb{Z}_{5}$, $\beta$ в $\mathbb{Z}_{20}$, $\gamma$ в $\mathbb{Z}_{60}$, откуда максимальный порядок элемента это 60, такой порядок достигается у $[1,1,1]$\\
+		
+		\subsubsection*{\textbf{Г}}
+		\textbf{Условие}\\
+		Вычислите порядок элемента $\begin{bmatrix} {-132} & {248} & {1} & {120} \end{bmatrix}$ в группе $G$\\
+		\\
+		\textbf{Решение}\\
+		\begin{gather*}
+			\begin{bmatrix}
+				{-5} & {0} & {0} & {0} \\
+				{0} & {0} & {20} & {0} \\
+				{0} & {0} & {0} & {60} \\
+				{-132} & {248} & {1} & {120}
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				{-5} & {5} & {0} & {0} \\
+				{0} & {0} & {20} & {0} \\
+				{0} & {0} & {0} & {60} \\
+				{2} & {248} & {1} & {0}
+			\end{bmatrix}
+		\end{gather*}
+		Порядок $\begin{bmatrix} {-132} & {248} & {1} & {120} \end{bmatrix}$: $\#(2)$ в $\mathbb{Z}_5$, $\#(1)$ в $\mathbb{Z}_{20}$, $\#(0)$ в $\mathbb{Z}_{60}$, откуда: 
+		
+		
+		\subsection*{\textbf{Задача 3}}
+		\textbf{Теория}\\
+		Напомним, что цепным комплексом абелевых групп называется набор абелевых групп $C_n$ и отображений $d_n:\ C_n \to C_{n-1}$, таких что композиция $d_n \circ d_{n+1} = 0$ для любого $n$. Для удобства комплекс обозначают $(C\bullet , d\bullet)$ или записывают в виде цепочки отображений:
+		\begin{gather*}
+			\ldots \rightarrow C_{n+1} \stackrel{d_{n}+1}{\rightarrow} C_{n} \stackrel{d_{n}}{\rightarrow} C_{n-1} \stackrel{d_{n-1}}{\rightarrow} \ldots
+		\end{gather*}
+		$n$-мерной группой гомологий $H_n$ называется фактор-группа $\text{ker}(d_n)/\text{Im}(d_{n+1})$. Гомологиями комплекса $(C\bullet , d\bullet)$ называется набор всех групп гомологий $(H\bullet )$.
+		\\
+		\textbf{Условие}\\
+		Вычислите гомологии комплекса
+		\begin{gather*}
+			0 \rightarrow \mathbb{Z}^{3} \stackrel{d}{\rightarrow} \mathbb{Z}^{4} \rightarrow 0
+		\end{gather*}
+		где отображение $d$ задано матрицей
+		\begin{gather*}
+			\begin{bmatrix}
+				{14} & {-14} & {0} \\
+				{14} & {126} & {140} \\
+				{28} & {-308} & {-266} \\
+				{0} & {-140} & {-98}
+			\end{bmatrix}
+		\end{gather*}
+		\\
+		\textbf{Решение}\\
+		\begin{gather*}
+			d = 
+			\begin{bmatrix}
+				{14} & {-14} & {0} \\
+				{14} & {126} & {140} \\
+				{28} & {-308} & {-266} \\
+				{0} & {-140} & {-98}
+			\end{bmatrix}
+			\to
+			\begin{bmatrix}
+				{14} & {-14} & {14} \\
+				{14} & {126} & {14} \\
+				{28} & {-308} & {42} \\
+				{0} & {-140} & {42}
+			\end{bmatrix}
+			\to
+			\begin{bmatrix}
+				{14} & {-14} & {14} \\
+				{0} & {140} & {0} \\
+				{0} & {-336} & {14} \\
+				{0} & {-140} & {42}
+			\end{bmatrix}
+			\to
+			\begin{bmatrix}
+				{14} & {0} & {0} \\
+				{0} & {140} & {0} \\
+				{0} & {-336} & {14} \\
+				{0} & {-140} & {42}
+			\end{bmatrix}
+			\to\\
+			\begin{bmatrix}
+				{14} & {0} & {0} \\
+				{0} & {140} & {0} \\
+				{0} & {-56} & {14} \\
+				{0} & {0} & {42}
+			\end{bmatrix}
+			\to
+			\begin{bmatrix}
+				{14} & {0} & {0} \\
+				{0} & {140} & {0} \\
+				{0} & {-56} & {14} \\
+				{0} & {-168} & {0}
+			\end{bmatrix}
+			\to
+			\begin{bmatrix}
+				{14} & {0} & {0} \\
+				{0} & {140} & {0} \\
+				{0} & {-56} & {14} \\
+				{0} & {-28} & {0}
+			\end{bmatrix}
+			\to
+			\begin{bmatrix}
+				{14} & {0} & {0} \\
+				{0} & {28} & {0} \\
+				{0} & {0} & {14}
+			\end{bmatrix}\\
+			\\
+			\text{ker}\: d \cong 14\mathbb{Z} \oplus 28\mathbb{Z} \oplus 14\mathbb{Z}\\
+			\text{im}\: d \cong \mathbb{Z}^3\slash_{\text{ker}\: d} = 14\mathbb{Z} \oplus 14\mathbb{Z} \oplus 28\mathbb{Z}\\
+			\text{ker}\: d_0 = \mathbb{Z}^4,\quad \text{im}\: d_1 = \mathbb{Z}^3
+		\end{gather*}
+		Ответ:
+		\begin{gather*}
+			H_0 = \text{ker}\: d_0 \slash \text{im}\: d = \mathbb{Z}^4 \slash \Big( \mathbb{Z}_{14} \oplus \mathbb{Z}_{14} \oplus \mathbb{Z}_{28} \Big)\\
+			H_1 = \text{ker}\: d \slash \text{im}\: d_1 = \Big(14\mathbb{Z} \oplus 14\mathbb{Z} \oplus 28\mathbb{Z}\Big)\slash \mathbb{Z}^3
+		\end{gather*}

@@ -1,0 +1,143 @@
+\newpage
+	{\large \hspace{3cm} \begin{center} Домашнее задание 15 $\bullet$ Мозговой Владислав \end{center} }
+	\vspace{-1.5ex}
+	\hrulefill
+	
+	\fontsize{12pt}{4.5mm}\selectfont
+	\vspace{-3ex}
+	\hrulefill
+	\newline
+
+	\section{}
+		\subsection*{А}
+		\textbf{Условие}\\
+		Для каждого простого делителя p числа 790 опишите возможное количество силовских p-подгрупп\\
+		\\
+		\textbf{Решение}\\
+		$790 = 2 \cdot 5 \cdot 79$\\
+		\begin{enumerate}
+			\item
+			\begin{gather*}
+				p = 2:\quad 790 = 2 \cdot 395\\
+				n = 1\ \mod(2)\\
+				790 = 2 \cdot 395\ \Rightarrow\ n_2\ |\ (1 \cdot 5 \cdot 79)\ \Rightarrow\ n_2 = 1,5,79
+			\end{gather*}
+			
+			\item
+			\begin{gather*}
+				p = 5:\quad 790 = 5 \cdot 158\\
+				n = 1\ \mod(5)\\
+				790 = 5 \cdot 158\ \Rightarrow\ n_5\ |\ (1 \cdot 2 \cdot 79)\ \Rightarrow\ n_5 = 1
+			\end{gather*}
+			
+			\item
+			\begin{gather*}
+				p = 79:\quad 790 = 2 \cdot 5\\
+				n = 1\ \mod(79)\\
+				790 = 79 \cdot 10\ \Rightarrow\ n_{79}\ |\ (1 \cdot 2 \cdot 5)\ \Rightarrow\ n_{79} = 1
+			\end{gather*}
+		\end{enumerate}		
+		
+		\subsection*{Б}
+		\textbf{Условие}\\
+		Докажите, что группа порядка 790 разрешима\\
+		\\
+		\textbf{Решение}\\
+		Докажем более сильно утверждение -- что группа порядка $pqr\ (p<q<r)$ разрешима\\
+		Пусть $n_{p},\ n_{q},\ n_{r}$ -- количество Силовских подгрупп\\
+		$p \in \mathbb{P},\ m \in \mathbb{N},\ (p,m) = 1,\ |G| = pm$. Тогда в группе $G$ элементов с $ord = p$ хотя бы $n_p (p-1)$. Все группы Силова порядка $p$ сопряжены, различны и циклические.\\
+		Тогда:
+		\begin{gather*}
+			n_q (q-1) + n_r (r-1) \leqslant pqr-1\\
+			(1 + ra)\ |\ pqr\\
+			n_r = 1,p,q,pq\\
+			a \geqslant 1,\ \text{откуда}\ n_r = 1,pq\\
+			\text{аналогично} n_q = 1, pr
+		\end{gather*}
+		Тогда если $n_q \ne 1$:
+		\begin{gather*}
+			n_{q} (q-r) + n_{r}(r-1) \geqslant r(q-1) + pq(r-1) = pqr + r(q-1) - pq\\
+			\\
+			r(q-1) = rq - r = pq - p + rq - r - pq + p = p(q-1) + (r-p)(q-1) \geqslant \\
+			\geqslant p(q-1) + 2(q-1) > p(q-1) + p = pq \Rightarrow r(q-1) > pq\\
+			\\
+			pqr + r(q-1) -pq > pqr\quad \text{противоречие, откуда $n_r = 1$, $n_q= 1$}
+		\end{gather*}
+		Если $n_{r} = 1$, то существует одна силовская подгруппа порядка $r$, она нормальна в $G$\\
+		Подгруппа порядка $pq,\ p<q$ имеет одну нормальную силовскую подгруппу порядка $q$ ($(1 + kq)\ |\ pq \Leftrightarrow k = 0$). Факторгруппа группы порядка $pq$ по нормальной подгруппе порядка $q$ имеет порядок $p$, обе группы разрешимы.\\
+		\\
+		Докажем, что подгруппа порядка $pq$ разрешима\\
+		$Q$ -- силовская $q$-подгруппа в $G$, $|Q| = q$, все силовские $q$-подгруппы сопряжены с ней.\\
+		$Nq = 1,\ g^{-1}Qg = Q,\quad \forall g \in G \Rightarrow Q \lhd G$, тогда $Q,\ G\slash Q$ -- циклические $\Rightarrow G$ разрешима, иначе в любой силовской $q$-подгруппе найдется $q-1$ элемент порядка $q\ \Rightarrow\ |G| \geqslant Nq(q-1) \geqslant (q+1)(q-1) > pq$ --протичворечие\\
+		\\
+		Подгруппа порядка $r$ и $pq$ разрешима, тогда группа $pqr$ разрешима\\
+		\\
+		Если $nq = 1$, то существует одна силовская подгруппа порядка $q$, нормальная в $G$, факторгруппа $G$ по ней имеет порядок $pr$. Подгруппы $q$ и $pr$ аналогично разрешимы, откуда и $pqr$ разрешима\\
+ 					
+		\subsection*{В}
+		\textbf{Условие}\\
+		Выпишите простые группы, которые входят в разложение Жордана-Гёльдера группы порядка 790.\\
+		\\
+		\textbf{Решение}\\
+		$G_{5} \lhd G,\ G_{79} \lhd G$\\
+		$G_{5} \cap G_{79} = \{e\}$ у всех других элементов $G_{5}$ порядок 5, у $G_{79}$ -- порядок $79$ $\Rightarrow$ $G_{5} \cdot G_{79} = G_{5} \times G_{79}$, так как если $g_1 \in G_{5},\ g_2 \in G_{79},\ g_{1}g_{2}g^{-1}_{1}g^{-1}_{2} = e$\\
+		$g_{1} \in G_{5},\ g_{2} \in G_{79}\ \Rightarrow\ \forall g\in G\quad gg_{1}g_{2}g^{-1} = gg_{1}g^{-1} \cdot gg_{2}g^{-1}\ \in\ G_{5}G_{79}\ \Rightarrow\ G_{5}G_{79}$ -- нормальная подгруппа\\
+		$G_{5} \cdot G_{79} \hookrightarrow G\ \to\ G\slash_{G_{5} \cdot G_{79}} = C_{2}$ -- абелева группа\\
+		$G_{5} \cdot G_{79} \rhd G_{79} \rhd e$, причем $G_{5} \cdot G_{79}\slash G_{79} = C_{5},\ G_{79 \slash e} = G_{79}$\\
+		Получим композиционные факторы: $C_{2}, C_{5}, C_{79}$ -- они абелевы $\Rightarrow$ композиционный ряд. 
+		
+		\subsection*{Г}
+		\textbf{Условие}\\
+		Приведите примеры по крайней мере 3 неизоморфных (поясните, почему) некоммутативных групп порядка 790.\\
+		\\
+		\textbf{Решение}\\
+		\begin{gather*}
+			\text{Aut}(\mathbb{Z}_{5} \cdot \mathbb{Z}_{79}):\\
+			\phi_{a,b}:\ (x,y) \mapsto (ax,by)\\
+			\Phi = 
+			\begin{cases}
+				0 \mapsto 0\ \text{id}\\
+				1 \mapsto b\ \phi(a,b)
+			\end{cases}
+			\\
+			1+1 = 0\ \Rightarrow\ \phi_{a,b}^{2} = \text{id}\ \Rightarrow\ 
+			\begin{cases}
+				a^{2} = 1\\
+				b^{2} = 1
+			\end{cases}
+			\ \Rightarrow\
+			\begin{cases}
+				|a| = 1\\
+				|b| = 1
+			\end{cases}
+		\end{gather*}
+		
+		\begin{enumerate}
+			\item $a = 1,\ b = 1$\\
+				$\phi_{a,b} = \text{id}\ \Rightarrow\ \Phi\text{ -- тривиален } \Rightarrow\ G = \mathbb{Z}_{2} \times \mathbb{Z}_{5} \times \mathbb{Z}_{79}$ -- абелева
+			\item $a = 1,\ b = -1$\\
+				$\Phi_{1}:\ 1 \mapsto (\phi(x,y) = (x - y))$\\
+				Умножение на $(\mathbb{Z}_{5} \times \mathbb{Z}_{79}) \times \mathbb{Z}_{2}$, заданная $\Phi:$
+				\begin{gather*}
+					((a_{1}, b_{1}),c_{1}) \cdot ((a_{2},b_{2}),c_{2}) = ((a_{1},b_{1})(a_{2} + (-1)^{c_{1}}b_{2}), c_{1}+c_{2}) = ((a_{1}+a_{2}, b_{1} + (-1)^{c_{1}}b_{2}), c_{1}+c_{2}) = ((a_{1} + a_{2}, b_{1} + (-1)^{c_{1}}b_{2}), c_{1}+c_{2})
+				\end{gather*}
+			\item $a = -1,\ b = -1$\\
+				$\Phi_{2}:\ 1 \mapsto (\phi:\ (a,b) \mapsto (-a,b))$\\
+				$(\mathbb{Z}_{5} \times \mathbb{Z}_{79}) \times \mathbb{Z}_{2}$\\
+				$((a_{1}, b_{1}), c_{1})((a_{2}, b_{2}), c_{2}) = ((a_{1} + (-1)^{c_{1}}a_{2}, b_{2} + (-1)^{c_{1}}b_{2}), c_{1}+c_{2})$
+		\end{enumerate}
+		
+		\subsection*{Д}
+		\textbf{Условие}\\
+		Для каждой группы из вашего списка выпишите количество силовских подгрупп и сравните результат со своим ответом на первый пункт.\\
+		\\
+		\textbf{Решение}\\
+		
+		
+		\subsection*{Е}
+		\textbf{Условие}\\
+		Опишите с точностью до изоморфизма все группы порядка 790.\\
+		\\
+		\textbf{Решение}\\
+		
+		

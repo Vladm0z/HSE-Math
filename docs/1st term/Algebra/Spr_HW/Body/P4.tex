@@ -1,0 +1,56 @@
+\newpage
+	{\large \hspace{3cm} \begin{center} Домашнее задание 17 $\bullet$ Мозговой Владислав \end{center} }
+	\vspace{-1.5ex}
+	\hrulefill
+	
+	\fontsize{12pt}{4.5mm}\selectfont
+	\vspace{-3ex}
+	\hrulefill
+	\newline
+
+	\section{}
+		\subsection*{\textbf{Задача 1}}
+		\textbf{Условие}\\
+		Вычислите количество различных гомоморфизмов из циклической группы порядка $2^{4} \cdot 43^{3} \cdot 31^{2}$ в циклическую группу порядка $43^{11} \cdot 31^{4} \cdot 3$
+		\\
+		\textbf{Решение}\\
+		$\text{gcd}(2^{4} \cdot 43^{3} \cdot 31^{2}, 43^{11} \cdot 31^{4} \cdot 3) = 43^{3} \cdot 31^{2}$\\
+		Ответ: $43^{3} \cdot 31^{2}$
+		
+		\subsection*{\textbf{Задача 2}}
+		\textbf{Условие}\\
+		Вычислите количество различных гомоморфизмов из абелевой группы $\mathbb{Z} /\left(\left(43^{11} \cdot 31^{4}\right) \mathbb{Z}\right) \oplus \mathbb{Z} /\left(\left(43 \cdot 31^{2}\right) \mathbb{Z}\right)$ в абелеву группу $\mathbb{Z} /\left(43^{3} \mathbb{Z}\right) \oplus \mathbb{Z} /\left(\left(2^{4} \cdot 43^{11} \cdot 31\right) \mathbb{Z}\right)$
+		\\
+		\textbf{Решение}\\
+		$\text{gcd}(\mathbb{Z} /\left(\left(43^{11} \cdot 31^{4}\right) \mathbb{Z}\right),\ \mathbb{Z} /\left(43^{3} \mathbb{Z}\right)) = 43^{3}$\\
+		$\text{gcd}(\mathbb{Z} /\left(\left(43 \cdot 31^{2}\right) \mathbb{Z}\right),\ \mathbb{Z} /\left(\left(2^{4} \cdot 43^{11} \cdot 31\right) \mathbb{Z}\right)) = 43 \cdot 31$\\
+		Откуда общее число $43^{3} \cdot 43 \cdot 31 = 43^{4} \cdot 31$\\
+		Ответ: $43^{4} \cdot 31$
+		
+		\subsection*{\textbf{Задача 3}}
+		Вычислите порядок группы автоморфизмов абелевой группы $G$\\
+			\subsubsection*{\textbf{А}}
+			\textbf{Условие}\\
+			$G:=\mathbb{Z} /(43 \mathbb{Z}) \oplus \mathbb{Z} /(31 \cdot 3 \mathbb{Z})$\\
+			\\
+			\textbf{Решение}\\
+			$\text{Aut}(\mathbb{Z}/_{p/\mathbb{Z}}) = \mathbb{F}^{*}_{p} \simeq \mathbb{Z}/_{(p-1)\mathbb{Z}}$\\
+			$(43-1) \cdot ((31-1)(3-1)) = 42 \cdot 30 \cdot 2 = 2^{3} \cdot 3^{2} \cdot 5 \cdot 7$
+		
+			\subsubsection*{\textbf{Б}}
+			\textbf{Условие}\\
+			$G:=\mathbb{Z} /((43 \cdot 31) \mathbb{Z}) \oplus \mathbb{Z} /((43 \cdot 3) \mathbb{Z})$\\
+			\\
+			\textbf{Решение}\\
+			$\text{Aut}(\mathbb{Z}/_{p_1^{n_1} p_2^{n_2} \mathbb{Z}}) = \text{Aut}(\mathbb{Z}/_{p_1^{n_1} \mathbb{Z}}) \times \text{Aut}(\mathbb{Z}/_{p_2^{n_2} \mathbb{Z}})$\\
+			$\text{Aut}(G) = \text{Aut}(\mathbb{Z}/_{43 \mathbb{Z}} \oplus \mathbb{Z}/_{43 \mathbb{Z}}) \oplus \text{Aut}(\mathbb{Z}/_{31 \mathbb{Z}}) \oplus \text{Aut}(\mathbb{Z}/_{3 \mathbb{Z}})$\\
+			Ответ: $(43^{2} - 1)(43^{2} - 43) \cdot (31-1) \cdot (3-1) = 2^{6} \cdot 3^{3} \cdot 5 \cdot 7^{2} \cdot 11 \cdot 43$
+		
+			\subsubsection*{\textbf{В}}
+			\textbf{Условие}\\
+			$G:=\mathbb{Z} /\left(\left(43^{3}\right) \mathbb{Z}\right) \oplus \mathbb{Z} /\left(\left(43^{3}\right)\mathbb{Z}\right)$\\
+			\\
+			\textbf{Решение}\\
+			$\text{Aut}(G) = GL_{2}(\mathbb{F}_{43^{3}}) = \text{Aut}(\mathbb{F}^{2}_{43^{3}})$\\
+			Ответ: $(43^{3} - 1)(43^{3} - 43) = 2^{4} \cdot 3^{2} \cdot 7^{2} \cdot 11 \cdot 43$
+			

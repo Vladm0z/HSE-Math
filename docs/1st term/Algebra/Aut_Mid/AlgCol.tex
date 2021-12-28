@@ -1,0 +1,34 @@
+\documentclass[fleqn]{article}
+\usepackage[utf8]{inputenc} 
+\usepackage[left = 2cm, right = 1.5cm, top = 1cm, bottom = 2cm, bindingoffset = 0cm]{geometry} 
+\usepackage{import}
+\usepackage{Other/Cup}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+\title{Алгебра \\ Домашнее задание \\ В.Мозговой}
+
+\makeatletter
+\newenvironment{sqcases}{%
+	\matrix@check\sqcases\env@sqcases
+}{%
+	\endarray\right.%
+}
+\def\env@sqcases{%
+	\let\@ifnextchar\new@ifnextchar
+	\left\lbrack
+	\def\arraystretch{1.2}%
+	\array{@{}l@{\quad}l@{}}%
+}
+\makeatother
+
+\begin{document}
+	\maketitle
+	\pagebreak 
+	
+	%\tableofcontents
+	
+	\newpage
+	\input{Body/P1}
+	
+\end{document}

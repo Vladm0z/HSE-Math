@@ -1,0 +1,248 @@
+\newpage
+	{\large \hspace{3cm} \begin{center} Задачи $\bullet$ Мозговой Владислав \end{center} }
+	\vspace{-1.5ex}
+	\hrulefill
+	
+	\fontsize{12pt}{4.5mm}\selectfont
+	\vspace{-3ex}
+	\hrulefill
+	\newline
+
+	\section{}
+		\subsection*{\textbf{Задача 1}}
+		\textbf{Условие}\\
+		Пусть $p$ и $q$ -- простые числа. Покажите, что группа порядка $pq$ всегда является полупрямым произведением циклических групп. При каких значениях $p$ и $q$ можно утверждать, что это произведение прямое?\\
+		\\
+		\textbf{Решение}\\
+		Пусть $G$ -- группа порядка $pq$, где $p>q$ простые, тогда по теореме Коши есть подгруппы $P = \langle x | x^p = 1 \rangle$ и $Q = \langle x | x^q = 1 \rangle$ порядка $p$ и $q$ соответственно. Это следует из того, что по тереме Силова $P \triangleleft G$ нормальна (так как все силовские $p$-подгруппы сопряжены в $G$ и количество $n_p$ силовских $p$-подгрупп должно делиться на $q$ и соответствовать $n_p \equiv 1$ (mod p))\\
+		Тогда докажем что $G \cong P \rtimes Q$, где полупрямое произведение определено гомоморфизмом $\varphi: Q \to \text{Aut}(P)$
+		\begin{enumerate}
+			\item 
+			Сперва заметим что так как $|P \cap Q|$ делится как $p$ так и на $q$, то $|P \cap Q|$, так как
+			\begin{gather*}
+				|PQ| = \frac{|P||Q|}{|P \cap Q|} = pq = |G|
+			\end{gather*}
+			Откуда $PQ =G$
+			\item 
+			Теперь так как $Q = \langle y \rangle$ нормализует $P = \langle x \rangle$, отображение $\varphi_k: P \to P$ задано $\varphi_k(x) = y^k x y^{-k}$. Это также автоморфизм так как $\varphi_{-k}$ определен. И так как $\varphi_i \varphi_j = \varphi_{i+j}$, отображение $y^k \mapsto \varphi_k$ определяет гомоморфизм $\varphi: Q \to \text{Aut}(P)$
+			\item 
+			И так мы определили $P \rtimes Q$ как множество $P \times Q$ с умножением $(x^{i_1},y^{j_1})(x^{i_2},y^{j_2}) = (x^{i_1} \varphi_{j_1}(x^{i_2}), y^{j_1 + j_2})$. Убидимся что это группа, $(1,1)(x^i,y^j)^{-1} = (\varphi_{-j}(x^{-i}),y^{-j})$. Ассоциативность также выпонена.
+			\item 
+			Определим отображение $\psi: P \rtimes Q \to G$ как $\psi(x^i, y^j) = x^i y^j$, $\psi$ сюрьекция так как $PQ = G$ и инъекция так как $|P \rtimes Q| = pq = |G|$, тогда заметим что 
+			\begin{gather*}
+				\psi((x^{i_1},y^{j_1}),(x^{i_2},y^{j_2})) = \psi(x^{i_1}\varphi_{j_1}(x^{i_2}),y^{j_1 + j_2}) =\\
+				x^{i_1} \varphi_{j_1}(x^{i_2}) y^{j_1 + j_2} = x^{i_1} y^{j_1} x^{i_2} y^{j_2} = \psi(x^{i_1},y^{j_1})\psi(x^{i_2},y^{j_2})
+			\end{gather*}
+			Откуда следует что $\psi$ гомоморфизм
+			\item 
+			Теперь определим тривиален гомоморфизм $\varphi: Q \to \text{Aut}(P)$ или нет\\
+			Если он тривиален то $G \cong P \rtimes Q = P \times Q \cong C_p \times C_q \cong C_{pq}$\\
+			Если он не тривиален то $G = \langle x,y | x^p = 1 = y^q, yx = x^n y \rangle$ где $n \in \mathbb{Z}$ удовлетворяет $n \not \equiv 1$ (mod p) и $n^q \equiv 1$ (mod p) (так как $yxy^{-1} = x^n$ для некоторых $n \not \equiv_p 1$, но $x = y^q x y^{-q} = x^{n^q}$)\\
+			Это выполнено для любой пары простых, где $q | (p-1)$			
+		\end{enumerate}
+		То есть произведение прямое при $q | (p-1)$
+	
+		\newpage	
+		\subsection*{\textbf{Задача 2}}
+		\textbf{Условие}\\
+		Опишите классы сопряженности в группе $A_6$\\
+		\\
+		\textbf{Решение}\\
+		Напомним, что класс сопряженности в $S_6$ четной перестановки $\sigma$ остается в виде класс сопряженности в $A_6$, если $\sigma$ коммутирует с нечетной перестановкой и расщепляет на два равных класса сопряженности в $A_6$ в противном случае. Тогда $(123),\ (12)(34),\ (1234)(56)$ коммутируют с нечетной перестановкой $(56)$, а также $(123)(456)$ коммутирует с нечетной перестановкой $(14)(25)(36)$. Таким образом, классы сопряженности в $S_6$ из этих элементов остаются в качестве классов сопряженности в $A_6$. С другой стороны $(12345)$ не коммутирует с любой четной перестановкой, поэтому его класс сопряженности в $S_6$ должен разделиться на два класса в $A_6$: $(12345)$ и $(56)(12345)(56)^{-1} = (12346)$, откуда следует таблица:
+		\begin{gather*}
+			\begin{matrix}
+				\text{Представитель} & \text{Размер класса}\\
+				\text{id} & 1\\
+				(123) & 40\\
+				(12345) & 72\\
+				(12346) & 72\\
+				(12)(34) & 45\\
+				(1234)(56) & 90\\
+				(123)(456) & 40
+			\end{matrix}
+		\end{gather*}
+
+
+		\subsection*{\textbf{Задача 3}}
+		\textbf{Условие}\\
+		Найдите группу автоморфизмов группы $\mathbb{Z} \oplus \mathbb{Z} \slash 3\mathbb{Z}$\\
+		\\
+		\textbf{Решение}\\
+		В дальнейшем решении $\mathbb{Z} \slash a \mathbb{Z}$ будет обозначаться как $\mathbb{Z}_a$ для всех $a$\\
+		\begin{gather*}
+			\text{Aut}(\mathbb{Z} \oplus \mathbb{Z}_3) = \text{Aut}(\mathbb{Z}) \oplus \text{Aut}(\mathbb{Z}_3)\\
+			\text{Aut}(\mathbb{Z}_3) \cong \mathbb{Z}_2
+		\end{gather*}
+		Заметим что у $\mathbb{Z}$ только 2 образующих: 1 и -1, и тогда есть только два автоморфизма: $f_1(x) = x$ и $f_2(x) = -x$, то есть $|\text{Aut}(\mathbb{Z})| = 2$ и $\text{Aut}(\mathbb{Z}) \cong \mathbb{Z}_2$.\\
+		И тогда
+		\begin{gather*}
+			\text{Aut}(\mathbb{Z} \oplus \mathbb{Z}_3) \cong \mathbb{Z}_2 \oplus \mathbb{Z}_2
+		\end{gather*}
+		\\
+		\newpage
+		\subsection*{\textbf{Задача 4}}
+		\textbf{Условие}\\
+		Найдите ЖНФ матрицы
+		\begin{gather*}
+			\begin{pmatrix}
+				\lambda & 0 & 1 & 0 & \ldots & 0 & 0 \\
+				0 & \lambda & 0 & 1 & \ldots & 0 & 0 \\
+				0 & 0 & \lambda & 0 & \ldots & 0 & 0 \\
+				0 & 0 & 0 & \lambda & \ldots & 0 & 0 \\
+				\ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
+				0 & 0 & 0 & 0 & \ldots & \lambda & 0 \\
+				0 & 0 & 0 & 0 & \ldots & 0 & \lambda
+			\end{pmatrix}
+		\end{gather*}
+		\\
+		\textbf{Решение}\\
+		Обозначим данную многочленную матрицу как 
+		\begin{gather*}
+			A(\lambda) = 
+			\begin{pmatrix}
+				\lambda & 0 & 1 & 0 & \ldots & 0 & 0 \\
+				0 & \lambda & 0 & 1 & \ldots & 0 & 0 \\
+				0 & 0 & \lambda & 0 & \ldots & 0 & 0 \\
+				0 & 0 & 0 & \lambda & \ldots & 0 & 0 \\
+				\ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
+				0 & 0 & 0 & 0 & \ldots & \lambda & 0 \\
+				0 & 0 & 0 & 0 & \ldots & 0 & \lambda
+			\end{pmatrix}\\
+			A(\lambda) = \lambda \cdot 
+			\begin{pmatrix}
+				1 & 0 & \ldots & 0 \\
+				0 & 1 & \ldots & 0 \\
+				\ldots & \ldots & \ldots & \ldots\\
+				0 & 0 & \ldots & 1
+			\end{pmatrix}
+			+
+			\begin{pmatrix}
+				0 & 0 & 1 & 0 & \ldots & 0 & 0 \\
+				0 & 0 & 0 & 1 & \ldots & 0 & 0 \\
+				\ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
+				0 & 0 & 0 & 0 & \ldots & 0 & 1\\
+				0 & 0 & 0 & 0 & \ldots & 0 & 0\\
+				0 & 0 & 0 & 0 & \ldots & 0 & 0
+			\end{pmatrix}\\
+		\end{gather*}
+		То есть данный многочлен регулярный\\
+		Приведем его к диагональному виду
+		\begin{gather*}
+			A(\lambda) = 
+			\begin{pmatrix}
+				\lambda & 0 & 1 & 0 & \ldots & 0 & 0 \\
+				0 & \lambda & 0 & 1 & \ldots & 0 & 0 \\
+				0 & 0 & \lambda & 0 & \ldots & 0 & 0 \\
+				0 & 0 & 0 & \lambda & \ldots & 0 & 0 \\
+				\ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
+				0 & 0 & 0 & 0 & \ldots & \lambda & 0 \\
+				0 & 0 & 0 & 0 & \ldots & 0 & \lambda
+			\end{pmatrix}
+			=\\
+			\begin{pmatrix}
+				1 & 0 & \lambda & 0 & \ldots & 0 & 0 \\
+				0 & \lambda & 0 & 1 & \ldots & 0 & 0 \\
+				\lambda & 0 & 0 & 0 & \ldots & 0 & 0 \\
+				0 & 0 & 0 & \lambda & \ldots & 0 & 0 \\
+				\ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
+				0 & 0 & 0 & 0 & \ldots & \lambda & 0 \\
+				0 & 0 & 0 & 0 & \ldots & 0 & \lambda
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+				1 & 0 & \lambda & 0 & \ldots & 0 & 0 \\
+				0 & \lambda & 0 & 1 & \ldots & 0 & 0 \\
+				0 & 0 & -\lambda^2 & 0 & \ldots & 0 & 0 \\
+				0 & 0 & 0 & \lambda & \ldots & 0 & 0 \\
+				\ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
+				0 & 0 & 0 & 0 & \ldots & \lambda & 0 \\
+				0 & 0 & 0 & 0 & \ldots & 0 & \lambda
+			\end{pmatrix}
+			=\\
+			\begin{pmatrix}
+				1 & 0 & 0 & 0 & \ldots & 0 & 0 \\
+				0 & \lambda & 0 & 1 & \ldots & 0 & 0 \\
+				0 & 0 & -\lambda^2 & 0 & \ldots & 0 & 0 \\
+				0 & 0 & 0 & \lambda & \ldots & 0 & 0 \\
+				\ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
+				0 & 0 & 0 & 0 & \ldots & \lambda & 0 \\
+				0 & 0 & 0 & 0 & \ldots & 0 & \lambda
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+				1 & 0 & 0 & 0 & \ldots & 0 & 0 \\
+				0 & 1 & 0 & \lambda & \ldots & 0 & 0 \\
+				0 & 0 & -\lambda^2 & 0 & \ldots & 0 & 0 \\
+				0 & \lambda & 0 & 0 & \ldots & 0 & 0 \\
+				\ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
+				0 & 0 & 0 & 0 & \ldots & \lambda & 0 \\
+				0 & 0 & 0 & 0 & \ldots & 0 & \lambda
+			\end{pmatrix}
+			=
+			\ldots
+			=
+		\end{gather*}
+		\begin{gather*}
+			=
+			\begin{pmatrix}
+			1 & 0 & 0 & 0 & \ldots & 0 & 0 \\
+			0 & 1 & 0 & 0 & \ldots & 0 & 0 \\
+			0 & 0 & 1 & 0 & \ldots & 0 & 0 \\
+			0 & 0 & 0 & 1 & \ldots & 0 & 0 \\
+			\ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
+			0 & 0 & 0 & 0 & \ldots & (-1)^{\ceil[\big]{\frac{(n-1)-\frac{1}{2}}{2}} + 1}\lambda^{\ceil[\big]{\frac{(n-1)-\frac{1}{2}}{2}}} & 0 \\
+			0 & 0 & 0 & 0 & \ldots & 0 & (-1)^{\ceil[\big]{\frac{n-\frac{1}{2}}{2}} + 1}\lambda^{\ceil[\big]{\frac{n-\frac{1}{2}}{2}}}
+			\end{pmatrix}
+		\end{gather*}
+		Тогда 
+		\begin{gather*}
+			A(\lambda) = 
+			\text{diag}\left(
+			1;\ldots; 1; 
+			(-1)^{\ceil[\big]{\frac{(n-1)-\frac{1}{2}}{2}} + 1}\lambda^{\ceil[\big]{\frac{(n-1)-\frac{1}{2}}{2}}};
+			(-1)^{\ceil[\big]{\frac{n-\frac{1}{2}}{2}} + 1}\lambda^{\ceil[\big]{\frac{n-\frac{1}{2}}{2}}}
+			\right)
+		\end{gather*}
+		То есть $n-2$ единицы и 2 не единичных значения на диагонали\\
+		Тогда инвариантные множители:
+		\begin{gather*}
+			e_1(\lambda) = 1\\
+			\ldots\\
+			e_{n-2}(\lambda) = 1\\
+			e_{n-1}(\lambda) = (-1)^{\ceil[\big]{\frac{(n-1)-\frac{1}{2}}{2}} + 1}\lambda^{\ceil[\big]{\frac{(n-1)-\frac{1}{2}}{2}}}\\
+			e_{n}(\lambda) = (-1)^{\ceil[\big]{\frac{n-\frac{1}{2}}{2}} + 1}\lambda^{\ceil[\big]{\frac{n-\frac{1}{2}}{2}}}
+		\end{gather*}
+		Заметим что эти же инвариантные множетели есть и у матрицы
+		\begin{gather*}
+			\begin{pmatrix}
+				\lambda & 0 & 1 & 0 & \ldots & 0 & 0 \\
+				0 & \lambda & 0 & 1 & \ldots & 0 & 0 \\
+				0 & 0 & \lambda & 0 & \ldots & 0 & 0 \\
+				0 & 0 & 0 & \lambda & \ldots & 0 & 0 \\
+				\ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
+				0 & 0 & 0 & 0 & \ldots & \lambda & 0 \\
+				0 & 0 & 0 & 0 & \ldots & 0 & \lambda
+			\end{pmatrix}
+		\end{gather*}
+		Так как мы проводили с ней только элементарные преобразования, а при них инвариантные множители не меняются.\\
+		\\
+		\textbf{Доказательство}:\\
+		При совершении любого одгого элементарного преобразования матрицы $A(\lambda)$ любой ее минор порядка $k$ либо не изменится, либо меняет знак на противоположный, либо совпадет с другим минором того же порядка, либо окажется равным сумме двух миноров того-же порядка (взятых с некоторыми множителями). Ни одно из этих действий не меняет $\text{gcd}(\text{миноров порядка }k)$. Откуда и отношения наибольших общих делителей не изменятся.\\
+		\\
+		Тогда есть 2 элементарных делителя $(-1)^{\ceil[\big]{\frac{(n-1)-\frac{1}{2}}{2}} + 1}\lambda^{\ceil[\big]{\frac{(n-1)-\frac{1}{2}}{2}}}$ и $(-1)^{\ceil[\big]{\frac{n-\frac{1}{2}}{2}} + 1}\lambda^{\ceil[\big]{\frac{n-\frac{1}{2}}{2}}}$\\
+		Тогда есть одна клетка (назовем ее $J_1$) с делителем: $(-1)^{\ceil[\big]{\frac{(n-1)-\frac{1}{2}}{2}} + 1}\lambda^{\ceil[\big]{\frac{(n-1)-\frac{1}{2}}{2}}}$\\
+		И вторая клетка (назовем ее $J_2$)  с делителем: $(-1)^{\ceil[\big]{\frac{n-\frac{1}{2}}{2}} + 1}\lambda^{\ceil[\big]{\frac{n-\frac{1}{2}}{2}}}$\\
+		\\
+		Следовательно ЖНФ изначальной матрицы имеет вид:
+		\begin{gather*}
+			J = \text{diag}(J_1(\lambda_1), J_2(\lambda_2)) = 
+			\begin{pmatrix}
+				J_1(\lambda_1) & 0\\
+				0 & J_2(\lambda_2)
+			\end{pmatrix}
+		\end{gather*}
+		И
+		\begin{gather*}
+			(J - \lambda E) \sim \text{diag}(1,\ldots,1,(-1)^{\ceil[\big]{\frac{(n-1)-\frac{1}{2}}{2}} + 1}\lambda^{\ceil[\big]{\frac{(n-1)-\frac{1}{2}}{2}}}, 1, \ldots,1, (-1)^{\ceil[\big]{\frac{n-\frac{1}{2}}{2}} + 1}\lambda^{\ceil[\big]{\frac{n-\frac{1}{2}}{2}}})
+		\end{gather*}
+		

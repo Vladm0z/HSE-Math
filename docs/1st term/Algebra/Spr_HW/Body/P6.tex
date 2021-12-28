@@ -1,0 +1,117 @@
+\newpage
+	{\large \hspace{3cm} \begin{center} Домашнее задание 19 $\bullet$ Мозговой Владислав \end{center} }
+	\vspace{-1.5ex}
+	\hrulefill
+	
+	\fontsize{12pt}{4.5mm}\selectfont
+	\vspace{-3ex}
+	\hrulefill
+	\newline
+
+	\section{}
+		\subsection*{\textbf{Задача 1}}
+		\textbf{Условие}\\
+		Найдите наибольший общий делитель следующих многочленов с
+		коэффициентами в поле $\mathbb{F}^2$: $f(x) = x^6+x^5+x^4+x$ и $g(x) = x^7+x^6+x^2+x+1$\\
+		\textbf{Решение}\\
+		По алгоритму евклида:
+		\begin{gather*}
+			\text{gcd}(x^7+x^6+x^2+x+1, x^6+x^5+x^4+x) = 
+			\text{gcd}(x^6+x^5+x^4+x, x^5 + x + 1) = \\
+			\text{gcd}(x^5 + x + 1, x^4 + x^2 + x + 1) = 
+			\text{gcd}(x^4 + x^2 + x + 1, x^3 + x^2 + 1) = x^3 + x^2 + 1\\
+			g(x) = (x^3 + x^2 + 1)(x^4 + x + 1)\\
+			f(x) = (x^3 + x^2 + 1)(x^3 + x)
+		\end{gather*}
+		\\
+		
+		\subsection*{\textbf{Задача 2}}
+		\textbf{Условие}\\
+		Разложите пространство $V := \mathbb{F}_2[x]\slash(f(x))$ в прямую сумму двух $3-x$ мерных подпространств, инвариантных относительно умножения на $x$\\
+		\textbf{Решение}\\
+		\begin{gather*}
+			V = \mathbb{F}_2[x]\slash_{f(x)} = \mathbb{F}_2[x]\slash_{x^3 + x} \oplus \mathbb{F}_2[x]\slash_{x^3 + x^2 + 1}
+		\end{gather*}
+		Элементы $\mathbb{F}_2[x]\slash_{x^3+x^2+1}:\ 0, 1, x, x+1, x^2, x^2+1, x^2+x, x^2+x+1$\\
+		$\phi(\alpha) = x\alpha$\\
+		$x(x^2+1) \equiv x^2 + x + 1\ \text{mod}(x^3+x^2+1)$\\
+		$x(x^2+x+1) \equiv x + 1\ \text{mod}(x^3+x^2+1)$\\
+		аналогично элементы $\mathbb{F}_2[x]\slash_{x^3+x}:\ 0, 1,\ldots$\\
+		$\phi(\beta) = x\beta$\\
+		Пространство инвариантно\\
+		\\
+		
+		\subsection*{\textbf{Задача 3}}
+		\textbf{Условие}\\
+		Вычислите матрицу и характеристический многочлен в каждом из этих 3-мерных подпространств, выбрав подходящий базис в $V$, такой что первые 3 базисных вектора порождают первое подпространство, а последние 3 -- второе. Укажите этот базис явно\\
+		\textbf{Решение}\\
+		Базис в $\mathbb{F}_2[x]\slash_{x^3+x^2+1}:$
+		\begin{gather*}
+			a_1 = x^3 + x^2 + 1\\
+			a_2 = x(x^3 + x^2 + 1)\\
+			a_3 = x^2(x^3 + x^2 + 1)
+		\end{gather*}
+		Так как $x(e_1) = x^6 + x^5 + x^3 = x^5 + x^4 + x^2 = e_3$\\
+		Базис в $\mathbb{F}_2[x]\slash_{x^3+x}:$
+		\begin{gather*}
+		a_1 = x^3 + x\\
+		a_2 = x(x^3 + x)\\
+		a_3 = x^2(x^3 + x)
+		\end{gather*}
+		Так как $x(e_1) = x^6 + x^4 = x^5 + x^3 = e_3$\\
+		\\
+		Тогда получается матрица
+		\begin{gather*}
+			\begin{bmatrix}
+				0 & 0 & 1 & 0 & 0 & 0\\
+				1 & 0 & 0 & 0 & 0 & 0\\
+				0 & 1 & 0 & 0 & 0 & 0\\
+				0 & 0 & 0 & 0 & 0 & 1\\
+				0 & 0 & 0 & 1 & 0 & 0\\
+				0 & 0 & 0 & 0 & 1 & 1
+			\end{bmatrix}
+		\end{gather*}
+		Многочлены для $\mathbb{F}_2[x]\slash_{x^3+x}:$
+		\begin{gather*}
+			\begin{bmatrix}
+				-\lambda & 0 & 1\\
+				1 & -\lambda & 0\\
+				0 & 1 & -\lambda
+			\end{bmatrix}
+			= -\lambda^3 + 1
+		\end{gather*}
+		Многочлены для $\mathbb{F}_2[x]\slash_{x^3+x^2+1}:$
+		\begin{gather*}
+			\begin{bmatrix}
+				-\lambda & 0 & 1\\
+				1 & -\lambda & 0\\
+				0 & 1 & 1-\lambda
+			\end{bmatrix}
+			= \lambda^2(1-\lambda) + 1 = -\lambda^3 + \lambda^2 + 1
+		\end{gather*}
+		
+		
+		\subsection*{\textbf{Задача 4}}
+		\textbf{Условие}\\
+		Вычислите количество подпространств в $\mathbb{F}_2[x]\slash(g(x))$ инвариантных относительно умножения на $x$. Нульмерное подпространство и всё пространство также считаются подпространствами\\
+		\textbf{Решение}\\
+		$|\mathbb{F}_2\slash_{g(x)}| = \det(A) \cdot \det(B) = (-\lambda^3 + \lambda^2 + 1)$\\
+		$\lambda = $, других вещественных корней нет $\Rightarrow$ существет  инвариантное пространство\\
+		\\
+		
+		\subsection*{\textbf{Задача 5}}
+		\textbf{Условие}\\
+		Тот же вопрос о количестве $x$-инвариантных подпространств в пространстве $\mathbb{F}_2[x]/(f(x))$\\
+		\textbf{Решение}\\
+		Количество инвариантных подпространств равно количеству собственных значений матрицы оператора\\
+		$|\mathbb{F}_2\slash_{f(x)}| = \det(A) \cdot \det(B) = (-\lambda^3 + 1)(-\lambda^3 + \lambda^2 + 1)$\\
+		$\lambda = 1$, других вещественных корней нет $\Rightarrow$ существет $1+2 = 3$ инвариантных пространства\\
+		\\
+		
+		\subsection*{\textbf{Задача 6}}
+		\textbf{Условие}\\
+		Тот же вопрос о количестве $x$-инвариантных подпространств в пространстве $\mathbb{F}_2[x]/(f(x)) \oplus \mathbb{F}_2[x]/(g(x))$\\
+		\textbf{Решение}\\
+		$|\mathbb{F}_2\slash_{f(x)}| \cdot |\mathbb{F}_2\slash_{g(x)}| = $\\
+		$\lambda = $, других вещественных корней нет $\Rightarrow$ существет  инвариантное пространство\\
+		\\

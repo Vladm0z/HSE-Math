@@ -1,0 +1,128 @@
+\newpage
+	{\large \hspace{3cm} \begin{center} Домашнее задание 16 $\bullet$ Мозговой Владислав \end{center} }
+	\vspace{-1.5ex}
+	\hrulefill
+	
+	\fontsize{12pt}{4.5mm}\selectfont
+	\vspace{-3ex}
+	\hrulefill
+	\newline
+
+	\section{}
+		\subsection*{\textbf{Задача 1}}
+			\subsubsection*{\textbf{А}}
+			\textbf{Условие}\\
+			Выпишите какой-нибудь композиционный ряд группы
+			\begin{equation*}
+				G=D_{119} \times D_{117} \times \mathrm{S}_{4}
+			\end{equation*}
+			\\
+			\textbf{Решение}\\
+			\begin{gather*}
+				D_{119} \simeq \mathbb{Z}_{119} \times \mathbb{Z}_{2}\\
+				119 = 17 \cdot 7\\
+				\mathbb{Z}_{119} \simeq \mathbb{Z}_{17} \cdot \mathbb{Z}_{7}\\
+				\\
+				D_{117} \simeq \mathbb{Z}_{117} \times \mathbb{Z}_{2}\\
+				117 = 3 \cdot 3 \cdot 13\\
+				\mathbb{Z}_{117} \simeq \mathbb{Z}_{3} \times \mathbb{Z}_{3} \times \mathbb{Z}_{13}
+			\end{gather*}
+			\begin{gather*}
+				G = D_{119} \times D_{117} \times S_{4} \supset \mathbb{Z}_{119} \times D_{117} \times S_{4} \supset \mathbb{Z}_{17} \times D_{117} \times S_{4} \supset D_{117} \times S_{4} \supset\\
+				\supset \mathbb{Z}_{117} \times S_{4} \supset \mathbb{Z}_{13} \times \mathbb{Z}_{3} \times S_{4} \supset \mathbb{Z}_{13} \times S_{4} \supset S_{4}  \supset A_{4} \supset V_{4} \supset \mathbb{Z}_{2} \supset \{e\}
+			\end{gather*}
+			
+			
+			\subsubsection*{\textbf{Б}}
+			\textbf{Условие}\\
+			Опишите композиционные факторы в этом ряду\\
+			\\
+			\textbf{Решение}\\
+			\begin{enumerate}
+				\item $\mathbb{Z}\slash 2\mathbb{Z}$
+				\item $\mathbb{Z}\slash 17\mathbb{Z}$
+				\item $\mathbb{Z}\slash 7\mathbb{Z}$
+				\item $\mathbb{Z}\slash 2\mathbb{Z}$
+				\item $\mathbb{Z}\slash 3\mathbb{Z}$
+				\item $\mathbb{Z}\slash 3\mathbb{Z}$
+				\item $\mathbb{Z}\slash 13\mathbb{Z}$
+				\item $\mathbb{Z}\slash 2\mathbb{Z}$
+			\end{enumerate}
+			
+			
+			\subsubsection*{\textbf{В}}
+			\textbf{Условие}\\
+			Верно ли, что группа $G$ разрешима?
+			\\
+			\textbf{Решение}\\
+			Заметим, что группы: $\mathbb{Z}_{2},\ \mathbb{Z}_{3},\ \mathbb{Z}_{7},\ \mathbb{Z}_{13},\ \mathbb{Z}_{17}$  абелевы $\Leftrightarrow$ $G$ -- разрешима
+			
+		\subsection*{\textbf{Задача 2}}
+			Рассмотрим группу $H \subset S_{75}$, состоящую из перестановок чисел от 1 до 75, сохраняющих отношение сравнимости по модулю 5. То есть
+			\begin{equation*}
+				\sigma \in H \stackrel{\text { def }}{\Leftrightarrow} \forall i, j \sigma(i)-\sigma(j) \equiv i-j\ \mod(5)
+			\end{equation*}
+			и рассмотрим её подгруппу $K \subset H \subset S_{75}$, состоящую из таких перестановок сохраняющих остаток числа по модулю 5. То есть,
+			\begin{equation*}
+				\sigma \in K \Leftrightarrow \forall i \equiv \sigma(i) \text { mod } 5
+			\end{equation*}
+			\\
+			\subsubsection*{\textbf{Г}}
+			\textbf{Условие}\\
+			Покажите, что $K$ -- нормальная подгруппа группы $H$ и вычислите порядки групп $K$ и $H$;
+			\\
+			\textbf{Решение}\\
+			Существует 5 классов эквивалентности:
+			\begin{enumerate}
+				\item $K_{1} = \{1, 6, \ldots, 71\}$ -- остаток 1
+				\item $K_{2} = \{2, 7, \ldots, 72\}$ -- остаток 2
+				\item $K_{3} = \{3, 8, \ldots, 73\}$ -- остаток 3
+				\item $K_{4} = \{4, 9, \ldots, 74\}$ -- остаток 4
+				\item $K_{5} = \{5, 10, \ldots, 75\}$ -- остаток 0
+			\end{enumerate}
+			Если $i,j$ принадлежат одному классу эквивалентности, то $G(i) - G(j) \equiv 0$. Значит они переходят только в тот же класс эквивалентности, откуда следует, что $H$ представляет классы целиком\\
+			$K$ переставляет элементы внутри классов эквивалентности\\
+			Докажем, что $K \rhd H:\quad h \in H\quad h^{-1}Kh = K$\\
+			\begin{enumerate}
+				\item $h$ меняет классы местами
+				\item $h^{-1}$ возвращает классы на свои первоначальные места. Если $K$ не действует на рассматриваемый класс, то элементы вернутся на свои места, если $K$ действует на класс, то элементы в классе будут переставлены каким-то образом
+				\item $K$ преставляет элементы внутри класса
+			\end{enumerate}
+			$\Rightarrow$ все классы на своих местах, но в одном из них элементы переставлены. $\Rightarrow\ K \rhd H$\\
+			Найдем $|K|$: в классе $15!$ элементов, классов 5 $\Rightarrow$ $|K| = (15!)^{3}$ 
+			
+			\subsubsection*{\textbf{Д}}
+			\textbf{Условие}\\
+			Предъявите подгруппу $L \subset H$, такую что группа $H$ представляется как полупрямое произведение $L \ltimes K$.
+			\\
+			\textbf{Решение}\\
+			$l_{1},l_{2} \in L$ и $k_{1},k_{2} \in K$\\
+			Зададим операцию на полупрямом произведении: $(l_{1}k_{1})(l_{2}k_{2}) = (l_{1}l_{2}, x)\quad x \cdot l_{1}l_{2} = k_{1}l_{1}k_{2}l_{2}\quad x = k_{1}l_{1}k_{2}l^{-1}_{1}\ \Rightarrow\ (l_{1}k_{1})(l_{2}k_{2}) = (l_{1}l_{2}, k_{1}l_{1}k_{2}l^{-1}_{1})$
+			
+			\subsubsection*{\textbf{Е}}
+			\textbf{Условие}\\
+			Опишите композиционные факторы группы $H$
+			\\
+			\textbf{Решение}\\
+			\begin{gather*}
+				H = L \ltimes K \supset A_{5} \ltimes K \supset K = S_{15} \times S_{15} \times S_{15} \times S_{15} \times S_{15} \supset A_{15} \times S_{15}  \times S_{15}  \times S_{15}  \times S_{15} \supset\\
+				\supset S_{15} \times S_{15}  \times S_{15}  \times S_{15} \supset A_{15} \times S_{15}  \times S_{15}  \times S_{15} \supset S_{15} \times S_{15}  \times S_{15} \supset A_{15} \times S_{15}  \times S_{15} \supset\\
+				\supset S_{15} \times S_{15} \supset A_{15} \times S_{15} \supset S_{15} \supset A_{15} \supset \{e\}
+			\end{gather*}
+			Факторы:
+			\begin{enumerate}
+				\item $\mathbb{Z}\slash 2\mathbb{Z}$
+				\item $\mathbb{Z}\slash 5\mathbb{Z}$
+				\item $\mathbb{Z}\slash 2\mathbb{Z}$
+				\item $A_{15}$
+				\item $\mathbb{Z}\slash 2\mathbb{Z}$
+				\item $A_{15}$
+				\item $\mathbb{Z}\slash 2\mathbb{Z}$
+				\item $A_{15}$
+				\item $\mathbb{Z}\slash 2\mathbb{Z}$
+				\item $A_{15}$
+				\item $\mathbb{Z}\slash 2\mathbb{Z}$
+				\item $A_{15}$
+				\item $\mathbb{Z}\slash 2\mathbb{Z}$
+			\end{enumerate}
+		простые (так как $A_n$ простая при $n \geqslant 5$) 

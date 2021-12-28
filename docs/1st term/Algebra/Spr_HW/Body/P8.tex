@@ -1,0 +1,582 @@
+\newpage
+	{\large \hspace{3cm} \begin{center} Домашнее задание 22 $\bullet$ Мозговой Владислав \end{center} }
+	\vspace{-1.5ex}
+	\hrulefill
+	
+	\fontsize{12pt}{4.5mm}\selectfont
+	\vspace{-3ex}
+	\hrulefill
+	\newline
+
+	\section*{}
+		\subsection*{\textbf{Задача 1}}
+		\subsubsection*{\textbf{А}}
+		\textbf{Условие}\\
+		Проверьте,что 3 – является собственным значением матрицы
+		\begin{gather*}
+			A := 
+			\begin{pmatrix}
+				-2 & -2 & -3 \\
+				-2 & -2 & 3 \\
+				-3 & 3 & -3
+			\end{pmatrix}
+		\end{gather*}
+		и найдите оставшиеся собственные значения этой матрицы.\\
+		\\
+		\textbf{Решение}\\
+		\begin{gather*}
+			\text{det}(A-\lambda E) = 
+			\text{det}
+			\begin{pmatrix}
+				-2-\lambda & -2 & -3 \\
+				-2 & -2-\lambda & 3 \\
+				-3 & 3 & -3-\lambda
+			\end{pmatrix}
+			=\\=
+			-\lambda^3 - 7\lambda^2 + 6\lambda + 72
+			=
+			-(\lambda - 3)(\lambda + 4)(\lambda + 6)\\
+			\lambda_1 = 3,\ \lambda_2 = -4,\ \lambda_3 = -6
+		\end{gather*}
+		собственные значения $A$ это $3, -4, -6$
+		
+		\subsubsection*{\textbf{Б}}
+		\textbf{Условие}\\
+		Найдите собственные векторы матрицы A\\
+		\\
+		\textbf{Решение}\\
+		\begin{enumerate}
+		\item $\lambda = 3$
+			\begin{gather*}
+				(A-\lambda E)X = 
+				(A-3E)X = 
+				\begin{pmatrix}
+					-2-3 & -2 & -3 \\
+					-2 & -2-3 & 3 \\
+					-3 & 3 & -3-3
+				\end{pmatrix}
+				\begin{pmatrix}
+					x_1 \\ x_2 \\ x_3
+				\end{pmatrix}
+				=\\
+				\begin{pmatrix}
+					-5 & -2 & -3 \\
+					-2 & -5 & 3 \\
+					-3 & 3 & -6
+				\end{pmatrix}
+				\begin{pmatrix}
+					x_1 \\ x_2 \\ x_3
+				\end{pmatrix}
+				=
+				\begin{pmatrix}
+					-5x_1 -2x_2 -3x_3 \\
+					-2x_1 -5x_2 +3x_3 \\
+					-3x_1 + 3x_2 -6x_3
+				\end{pmatrix}
+				\\
+				\text{det}
+				\begin{pmatrix}
+					-5x_1 -2x_2 -3x_3 \\
+					-2x_1 -5x_2 +3x_3 \\
+					-3x_1 + 3x_2 -6x_3
+				\end{pmatrix}
+				= 0
+				\\
+				\alpha
+				\begin{pmatrix}
+					1\\ -1 \\ -1
+				\end{pmatrix}
+			\end{gather*}
+		\item $\lambda = -4$
+			\begin{gather*}
+				(A-\lambda E)X = 
+				(A+4E)X = 
+				\begin{pmatrix}
+					-2+4 & -2 & -3 \\
+					-2 & -2+4 & 3 \\
+					-3 & 3 & -3+4
+				\end{pmatrix}
+				\begin{pmatrix}
+					x_1 \\ x_2 \\ x_3
+				\end{pmatrix}
+				=\\
+				\begin{pmatrix}
+					2 & -2 & -3 \\
+					-2 & 2 & 3 \\
+					-3 & 3 & 1
+				\end{pmatrix}
+				\begin{pmatrix}
+					x_1 \\ x_2 \\ x_3
+				\end{pmatrix}
+				=
+				\begin{pmatrix}
+					2x_1 -2x_2 -3x_3 \\
+					-2x_1 +2x_2 +3x_3 \\
+					-3x_1 + 3x_2 +x_3
+				\end{pmatrix}
+				\\
+				\text{det}
+				\begin{pmatrix}
+					2x_1 -2x_2 -3x_3 \\
+					-2x_1 +2x_2 +3x_3 \\
+					-3x_1 + 3x_2 +x_3
+				\end{pmatrix}
+				= 0
+				\\
+				\alpha
+				\begin{pmatrix}
+					1\\1\\0
+				\end{pmatrix}
+			\end{gather*}
+		\item $\lambda = -6$
+			\begin{gather*}
+				(A-\lambda E)X = 
+				(A+6E)X = 
+				\begin{pmatrix}
+					-2+6 & -2 & -3 \\
+					-2 & -2+6 & 3 \\
+					-3 & 3 & -3+6
+				\end{pmatrix}
+				\begin{pmatrix}
+					x_1 \\ x_2 \\ x_3
+				\end{pmatrix}
+				=\\
+				\begin{pmatrix}
+					4 & -2 & -3 \\
+					-2 & 4 & 3 \\
+					-3 & 3 & 3
+				\end{pmatrix}
+				\begin{pmatrix}
+					x_1 \\ x_2 \\ x_3
+				\end{pmatrix}
+				=
+				\begin{pmatrix}
+					4x_1 -2x_2 -3x_3 \\
+					-2x_1 +4x_2 +3x_3 \\
+					-3x_1 + 3x_2 +3x_3
+				\end{pmatrix}
+				\\
+				\text{det}
+				\begin{pmatrix}
+					4x_1 -2x_2 -3x_3 \\
+					-2x_1 +4x_2 +3x_3 \\
+					-3x_1 + 3x_2 +3x_3
+				\end{pmatrix}
+				= 0
+				\\
+				\alpha
+				\begin{pmatrix}
+					1\\-1\\2
+				\end{pmatrix}
+			\end{gather*}
+		\end{enumerate}
+		
+		
+		\subsubsection*{\textbf{В}}
+		\textbf{Условие}\\
+		Выпишите ортогональную замену переменных, приводящую квадратичную форму
+		\begin{gather*}
+			-2 x^{2}-4 x y-6 x z-2 y^{2}+6 y z-3 z^{2}
+		\end{gather*}
+		к главным осям (т.е. к виду $\sum a_{i} x_{i}^{2}$ )\\
+		\\
+		\textbf{Решение}\\
+		\begin{gather*}
+			\begin{pmatrix}
+				-2 & -2 & -3\\
+				-2 & -2 & 3\\
+				-3 & 3 & -3
+			\end{pmatrix}\\
+			e_1 = \frac{(1,-1,-1)}{|(1,-1,-1)|} = \frac{(1,-1,-1)}{\sqrt{3}} = (\frac{1}{\sqrt{3}},-\frac{1}{\sqrt{3}},-\frac{1}{\sqrt{3}})\\
+			e_2 = \frac{(1,1,0)}{|(1,1,0)|} = \frac{(1,1,0)}{\sqrt{2}} = (\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{3}},0)\\
+			e_3 = \frac{(1,-1,2)}{|(1,-1,2)|} = \frac{(1,-1,2)}{\sqrt{6}} = (\frac{1}{\sqrt{6}},-\frac{1}{\sqrt{6}},\frac{2}{\sqrt{6}})\\
+			\\
+			\begin{pmatrix}
+				\frac{1}{\sqrt{3}} & \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{6}}\\
+				\\
+				\frac{-1}{\sqrt{3}} & \frac{1}{\sqrt{2}} & \frac{-1}{\sqrt{6}}\\
+				\\
+				\frac{-1}{\sqrt{3}} & \frac{0}{\sqrt{2}} & \frac{2}{\sqrt{6}}
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+				\frac{1}{\sqrt{3}} & \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{6}}\\
+				\\
+				-\frac{1}{\sqrt{3}} & \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{6}}\\
+				\\
+				-\frac{1}{\sqrt{3}} & 0 & \frac{2}{\sqrt{6}}
+			\end{pmatrix}
+		\end{gather*}
+		
+		
+		\subsection*{\textbf{Задача 2}}
+		\subsubsection*{\textbf{А}}
+		\textbf{Условие}\\
+		Предьявите базис в $\mathbb{R}^3$, в котором пара квадратичных форм
+		\begin{gather*}
+			Q_{1}(x, y, z):=x(x+2 z)+y(y-z)+z(2 x-y+6 z)\\
+			Q_{2}(x, y, z):=-7 x^{2}-10 x y-28 x z+17 y^{2}-92 y z+44 z^{2}
+		\end{gather*}
+		одновременно приводятся к сумме квадратов $a_ix^2 + b_iy^2 + c_iz^2$ ($i = 1; 2$). Выпишите получившиеся формы в новом базисе.\\
+		\\
+		\textbf{Решение}\\
+		\begin{gather*}
+			Q_1:\\
+			\begin{pmatrix}
+				1 & 0 & 2\\
+				0 & 1 & -1\\
+				2 & -1 & 6
+			\end{pmatrix}
+			\\
+			Q_2:\\
+			\begin{pmatrix}
+				-7 & -5 & -14\\
+				-5 & 17 & -46\\
+				-14 & -46 & 44
+			\end{pmatrix}\\
+			\\
+			\text{det}(Q_2 - \lambda Q_1) = 0\\
+			\text{det}
+			\Bigg(
+			\begin{pmatrix}
+				-7 & -5 & -14\\
+				-5 & 17 & -46\\
+				-14 & -46 & 44
+			\end{pmatrix}
+			-
+			\lambda
+			\begin{pmatrix}
+				1 & 0 & 2\\
+				0 & 1 & -1\\
+				2 & -1 & 6
+			\end{pmatrix}
+			\Bigg)
+			=
+			\text{det}
+			\begin{pmatrix}
+				-7-\lambda & -5 & -14-2\lambda\\
+				-5 & 17-\lambda & -46+\lambda\\
+				-14-2\lambda & -46+\lambda & 44-6\lambda
+			\end{pmatrix}
+			=\\
+			= -\lambda^3 + 27\lambda^2 + 360\lambda - 1296 = -(\lambda-3)(\lambda+12)(\lambda-36)\\
+			\lambda_1 = 3\\
+			\lambda_2 = -12\\
+			\lambda_3 = 36\\		
+		\end{gather*}
+		\begin{enumerate}
+		\item $\lambda_1 = 3$
+			\begin{gather*}
+				\begin{pmatrix}
+					-7-\lambda & -5 & -14-2\lambda\\
+					-5 & 17-\lambda & -46+\lambda\\
+					-14-2\lambda & -46+\lambda & 44-6\lambda
+				\end{pmatrix}	
+				\begin{pmatrix}
+					x_1 \\ x_2 \\ x_3
+				\end{pmatrix}
+				=
+				\begin{pmatrix}
+					-7-3 & -5 & -14-6\\
+					-5 & 17-3 & -46+3\\
+					-14-6 & -46+3 & 44-18
+				\end{pmatrix}	
+				\begin{pmatrix}
+					x_1 \\ x_2 \\ x_3
+				\end{pmatrix}
+				=\\
+				\begin{pmatrix}
+					-10 & -5 & -20\\
+					-5 & 14 & -43\\
+					-20 & -43 & 26
+				\end{pmatrix}	
+				\begin{pmatrix}
+					x_1 \\ x_2 \\ x_3
+				\end{pmatrix}
+				=
+				\begin{pmatrix}
+					-10x_1 -5x_2  -20x_3\\
+					-5x_1 14x_2  -43x_3\\
+					-20x_1  -43x_2 +26x_3
+				\end{pmatrix}
+				=
+				\begin{pmatrix}
+					0 \\ 0 \\ 0
+				\end{pmatrix}\\
+				\\
+				\begin{pmatrix}
+					x_1 \\ x_2 \\ x_3
+				\end{pmatrix}
+				=
+				\begin{pmatrix}
+					3 \\ -2 \\ -1
+				\end{pmatrix}
+			\end{gather*}
+		\item $\lambda_2 = -12$
+			\begin{gather*}
+				\begin{pmatrix}
+					-7-\lambda & -5 & -14-2\lambda\\
+					-5 & 17-\lambda & -46+\lambda\\
+					-14-2\lambda & -46+\lambda & 44-6\lambda
+				\end{pmatrix}	
+				\begin{pmatrix}
+					x_1 \\ x_2 \\ x_3
+				\end{pmatrix}
+				=
+				\begin{pmatrix}
+					-7+12 & -5 & -14+24\\
+					-5 & 17+12 & -46-12\\
+					-14+24 & -46-12 & 44+72
+				\end{pmatrix}	
+				\begin{pmatrix}
+					x_1 \\ x_2 \\ x_3
+				\end{pmatrix}
+				=\\
+				\begin{pmatrix}
+					5 & -5 & 10\\
+					-5 & 29 & -58\\
+					10 & -58 & 116
+				\end{pmatrix}	
+				\begin{pmatrix}
+					x_1 \\ x_2 \\ x_3
+				\end{pmatrix}
+				=
+				\begin{pmatrix}
+					5x_1 -5x_2  +10x_3\\
+					-5x_1 +29x_2  -58x_3\\
+					10x_1  -58x_2 +116x_3
+				\end{pmatrix}
+				=
+				\begin{pmatrix}
+					0 \\ 0 \\ 0
+				\end{pmatrix}\\
+				\\
+				\begin{pmatrix}
+					x_1 \\ x_2 \\ x_3
+				\end{pmatrix}
+				=
+				\begin{pmatrix}
+					0 \\ 2 \\ 1
+				\end{pmatrix}
+			\end{gather*}
+		\item $\lambda_3 = 36$
+			\begin{gather*}
+				\begin{pmatrix}
+					-7-\lambda & -5 & -14-2\lambda\\
+					-5 & 17-\lambda & -46+\lambda\\
+					-14-2\lambda & -46+\lambda & 44-6\lambda
+				\end{pmatrix}	
+				\begin{pmatrix}
+					x_1 \\ x_2 \\ x_3
+				\end{pmatrix}
+				=
+				\begin{pmatrix}
+					-7-36 & -5 & -14-72\\
+					-5 & 17-36 & -46+36\\
+					-14-72 & -46+36 & 44-216
+				\end{pmatrix}	
+				\begin{pmatrix}
+					x_1 \\ x_2 \\ x_3
+				\end{pmatrix}
+				=\\
+				\begin{pmatrix}
+					-43 & -5 & -86\\
+					-5 & -19 & -10\\
+					-86 & -10 & -172
+				\end{pmatrix}	
+				\begin{pmatrix}
+					x_1 \\ x_2 \\ x_3
+				\end{pmatrix}
+				=
+				\begin{pmatrix}
+					0 \\ 0 \\ 0
+				\end{pmatrix}
+				\\
+				\begin{pmatrix}
+				x_1 \\ x_2 \\ x_3
+				\end{pmatrix}
+				=
+				\begin{pmatrix}
+				2 \\ 0 \\ -1
+				\end{pmatrix}
+			\end{gather*}
+		\end{enumerate}
+		\begin{gather*}
+			\begin{pmatrix}
+				\frac{3}{\sqrt{3^2 + 2^2 + 1^2}} & \frac{0}{\sqrt{2^2 + 1^2}} & \frac{2}{\sqrt{2^2 + 1^2}}\\
+				\frac{-2}{\sqrt{3^2 + 2^2 + 1^2}} & \frac{2}{\sqrt{2^2 + 1^2}} & \frac{0}{\sqrt{2^2 + 1^2}}\\
+				\frac{-1}{\sqrt{3^2 + 2^2 + 1^2}} & \frac{1}{\sqrt{2^2 + 1^2}} & \frac{-1}{\sqrt{2^2 + 1^2}}
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+				\frac{3}{\sqrt{14}} & 0 & \frac{2}{\sqrt{5}}\\
+				-\frac{2}{\sqrt{14}} & \frac{2}{\sqrt{5}} & 0\\
+				-\frac{1}{\sqrt{14}} & \frac{1}{\sqrt{5}} & -\frac{1}{\sqrt{5}}
+			\end{pmatrix}
+		\end{gather*}
+	
+	
+		\begin{comment}
+			-43a -5b -86c, -5a -19b -10c, -86a -10b -172c
+		\begin{gather*}
+			Q_{1}(x, y, z):=x(x+2 z)+y(y-z)+z(2 x-y+6 z) = \\
+			(x+2z)^2 + (y-z)^2 + z^2\\
+			x' = x + 2z\\
+			y' = y-z\\
+			z' = z
+			\\
+			Q_{2}(x', y', z'):=-7 x'^{2}-10 x' y'-28 x' z'+17 y'^{2}-92 y' z'+44 z'^{2} = \\
+			-7 (x + 2z)^{2}-10 (x + 2z) (y-z)-28 (x + 2z) z+17 (y-z)^{2}-92 (y-z) z+44 z^{2} =\\
+			-7x^2 - 10xy - 46 xz + 17y^2 - 146 yz + 89z^2\\
+			\begin{pmatrix}
+				-7 & -5 & -23\\
+				-5 & 17 & -73\\
+				-23 & -73 & 89
+			\end{pmatrix}\\
+			\text{det}
+			\begin{pmatrix}
+			-7-\lambda & -5 & -23\\
+			-5 & 17-\lambda & -73\\
+			-23 & -73 & 89-\lambda
+			\end{pmatrix}
+			=
+			-\lambda^3 + 99\lambda^2 + 5112\lambda - 1296 =\\
+			-(\lambda-33)^3 + 8379(\lambda - 33) + 239274 = 0\\
+			(\lambda-33)^3 - 8379(\lambda - 33) - 239274 = 0\\
+			\lambda -33 = x + \frac{c}{x}\\
+			(x + \frac{c}{x})^3 - 8379(x + \frac{c}{x}) - 239274 = 0\\
+			x^3 = 21(5697 + 8i\sqrt{264837})\\
+			x_1 = 21^{\frac{1}{3}}(5697 + 8i\sqrt{264837})^{\frac{1}{3}} \approx -70.659\\
+			x_2 = -1 \cdot -21^{\frac{1}{3}}(5697 + 8i\sqrt{264837})^{\frac{1}{3}} \approx -32.748\\
+ 			x_3 = (-1)^{\frac{2}{3}}21^{\frac{2}{3}}(5697 + 8i\sqrt{264837})^{\frac{2}{3}} \approx 103.41\\
+ 			\\
+ 			\lambda_1 \approx -37.659\\
+ 			\lambda_2 \approx 0.252\\
+ 			\lambda_3 \approx 136.41\\
+		\end{gather*}
+		Собственные вектора
+		\begin{enumerate}
+		\item $\lambda_1 = -37.659$
+			\begin{gather*}
+				\begin{pmatrix}
+					-7-\lambda_1 & -5 & -23\\
+					-5 & 17-\lambda_1 & -73\\
+					-23 & -73 & 89-\lambda_1
+				\end{pmatrix}
+				=
+				\begin{pmatrix}
+					1 & 0 & -0.983\\
+					0 & 1 & -1.425\\
+					0 & 0 & 0
+				\end{pmatrix}
+				\\
+				\begin{pmatrix}
+					0.983 \\ 1.425 \\ 1
+				\end{pmatrix}
+			\end{gather*}
+		\item $\lambda_2 = 0.252$
+			\begin{gather*}
+				\begin{pmatrix}
+					-7-\lambda_2 & -5 & -23\\
+					-5 & 17-\lambda_2 & -73\\
+					-23 & -73 & 89-\lambda_2
+				\end{pmatrix}
+				=
+				\begin{pmatrix}
+					1 & 0 & 5.122\\
+					0 & 1 & -2.83\\
+					0 & 0 & 0
+				\end{pmatrix}
+				\\
+				\begin{pmatrix}
+					-5.122 \\ 2.83 \\ 1
+				\end{pmatrix}
+			\end{gather*}
+		\item $\lambda_3 = 136.41$
+			\begin{gather*}
+				\begin{pmatrix}
+					-7-\lambda_3 & -5 & -23\\
+					-5 & 17-\lambda_3 & -73\\
+					-23 & -73 & 89-\lambda_3
+				\end{pmatrix}
+				=
+				\begin{pmatrix}
+					1 & 0 & 0.139\\
+					0 & 1 & 0.606\\
+					0 & 0 & 0 
+				\end{pmatrix}
+				\\
+				\begin{pmatrix}
+					-0.139 \\ -0.606 \\ 1
+				\end{pmatrix}
+			\end{gather*}
+		\end{enumerate}	
+		Тогда матрица перехода имеет вид
+		\begin{gather*}
+			P = 
+			\begin{pmatrix}
+				\frac{0.983}{\sqrt{0.983^{2} + 1.425^{2} + 1}} & -\frac{5.122}{\sqrt{5.122^{2} + 2.83^{2} + 1}} & -\frac{0.139}{\sqrt{0.139^{2} + 0.606^{2} + 1}}\\
+				\frac{1.425}{\sqrt{0.983^{2} + 1.425^{2} + 1}} & \frac{2.83}{\sqrt{5.122^{2} + 2.83^{2} + 1}} & -\frac{0.606}{\sqrt{0.139^{2} + 0.606^{2} + 1}}\\
+				\frac{1}{\sqrt{0.983^{2} + 1.425^{2} + 1}} & \frac{1}{\sqrt{5.122^{2} + 2.83^{2} + 1}} & \frac{1}{\sqrt{0.139^{2} + 0.606^{2} + 1}}
+			\end{pmatrix}
+		\end{gather*}
+		И формы имеют вид:
+		\begin{gather*}
+			Q'_1 = P Q_1 P^{T}\\
+			Q'_2 = P Q_2 P^{T}
+		\end{gather*}
+		\end{comment}
+	
+		
+		\subsubsection*{\textbf{Б}}
+		\textbf{Условие}\\
+		Вычислите корни кубического многочлена
+		\begin{gather*}
+			f(t):=
+			\text{det}
+			\left(t
+			\begin{bmatrix}
+				1 & 0 & 2 \\
+				0 & 1 & -1 \\
+				2 & -1 & 6
+			\end{bmatrix}
+			-
+			\begin{bmatrix}
+				-7 & -5 & -14 \\
+				-5 & 17 & -46 \\
+				-14 & -46 & 44
+			\end{bmatrix}
+			\right)
+		\end{gather*}
+		\\
+		\textbf{Решение}\\
+		\begin{gather*}
+			f(t):=
+			\text{det}
+			\left(t
+			\begin{bmatrix}
+				1 & 0 & 2 \\
+				0 & 1 & -1 \\
+				2 & -1 & 6
+			\end{bmatrix}
+			-
+			\begin{bmatrix}
+				-7 & -5 & -14 \\
+				-5 & 17 & -46 \\
+				-14 & -46 & 44
+			\end{bmatrix}
+			\right)
+			=\\
+			\text{det}
+			\begin{pmatrix}
+				t-7 & -5 & 2t-14 \\
+				-5 & t+17 & -t-46 \\
+				2t-14 & -t-46 & 6t+44
+			\end{pmatrix}
+			= \\
+			t^3 + 27t^2 - 360t - 1296
+			=
+			(t + 3)(t - 12)(t + 36)\\
+			t_1 = -3,\ t_2 = 12,\ t_3 = -36			
+		\end{gather*}
+		
