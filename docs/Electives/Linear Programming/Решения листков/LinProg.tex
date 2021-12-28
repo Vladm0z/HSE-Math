@@ -1,0 +1,58 @@
+%если что-то сломалось, стучать сюда: vlad270136@gmail.com, t.me/mvr27
+
+%кастомный класс документа, чтобы все было красиво
+\documentclass[fleqn]{article}
+\usepackage[utf8]{inputenc} 
+\usepackage[left = 2cm, right = 1.5cm, top = 1cm, bottom = 2cm, bindingoffset = 0cm]{geometry} 
+\geometry{a4paper}
+\usepackage{times}
+\usepackage[english,russian]{babel}
+
+%бибилиотеки ams
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+
+%многострочный текст над/под строкой, скопировано с https://tex.stackexchange.com/questions/346990/text-inside-equation-with
+\usepackage{newtxtext, ragged2e}
+
+%tikz
+\usepackage{tikz}
+
+%нумерация, названия и вот это все
+%\newtheorem{код LaTeX, который пишется в begin/end}[к какому элементу/группе привязать нумерацию]{отображающееся название}[к чему глобально привязать нумерацию]
+\theoremstyle{plain}
+\newtheorem{thm}{Теорема}[section]
+\newtheorem{lem}[thm]{Лемма}
+\newtheorem{prop}[thm]{Предложение}
+\newtheorem*{cor}{Следствие}
+\newtheorem{prob}{Задача}[section]
+
+\theoremstyle{definition}
+\newtheorem{defn}{Определение}[section]
+\newtheorem{conj}{Гипотеза}[section]
+\newtheorem{exmp}{Пример}[section]
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Замечание}
+\newtheorem*{note}{Отметим}
+
+%работа с картиночками
+\graphicspath{{images/}}
+\DeclareGraphicsExtensions{.pdf, .png, .tif, .eps, .tiff, .psd, .jpg}
+
+%настройки hyperref, можно поменять цвета, так как в своих вкусах я не уверен
+\usepackage[
+breaklinks=true,colorlinks=true,
+%linkcolor=blue,urlcolor=blue,citecolor=blue,% PDF VIEW
+linkcolor=black,urlcolor=black,citecolor=black,% PRINT
+bookmarks=true,bookmarksopenlevel=2]{hyperref}
+
+
+\title{Линеное программирование \\ Листок 1 \\ Мозговой Владислав}
+\date{}
+
+\begin{document}
+
+\input{P1}
+\input{P2}
+
+\end{document}		

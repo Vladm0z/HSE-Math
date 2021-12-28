@@ -1,0 +1,343 @@
+\section{Лист 1}
+\begin{prob}
+    \begin{gather*}
+        2x - 6y \to \mathrm{max}\\
+        x + y + z \geqslant 2\\
+        2x - y + z \leqslant 1\\
+        x,y,z \geqslant 0
+    \end{gather*}
+\end{prob}
+
+\begin{proof}
+    \begin{gather*}
+        \begin{cases}
+            m \leqslant 2x - 6y\\
+            x + y + z \geqslant 2\\
+            2x - y + z \leqslant 1\\
+            x \geqslant 0\\
+            y \geqslant 0\\
+            z \geqslant 0
+        \end{cases}
+        \Rightarrow
+        \begin{cases}
+            m \leqslant 2x - 6y\\
+            z \geqslant 2 - x - y\\
+            z \leqslant 1 - 2x + y\\
+            x \geqslant 0\\
+            y \geqslant 0\\
+            z \geqslant 0
+        \end{cases}
+        \Rightarrow
+        \begin{cases}
+            m \leqslant 2x - 6y\\
+            1 - 2x + y \geqslant 2 - x - y\\
+            1 - 2x + y \geqslant 0\\
+            x \geqslant 0\\
+            y \geqslant 0
+        \end{cases}\\
+        \Rightarrow
+        \begin{cases}
+            6y \leqslant 2x - m\\
+            2y \geqslant 1 + x\\
+            y \geqslant -1 + 2x\\
+            x \geqslant 0\\
+            y \geqslant 0
+        \end{cases}
+        \Rightarrow
+        \begin{cases}
+            2x - m \geqslant 0\\
+            2x - m \geqslant 3 + 3x\\
+            2x - m \geqslant -6 + 12x\\
+            x \geqslant 0
+        \end{cases}
+        \Rightarrow
+        \begin{cases}
+            2x \geqslant m\\
+            -x \geqslant 3 + m\\
+            -10x \geqslant -6 + m\\
+            x \geqslant 0
+        \end{cases}
+        \Rightarrow
+        \begin{cases}
+            x \geqslant \frac{1}{2}m\\
+            x \leqslant -3 - m\\
+            x \leqslant \frac{1}{10} (6 - m)\\
+            x \geqslant 0
+        \end{cases}\\
+        \Rightarrow
+        \begin{cases}
+            -3 - m \geqslant \frac{1}{2}m\\
+            \frac{1}{10} (6 - m) \geqslant \frac{1}{2}m\\
+            \frac{1}{10} (6 - m) \geqslant 0\\
+            -3 - m \geqslant 0
+        \end{cases}
+        \Rightarrow
+        \begin{cases}
+            -6 - 2m \geqslant m\\
+            6 - m \geqslant 5m\\
+            6 - m \geqslant 0\\
+            -3 - m \geqslant 0
+        \end{cases}
+        \Rightarrow
+        \begin{cases}
+            -6 \geqslant 3m\\
+            6 \geqslant 6m\\
+            6 \geqslant m\\
+            -3 \geqslant m
+        \end{cases}
+        \Rightarrow
+        -3 \geqslant m
+    \end{gather*}
+    Откуда максимум $2x-6y$ равен $-3$, данное значение достигается, например, при $x = 0, y = \frac{1}{2}, z = \frac{3}{2}$
+\end{proof}
+\vskip 0.6in
+
+
+
+\begin{prob}
+    Докажите с.тедующий вариант леммы Фаркашга: для матриц $A, B, C$ и векторов $u, v, w$ выполнена одна из двух взаимоисключаюших возможностей.
+    \begin{itemize}
+        \item - Существует вектор $x$ т.ч.
+        \begin{gather*}
+            A x=u, B x \geqslant v, C x \leqslant \omega
+        \end{gather*}
+        \item - существуют такие векторы $a, b, c$, что
+        \begin{gather*}
+            A^{T} a+B^{T} b+C^{T} c=0, b \leqslant 0, c \geqslant 0,\langle a, u\rangle+\langle b, v\rangle+\langle c, \omega\rangle<0
+        \end{gather*}
+    \end{itemize}
+\end{prob}
+
+\begin{proof}
+    Для удобства рассмотрим $b \geqslant 0$, то есть условие примет вид
+    \begin{gather*}
+        A^{T} a - B^{T} b+C^{T} c=0,\ b \geqslant 0,\ c \geqslant 0,\ \langle a, u\rangle-\langle b, v\rangle+\langle c, \omega\rangle<0
+    \end{gather*}
+    \vskip 0.1in \noindent
+    Предположим, что выполнено первое условие, то есть $\exists x: Ax = u,\ Bx \geqslant v,\ Cx \leqslant w$, что равносильно $Ax \leqslant u,\ -Ax  \leqslant  -u,\ v \leqslant Bx,\ Cx \leqslant w$, что можно записать как
+    \begin{gather*}
+        \begin{pmatrix}
+            A\\ -A\\ -B\\ C
+        \end{pmatrix}
+        x
+        \leqslant
+        \begin{pmatrix}
+            u\\ -u\\ -v\\ w
+        \end{pmatrix}
+    \end{gather*}
+    Тогда по лемме Фракаша 2 для любых $a_1, a_2, b, c$, таких что
+    \begin{gather*}
+        \begin{pmatrix}
+            A\\ -A\\ -B\\ C
+        \end{pmatrix}
+        ^{\top}
+        (a_1, a_2, b, c)
+        = 0
+    \end{gather*}
+    Выполнено
+    \begin{gather*}
+        \left\langle 
+        (u, -u, -v, w)
+        ,
+        (a_1, a_2, b, c)
+        \right\rangle
+        = \langle a_1 - a_2, u\rangle - \langle b,v \rangle + \langle c,w \rangle \geqslant 0
+    \end{gather*}
+    То есть если существуют такие  $a_1, a_2, b, c \geqslant 0$, что $A^{\top} (a_1 - a_2) - B^{\top} b + C^{\top} c = 0$, то выполнено $\langle a_1 - a_2, u\rangle - \langle b,v \rangle + \langle c,w \rangle \geqslant 0$, то есть при выполненном первом условии, второе не выполнено.
+    \vskip 0.1in \noindent
+    Заметим, что числа $a_1 = a_2 = b = c = 0$ подходят. Если первое условие не выполнено, то есть такого $x$ не существует, то для каких-то $a_1, a_2, b, c \geqslant 0$ выполнено $A^{\top} (a_1 - a_2) + B^{\top} b + C^{\top} c = 0,\ \langle a_1 - a_2, u\rangle - \langle b,v \rangle + \langle c,w \rangle < 0$, то есть $a_1 - a_2, b, c$ подходит под 2 условие.
+\end{proof}
+\vskip 0.6in
+
+
+
+
+\begin{prob}
+    Напомним, что гиперплоскостью, несущей к выпуклому телу $A$ в точке $x \in A$, называется такая гиперплоскость $H \ni x$, что $A$ содержится в одном из полупространств, определяемых этой гиперплоскостью.\\
+    Пусть $A$-замкнутое выпуклое множество, $x \notin A$.
+    \begin{itemize}
+    \item Докажите, что существует единственная точка $y \in A$, для которой
+        \begin{gather*}
+            |x-y| \leq|x-z|, \forall z \in A
+        \end{gather*}
+    \item Докажите, что гиперплоскость, содержащая $y$ и ортогональная к $x-y$ является несущей к $A$.
+    \end{itemize}
+\end{prob}
+    
+\begin{proof}
+\text{ }
+    \begin{itemize}
+    \item Покажем, что ближайшая точка существует. Рассмотрим какое-то $a \in A$, если для $y = a$ условие выполнено, то мы её нашли, иначе рассмотрим $A \cap B_{|x-y|}(x)$, это множество выпукло, замкнуто и ограничено, то есть компакт. Построим отображение $F:\ A \cap B_{|x-y|}(x) \mapsto \mathbb{R}_{\geqslant 0}, F(y) = |x-y|$, оно непрерывно, а так как функция на компакте, то есть минимум, который и будет ближайшей точкой. Предположим, что существуют 2 ближайшие точки, назовем их $y_1,\ y_2$, в силу выпуклости $A$, $\frac{y_1 + y_2}{2} \in A$ и при $z = \frac{y_1 + y_2}{2}$ условие $|x - y| \leqslant |x - z|$ выполнено не будет.
+
+    \item Рассмотрим опорную (несущую) гиперплоскость $H$, точку касания назовем $y$, полупространство с точкой $x$ назовем $X$, пусть $\exists y_0 \in A, y_0 \in X, y_0 \notin B_{|x-y|}[x]$, тогда $yy_0$ пересекает границу $B_{|x-y|}[x]$ в $y_1 = k y + (1 - k)y_0$, рассмотрим $\frac{y + y_0}{2} \in A$, заметим $|x - \frac{y + y_0}{2}| < |x - y|$ -- противоречие, то есть пересечение $X$ и $A$ непусто и $H$ является опорной.
+    \end{itemize}
+\end{proof}
+\vskip 0.6in
+
+
+
+
+\begin{prob}
+    Найдите решение задачи
+    \begin{gather*}
+        x_{1}+2 x_{2}+3 x_{3}+\cdots+n x_{n} \rightarrow \min \\
+        x_{1} \geqslant 1, x_{1}+x_{2} \geqslant 2, \cdots, x_{1}+\cdots+x_{n} \geqslant n \\
+        x_{i} \geqslant 0
+    \end{gather*}
+    Сформулируйте и решите двойственную задачу.
+\end{prob}
+
+\begin{proof}
+    \begin{gather*}
+        x_{1}+2 x_{2}+3 x_{3}+\cdots+n x_{n}
+        \geqslant x_{1}+\cdots+x_{n}
+        \geqslant n\\ 
+        \min(x_{1}+2 x_{2}+3 x_{3}+\cdots+n x_{n}) \geqslant n
+    \end{gather*}
+    Осталось заметить, что $n$ достигается при $(x_1, x_2, \ldots, x_n) = (n, 0, \ldots, 0)$
+    \vskip 0.2in \noindent
+    Двойственная
+    \begin{gather*}
+        \begin{cases}
+            y_1 + 2 y_2 +\ldots + n \cdot y_n \to \max\\
+            y_1 + \ldots + y_n \leqslant 1\\
+            \vdots\\
+            y_i + \ldots + y_n \leqslant i\\
+            \vdots\\
+            y_n \leqslant n\\
+            y_1, \ldots, y_n \geqslant 0
+        \end{cases}
+    \end{gather*}
+    Решение:
+    \begin{gather*}
+        y_1 + 2y_2 + \ldots n \cdot y_n
+        \leqslant n \cdot y_1 + \ldots + n \cdot y_n
+        \leqslant n\\
+        \max(y_1 + 2y_2 + \ldots n \cdot y_n) \leqslant n
+    \end{gather*}
+    Осталось заметить, что $n$ достигается при $(y_1, \ldots, y_n) = (0, \ldots, 0, 1)$
+\end{proof}
+\vskip 0.6in
+
+
+
+
+\begin{prob}
+    Описать все решения задачи
+    \begin{gather*}
+        \sum_{i=1}^{n} c_{i} x_{i} \rightarrow \max \\
+        \sum_{i=1}^{n} a_{j} x_{j} \leq b,\quad x_{j} \geq 0,1 \leq j \leq n
+    \end{gather*}
+    где $b, a_{j}>0$. Показать, что если $c_{j}>0$ и все числа $b \frac{c_{j}}{a_{j}}$ различны, то решение единственно.
+\end{prob}
+
+\begin{proof}
+    Рассмотрим пространство $\mathbb{R}^n$, заметим, что в нем можно задать каждое решение системы в виде точки $(x_1, \ldots, x_n)$. Далее рассмотрим выпуклую оболочку множества точек $x_i = \frac{b}{a_i}$ (то есть точки вида $(0, \ldots, 0, \frac{b}{a_i}, 0, \ldots, 0)$, где $\frac{b}{a_i}$ стоит на $i$ позиции) и точки $(0, \ldots, 0)$, заметим, что все решения $\sum a_j x_j \leqslant b$ будут ей принадлежать, так как в выпуклой оболочке точек $(0, \ldots, 0, \frac{b}{a_i}, 0, \ldots, 0)$ будет $b$, а в $0$ будет $0$, и в силу непрерывности и линейности между ними значения в точках будут принадлежать интервалу $(0, b)$. Пусть какое-то решение не принадлежит данному симплексу, обозначим эту точку как $x_q$, пусть $Ax_q = b_q \leqslant b$, тогда проведем прямую из 0 в $x_q$, она где-то пересечет симплекс, причем в точке пересечения, обозначим её $x_p$, $A x_p = b$, но тогда получится, что на участке от $0$ до $x_p$ значения возрастают, на $x_px_q$ убывают, а этого не может быть в силу линейности.
+    \vskip0.1in \noindent
+    Теперь найдем точки, где $\sum c_i x_i$ достигает своего максимума.
+    \vskip0.1in \noindent
+    Так как на любом отрезке линейная функция достигает максимума в одном из концов, то для любой предположительно максимальной точки, принадлежащей некой $k$-мерной грани, можно провести прямую, проходящую через неё и пересекающую данную $k$-мерную грань в каких-то точках $i_1, i_2$. В силу линейности максимум будет достигаться либо в одной из этих точек, либо же значения на всем отрезке $i_1 i_2$ будут равны (соответственно если известно, что максимум достигается на каком-то множестве вершин, то он достигается на выпуклой оболочке всех этих вершин).
+    \vskip0.1in \noindent
+    Рассмотрим вершины выпуклой оболочки, заметим, что в $(0, \ldots, 0)$ значение $\sum_i c_i x_i$ равно $0$, а в остальных вершинах, имеющих координаты $(0, \ldots, 0, \frac{b}{a_i}, 0, \ldots, 0)$, значения соответственно будут равны $b\frac{c_i}{a_i}$, то есть максимум будет достиагаться при максимальном значении $\frac{c_i}{a_i}$, а если максимальных значений $\frac{c_i}{a_i}$ несколько, то максимум будет достигаться на выпуклой оболочке вершин, соответствующих максимальным значениям $\frac{c_i}{a_i}$.
+    \vskip0.1in \noindent
+    Теперь докажем, что если все $b \frac{c_i}{a_i}$ различны, то максимум ровно один. Заметим, что помимо вершины, соответствующей максимальному значению $\frac{c_i}{a_i}$, вершины не содержат максимума, а следовательно, если максимум не один, то точки максимума, отличные от данной вершины, находятся в какой-то из $2+$-мерных граней данной выпуклой оболочки. Рассмотрим какую-то грань, которой принадлежит данный максимум, рассмотрим $1$-мерные грани данной грани, заметим, что по утверждению выше, либо в какой-то из вершин есть значение больше (что противоречит предположению, что рассматриваемая точка -- максимум), либо есть вершина с таким же значением, и тогда на оси, их соединяющей, все значения равны максимуму, однако эта ось еще в какой-то точке пересекает выпуклую оболочку, и, если рассмореть грань, в которой она её пересекает, то для её вершин можно провести аналогичное рассуждение, однако тогда мы найдем 2 вершины, чьи значения равны максимуму, а такого быть не может при различных $\frac{c_i}{a_i}$.
+\end{proof}
+\vskip 0.6in
+
+
+
+
+\begin{prob}
+    Сформулируйте двойственную задачу к задаче 1 и решите её
+\end{prob}
+
+\begin{proof}
+    \begin{gather*}
+        \begin{cases}
+            2x - 6y \to \max\\
+            x + y + z \geqslant 2\\
+            2x - y + z \leqslant 1\\
+            x,y,z \geqslant 0
+        \end{cases}
+        \Rightarrow
+        \begin{cases}
+            -2a + b \to \min\\
+            -a + 2b \geqslant 2\\
+            -a - b \geqslant -6\\
+            -a + b \geqslant 0\\
+            a \geqslant 0\\
+            b \geqslant 0
+        \end{cases}\\
+        \Rightarrow
+        \begin{cases}
+            -2a + b \leqslant m\\
+            -a + 2b \geqslant 2\\
+            -a - b \geqslant -6\\
+            -a + b \geqslant 0\\
+            a \geqslant 0\\
+            b \geqslant 0
+        \end{cases}
+        \Rightarrow
+        \begin{cases}
+            b \leqslant m + 2a\\
+            b \geqslant 1 + \frac{1}{2}a\\
+            b \leqslant 6 - a\\
+            b \geqslant a\\
+            a \geqslant 0\\
+            b \geqslant 0
+        \end{cases}
+        \Rightarrow
+        \begin{cases}
+            m + 2a \geqslant 1 + \frac{1}{2}a\\
+            m + 2a \geqslant a\\
+            m + 2a \geqslant 0\\
+            6 - a \geqslant 1 + \frac{1}{2}a\\
+            6 - a \geqslant a\\
+            6 - a \geqslant 0\\
+            a \geqslant 0
+        \end{cases}
+        \Rightarrow
+        \begin{cases}
+            2m + 3a \geqslant 2\\
+            m + a \geqslant 0\\
+            m + 2a \geqslant 0\\
+            10 - 3a \geqslant 0\\
+            6 - 2a \geqslant 0\\
+            6 - a \geqslant 0\\
+            a \geqslant 0
+        \end{cases}\\
+        \Rightarrow
+        \begin{cases}
+            a \geqslant \frac{2}{3} - \frac{2}{3}m\\
+            a \geqslant -m\\
+            a \geqslant -\frac{1}{2}m\\
+            a \leqslant \frac{10}{3}\\
+            a \leqslant 3\\
+            a \leqslant 6\\
+            a \geqslant 0
+        \end{cases}
+        \Rightarrow
+        \begin{cases}
+            a \geqslant \frac{2}{3} - \frac{2}{3}m\\
+            a \geqslant -m\\
+            a \geqslant -\frac{1}{2}m\\
+            a \leqslant 3\\
+            a \geqslant 0
+        \end{cases}
+        \Rightarrow
+        \begin{cases}
+            3 \geqslant \frac{2}{3} - \frac{2}{3}m\\
+            3 \geqslant -m\\
+            3 \geqslant -\frac{1}{2}m
+        \end{cases}
+        \Rightarrow
+        \begin{cases}
+            -7 \leqslant 2m\\
+            -3 \leqslant m\\
+            -6 \leqslant m
+        \end{cases}
+        \Rightarrow
+        -3 \leqslant m
+    \end{gather*}
+    Значение достигается при $a = 3, b = 3$
+\end{proof}
