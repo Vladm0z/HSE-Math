@@ -1,0 +1,9 @@
+\babel@toc {russian}{}
+\contentsline {section}{\numberline {1}Евклидова геометрия}{3}{section.1}%
+\contentsline {section}{\numberline {2}Линейные отображения евклидовых пространств}{4}{section.2}%
+\contentsline {section}{\numberline {3}Выпуклые фигуры}{5}{section.3}%
+\contentsline {section}{\numberline {4}Билинейные и квадратичные формы}{6}{section.4}%
+\contentsline {section}{\numberline {5}Проективная геометрия}{7}{section.5}%
+\contentsline {section}{\numberline {6}Проективные квадрики}{8}{section.6}%
+\contentsline {section}{\numberline {7}Коники}{9}{section.7}%
+\contentsline {section}{\numberline {8}Квадрики в $\mathbb {R}^{n}$}{12}{section.8}%
