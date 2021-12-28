@@ -1,0 +1,129 @@
+\section{Лист 2}
+    \begin{prob}
+        Дана случайная величина $\xi \in \mathbb{R}$. Предъявите функцию $G: \mathbb{R} \mapsto \mathbb{R}$, такую что случайная величина $G(\eta)$, где $\eta$ имеет равномерное распределение на отрезке $[0,1]$, имеет такое же распределение как и $\xi$.
+    \end{prob}
+    \begin{proof}
+        Пусть случайная величина $\xi$ имеет функцию распределения $F$\\
+        Определим функцию $F^{-}: [0,1] \to \mathbb{R}$
+        \begin{gather*}
+            F^{-} (y) := \inf \{x: F(x) \geqslant y\}, y \in [0,1]
+        \end{gather*}
+        Покажем, что сучайная величина $X = F^{-}(\eta)$, где $\eta$ имеет равномерное распределение на $[0,1]$, имеет то же распредление, что и $\eta$, то есть
+        \begin{gather*}
+            \mathbb{P} (X \leqslant x) = F(x),\quad x \in \mathbb{R}
+        \end{gather*}
+        Рассмотрим случай, когда $x > y \Rightarrow F(x) > F(y)$ (то есть $F$ обратима). Заметим, что в этом случае $F^{-} = F^{-1}$. Нам нужно показать, что $\mathbb{P}(F^{-1}(\eta) \leqslant x) = F(x),\ x \in \mathbb{R}$
+        \begin{gather*}
+            \{F^{-1}(\eta) \leqslant x\} = \{\eta \leqslant F(x)\}\\
+            F^{-1} (\eta) \leqslant x \Rightarrow F(F^{-1}(\eta)) \leqslant F(x) \Rightarrow \eta \leqslant F(x)\\
+            \eta \leqslant F(x) \Rightarrow F^{-1}(\eta) \leqslant F^{-1}(F(x)) = x
+        \end{gather*}
+        Следовательно $\mathbb{P}(F^{-1} (\eta) \leqslant x) = \mathbb{P}(\eta \leqslant F(x)) = F(x)$
+        \vskip 0.2in
+        Рассмотрим случай, когда $F$ -- произвольное распределение
+        Покажем, что $\{\eta \leqslant F(x)\} \subseteq \{F^{-}(\eta) \leqslant x\} \subseteq \{\eta \leqslant F(x)\}$, то есть $\{\eta \leqslant F(x)\} = \{F^{-} (\eta) \leqslant x\}$\\
+        так как $F^{-}$ не убывает, то $\eta \leqslant F(x) \to F^{-}(\eta) \leqslant F^{-}(F(x))$
+        \begin{gather*}
+            F^{-}(F(x)) - \inf \{x_{0}: F(x_0) \geqslant F(x)\}\\
+            x \in \{x_{0}: F(x_{0}) \geqslant F(x)\} \Rightarrow \inf \{x_{0}: F(x_{0}) \geqslant F(x)\} \leqslant x \Rightarrow
+            F^{-}(F(x)) \leqslant x
+        \end{gather*}
+        Следовательно $F^{-}(\eta) \leqslant x \Rightarrow \{\eta \leqslant F(x)\} \subseteq \{F^{-}(\eta) \leqslant x\}$
+        Так как $F$ монотонна и не убывает, то $F^{-}(\eta) \leqslant x \Rightarrow F(F^{-}(\eta)) \leqslant F(x)$
+        Покажем, что $F(F^{-}(y)) \geqslant y$ при $F^{-}(y) < \infty$
+        \begin{gather*}
+            F^{-}(y) < \infty
+            \Rightarrow
+            A = \{x \in \mathbb{R}|\ F(x) \geqslant y\} \ne \emptyset
+        \end{gather*}
+        То есть существует последовательность $(x_n)_{n \in \mathbb{N}} \subseteq A:\ x_n \downarrow \inf A = T^{-}(y)\ n \to \infty$
+        Так как $F$ -- функция распределения случайной величины, то $F$ непрерывна справа, откуда $F(x_n)$ убывает к $F(F^{-}(y))$ при $n \to \infty$, то есть $F(F^{-}(y)) > y$.
+        Следовательно
+        \begin{gather*}
+            F(F^{-}(\eta)) \geqslant \eta
+            \Rightarrow
+            \eta \leqslant F(x)
+            \Rightarrow
+            \{F^{-}(\eta) \leqslant x\} \subseteq \{\eta \leqslant F(x)\}
+        \end{gather*}
+        Таким образом, $\{F^{-}(\eta) \leqslant x\} = \{\eta \leqslant F(x)\}$
+        Получается, что опять
+        $\mathbb{P}(F^{-}(\eta) \leqslant x) = \mathbb{P}(\eta \leqslant F(x)) = F(x)$
+        Значит функция $G$, котрую нужно было найти в задаче, равна $F^{-}$
+    \end{proof}
+\vskip 0.6in
+
+
+
+    \begin{prob}
+        Имеется случайная величина, равномерно распределенная на $[0,1]$, и симметричная монетка. Как с их помощью построить случайную величину с плотностью распределения
+        \begin{gather*}
+            \rho(x)=\left(3(x-1 / 2)^{2}+\frac{9}{8}|1-2 x|^{1 / 2}\right), \quad x \in[0,1] ?
+        \end{gather*}
+    \end{prob}
+    \begin{proof}
+    \end{proof}
+\vskip 0.6in
+
+
+
+    \begin{prob}
+        Пусть $\xi_{1}, \xi_{2}, \ldots-$ независимые одинаково распределенные случайные величины, $\mathbb{E}\left|\xi_{1}\right|<\infty$, и $S_{k}=$ $\sum_{i=1}^{k} \xi_{i}$, а $M_{k}=\max \left(0, S_{1}, \ldots, S_{k}\right), k \geq 1 .$ Покажите, что для любого $n$
+        \begin{gather*}
+            \mathbb{E} M_{n}=\sum_{k=1}^{n} \frac{\mathbb{E} S_{k}^{+}}{k}
+        \end{gather*}
+        где $S_{k}^{+}=\max \left(0, S_{k}\right)$
+    \end{prob}
+    \begin{proof}
+    \end{proof}
+\vskip 0.6in
+
+
+
+    \begin{prob}
+        Пусть $\varphi(n)-$ функция Эйлера, равная количеству простых чисел $p$, таких что $1<p \leq n$. Докажите формулу Эйлера, используя вероятностные соображения:
+        \begin{gather*}
+            \varphi(n)=\prod_{p \mid n}\left(1-\frac{1}{p}\right)
+        \end{gather*}
+        где произведение берется по всем простым числам $p$, делящим $n$.
+    \end{prob}
+    \begin{proof}
+        Рассмотрим дискретное распределение на множестве $\{1, \ldots, n\}$
+        \begin{gather*}
+            \mathbb{P}(x = k) = \frac{1}{n}
+        \end{gather*}
+        Пусть $n = p_{1}^{\alpha_{1}} \cdot \ldots \cdot p_{m}^{\alpha_{m}}$ -- разложение $n$.
+        \begin{gather*}
+            A_{p_{i}} := \{X \text{ делится на } p_{i}\}\\
+            P(A_{p_{i}}) = \frac{\text{число элементов $\mathbb{Z}_{n}$, кратных $p_{i}$}}{n}
+            = \frac{\frac{n}{p_{i}}}{n}
+            = \frac{1}{p_{i}}
+        \end{gather*}
+        Покажем, что события $A_{p_{1}}, \ldots, A_{p_{m}}$ независимы\\
+        Возьмем $I = \{i_{1}, \ldots, i_{s}\} \subset \{1, 2, \ldots, m\}$
+        \begin{gather*}
+            P(\bigcap\limits_{I} A_{p_{i}})
+            = P(A_{\cap_{I} p_{i}})
+            = \frac{\text{число элементов } \mathbb{Z}_{n} \text{, кратных } \prod_{I} p_{i}}{n}
+            = \frac{\frac{n}{\prod_{I} p_{i}}}{n}
+            = \prod_{I} p i^{-1}
+            = \prod_{i \in I} P(A_{p_{i}})\\
+            \Rightarrow A_{p_{1}, \ldots, p_{m}} \text{ независимы}
+        \end{gather*}
+        Число взаимно просто с $n \Leftrightarrow$ это число не делится на $p_{i},\ 1 \leqslant i \leqslant m$
+        \begin{gather*}
+            P(\bigcap\limits_{i = 1}^{m} A_{p_{i}}^{c})
+            = \prod\limits_{i = 1}^{m} P (A_{p_{i}}^{c})
+            = \prod\limits_{i = 1}^{m} (1 - \frac{1}{p_{i}})
+        \end{gather*}
+        Заметим теперь, что $P(X \text{ взаимнопросто с } n) = \frac{\varphi (n)}{n}$, таким образом $\frac{\varphi (n)}{n} = \prod\limits_{p|n}(1 - \frac{1}{p})$
+    \end{proof}
+\vskip 0.6in
+
+
+
+    \begin{prob}
+        Случайные точки $A_{1}=\left(\xi_{1}, \eta_{1}\right), A_{2}=\left(\xi_{2}, \eta_{2}\right), A_{3}=\left(\xi_{3}, \eta_{3}\right)$ независимы и нормально распределены на плоскости с нулевым математическим ожиданием и единичной матрицей ковариаций. Найдите вероятность того, что треугольник $A_{1} A_{2} A_{3}$ будет тупоугольным.
+    \end{prob}
+    \begin{proof}
+    \end{proof}
