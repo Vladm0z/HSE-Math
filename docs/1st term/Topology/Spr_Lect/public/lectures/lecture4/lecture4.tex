@@ -1,0 +1,179 @@
+\documentclass[../../main.tex]{subfiles}
+ 
+\begin{document}
+
+\section{Лекция 4. 13 ноября 2019 г.}
+\vspace{10pt}
+
+{\large Предельные и изолированные точки, внутренность и граница множества; примеры. Плотные множества и сепарабельные пространства. Первая и вторая аксиомы счетности. Описание замыкания через последовательности в пространствах с первой аксиомой счетности. Непрерывные отображения топологических пространств.}
+
+\vspace{10pt}
+
+$X$ — топологическое пространство, $A \subset X$
+
+\textbf{Определение.} \textit{Внутренность} $A$ — это $\Int\left( A\right) = \bigcup \left\{ V \subseteq X \colon V откр, V \subset A  \right\}$
+
+\textit{Наблюдение:} 
+
+(1) $\Int A$ — наиболее открытое множество, содержащееся в $A$. В частности: $A$ откр $\lra A = \Int A$.
+
+(2) Если $\left(X, \ro \right)$ — метрическое пространство, то $x \in \Int A \lra \ex \eps > 0 \colon B_{\eps}(x) \subset A$
+
+\textit{Упражнение.} $\Int A = X \backslash \overline{X \backslash A}; \; \overline{A} = X \backslash \Int(X \backslash A)$
+
+
+$$\boxed{\Int A \subset A \subset \overline{A}}$$
+
+\defn \textit{Граница} $A$ — это $\delta A = \overline{A} \backslash \Int(A)$
+
+\textit{Наблюдение.} $x \in \delta A \lra \fo$ окрестности $U \ni x \; U \cap A \neq \varnothing$ и $U \cap ( x \backslash A ) \neq \varnothing$
+
+\textbf{Пример 1.} $x = \R, A = \Z \Ra \overline{A} - \Z, \; \Int A = \varnothing$
+
+$\delta A = A = \Z$, все точки $A$ изолированные, $\overline{A'} = \varnothing$
+
+\textbf{Пример 2.} $X = \R, A = (0, 1) \lra \overline{A} = [0;\; 1], \Int A = A = (0,\; 1), \delta A = \{0, 1\}$.
+
+\begin{minipage}{0.3\linewidth}
+(картинка с прямой)
+\end{minipage}
+\begin{minipage}{0.7\linewidth}
+Изолированных точек нет, $A' = [0, 1]$
+\end{minipage}
+
+
+
+\textbf{Пример 3.} $X = \R, A = \left\{ \frac 1 n \colon n \in \N \right\} \cup \{ 0 \} \Ra \overline{A} = A \; (\text{(т.к. } \R \backslash A = (-\infty;\; 0) \cup (1;\: +\infty) \cup \left( \bigcup\limits_{n = 1}^{\infty} \left( \frac{1}{n + 1}, \frac 1 n \right) \right) — \text{открытое}) $,
+
+\begin{minipage}{0.3\linewidth}
+(картинка с прямой)
+\end{minipage}
+\begin{minipage}{0.7\linewidth}
+$\Int A = \varnothing, \; \delta A = A$
+$\left\{ \text{изолированные точки } A \right\} = \left\{ \frac 1 n \colon n \in \N \right\}; \;\; \{ 0 \} = A'$
+\end{minipage}
+
+$X$ — топологическое пространство.
+
+\defn Множество $A \subset X$ \textit{плотно} в $X$ (\textit{всюду плотно} в $X$) $\lra \overline{A} = X$
+
+\textit{Наблюдение.} $A$ плотно в $X \lra \fo x \in X \fo$ окрестности $U \ni x \;\; U \cap A \neq \varnothing$
+
+$A$ плотно в $X \lra \fo $ непустого открытого $U \subset X \;\; U \cap A \neq \varnothing$
+
+\defn $X$ \textit{сепарабельно} $\lra$ существует не более чем счетное плотное подмножество в $X$
+
+\textbf{Пример 1.} Дискретное пространство сепарабельно $\lra$ оно само не более чем счетно
+
+\textbf{Пример 2.} Антидискретное пространство сепарабельно (каждое непустое подмножество плотно)
+
+\textbf{Пример 3.} $\R$ сепарабельно (т.к. $\Q$ плотно в $\R$)
+
+\textbf{Пример-упражнение 4.} $\R^n, \mathbb{C}^n, l^1, l^2$ сепарабельны, $l^{\infty}$ несепарабельно.
+
+\subsection{Аксиомы счетности}
+
+$X$ — топологическое пространство
+
+\defn (1) $X$ удовлетворяет \textit{1-ой аксиоме счетности} $\lra \fo x \in X$ существует не более чем счетная база окрестностей $x$.
+
+(2) $X$ удовлетворяет \textit{2-ой аксиоме счетности} (является пространством \textit{со счётной базой}) $\lra$ существует не более чем счетная база топологии на $X$.
+
+\textbf{Предложение.} $X$ удовлетворяет 2-ой аксиоме счетности $\Ra X$ удовлетворяет 1-ой аксиоме счетности
+
+\textit{Доказательство:} Пусть $\beta$ — не более чем счетная база топологии на $X$.
+
+$x \in X; \;$ тогда $\left\{ U \in \beta \colon U \ni x \right\}$ — база окрестностей $x \quad \square$
+
+\textbf{Пример 1.} $X$ метризуемо $\lra X$ удовлетворяет 1-ой аксиоме счетности.
+
+Действительно, $\fo x \in X \quad \left\{ B_{\frac 1 n}(x) \colon n \in \N \right\}$ — база окрестностей $x$.
+
+\textbf{Пример 2.} Дискретное пространство $X$ удовлетворяет 1-ой аксиоме счетности.
+
+Оно удовлетворяет 2-ой аксиоме счетности $\lra$ оно не более чем счетно.
+
+\textbf{Пример 3.} $\R$ удовлетворяет 2-ой аксиоме счетности.
+
+А именно, $\left\{ (a, b) \colon a < b, a, b \in \Q \right\}$ — база $\R$.
+
+Действительно, $\fo c, d \in \R, c < d$,
+ выполнено $(c, d) = \bigcup\left\{ (a, b) \colon a, b \in \Q, c < a < b < d \right\}$ — в силу плотности $\Q$ в $\R$.
+
+\defn Семейство $\beta(x)$ окрестностей точки $x \in X$ — \textit{база окрестностей} $x \lra$ для любой окрестности $U \ni x,\;\; V \subset U$. 
+
+\textbf{Предложение:} Топологическое пространство со счетной базой сепарабельно.
+
+\textit{Доказательство:} $\left\{U_n \colon n \in \N \right\}$ — счетная база в $X$,
+
+$U_n \neq 0 \fo n$
+
+$\fo n \in \N$ выберем $x_n \in U_n \Ra \left\{ x_n \colon n \in \N \right\}$ плотно в $X \quad \square$
+
+\textit{Упражнение:} Для метризуемых пространств: счетная база $\lra$ сепарабельность.
+
+В частности: $\R^n, \mathbb{C}^n, l^1, l^2$, — со счетной базой.
+
+\textbf{Лемма:} Пусть $X$ — топологическое пространство, удовлетворяющее 1-ой аксиоме счетности.
+
+Тогда $\fo x \in X$ существует база окрестностей $\left\{ U_n \colon n \in \N \right\}$ точки $x$, такая что $U_n \supset U_{n+1} \fo n$.
+
+\textit{Доказательство:} Пусть $\left\{ V_n \colon n \in \N \right\}$ — база окрестностей $x$; обозначим $U_n = V_1 \cap \ldots \cap V_n \Ra \left \{ \right \}$ — искомая. $\quad\square$
+
+\textbf{Предложение.} $X$ — топологическое пространство, $A \subset X, \; x \in X$
+
+(1) Если существует последовательность $(x_n)$ такая, что $x_n \to x \Ra x \in \overline{A}$,
+
+(2) Если $X$ удовлетворяет 1-ой аксиоме счетности, то верно и обратное.
+
+\textit{Доказательство:} $(1) \Ra (2)$ Пусть $U$ — окрестность $x \Ra \ex n \in \N \colon x_n \in U \Ra U \cap A \neq \varnothing \Ra x \in \overline{A}$.
+
+$(2) \Ra (1)$ Пусть $x \in \overline{A}$, и пусть $\left\{ U_n \colon n \in \N \right\}$ — база окрестностей $x$ такая, что $U_{n+1} \subset U_n \fo n$.
+
+Выберем любую последовательность $x_n \in U_n \cap A$. Покажем, что $x_n \to x$.
+
+Пусть $U$ — окрестность точки $x$. Тогда $\ex N \in \N$, т.ч. $U_n \subset U \Ra \fo n \geq N \;\; x_n \in U_n \subset U_N \subset U \Ra x_n \to x \quad \square$.
+
+
+\subsection{Непрерывные отображения}
+
+\defn $X, Y$ — топологические пространства, $f \colon X \to Y, \; x \in X$
+
+$f$ — \textit{непрерывно в $x$} $\lra \fo$ окрестности $V \ni f(x) \; \ex$ окрестность $U \ni x \colon f(U) \subset V$
+
+$f$ — \textit{непрерывно в $x$} $\lra$ оно непрерывно в каждой точке $x \in X$.
+
+\textbf{Предложение.} Пусть $f \colon X \to Y$ — отображение топологических пространств, $x \in X, y = f(x)$
+
+$\beta_x$ — база окрестностей $x$, $\sigma_y$ — предбаза окрестностей $y$.
+
+Тогда: $f$ непрерывно в $x \lra \fo V \in \sigma_y \; \ex U \in \beta_x \colon f(U) \subset V$.
+
+\textit{Доказательство:} $(\Ra) \fo V \in \sigma_y \; \ex$ окрестность $W$ такая, что $f(W) \subset V$; $\ex U \in \beta_x \colon U \subset W \Ra f(U) \subset V$.
+
+$(\Leftrightarrow)$ Пусть $V$ — окрестность $y  \ex V_1, V_2, \ldots, V_p \in \sigma_y$ т.ч. $V_1 \cap \ldots \cap V_p = W$
+
+$\fo i = 1, \ldots, p \; \ex U_i \subset \beta_x$, т.ч. $f(U_i) \subset V_i \Ra f(U_1 \cap \ldots \cap U_p) \subset V \quad \square$.
+
+\textit{Следствие:} $(X, \ro_x), (Y, \ro_y)$ — метрические пространства $x \in X$
+
+Отображение $f \colon X \to Y$ непрерывно в $x \lra \fo \eps > 0 \; \ex \delta$ такая, что $\fo x \in X$, удовлетворяющий $\ro_X(x, x') < \eps$ выполняется $\ro_Y(f(x), f(x')) < \eps$.
+
+\textit{Доказательство:} применить предл. к базам окрестностей $x$ и $f(x)$, состоящим из открытых шаров с центрами $x$ и $y$.
+
+\begin{theo}[]{thm:top_otobr}
+
+$X, Y$ — топологические пространства, $f \colon X \to Y$ отображение. Следующие утверждения эквивалентны:
+
+(1) $f$ непрерывно
+
+(2) для любой окрестности $V \subset Y \; f^{-1}(V)$ — открыто в $X$
+
+(3) для любого замкнутого $B \subset Y \; f^{-1}(B)$ замкнуто в $X$
+
+(4) для любого $A \subset X \;\; f(\overline{A}) \subset \overline{f(A)}$.
+
+\end{theo}
+
+
+\end{document}

@@ -1,0 +1,93 @@
+\documentclass[../../main.tex]{subfiles}
+ 
+\begin{document}
+
+\section{Лекция 10. 11 декабря 2019 г.}
+
+\subsection{Основные свойства компактных пространств.}
+\textbf{Напоминание.}\\
+Пусть $X$ - метрическое пространство, $A\subset X$. \textbf{\textit{Диаметр}} множества $A$ - число (возможно $\infty$) $diam\;A := \sup\{\ro(x,\; y)\; |\; x,\;y \in X\}$.\\
+Множество $A$ - \textbf{\textit{ограничено}}, если $diam \;A\; <\;\infty$.
+
+\textbf{Предложение.} $A$ - ограниченное множество $\leftrightarrow\; A$ содержится в некотором шаре.\\
+\textit{Доказательство:}\\
+$\Leftarrow:\; A\subset B_r(x)\; \Rightarrow \;diam\;A \leq\; 2r \;<\; \infty$.\\
+$\Rightarrow:\; A\subset B_{diam\;A}(x),\; x\in A.\;\square$
+
+\begin{theo}[(Основные свойства компактных пространств)]{thm:cv_comp_pr}
+(1) $f:\;X\rightarrow Y$ - непрерывное отображение, $X$ - компактно $\Rightarrow\; f(X)$ - компактно.\\
+(2) $X$ - компактно, $Y\subset X$ - замкнуто $\Rightarrow\; Y$ - компактно.\\
+(3) $X$ - хаусдорфово, $A,\;B\subset X$ -  компактны, $A\cap B = \varnothing\; \Rightarrow\; \exists \text{ открытые множества } U,\; V \subset X: U\supset A,\; V\supset B,\; U\cap V = \varnothing$.\\
+(4) $X$ - хаусдорфово, $Y\subset X$ - компакт $\Rightarrow\; Y$ замкнуто в $X$.\\
+(5) $X$ - метрическое пространство, $Y\subset X$ - компакт $\Rightarrow\; Y$ - ограничено.\\
+(6) $X$ - компакт, $Y$ - хаусдофово, $f:\;X\rightarrow Y$ - непрерывно $\Rightarrow\; f$ - замкнуто.\\
+(7) $X$ - компакт, $Y$ - хаусдофово, $f:\;X\rightarrow Y$ непрерывная биекция $\Rightarrow\; f$ - гомеоморфизм.
+\end{theo}
+\textbf{Доказательство:}\\
+(1): Можем считать $f(X)=Y$. Пусть $U\subset 2^Y$ - открытое покрытие $Y\; \Rightarrow\; \{f^{-1}(V)\; | \; V \in U\}$ - открытое покрытие $X$ в силу непрерывности $f\;\Rightarrow\; \exists\; V_1,\; \ldots ,\; V_n\in U:\; \bigcup\limits_{i=1}^n f^{-1}(V_i) = X\; \Rightarrow\; \bigcup\limits_{i=1}^n V_i = Y\;\Rightarrow {V_1,\; \ldots ,\; V_n}$ - Конечное подпокрытие $Y$.\\
+(2): Пусть $\{U_i\}_{i\in I}$ -  покрытие $Y$ множествами, открытыми в $X$, тогда $\{U_i\}_{i\in I}\cup \{X\backslash Y\}$ -  открытое покрытие $X$, значит $\exists\; V_1,\; \ldots ,\;V_n\in \{U_i\}_{i\in I}\cup \{X\backslash Y\}$ - конечное подпокрытие $X$. Если $X\backslash Y = V_i$, то $V_1,\; \ldots ,\;V_{i-1},\;V_{i+1},\; \ldots ,\;V_n$ - конечное подпокрытие $Y$.\\
+(3): Зафиксируем $x\in A$. $\fo\; y\in B\; \exists\; U_{xy}\ni x,\; V_{xy}\ni Y:\; U_{xy}\cap V_{xy} = \varnothing$, значит $\{V_{xy}\}$ - покрытие $B\; \Rightarrow\; B\subset V_{xy_1}\cup\; \ldots \;\cup V_{xy_n}=V_x$ - открытое множество. Обозначим $U_x = U_{xy_1}\cap\; \ldots \;\cap U_{xy_n}$ - открытое множество, $U_x \ni x,\; V_x\supset B,\; U_x\cap V_x = \varnothing$. Теперь $\{U_x\; |\; x\in A\}$ - открытое покрытие $A\; \Rightarrow\;\exists\; \{U_{x_1},\; \ldots ,\;U_{x_n}\}$ - конечное подпокрытие $A$. Положим $U= \bigcup\limits_{i=1}^n U_{x_i},\; V = \bigcap\limits_{i=1}^n V_{x_i}$ - открытые монжества, $U\supset A,\; V\supset B,$ $ U\cap V =U\cap (\bigcap\limits_{i=1}^n V_{x_i})=\bigcap\limits_{i=1}^n(U\cap V_{x_i})=  \bigcup\limits_{i=1}^n(U_{x_i}\bigcap\limits_{j=1}^n(V_{x_j})) =\varnothing$, так как $U_{x_i}\bigcap\limits_{j=1}^n(V_{x_j})\subset U_{x_i}\cap V_{x_i} = \varnothing$.\\
+(4): Пусть $x\in X\backslash Y$. $\{x\},\; Y$ - компакты, тогда по (3) $\exists\; U\ni x, V\supset Y:\; u\cap V=\varnothing\; \Rightarrow \; U\cap Y = \varnothing\;\Rightarrow\; x\notin \overline Y\; \Rightarrow\; Y=\overline Y$.\\
+(5): Рассмотрим открытые шары $\{B_r(x)\; | \; r\in\R\}$, где $x\in X$ - некоторая точка. Заметим, что $Y\subset X = \bigcup\limits_r B_r(x)\; \exists\; r_1,\; \ldots ,\; r_n:\; Y\subset B_{r_1}(x)\cup\; \ldots \;\cup B_{r_n}(x) = B_r(x)$, где $r = \max\{r_1,\; \ldots ,\; r_n\}$.\\
+(6): Пусть $B\subset X$ - замкнуто $\Rightarrow\; B$ - компактно в $X\;\Rightarrow\; f(B)$ - компактно в хаусдорфовом $Y\;\Rightarrow\; f(B)$ - замкнуто.\\
+(7): Частный случай (6). $\square$
+
+\subsection{Некоторые свойства центрированных множеств.}
+$X$ - множество\\
+\defn Семейство $\mathcal{F}\subset 2^X$ называется \textbf{\textit{центрированным}}, если для любого конечного $\mathcal{F}_0\subset \mathcal{F}\; \Rightarrow\; \bigcap \mathcal{F}_0\neq \varnothing$. 
+
+\textbf{Предложение 1.} $X$ - компактно $\Leftrightarrow \; \fo$ центрированного семейства $\mathcal{F}$ замкнутых множеств $\bigcap\mathcal{F} \neq \varnothing$.\\
+\textit{Доказательство:} было ранее. $\square$
+
+\textbf{Предложение 2.} $X$ - компактно $\Leftrightarrow \; \fo$ центрированного семейства $\mathcal{F}$ множеств $\bigcap\{\overline F\; | \; F \in \mathcal{F}\} \neq \varnothing$.\\
+\textit{Локазательство:}\\
+$\Leftarrow$: из предложения (1).\\
+$\Rightarrow$: семейство $\{\overline F\; | \; F \in \mathcal{F}\}$ - центрированное, далее смотреть предложение (1). $\square$
+
+\textbf{Лемма.} $X,\; Y$ - множества, $\mathcal F \subset 2^X$ - центрированное семейтсво.
+
+(1) $f:\; X\rightarrow Y$ - отображение $\Rightarrow\; \{f(A)\; | \; A \in \mathcal{F}\}$ - центрированное семейство.
+
+(2) Существует максимальное по включению центрированное семейство $\mathcal F_{\text{max}}\supset\mathcal F$.
+
+(3) Если $\mathcal F$ - максимальное центрированное множество, то $\fo\; A_1,\;  \ldots ,\; A_n \in \mathcal F$ выполнено $A_1\cap\; \ldots \;\cap A_n \in \mathcal F$.\\
+\textit{Доказательство:}\\
+(1): $\fo A_1,\;  \ldots ,\; A_n \in \mathcal F\; \Rightarrow\; \bigcap\limits_{i=1}^n g(A_i)\supset g(\bigcap\limits_{i=1}^n A_i)\neq \varnothing$.\\
+(2): Обозначим $\Gamma = \{\xi\subset2^X\; |\; \xi\text{ - центрированное семейство}\}$.\\
+Пусть $A\subset\Gamma$ - линейно упорядоченное по вложению подмножество.\\
+Обозначим $\mathcal H =\bigcup \{\xi\; | \; \xi\in A\}$. Покажем, что $\mathcal H$ центрированное семейство.\\
+Действительно, пусть $ H_1,\;  \ldots ,\; H_n\in \mathcal H\;\Rightarrow\; \fo i = 1,\; \ldots ,\;n\;\;\; H_i \in \xi_i$, где $ \xi_i\in A\; \exists\; k:\; \xi_k \supset \xi_i\; \fo\; i \;\Rightarrow\; H_1,\; \ldots ,\;H_n\in \xi_k\;\Rightarrow\;$ $\mathcal H\text{ - центрированное}$.\\
+Значит $\mathcal H\in\Gamma,\; \mathcal H \ni \xi\; \fo\; \xi \supset A$, то есть максимальное $\Rightarrow\; \Gamma$ удовлетворяет условиям леммы Цорна.\\
+Тогда  по лемме существует максимальный элемент $\mathcal F_{max}\in\Gamma$.\\
+(3): Семейство $\{A_1\cap\; \ldots \;\cap A_n\}\cup\mathcal F$ центрировано и содержит максимальный $\mathcal F\; \Rightarrow\;$ эти множества совпадают. $\square$
+
+\subsection{Теорема Тихонова.}
+
+\begin{theo}[(Тихонова)]{thm:tichonov}
+
+$(X_i)_{i\in I}$ - семейство компактных пространств $\Rightarrow\; X=\prod\limits_{i\in I} X_i$ компактно.
+
+\end{theo}
+textit{Доказательство:}
+
+Пусть $\mathcal F\subset 2^X$ - центрированное семейство. Из леммы (2) следует, что найдется максимальное $\mathcal F_{max}\supset\mathcal F$. Достаточно доказать, что $\bigcap \{\overline A\; | \; A \in \mathcal F_{max}\}\neq\varnothing$ (это множество содержится в пересечении замыканий элементов  из $\mathcal F$).\\
+$p_i\;:X\rightarrow X_i$ - канонические проекции. Семейство $\{p_i(A)\;|\; A \in \mathcal F_{max}\}\subset2^{X_i}$ является центрированным $\fo\;i$ (из леммы (1)) $\Rightarrow\;\exists\; x_i\in p_i(A)\; \fo \;; A \in \mathcal F_{max}$ (из предложения 2).\\
+Обозначим $x = (x_i)_{i\in I}\in X$. Пусть $U$ - базисная окрестность точки $x$ вида $U = \bigcap\limits_{i\in J} p_i(U_i)$, где $J\subset I$ конечно, $U_i \subset X_i$ открыты. Покажем, что $U\cap A \neq \varnothing\; \fo\; A\in \mathcal F$.\\
+Действительно, $\fo\; i\in J\; x_i\in U_i\;\Rightarrow\; U_i\cap p_i(A)\neq \varnothing\;\fo\; A\in \mathcal F_{max}\; \Rightarrow\; p_i^{-1}(U_i)\cap A\neq \varnothing\; \fo\; A\in \mathcal F$. Тогда по лемме (3) $\mathcal F_{max}\cup\{p_i^{-1}\}$ - центрированное $\Rightarrow\; p_i^{-1} \in \mathcal F_{max}\;\fo\; i\in J$ (в силу максимальности) $U\in\mathcal F_{max}\;\Rightarrow\;\fo\; A\in \mathcal F_{max}\; U\cap A\neq\varnothing$ $\Rightarrow\; \fo\;A\in \mathcal F_{max}\; x\in \overline A$, то есть $x\in \bigcap \{\overline A\; | \; A\in\mathcal F_{max}\}$, что равносильно компактности. $\square$
+
+\textit{Следствие:} подмножество $X\subset\R^n$ компактно тогда и только тогда, когда оно замкнуто и ограничено в евклидовой метрике.\\
+\textit{Доказательство:}\\
+$\Rightarrow$: из свойств компактных пространств.\\
+$\Leftarrow$: $X$ ограничено $\Rightarrow\; X$ содержится в замкнутом кубе $C\subset\R^n,\;C$ компактно как произведение отрезков; $X$ замкнуто в $C\;\Rightarrow\;X$ компактно. $\square$
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,227 @@
+ \documentclass[]{book} 
+%These tell TeX which packages to use.
+\usepackage[utf8]{inputenc}
+\usepackage[T2B]{fontenc}
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{mathtext}
+\usepackage[english, russian] {babel}
+\usepackage{mathtools}
+\usepackage{rotating}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage{multicol}
+\usepackage{verbatim}
+\usepackage{eufrak}
+\usepackage{subfiles}
+\usepackage{subfigure}
+\usepackage{stackrel}
+\usepackage[arrow]{xy}
+\usepackage{units}
+\usetikzlibrary{babel,calc,arrows,shapes.geometric,intersections,through,backgrounds}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+
+\renewcommand{\thesection}{\arabic{section}}
+
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{amsthm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Theorem
+\newcounter{theo}[section] \setcounter{theo}{1}
+\renewcommand{\thetheo}{\arabic{section}.\arabic{theo}}
+\newenvironment{theo}[2][]{%
+\refstepcounter{theo}%
+\ifstrempty{#1}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=blue!20]
+{\strut Теорема};}}
+}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=blue!20]
+{\strut Теорема:~#1};}}%
+}%
+\mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+linewidth=2pt,topline=true,%
+frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+}
+\begin{mdframed}[]\relax%
+\label{#2}}{\end{mdframed}}
+
+\newcommand{\lra}{\Longleftrightarrow}
+\newcommand{\Lra}{\Longrightarrow}
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\renewcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\mB}{\mathfrak{B}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\wh}{\widehat}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\newcommand{\tgn}{\mathrm{tg}}
+\newcommand{\ro}{\rho}
+\newcommand{\ex}{\exists\:}
+\newcommand{\fo}{\forall\:}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\defn}{\textbf{Определение. }}
+\newcommand{\eps}{\varepsilon}
+
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\pt}{pt}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\fin}{fin}
+%\DeclareMathOperator{\i}{i}
+
+%Pagination stuff.
+%\setlength{\topmargin}{-.3 in}
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\textheight}{9.in}
+%\setlength{\textwidth}{7in}
+\pagestyle{plain}
+
+\usepackage[a4paper,%
+            left=1cm,right=1cm,top=1in,bottom=1cm]{geometry}
+
+\everymath{\displaystyle}
+
+\linespread{1.5}
+
+\usepackage[labelformat=empty]{caption}
+
+\begin{document}
+
+\begin{titlepage}
+	\centering
+	{\scshape\LARGE НИУ «Высшая школа экономики» \par}
+	\vspace{1cm}
+	{\scshape\Large Факультет математики\par}
+	\vspace{1.5cm}
+	{\huge\bfseries Введение в топологию\par}
+	\vspace{2cm}
+	{\Large\itshape лектор: Пирковский Алексей Юльевич\par}
+	\vfill
+
+% Bottom of the page
+	{\large 2019/2020 г.}
+\end{titlepage}
+
+\tableofcontents
+
+\newpage
+
+\graphicspath{{lectures/lecture1/}{pictures/}}
+
+\subfile{lectures/lecture1/lecture1.tex}
+
+\vspace{30pt}
+
+\graphicspath{{lectures/lecture2/}{pictures/}}
+
+\subfile{lectures/lecture2/lecture2.tex}
+
+\vspace{30pt}
+
+\graphicspath{{lectures/lecture3/}{pictures/}}
+
+\subfile{lectures/lecture3/lecture3.tex}
+
+\vspace{30pt}
+
+\graphicspath{{lectures/lecture4/}{pictures/}}
+
+\subfile{lectures/lecture4/lecture4.tex}
+
+\vspace{30pt}
+
+\graphicspath{{lectures/lecture5/}{pictures/}}
+
+\subfile{lectures/lecture5/lecture5.tex}
+
+\vspace{30pt}
+
+\graphicspath{{lectures/lecture6/}{pictures/}}
+
+\subfile{lectures/lecture6/lecture6.tex}
+
+\graphicspath{{lectures/lecture7/}{pictures/}}
+
+\subfile{lectures/lecture7/lecture7.tex}
+
+\graphicspath{{lectures/lecture8/}{pictures/}}
+
+\subfile{lectures/lecture8/lecture8.tex}
+
+\graphicspath{{lectures/lecture9/}{pictures/}}
+
+\subfile{lectures/lecture9/lecture9.tex}
+
+\graphicspath{{lectures/lecture_10/}{pictures/}}
+
+\subfile{lectures/lecture_10/lecture_10.tex}
+
+\graphicspath{{lectures/lecture_11}{pictures/}}
+
+\subfile{lectures/lecture_11/lecture_11.tex}
+
+\graphicspath{{lectures/lecture_12}{pictures/}}
+
+\subfile{lectures/lecture_12/lecture_12.tex}
+
+\graphicspath{{lectures/lecture_13}{pictures/}}
+
+\subfile{lectures/lecture_13/lecture_13.tex}
+
+\vspace{30pt}
+
+
+\end{document}
+
+

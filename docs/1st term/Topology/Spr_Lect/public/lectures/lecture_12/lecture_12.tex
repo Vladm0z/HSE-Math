@@ -1,0 +1,96 @@
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+
+\section{Лекция 12. 15 января 2020 г.}
+
+\subsection{Эквивалентные нормы.}
+
+$X$ - векторное пространство над $\K\; (\K = \R,\; \C)$. Пусть $||\cdot||',\;||\cdot||''$ - две нормы на $X,\; \tau',\;\tau''$ соответственно топологии, порожденные нормами на $X$.\\
+\defn Норма $||\cdot||'$ \textbf{\textit{мажорируется нормой}} $||\cdot||''\; (||\cdot||'\prec||\cdot||'')$, если $\tau' \subset \tau''$.\\
+\defn нормы \textbf{\textit{эквивалентны}} $(||\cdot||'\thicksim||\cdot||'')$, если $\tau' = \tau''$.
+
+\textbf{Предложение 1.} Следующие утверждения эквивалентны:
+
+(1) $||\cdot||'\prec ||\cdot||''$,
+
+(2) $\underset{\text{в }\tau''}{\lim\limits_{n\rightarrow \infty} x_n = x}\; \Rightarrow\; \underset{\text{в }\tau'}{\lim\limits_{n\rightarrow\infty} x_n = x}$,
+
+(3) $\exists\; c > 0:\; \fo\; x\in X \; ||x||'\leq c||x||''$.\\
+\textit{Доказательство:}\\
+(1) $\Leftrightarrow$ (2): (1) $\Leftrightarrow$ отображение $I:\; (X,\;\tau'')\rightarrow (X,\tau'),\; x\mapsto x$ непрерывно $\Leftrightarrow$ (так как метрическое пространство) оно секвенциально непрерывно $\Leftrightarrow$ (2).\\
+(3) $\Rightarrow$ (2): Пусть $x_n \rightarrow x$ в $\tau''$, то есть $||x - x_n||'' \rightarrow 0$, $||x - x_n||'\leq c||x - x_n||''\;\Rightarrow\; ||x - x_n||'$, то есть $x_n\rightarrow x$ в $\tau'$.\\
+(3) $\Leftarrow$ (2): Пусть (3) неверно, тогда $\fo\; n\in \N\;\exists\; x_n\in X:\; ||x_n||'>n^2||x_n||''$. Пусть $y_n = \frac{x_n}{n||x_n||''}$, $||y_n||''=\frac{||x_n||''}{n||x_n||''} = \frac 1n$, то есть $||y_n||''\rightarrow 0 \;\Leftrightarrow\; y_n\rightarrow 0$ в $\tau''$. $||y_n||' = \frac{||x_n||'}{n||x_n||''}>\frac{n^2||x_n||''}{n||x_n||''} = n$, то есть $y_n\nrightarrow 0$ $\square$
+
+\textit{Следствие:} $||\cdot||'\thicksim||\cdot||''\; \Leftrightarrow\; \exists c,\;C>0:\;\fo\; x\in X c||x||'\leq ||x||''\leq C||x||'$.
+
+\begin{theo}[]{thm:norm_eq}
+На конечномерном векторном пространстве любые две нормы эквивалентны.
+\end{theo}
+\textit{Доказательство:}\\
+Пусть $||\cdot||$ - какая-либо норма на $\K^n$. Покажем, что $||\cdot||\thicksim ||\cdot||_2$:\\
+$\fo\; x = (x_1,\;\ldots,\;x_n)\in X = \K^n\; ||x|| = ||\sum\limits_{i=1}^n x_i\,e_i|| $, где $e_i = (\underbrace{0,\;\ldots\;,\; 1}_i,\;0,\;\ldots\;,\;0)$. $||\sum\limits_{i=1}^n x_i\,e_i|| \leq \sum\limits_{i=1}^n|x_i|\, ||e_i||\leq$(по неравенству Коши-Буняковского) $\sqrt{\sum\limits_{i=1}^n|x_i|^2}\,\sqrt{\sum\limits_{i=1}^n ||e_i||^2} = C ||x||_2\;\Rightarrow \; ||\cdot|| \prec ||\cdot||_2$.\\
+Теперь покажем, что $f:\; X\rightarrow \R_{\geq 0},\; x\mapsto ||x||$ непрерывна на $(X, ||\cdot||_2)$:
+Действительно, $|f(x)-f(y)| = |\,||x||-||y||\,|\leq ||x-y||\leq C||x-y||_2$, отсюда следует, что $X_n\rightarrow x\;(||\cdot||_2)$ влечет $f(x_n)\rightarrow f(x)\;\Rightarrow\;f$ секвенциально непрерывна на $(X,||\cdot||_2)$.\\
+Для $S^{n-1}\subset\R^n$ существует $\min\limits_{x\in S}f(x) = a > 0$, так как $S^{n-1}$ компакт, а $f$ - непрерывна. Теперь $\fo\; x\neq 0$ рассмотрим $y = \frac x{||x||_2}$. $y\in S\; \Rightarrow f(y) = \frac {||x||\;\,}{||x||_2}\geq a\;\Rightarrow \; a||x||_2\leq||x||\leq C||x||_2 $. $\square$  
+
+\begin{theo}[(Эквивалентна предыдущей)]{thm:norm_pr}
+Любая норма на $\K^n$ порождает топологию произведения.
+\end{theo}
+\textit{Доказательство:} $||\cdot||_\infty$ порождает топологию произведения. $\square$
+
+\subsection{Факторпространства.}
+Пусть даны множество $X$, отношение эквивалентности $\thicksim$, $\forall x\in X$  $[x]$ - класс эквивалентности элемента $x$.\\
+\defn \textbf{\textit{Фактормножество}} (\textbf{\textit{фактор}} множества) $X$ по $\thicksim$ - это множество $X/_\thicksim = \{[x]\;|\;x\in X\}$ смежных классов. $q:\;X\rightarrow X\rightarrow x/_q,\; x\mapsto [x]$ - \textbf{\textit{отображение факторизации}}.\\
+\defn \textbf{\textit{Фактортопология}} на факторе $X/_\thicksim$ - это финальная топология $\tau_q$, порожденная отображением факторизации, то есть $U\in\tau_q \Leftrightarrow q^{-1}(U)$ открыто в $X$. $(X/_\thicksim,\;\tau_q)$ - \textbf{\textit{факторпространство}} пространства $X$ по разбиению (отношению эквивалентности) $\thicksim$. 
+
+\begin{theo}[]{thm:sv_fapr}
+(1) $\tau_q$ самая тонкая топология на $X/_{\thicksim}$, в котором $q$ непрерывно,\\
+(2) Пусть $Y$ - топологическое пространство, тогда $g:\; X/_\thicksim\rightarrow Y$ непрерывно $\Leftrightarrow\; g\circ q:\; X\rightarrow Y$ нерперывно.
+\end{theo}
+\textit{Доказательство:} по свойствам финальной топологии.  $\square$
+
+\begin{theo}[(Универсальное свойство факторпространств)]{thm:un_svf}
+\begin{minipage}{0.80\linewidth}
+Пусть $Y$ - топологическое пространство, $f:\;X\rightarrow Y$ - непрерывное отображение, постоянное на классах: $f([x]) = \{f(x)\}$, тогда $\exists!$ непрерывное отображение $\tilde f:\; X/_\thicksim \rightarrow Y$, которое делает диаграмму коммутативной.
+\end{minipage}
+\begin{minipage}{0.20\linewidth}
+\begin{tikzpicture}[node distance=2cm, auto]
+\node (X) {$X$};
+\node(X1) [below of=X] {$X/_\thicksim$};
+\node (Y) [right of=X] {$Y$};
+\draw[->](X) to node {$q$}(X1);
+\draw[->](X1) to node [right=0.5ex] {$\tilde f$}(Y);
+\draw[->](X) to node  {$f$}(Y);
+\end{tikzpicture}
+\end{minipage}
+\end{theo}
+\textit{Доказательство:}\\
+$\fo\; U\in x/_\thicksim$ выберем $x\in U$ и положим $\tilde f(U) = f(x)$. Это дает однозначное задание функции $\tilde f$, так как $f$ постоянна на каждом элементе класса, так что $\tilde f$ корректно определена и делает диаграмму коммутативной, иное отображение не делает. По предыдущей теореме она непрерывна. $\square$
+
+\begin{theo}[]{thm:homeo_fac}
+Пусть выполнены условия предыдущей теоремы, тогда:\\
+(1) $\tilde f$ - сюръекция $\Longleftrightarrow$ $f$ - сюръекция,\\
+(2) $\tilde f$ - инъекция $\Longleftrightarrow$ $\fo\;x,\;y\in X\;\;\; f(x) = f(y) \;\Leftrightarrow\;x\thicksim y$,\\
+(3) Пусть (1) и (2) выполнены, $X$ компактно, $Y$ хаусдорфово, тогда $\tilde f$ - гомеоморфизм.
+\end{theo}
+\textit{Доказательство:}\\
+(1): $\tilde f (X/_\thicksim) = \tilde f(q(X)) = f(X)$.\\
+(2): $\tilde f$ - инъекция $\Longleftrightarrow$ $\fo\; U,\;V\in X/_\thicksim\;\;\; \tilde f (U) = \tilde f(V)\; \Leftrightarrow\; U=V$ $\Longleftrightarrow\; \fo\; x,\; y\in X\;\;\; \tilde f(q(x)) = \tilde f(q(y))\;\Leftrightarrow\; q(x)=q(y)$, что и означает эквивалентность $x\thicksim y$.\\
+(3): $X$ компактно $\Rightarrow\; X/_\thicksim = q(X)$ компактно, из (1), (2): $\tilde f$ - непрерывная биекция из компакта в хаусдорфово. $\square$
+
+\textbf{Пример 1.} Введем отношение эквивалентности на отрезке $[0,\;1]$: $0\thicksim 1, x\thicksim x$, тогда $[0,\;1]/_\thicksim \cong S^1$\\
+\textit{Доказательство:} $f(t)=e^{2\pi it}$ - непрерывная сюрьекция. $\square$
+
+\textbf{Пример 2.} Введем отношение эквивалентности на квадрате $[0,\;1]\times[0,\;1]$, $(t,0)\thicksim (t,1),\;(0,t)\thicksim(1,t)$, а остальные классы - одноэлементные. тогда $[0,\;1]\times[0,\;1]/_[0,\;1]\times[0,\;1]\cong T^2$.\\
+\textit{Доказательство:} $f(s,t) = (e^{2\pi is},e^{2\pi it})$. $\square$
+
+\textbf{Пример 3.} Введем отношение эквивалентности на $\R$: $x\thicksim y\;\Leftrightarrow \;x-y\in\Q$. Обозначим $\R/\Q = \R/_\thicksim$, тогда топология на $\R/\Q$ антидискретна.\\
+\textit{Доказательство:} $U\subset \R/\Q$ - открытое непустое множество, тогда $q^{-1}(U)\subset \R$ открыто, непусто и инвариантноотносительно прибавления рационального числа: $\fo\;x\in q^{-1}(U)\;\fo\; v\in\Q\;\;\;x+v\in q^{-1}(U)$, то есть оно открыто и содержит плотное множество $x+\Q$, а значит каждую точку этого множества осдержит вместе со своей окрестностью, значит совпадает со всей прямой $\R$. $\square$
+
+
+
+
+
+
+\end{document}

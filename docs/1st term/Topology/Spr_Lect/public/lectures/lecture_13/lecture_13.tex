@@ -1,0 +1,52 @@
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+
+\section{Лекция 13. 22 января 2020 г.}
+
+\subsection{Частные случаи факторпространтв. Стягивание.}
+
+$X$ - топологическое пространство, $A\subset X$. Введем отношение эквивалентности: $x\thicksim y\Leftrightarrow x = y$ или $x, y\in A$.\\
+Обозначение: $X/_A = X/_\thicksim$.\\
+\defn Говорят, что $X/_A$ получено из $X$ \textbf{\textit{стягиванием}} $A$ в точку.
+
+\textbf{Пример 1.} $[0,\;1]/_{\{0,\;1\}}\cong S^1$
+
+\textbf{Лемма.} Пусть $Y$ - хаусдорфово топологическое пространство, $X\subset Y$ - открытое множество. Тогда $f:\;Y\rightarrow X_+$,\\
+\begin{minipage}[]{0.2\linewidth}
+
+\begin{equation*}
+    f(x) = \begin{cases}
+    x, & x\in X\\
+    \infty, & x\notin X
+    \end{cases}
+\end{equation*} 
+\end{minipage} - непрерывно.\\
+\textit{Доказательство:}\\
+Пусть $U\subset X_+$ - открыто. далее возможны 2 случая: $\infty\notin U$(*) и $U\ni\infty$(**).\\
+(*): тогда по определению $\tau_+$ $U\subset X$ и $U$ открыто в $X$, $f^{-1}(U) = U$ - открыто.\\
+(**): Тогда $K = X_+\backslash U$ - компактно, замкнуто, $K\subset Y$, но $Y$ хаусдорфово, значит $K$ - замкнут в $Y$ и $f^{-1}(U) = Y\backslash f^{-1}(K) = Y\backslash K$ - открыто, то есть отображение $f$ непрерывно. $\square$
+
+\textbf{Пример 2.} $D=\{(x,\;y)\in\R^2\;|\; x^2+y^2 < 1\},\; \overline D=\{(x,\;y)\in\R^2\;|\; x^2+y^2 \leq 1\},\; S^1 = \partial \overline D$. Покажем, что $\overline D/S^1 \cong S^2$.\\
+Действительно, $D\cong \R^2\;\Rightarrow\; D_+\cong \R^2_+\cong S^2$. Зафиксируем гомеоморфизм $\phi:\;D_+\rightarrow S^2$\\
+\begin{minipage}[]{0.25\linewidth}
+\begin{tikzpicture}[node distance=2cm, auto]
+\node (X) {$\overline D$};
+\node(X1) [below of=X] {$D$};
+\node (Y) [right of=X] {$D_+$};
+\draw[->](X1) to node {$\text{включение}$}(X);
+\draw[->](X1) to node [right=0.5ex] {$\text{включение}$}(Y);
+\draw[->](X) to node  {$f$}(Y);
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}[]{0.25\linewidth}
+\begin{equation*}
+    f(x) = \begin{cases}
+    x, & x\in D\\
+    \infty, & x\in S^1
+    \end{cases}
+\end{equation*}
+\end{minipage} $\Rightarrow\;f$ - непрерывно по лемме.\\
+Обозначим $g = \phi \circ f:\; \overline D\rightarrow S^2$, $\tilde g$ - биекция и нерперывна, $S^2$ - хаусдорфово, $\overline D$ - компактно, значит $\tilde g$ - гомеоморфизм.
+
+\end{document}

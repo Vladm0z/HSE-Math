@@ -1,0 +1,105 @@
+\documentclass[../../main.tex]{subfiles}
+ 
+\begin{document}
+
+\section{Лекция 11. 18 декабря 2019 г.}
+
+\subsection{Локально компактные топологическтие пространства.}
+
+\defn Топологическое пространство $X$ называется \textbf{\textit{локально компактным}}, если $\fo \; x\in X\;\exists\; U\ni x \text{ окрестность}:\; \overline U $ - компактно. 
+
+\textbf{Пример 1.} Компактное пространство локально компактно.
+
+\textbf{Пример 2.} Дискретное пространство локально компактно.
+
+\textbf{Пример 3.} $\R^n$ локально компактно.
+
+\textbf{Пример 4.} Открытые подмножества в $\R^n$ локально компактны.
+
+\textbf{Пример 5.} Топологическое многообразие локально компактно.
+
+\textbf{Пример 6.} $\Q$ не локально компактно.\\
+\textit{Доказательство:} Возьмем произвольную базисную окрестность $\fo\; x\in \Q\;\;\; \fo\;U = (a,\;b)\cap \Q\ni x$. Ее замыкание - множество $\overline U = [a,\;b]\cap\Q$ - не является компактным, так как семейство $\mathcal F =\{ (r,\;b], \;[a,\;r_1),\; (r_1,\; r_2),\;...,\;(r_{n-1},\;r_n),\;... \}$, где $r$ - произвольное иррациональное число из $U$, $r_n\longrightarrow\ r\; (n\rightarrow\infty), \; r_i\in\R\backslash\Q,\; r_i>r_{i-1}\;\fo\;i\in\N$ является открытым покрытием $\overline U$, но любое конечное подмножество не является покрытием: $\fo\; \mathcal A\subset \mathcal F$ - конечное подсемейство $\Rightarrow \; \exists\; n\in \N :\; (r_{n-1},\;r_n)\in \mathcal A,\; n$ - наибольший $\Rightarrow\; [r_n,\; r]\subset X\backslash \bigcup \mathcal A$. $\square$
+
+\textbf{Пример 7.} $ \R^\N$ - не локально компактное.\\
+\textit{Доказательство:} Пусть $U\subset\R^\N$ - базисное открытое множество, $U = \prod\limits_{i\in\N}U_i$, где $U_i\subset\R$ - открытое множество, причем только конечное их количество отлично от прямой: $\exists\; J$ - конечное подмножество натуральных чисел, такое что $U_i\subsetneq \R\; \Leftrightarrow\; i\in J$. Зафиксируем $i\in\N:\; U_i = \R$. Каноническая проекция $p_i:\; \R^\N\; \rightarrow\; R$ - непрерывное отображение $\Rightarrow$ если $\overline U$ - компакт, то $p_i(\overline U)\supset p_i(U) = U_i = \R$ - компакт $\Rightarrow$ противоречие $\Rightarrow\; \fo\;V$ - открытое множество $\fo\; U$ - базисное открытое множество, $U\subset V\;\Rightarrow \; \overline U$ - не компактно $\Rightarrow\; V$ - не компактно. $\square$
+
+\textbf{Предложение 1.} $X_1,\;...,\; X_n$ - локально компактные пространства, тогда $X = X_1\times...\times X_n$ - локально компактное пространство.\\
+\textit{Доказательство:} Пусть $x = (x_1,\;...,\;x_n),\;U = U_1\times...\times U_n$ - окрестность $x$, где $U_i:\; \overline U_i$ компактно.\\
+Докажем, что $\overline U = \overline U_1\times...\times\overline U_n$: во-первых, $\overline U_1\times...\times\overline U_n = \R^n \backslash \bigcup \limits_{i=1}^n (\R \times ... \times (\R \backslash \overline U_i)\times...\times\R)$ - замкнутое множество $\Rightarrow\; \overline U \subset \overline U_1\times...\times\overline U_n$, а во-вторых, $\fo\; y=(y_1,...,\; y_n)\in \overline U_1\times...\times\overline U_n\;\Rightarrow\; \fo\;i\;\fo\;V_i$ - окрестность $y_i\;\;\;V_i\cap U_i\neq\varnothing\;\Rightarrow\;\fo\;V$ - базисная окрестность $y$ выполняется $V\cap U\neq\varnothing\;\Leftrightarrow y\in \overline U\;\Leftrightarrow\; \overline U\supset \overline U_1\times...\times\overline U_n$.\\
+Имеем, что $\overline U = \overline U_1\times...\times\overline U_n$ - произведение компактов, значит компактно. $\square$\\
+\textit{Наблюдение:} произведение бесконечного числа локально компактных не всегда локально компактное (см. пример 7).
+
+\textbf{Предложение 2.} $X$ - локально компактное пространство, $Y\subset X$ является замкнутым $\Rightarrow\;Y$ - локально компактное.\\
+\textit{Доказательство:} $\fo\;y\in Y\;\exists\; U\subset X$ - окрестность в $X:\overline U$ - компактно. $Y\cap\overline U$ - замкнутое подмножество компакта $\Rightarrow\; \overline U\cap Y$ - компактно. $\square$
+
+\textbf{Предложение 3.} $X$ - хаусдорфово локально компактное топологическое пространство, $Y\subset X$ - открытое подмножество $\Rightarrow\;Y$ является локально компактным.\\
+\textit{Доказательство:}
+
+\textbf{Лемма.} $X$ - хаусдорфово локально компактное топологическое пространство, $x\in X$, тогда внутри всякой окрестности $U\ni x$ найдется окрестность $V\ni x,\; U\supset \overline V$ - компакт.
+
+\textit{Доказательство леммы: \textbf{добавьте картиночееееек, я их делать не умееееееею :'(}}
+
+$\exists\; W\ni x$ - окрестность: $\overline W$ - компакт. Пусть $K = \overline W\backslash U$ - замкнутое подмножество компакта $\Rightarrow\; K$ - компакт, $x\notin K$.
+
+Это означает, что найдутся такие окрестности $V'\ni x,\; U'\supset K$, что $U'\cap V' = \varnothing$, тогда $V = V'\cap W$ - искомое:
+
+$V$ - окрестность $x$, $\overline V \subset \overline W\; \Rightarrow\; \overline V$ - компакт. $\overline V \subset \overline {V'}\cap \overline W \subset \overline{X\backslash U'} \cap \overline W = X\backslash U'\cap \overline W \subset X\backslash K\cap \overline W = \overline W\backslash K = U.\; \blacktriangle$ \\
+Для всякого $y\in Y$ найдется окрестность  $V\ni x$ в $X:\;\overline V$ - компакт, $\overline V \subset Y\;\Rightarrow\; V$ - открыто в $Y$ и замыкание $V$ в $Y$ - это $\overline{V} \cap Y = \overline{V}$ - компактное пространство. $\square$
+
+\subsection{Одноточечная компактификация.}
+\textit{\underline{Обозначения:}} $X_+:=X\sqcup \{\infty\}$, $\tau_+ = \tau \cup \{U\subset X_+\; | \; \infty\in U,\;X\backslash U \text{ - компактное замкнутое множество}\}$
+
+\textit{Упражнение:} доказать, что $\tau_+$ действительно является топологией на $X_+$.
+
+\defn $(X_+,\;\tau_+)$ - \textbf{\textit{одноточечная компактификация топологического пространства}} $(X,\;\tau)$.
+
+\defn $X,\ Y$ - топологичесие пространтва, $f:\;X\rightarrow Y$ - \textbf{\textit{открытое вложение}}, если оно непрерывно, инъективно и открыто.
+
+\textit{Наблюдение:} открытое вложение является гомеоморфизмом $X$ и $f(X)$.
+
+\begin{theo}[]{thm:one_pt_comp}
+$X$ - топологическое пространство, $i_X\; :X\rightarrow Y,\; i_X(x) = x$ - отображение включения.\\
+(1) Отображение включения является открытым вложением.\\
+(2)$X_+$ компактно.\\
+(3)$X_+$ хаусдорфово $\Leftrightarrow$ $X$ хаусдорфово и локально компактно.\\
+(4) Если $X$ компактно, то $X_+$ - дизъюнктное объединение $X\sqcup\{\infty\}$ как топологических пространств, $\{\infty\}$ - изолированная точка.\\
+(5) $X$ некомпактно $\Leftrightarrow$ $X$ плотно в $X_+$
+
+\end{theo}
+\textit{Доказательство:}
+
+(1): $i_X$ инъективно (очевидно) и открыто (в силу тождественности на $X$ и факта, что $\tau\subset\tau_+$).\\
+Посмотрим на прообраз открытого множества $U\subset X_+$: $i_X^{-1} (U) = U\cap X = X\backslash(X_+\backslash U),\; X_+\backslash U$ - замкнутое по определению $\Rightarrow\; i_X^{-1} (U)$ открыто. 
+
+(2): Пусть $\{U_i\}_{i\in I}$ - открытое покрытие $X_+$, тогда $\infty$ содержится в каком-то множестве из покрытия, скажем в $U_j,\;j\in I$. $X_+\backslash U_j$ - компактное пространство, $\{U_i\}_{i\in I\backslash\{j\}}$ - его открытое покрытие $\Rightarrow\; \exists\; i_1,\;...,\;i_n:\; \{U_{i_k}\}_{k = \overline{1,n}}$ - конечное подпокрытие $X_+\backslash U_j \;\Rightarrow\; \{U_{i_k}\}_{k = \overline{1,n}} \cup\{U_j\}$ - конечное подпокрытие $X_+$. 
+
+(3):\\
+$\Rightarrow:$ пусть $X_+$ хаусдорфово, тогда из (1) $\tau$ совпадает с индуцированной топологией $\tau_+$ на $X\;\Rightarrow\;X$ хаусдорфово.\\
+Пусть $x\ni X$, тогда найдутся окрестности $U\ni X, V\ni\infty$, которые не пересекаются, то есть $U\subset X_+\backslash V$, тогда $\overline U$ - замкнутое подмножество компактного пространства $X_+\backslash V\;\Rightarrow\; $ компактно, значит $X$ локально компактно.\\
+$\Leftarrow:$ Пусть $X$ хаусдорфово и локально компактно, тогда $\fo\; x,\; y\in X\; \exists\; U,\;V\subset X U\ni x,\; V\ni y $ - открыты в $X_+$ и не пересекаются. теперь если одна из этих точек, без ограничения общности пусть $y$, то для $x$ существует $U\subset X: \overline{U}$ компактно, замкнуто, то есть $V = X_+\backslash \overline U$ - окрестность $y$, $U\cap V = \varnothing$.
+
+(4): $X_+\backslash \{\infty\}$ - замкнутое компактное множество $\Rightarrow\;\{\infty\}$ - окрестность $\infty$, то есть $\infty$ - изолированная точка в $X_+$.\\
+$\fo\; U\in \tau_+ \;\; U\cap X$ открыто и $U\cap \{\infty\}$ открыто, значит $\tau_+$ совпадает с топологией дизъюнктного объединения $X$ и $\{\infty\}$.
+
+(5):\\
+$\Leftarrow$: из (4).\\
+$\Rightarrow$: если $X$ - не плотно в $X_+$, то найдется такое непустое открытое в $X_+$ множество $U$, что $U\subset X_+\backslash X = \{\infty\}$, то есть $U = \{\infty\}\;\Rightarrow\;X = X_+\backslash \{\infty\}$ - компакт. $\square$
+
+\textbf{Предложение 4.} $(Y,\tau)$ - компактное хаусдорфово топологическое пространство, $y_0\in Y$ и $X=Y\backslash\{y_0\}$. Определим \\
+\begin{equation*}
+    f:\;X_+\rightarrow Y,\; x\mapsto \left \{ \begin{gathered}
+    x , \;\;x\in X\\
+    y_0 , \;x = \infty
+    \end{gathered} \right .,
+\end{equation*}
+тогда $f$ - гомеоморфизм.\\
+\textit{Доказательство:}\\
+$f$ - биекция, так как $f(X_+) = \overbrace{X}^{f(X)}\cup \overbrace{\{y_0\}}^{f(\{\infty\})} = Y,\; f|_X = i_X$, то есть инъекция и сюръекция.\\
+Пусть $U\in \tau,\; y_0\notin U$, тогда $f^{-1}(U) = U$ - открытое в $\tau_+$. Если $U\ni y_0$, то $f^{-1}(U) = U\backslash \{y_0\}\cup \{\infty\} = V$, $X_+\backslash V = Y\backslash U$ - замкнутое подмножество компактного $Y$, значит компактно, то есть $V$ - открыто в одноточечной компактификации.\\
+Тогда $f:\;\underbrace{X_+}_{\text{компакт}}\rightarrow \underbrace{Y}_{\text{хаусдорфово}}$ - непрерывная биекция $\Rightarrow\; f$ - гомеоморфизм. $\square$ 
+
+\textbf{Пример 8.} 
+
+
+\end{document}
