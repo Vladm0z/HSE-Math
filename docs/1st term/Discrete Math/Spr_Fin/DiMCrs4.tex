@@ -1,0 +1,29 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[fleqn]{article}
+\usepackage[utf8]{inputenc} 
+\usepackage[left = 2cm, right = 1.5cm, top = 1cm, bottom = 2cm, bindingoffset = 0cm]{geometry} 
+\usepackage{import}
+\usepackage{Other/Cup}
+
+\title{Introduction to Enumerative Combinatorics \\ Graded assignment 1 \\ V. R. Mozgovoy}
+
+\makeatletter
+\newenvironment{sqcases}{%
+	\matrix@check\sqcases\env@sqcases
+}{%
+	\endarray\right.%
+}
+\def\env@sqcases{%
+	\let\@ifnextchar\new@ifnextchar
+	\left\lbrack
+	\def\arraystretch{1.2}%
+	\array{@{}l@{\quad}l@{}}%
+}
+\makeatother
+
+\begin{document}
+	\noindent
+	\input{Body/P4}	
+\end{document}
