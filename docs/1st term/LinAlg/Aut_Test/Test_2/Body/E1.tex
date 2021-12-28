@@ -1,0 +1,1358 @@
+\newpage		
+	\section{Задачи для подготовки к экзамену}	
+		\subsection{}
+		Найдите вектор скорости линии пересечения плоскостей 
+		$9x_{1} - 5x_{2} + x_{3} = 1$ и $4x_{1} + 2x_{2} - 8x_{3} = 9$
+		и какую-нибудь точку на этой линии. 
+		\\
+		 Найдем пересечения этих плоскостей:
+		\begin{equation*}
+			\begin{cases}
+				9x_{1} - 5x_{2} + x_{3} = 1\\
+				4x_{1} + 2x_{2} - 8x_{3} = 9
+			\end{cases}
+		\end{equation*}
+		Запишем расширенную матрицу системы и с помощью элементарных преобразований приведем ее к ступенчатому виду:\\
+		
+		\begin{gather*}
+			\bigg( \begin{array}{c c c | c}
+			9 & -5 & 1 & 1\\
+			4 & 2 & -8 & 9\\
+			\end{array} \bigg) 
+			\to 
+			\bigg(\begin{array}{c c c | c}
+			1 & -9 & 17 & -17\\
+			4 & 2 & -8 & 9\\
+			\end{array} \bigg) 
+			\to 
+			\bigg(\begin{array}{c c c | c}
+			1 & -9 & 17 & -17\\
+			0 & 38 & -76 & 77\\
+			\end{array}\bigg) 
+			\to
+			\\
+			\Bigg(
+			\begin{array}{c c c | c}
+			1 & -9 & 17 & -17\\
+			\; & \; & \; & \;\\
+			0 & 1 & -2 & \dfrac{77}{38}\\
+			\end{array}\Bigg)
+			\to
+			\Bigg( \begin{array}{c c c | c}
+			1 & 0 & -1 & \dfrac{47}{38}\\
+			\; & \; & \; & \;\\
+			0 & 1 & -2 & \dfrac{77}{38}\\
+			\end{array} \Bigg)
+		\end{gather*}
+		Таким образом, 
+		\begin{equation*}
+			\begin{cases}
+				x_{1} = x_{3} + \dfrac{47}{38}\\
+				\\
+				x_{2} = 2x_{3} + \dfrac{77}{38}\\
+			\end{cases}
+		\end{equation*}
+		Два частных решения: $\Big(\dfrac{47}{38}, \; \dfrac{77}{38}, \; 0\Big), \; \Big(\dfrac{85}{38}, \; \dfrac{153}{38}, \; 1\Big)$. Прямая пересечения плоскостей: $\dfrac{x - \dfrac{47}{38}}{1} = \dfrac{y - \dfrac{77}{38}}{2} = \dfrac{z}{1}$. Тогда также частное решение: $(0, -\dfrac{17}{38}, -\dfrac{47}{38})$, направляющий вектор: $(1, 2, 1) \sim (38, 76, 38)$.\\
+		\\
+		\textbf{Ответ:} (38, 76, 38), $(0, -\dfrac{17}{38}, -\dfrac{47}{38})$
+		
+		
+		
+		\subsection{}		
+		Напишите уравнение плоскости в $\mathbb{Q}^{3}$, проходящей через точку $(3, -9, 7)$ параллельно векторам $(5, 6, 0)$ и $(-3, 14, -10)$\\
+		\\
+		Пусть 
+		$V_{1} = 
+		\Bigg(\begin{array}{c}
+		5\\ 6\\ 0
+		\end{array}\Bigg),
+		V_{2} = \Bigg(\begin{array}{c}
+		-3\\ 14\\ -10
+		\end{array}\Bigg), 
+		M = (3, -9, 7)$ 
+		\\ 
+		Тогда 
+		\begin{gather*}
+			\begin{vmatrix}
+				x_{1} - 3 & 5 & -3\\
+				x_{2} + 9 & 6 & 14\\
+				x_{3} - 7 & 0 & -10\\
+			\end{vmatrix} = 0
+		\end{gather*}
+		Разложим по первому столбцу: 
+		\begin{gather*}
+			(-1)^{1 + 1} \cdot (x_{1} - 3) \cdot 
+			\begin{vmatrix}
+				6 & 14\\
+				0 & -10\\
+			\end{vmatrix}
+			+ (-1)^{2 + 1} \cdot (x_{2} + 9) \cdot
+			\begin{vmatrix}
+				5 & -3\\
+				0 & -10\\
+			\end{vmatrix} 
+			+ (-1)^{3 + 1} \cdot (x_{3} - 7) \cdot
+			\begin{vmatrix}
+				5 & -3\\
+				6 & 14\\
+			\end{vmatrix} 
+			\\
+			= (x_{1} - 3) \cdot (-60) - (x_{2} + 9) \cdot (-50) + (x_{3} - 7) \cdot 88\\
+			= -60x_{1} + 180 + 50x_{2} + 450 + 88x_{3} - 616 = -60x_{1} + 50x_{2} + 88x_{3} - 14
+		\end{gather*}
+		Так как вычисленный определитель равен нулю, $-60x_{1} + 50x_{2} + 88x_{3} - 14 = 0$, то есть $-60x_{1} + 50x_{2} + 88x_{3} = 14$ 
+		\textbf{Ответ:} $-60x_{1} + 50x_{2} + 88x_{3} = 14$ 
+		
+		
+		
+		\subsection{}
+		Напишите уравнение плоскости в $\mathbb{Q}^{3}$, проходящей через точки $(5, -9, -2)$, $(4, -3, 6)$, $(4, 2, 4)$.\\
+		\\
+		 Рассмотрим векторы 
+		\begin{gather*}
+		V_{1} = 
+		\Bigg(\begin{array}{c}
+			x - 5\\ x + 9\\ x + 2
+		\end{array}\Bigg)
+		\quad 
+		V_{2} = 
+		\Bigg(\begin{array}{c}
+			4-5\\ -3- (-9)\\ 6- (-2)\\
+		\end{array}\Bigg)
+		= 
+		\Bigg(\begin{array}{c}
+			-1\\ 6\\ 8\\
+		\end{array}\Bigg)
+		\quad 
+		V_{3} = 
+		\Bigg(\begin{array}{c}
+		4-5\\ 2- (-9)\\ 4- (-2)\\
+		\end{array}\Bigg)
+		= 
+		\Bigg(\begin{array}{c}
+			-1\\ 11\\ 6\\
+		\end{array}\Bigg)
+		\end{gather*}
+		Задача равносильна предыдущей для данных векторов.\\
+		\\
+		Тогда 
+		\begin{gather*}
+			\begin{vmatrix}
+				x_{1} - 5 & -1 & -1\\
+				x_{2} + 9 & 6 & 11\\
+				x_{3} + 2 & 8 & 6\\
+			\end{vmatrix} = 0
+		\end{gather*}
+		Разложим по первому столбцу: 
+		\begin{gather*}
+		(-1)^{1 + 1} (x_{1} - 5) 
+		\begin{vmatrix}
+			6 & 11\\
+			8 & 6\\
+		\end{vmatrix} 
+		+ (-1)^{2 + 1} (x_{2} + 9) 
+		\begin{vmatrix}
+			-1 & -1\\
+			8 & 6\\
+		\end{vmatrix} 
+		+ (-1)^{3 + 1} (x_{3} + 2) 
+		\begin{vmatrix}
+			-1 & -1\\
+			6 & 11\\
+		\end{vmatrix}
+		= 0
+		\end{gather*}
+		То есть $-52(x_{1} - 5) - 2(x_{2} + 9) - 5(x_{3} + 2) = 0$. Значит, $-52x_{1} - 2x_{2} - 5x_{3} = -232$\\
+		\\
+		\textbf{Ответ:} $-52x_{1} - 2x_{2} - 5x_{3} = -232$. 
+		
+		
+		
+		\subsection{}
+		\begin{enumerate}
+		\item 
+			\begin{gather*}
+				\begin{vmatrix}
+					-4 & 0 & 0 & 2\\
+					-3 & -3 & 4 & 0\\
+					3 & -3 & -5 & 0\\
+					-3 & 0 & 0 & -3\\
+				\end{vmatrix}
+				=
+				\begin{vmatrix}
+					-4 & 0 & 0 & 2\\
+					0 & -3 & 4 & -\dfrac{3}{2}\\
+					0 & -3 & -5 & \dfrac{3}{2}\\
+					0 & 0 & 0 & \dfrac{-9}{2}\\
+				\end{vmatrix}
+				=
+				\begin{vmatrix}
+					-4 & 0 & 0 & 2\\
+					0 & -3 & 4 & -\dfrac{3}{2}\\
+					0 & 0 & -9 & 3\\
+					0 & 0 & 0 & \dfrac{-9}{2}\\
+				\end{vmatrix}
+				= -4 \cdot (-3) \cdot (-9) \cdot \dfrac{-9}{2} = 486
+			\end{gather*}
+			
+		
+		\item 
+			\begin{gather*}
+				\begin{vmatrix}
+					0 & 1 & 0 & 5\\
+					0 & 1 & -3 & -5\\
+					0 & 1 & 4 & 0\\
+					-4 & 0 & -5 & 0\\
+				\end{vmatrix}
+				 = 
+				\begin{vmatrix}
+					0 & 1 & 0 & 5\\
+					0 & 0 & -3 & -10\\
+					0 & 0 & 4 & -5\\
+					-4 & 0 & -5 & 0\\
+				\end{vmatrix}
+				 = 
+				\begin{vmatrix}
+					-4 & 0 & -5 & 0\\
+					0 & 0 & -3 & -10\\
+					0 & 0 & 4 & -5\\
+					0 & 1 & 0 & 5\\
+				\end{vmatrix}
+				= -4
+				\begin{vmatrix}
+					0 & -3 & -10\\
+					0 & 4 & -5\\
+					1 & 0 & 5\\
+				\end{vmatrix}
+				= -4
+				\begin{vmatrix}
+					1 & 0 & 5\\
+					0 & 4 & -5\\
+					0 & -3 & -10\\
+				\end{vmatrix}
+				\\
+				= -4
+				\begin{vmatrix}
+					4 & -5\\
+					-3 & -10\\
+				\end{vmatrix} 
+				= -4(-40 - 15) = -4 \cdot (-55) = -220
+			\end{gather*}
+		\end{enumerate}		
+		\textbf{Ответ:} а) -232, б) -220.
+		
+		 
+		
+		\subsection{}
+		Во всех пунктах будем пользоваться тем, что $A^{-1} = \dfrac{1}{|A|} \cdot A_{\phi}^{T}$, где $A_{\phi}^{T}$ -- транспонированная матрица алгебраических дополнений соответствующих элементов матрицы $A$. 
+		\begin{enumerate}
+		\item
+			$A = \Bigg(\begin{array}{c c c}
+				6 & -3 & -1\\
+				-6 & 5 & -5\\
+				-6 & 3 & 0\\
+			\end{array}\Bigg)$ найти $A^{-1}$. 
+			\\
+			1. Найдем определитель матрицы $A$:
+			\begin{gather*}
+				\begin{vmatrix}
+					6 & -3 & -1\\
+					-6 & 5 & -5\\
+					-6 & 3 & 0\\
+				\end{vmatrix}
+				=
+				\begin{vmatrix}
+					6 & -3 & -1\\
+					0 & 2 & -6\\
+					0 & 0 & -1\\
+				\end{vmatrix}
+				= 6
+				\begin{vmatrix}
+					2 & -6\\
+					0 & -1\\
+				\end{vmatrix}
+				= -12
+			\end{gather*}
+			\\
+			2. Найдем матрицу миноров:
+			\begin{gather*}
+				\begin{vmatrix}
+					5 & -5\\
+					3 & 0\\
+				\end{vmatrix}
+				= 15\qquad 
+				\begin{vmatrix}
+					-6 & -5\\
+					-6 & 0\\
+				\end{vmatrix}
+				= -30\qquad
+				\begin{vmatrix}
+					-6 & 5\\
+					-6 & 3\\
+				\end{vmatrix}
+				= 12\qquad\\
+				\begin{vmatrix}
+					-3 & -1\\
+					3 & 0\\
+				\end{vmatrix}
+				= 3\qquad
+				\begin{vmatrix}
+					6 & -1\\
+					-6 & 0\\
+				\end{vmatrix}
+				= -6\qquad
+				\begin{vmatrix}
+					6 & -3\\
+					-6 & 3\\
+				\end{vmatrix}
+				= 0\qquad\\
+				\begin{vmatrix}
+					-3 & -1\\
+					5 & -5\\
+				\end{vmatrix}
+				= 20\qquad
+				\begin{vmatrix}
+					6 & -1\\
+					-6 & -5\\
+				\end{vmatrix}
+				 = -36\qquad
+				\begin{vmatrix}
+					6 & -3\\
+					-6 & 5\\
+				\end{vmatrix}
+				= 12
+			\end{gather*}
+			Тогда 
+			\begin{gather*}
+				M = 
+				\begin{vmatrix}
+					15 & -30 & 12\\
+					3 & -6 & 0\\
+					20 & -36 & 12\\
+				\end{vmatrix}
+			\end{gather*}
+			\\
+			3. Найдем матрицу алгебраических дополнений $A_{\phi}:$\\
+			Домножим элементы $M$ на $(-1)^{i + j}$
+			\begin{gather*}
+			A_{\phi} = 
+				\begin{vmatrix}
+					15 & 30 & 12\\
+					-3 & -6 & 0\\
+					20 & 36 & 12\\
+				\end{vmatrix}
+			\end{gather*}
+			\\
+			4. Найдем матрицу алгебраических дополнений $A_{\phi}^{T}:$
+			\begin{gather*}
+				A_{\phi}^{T} = 
+				\begin{vmatrix}
+					15 & -3 & 20\\
+					30 & -6 & 36\\
+					12 & 0 & 12\\
+				\end{vmatrix} 
+			\end{gather*}
+			\\
+			5. Вспомним, что 
+			\begin{gather*}
+				A^{-1} = \dfrac{1}{|A|} \cdot A_{\phi}^{T} = -\dfrac{1}{12} 
+				\begin{vmatrix}
+					15 & -3 & 20\\
+					30 & -6 & 36\\
+					12 & 0 & 12\\
+				\end{vmatrix}
+				 = 
+				\begin{vmatrix}
+					-\dfrac{5}{3} & \dfrac{1}{4} & -\dfrac{5}{3}\\
+					\\
+					\dfrac{5}{2} & \dfrac{1}{2} & -3\\
+					\\
+					-1 & 0 & -1\\
+				\end{vmatrix} 
+			\end{gather*}
+		
+		
+		\item
+			\begin{gather*}
+				A = 
+				\begin{vmatrix}
+					6 & 2 & 0\\
+					-6 & -2 & 5\\
+					-5 & 3 & 1\\
+				\end{vmatrix}
+			\end{gather*} 
+			\\
+			1. Найдем $|A|$:
+			\begin{gather*}
+				\begin{vmatrix}
+					6 & 2 & 0\\
+					-6 & -2 & 5\\
+					-5 & 3 & 1\\
+				\end{vmatrix}
+				=
+				\begin{vmatrix}
+					6 & 2 & 0\\
+					0 & 0 & 5\\
+					-5 & 3 & 1\\
+				\end{vmatrix}
+				 = -50 - 15 \cdot 6 = -140
+			\end{gather*}
+			\\
+			2. Найдем матрицу миноров: 
+			\begin{gather*}
+				\begin{vmatrix}
+					-2 & 5\\
+					3 & 1\\
+				\end{vmatrix}
+				= -17\qquad
+				\begin{vmatrix}
+					-6 & 5\\
+					-5 & 1\\
+				\end{vmatrix}
+				= 19\qquad
+				\begin{vmatrix}
+					-6 & -2\\
+					-5 & 3\\
+				\end{vmatrix}
+				= -28\qquad
+				\\
+				\begin{vmatrix}
+					2 & 0\\
+					3 & 1\\
+				\end{vmatrix}
+				= 2\qquad
+				\begin{vmatrix}
+					6 & 0\\
+					-5 & 1\\
+				\end{vmatrix}
+				= 6\qquad
+				\begin{vmatrix}
+					6 & 2\\
+					-5 & 3\\
+				\end{vmatrix}
+				= 28\qquad
+				\\
+				\begin{vmatrix}
+					2 & 0\\
+					-2 & 5\\
+				\end{vmatrix}
+				= 10\qquad
+				\begin{vmatrix}
+					6 & 0\\
+					-6 & 5\\
+				\end{vmatrix}
+				= 30\qquad
+				\begin{vmatrix}
+					6 & 2\\
+					-6 & -2\\
+				\end{vmatrix}
+				= 0	
+			\end{gather*}
+			Запишем матрицу: 
+			\begin{gather*}
+				M = 
+				\begin{vmatrix}
+					-17 & 19 & -28\\
+					2 & 6 & 28\\
+					10 & 30 & 0\\
+				\end{vmatrix}
+			\end{gather*}
+			\\
+			3. Теперь запишем матрицу алгебраических дополнений: 
+			\begin{gather*}
+				A_{\phi} = 
+				\begin{vmatrix}
+					-17 & -19 & -28\\
+					-2 & 6 & -28\\
+					10 & -30 & 0\\
+				\end{vmatrix}
+			\end{gather*}
+			Где каждый элемент умножили на $(-1)^{i + j}$\\
+			\\
+			4. Транспонируем полученную матрицу: 
+			\begin{gather*}
+				A_{\phi}^{T} =
+				\begin{vmatrix}
+					-17 & -2 & 10\\
+					-19 & 6 & -30\\
+					-28 & -28 & 0\\
+				\end{vmatrix} 
+			\end{gather*}
+			\\
+			5. 
+			\begin{gather*}
+				A^{-1} = \dfrac{1}{|A|} \cdot A_{\phi}^{T} = -\dfrac{1}{140} \cdot 
+				\begin{vmatrix}
+					-17 & -2 & 10\\
+					-19 & 6 & -30\\
+					-28 & -28 & 0\\
+				\end{vmatrix}
+				=
+				\begin{vmatrix}
+					-\dfrac{17}{140} & -\dfrac{1}{70} & \dfrac{1}{14}\\
+					\\
+					-\dfrac{19}{140} & \dfrac{3}{70} & -\dfrac{3}{14}\\
+					\\
+					-\dfrac{1}{5} & -\dfrac{1}{5} & 0\\
+				\end{vmatrix} 
+			\end{gather*}
+			
+		\item
+			\begin{gather*}
+				A = 
+				\begin{vmatrix}
+					3 & 6 & 4\\
+					6 & -2 & 0\\
+					3 & 5 & 5\\
+				\end{vmatrix}
+			\end{gather*} 
+			\\
+			1. Найдем определитель $A$:
+			\begin{gather*}
+				\begin{vmatrix}
+					3 & 6 & 4\\
+					6 & -2 & 0\\
+					3 & 5 & 5\\
+				\end{vmatrix}
+				=
+				\begin{vmatrix}
+					3 & 6 & 4\\
+					0 & -14 & -8\\
+					0 & -1 & 1\\
+				\end{vmatrix}
+				= 3
+				\begin{vmatrix}
+					-14 & -8\\
+					-1 & 1\\
+				\end{vmatrix}
+				= 3(-14 - 8) = -66
+			\end{gather*} 
+			\\
+			2. Найдем матрицу миноров: 
+			\begin{gather*}
+				\begin{vmatrix}
+					-2 & 0\\
+					5 & 5\\
+				\end{vmatrix}
+				= -10\qquad
+				\begin{vmatrix}
+					6 & 0\\
+					3 & 5\\
+				\end{vmatrix}
+				= 30\qquad
+				\begin{vmatrix}
+					6 & -2\\
+					3 & 5\\
+				\end{vmatrix}
+				= 36\qquad
+				\\
+				\begin{vmatrix}
+					6 & 4\\
+					5 & 5\\
+				\end{vmatrix}
+				= 10\qquad
+				\begin{vmatrix}
+					3 & 4\\
+					3 & 5\\
+				\end{vmatrix}
+				= 3\qquad
+				\begin{vmatrix}
+					3 & 6\\
+					3 & 5\\
+				\end{vmatrix}
+				= -3\qquad
+				\\
+				\begin{vmatrix}
+					6 & 4\\
+					-2 & 0\\
+				\end{vmatrix}
+				= 8\qquad
+				\begin{vmatrix}
+					3 & 4\\
+					6 & 0\\
+				\end{vmatrix}
+				= -24\qquad
+				\begin{vmatrix}
+					3 & 6\\
+					6 & -2\\
+				\end{vmatrix}
+				= -42\quad
+			\end{gather*}
+			Тогда 
+			\begin{gather*}
+				M = 
+				\begin{vmatrix}
+					-10 & 30 & 36\\
+					10 & 3 & -3\\
+					8 & -24 & -42\\
+				\end{vmatrix}
+			\end{gather*}
+			\\
+			3. Найдем матрицу алгебраических дополнений: 
+			\begin{gather*}		
+				A_{\phi} =
+				\begin{vmatrix}
+					-10 & -30 & 36\\
+					-10 & 3 & 3\\
+					8 & 24 & -42\\
+				\end{vmatrix} 
+			\end{gather*}
+			\\
+			4. Транспонируем полученную матрицу: 
+			\begin{gather*}
+				A_{\phi}^{T} =
+				\begin{vmatrix}
+					-10 & -10 & 8\\
+					-30 & 3 & 24\\
+					36 & 3 & -42\\
+				\end{vmatrix}
+			\end{gather*}
+			\\
+			5. Вычисляем 
+			\begin{gather*}
+				\dfrac{1}{|A|} A_{\phi}^{T} = -\dfrac{1}{66} 
+				\begin{vmatrix}
+					-10 & -10 & 8\\
+					-30 & 3 & 24\\
+					36 & 3 & -42\\
+				\end{vmatrix}
+				=
+				\begin{vmatrix}
+					\dfrac{5}{33} & \dfrac{5}{33} & -\dfrac{4}{33}\\
+					\\
+					\dfrac{5}{11} & -\dfrac{1}{22} & -\dfrac{4}{11}\\
+					\\
+					-\dfrac{6}{11} & -\dfrac{1}{22} & \dfrac{7}{11}\\
+				\end{vmatrix}
+			\end{gather*}
+		\end{enumerate}
+	
+		\textbf{Ответ:}\\
+		\begin{gather*}
+			\text{а)}
+			\begin{vmatrix}
+				-\dfrac{5}{3} & \dfrac{1}{4} & -\dfrac{5}{3}\\
+				\\
+				\dfrac{5}{2} & \dfrac{1}{2} & -3\\
+				\\
+				-1 & 0 & -1\\
+			\end{vmatrix}
+			\quad
+			\text{б)}
+			\begin{vmatrix}
+				-\dfrac{17}{140} & -\dfrac{1}{70} & \dfrac{1}{14}\\
+				\\
+				-\dfrac{19}{140} & \dfrac{3}{70} & -\dfrac{3}{14}\\
+				\\
+				-\dfrac{1}{5} & -\dfrac{1}{5} & 0\\
+			\end{vmatrix}
+			\quad
+			\text{в)}
+			\begin{vmatrix}
+				\dfrac{5}{33} & \dfrac{5}{33} & -\dfrac{4}{33}\\
+				\\
+				\dfrac{5}{11} & -\dfrac{1}{22} & -\dfrac{4}{11}\\
+				\\
+				-\dfrac{6}{11} & -\dfrac{1}{22} & \dfrac{7}{11}\\
+			\end{vmatrix}
+		\end{gather*}
+		
+		
+		
+		\subsection{}
+		Найдите собственные числа, укажите какие-нибудь базисы в собственных и корневых подпространствах и выясните, диагонализуемы ли линейные операторы $\mathbb{Q}^{3} \to \mathbb{Q}^{3}$, заданные в стандартном базисе матрицами: 
+		\begin{enumerate}
+		\item	
+			\begin{gather*}
+				\begin{vmatrix}
+					13 & 75 & -21\\
+					-16 & -108 & 31\\
+					-48 & -330 & 95\\
+				\end{vmatrix}
+			\end{gather*}
+			\\
+			1. Собственные числа:\\
+			Найдем характеристический многочлен: 
+			\begin{gather*}
+				|\lambda E - A| = 0 \Leftrightarrow 
+				\begin{vmatrix}
+					\lambda & 0 & 0\\
+					0 & \lambda & 0\\
+					0 & 0 & \lambda\\
+				\end{vmatrix}
+				-
+				\begin{vmatrix}
+					13 & 75 & -21\\
+					-16 & -108 & 31\\
+					-48 & -330 & 95\\
+				\end{vmatrix}
+				=
+				\begin{vmatrix}
+					\lambda - 13 & -75 & 21\\
+					16 & \lambda + 108 & -31\\
+					48 & 330 & \lambda - 95\\
+				\end{vmatrix}
+				= 0 
+			\end{gather*}
+			Преобразуем определитель: 
+			\begin{gather*}
+				\begin{vmatrix}
+					\lambda - 13 & -75 & 21\\
+					16 & \lambda + 108 & -31\\
+					0 & 6 - 3\lambda & \lambda - 2\\
+				\end{vmatrix}
+				= 0 
+			\end{gather*}
+			Раскроем по первому столбцу:
+			\begin{gather*}
+				(\lambda - 13)
+				\begin{vmatrix}
+					\lambda + 108 & -31\\
+					6 - 3\lambda & \lambda - 2\\
+				\end{vmatrix}
+				- 16 
+				\begin{vmatrix}
+					-75 & 21\\
+					6 - 3\lambda & \lambda - 2\\
+				\end{vmatrix}
+				\\
+				= (\lambda - 13)((\lambda + 108)(\lambda - 2) + 31(6 - 3 \lambda)) - 16(-75 \lambda + 150 - 126 + 63\lambda) = 0
+			\end{gather*}
+			\\
+			то есть 
+			\begin{gather*}
+				(\lambda - 13)(\lambda^{2} + 13\lambda - 30) + 192\lambda - 384 =\\
+				\lambda^{3} + 13 \lambda^{2} - 30\lambda - 13\lambda^{2} - 169\lambda + 390 + 192\lambda - 384 =\\
+				\lambda^{3} - 7\lambda + 6 = 0
+			\end{gather*}
+			Собственные числа: $\lambda_{1} = 1, \lambda_{2} = -3, \lambda_{3} = 2$\\
+			\\
+			2. Найдем собственные векторы. Для этого будем подставлять найденные значения $\lambda_{i}$ в $(A - \lambda E)x = 0$. 
+			\begin{enumerate}
+			\item $\lambda = 1$\\
+				\begin{gather*}
+					\begin{vmatrix}
+						12 & 75 & -21\\
+						-16 & -109 & 31\\
+						-48 & -330 & 94\\
+					\end{vmatrix}
+					\to
+					\begin{vmatrix}
+						12 & 75 & -21\\ 
+						0 & -9 & 3\\
+						0 & -3 & 1\\
+					\end{vmatrix}
+					\to
+					\begin{vmatrix}
+						12 & 75 & -21\\ 
+						0 & -3 & 1\\
+						0 & -3 & 1\\
+					\end{vmatrix}
+					\to
+					\begin{vmatrix}
+						1 & 0 & \dfrac{1}{3}\\ 
+						0 & -1 & \dfrac{1}{3}\\
+					\end{vmatrix}
+				\end{gather*}
+				Получается, $x_{1} = -\dfrac{1}{3} x_{3}$, $x_{2} = \dfrac{1}{3} x_{3}$, где $x_{3}$ -- свободная переменная.\\
+				Тогда собственный вектор $\begin{vmatrix} 1\\ -1\\ -3\\ \end{vmatrix}$ 
+				
+			\item $\lambda = -3$\\
+				\begin{gather*}
+					\begin{vmatrix}
+						16 & 75 & -21\\
+						-16 & -105 & 31\\
+						-48 & -330 & 98\\
+					\end{vmatrix}
+					\to
+					\begin{vmatrix}
+						16 & 75 & -21\\
+						0 & 3 & -1\\
+						0 & 3 & -1\\
+					\end{vmatrix}
+					\to
+					\begin{vmatrix}
+						16 & 75 & -21\\
+						0 & 3 & -1\\
+					\end{vmatrix}
+					\to
+					\begin{vmatrix}
+						16 & 0 & 4\\
+						0 & 3 & -1\\
+					\end{vmatrix}
+					\to
+					\begin{vmatrix}
+						4 & 0 & 1\\
+						0 & 3 & -1\\
+					\end{vmatrix}
+					\to
+					\begin{vmatrix}
+						1 & 0 & \dfrac{1}{4}\\
+						0 & 1 & -\dfrac{1}{3}\\
+					\end{vmatrix} 
+				\end{gather*}
+				Таким образом, $x_{1} = -\dfrac{1}{4}x_{3}$, $x_{2} = \dfrac{1}{3}x_{3}$, где $x_{3}$ -- свободная переменная.\\
+				Тогда собственный вектор $\begin{vmatrix} -3\\ 4\\ 12 \end{vmatrix}$ 
+				
+			\item $\lambda = 2$\\
+				\begin{gather*}
+					\begin{vmatrix}
+						11 & 75 & -21\\
+						-16 & -110 & 31\\
+						-48 & -330 & 93\\
+					\end{vmatrix}
+					\to
+					\begin{vmatrix}
+						11 & 75 & -21\\
+						-16 & -110 & 31\\ 
+						0 & 0 & 0\\
+					\end{vmatrix}
+					\to
+					\begin{vmatrix}
+						11 & 75 & -21\\
+						-16 & -110 & 31\\
+					\end{vmatrix}
+					\to
+					\\
+					\begin{vmatrix}
+						1 & \dfrac{75}{11} & -\dfrac{21}{11}\\
+						\\ 
+						0 & \dfrac{-10}{11} & \dfrac{5}{11}\\
+					\end{vmatrix}
+					\to
+					\begin{vmatrix}
+						11 & 75 & -21\\
+						0 & 1 & -\dfrac{1}{2}\\
+					\end{vmatrix}
+					\to
+					\begin{vmatrix}
+						11 & 0 & \dfrac{33}{2}\\
+						\\
+						0 & 1 & -\dfrac{1}{2}\\
+					\end{vmatrix}
+					\to
+					\begin{vmatrix}
+						1 & 0 & \dfrac{3}{2}\\
+						\\
+						0 & 1 & -\dfrac{1}{2}\\
+					\end{vmatrix}
+				\end{gather*}
+				Таким образом, $x_{1} = -\dfrac{3}{2}x_{3}$, $x_{2} = \dfrac{1}{2}x_{3}$, а $x_{3}$ -- свободная переменная.\\
+				Тогда собственный вектор, например, $\begin{vmatrix}
+				3\\ -1\\ -2\\
+				\end{vmatrix}$ 
+			\end{enumerate}
+		\end{enumerate}
+		
+		
+		\subsection{}
+		Напишите такую вещественную $2 \times 2$ матрицу $A$, что
+		\begin{enumerate}
+			\item
+				\begin{gather*}
+					A^{5} = 
+					\begin{vmatrix}
+						-31 & -16\\
+						56 & 29
+					\end{vmatrix}
+				\end{gather*}
+				
+				1. Характеристический многочлен:
+				\begin{gather*}
+					\begin{vmatrix}
+						t + 31 & -16\\ 
+						56 & t - 29\\
+					\end{vmatrix} 
+					= 0 \Leftrightarrow 
+					t^{2} + 2t - 3= 0 \Leftrightarrow 
+					t = -3, t = 1
+				\end{gather*}
+				
+				2. $\sqrt[5]{A^{5}} = aA + bE$, где $at + b$ в точках $-3, \; 1$ принимает те же значения, что и в $\sqrt[5]{t}:$
+				\begin{gather*}
+					\begin{cases}
+						-3a + b = -\sqrt[5]{3}\\
+						a + b = 1
+					\end{cases}
+				\\
+					a = 
+					\dfrac{
+					\begin{vmatrix} 
+						-\sqrt[5]{3} & 1\\ 
+						1 & 1\\ 
+					\end{vmatrix}
+					}{
+					\begin{vmatrix} 
+						-3 & 1\\ 
+						1 & 1\\ 
+					\end{vmatrix}} 
+					= \dfrac{\sqrt[5]{3} + 1}{4}
+					\quad 
+					b = 
+					\dfrac{
+					\begin{vmatrix} 
+						-3 & -\sqrt[5]{3}\\
+						1 & 1\\
+					\end{vmatrix}
+					}{
+					\begin{vmatrix} 
+						-3 & 1\\
+						1 & 1\\
+					\end{vmatrix}} 
+					= \dfrac{3 - \sqrt[5]{3}}{4}
+				\end{gather*}
+				
+				3. Помним, что $\sqrt[5]{A^{5}} = aA + bE$, то есть искомая матрица:
+				\begin{gather*}
+					\sqrt[5]{A^{5}} = 
+					\dfrac{\sqrt[5]{3} + 1}{4} 
+					\begin{vmatrix} 
+						-31 & -16\\ 
+						56 & 29\\ 
+					\end{vmatrix} 
+					+ \dfrac{3 - \sqrt[5]{3}}{4} 
+					\begin{vmatrix} 
+						1 & 0\\
+						0 & 1\\ 
+					\end{vmatrix}
+					\\
+					= 
+					\begin{vmatrix} 
+						\dfrac{-31 \sqrt[5]{3} - 31}{4} & -4\sqrt[5]{3} - 4\\
+						14 \sqrt[5]{3} + 14 & \dfrac{29 \sqrt[5]{3} + 29}{4} 
+					\end{vmatrix}
+					+
+					\begin{vmatrix} 
+						\\ 
+						\dfrac{3 - \sqrt[5]{3}}{4} & 0\\
+						0 & \dfrac{3 - \sqrt[5]{3}}{4}\\
+					\end{vmatrix}
+					=
+					\begin{vmatrix}
+						-8\sqrt[5]{3} - 7 & -4\sqrt[5]{3} - 4\\
+						14\sqrt[5]{3} + 14 & 7\sqrt[5]{3} + 8\\
+					\end{vmatrix}
+				\end{gather*}
+				
+			\item
+				\begin{gather*}
+					A^{4} = 
+					\begin{vmatrix} 
+						-3 & -4\\
+						4 & 5\\
+					\end{vmatrix}
+				\end{gather*}
+				1. Характеристический многочлен:
+				\begin{gather*}
+					\begin{vmatrix} 
+						t + 3 & 4\\
+						- 4 & t - 5\\
+					\end{vmatrix}
+					= 0 \Leftrightarrow 
+					t^{2} + 3t - 5t - 15 + 16 = t^{2} - 2t + 1 = (t - 1)^{2} = 0 \Leftrightarrow 
+					t = 1
+				\end{gather*}
+				
+				2. $\sqrt[4]{A^{4}} = aE + b$, где $at + b$ принимает в $t = 1$ то же значение, что и в $\sqrt[4]{A^{4}}:$
+				
+				$a + b = 1$.
+				
+				Так как $1$ -- двукратное собственное число, рассмотрим производные от обеих частей равенства $at + b = \sqrt[4]{t}:$ $t = 1$ также должен быть удовлетворять этому равенству. Получается, $a = \dfrac{1}{4}\sqrt[3]{t} \overset{t = 1}{=} \dfrac{1}{4}$. 
+				
+				$a = \dfrac{1}{4}$. Из $a + b = 1$ имеем $b = \dfrac{3}{4}$. Таким образом, $aA + bE = \dfrac{1}{4}A + \dfrac{3}{4}E$, то есть 
+				\begin{gather*}
+					\dfrac{1}{4} 
+					\begin{vmatrix} 
+						-3 & -4\\ 
+						4 & 5\\
+					\end{vmatrix}
+					+ \dfrac{3}{4} 
+					\begin{vmatrix} 
+						1 & 0\\ 
+						0 & 1\\ 
+					\end{vmatrix}
+					= 
+					\begin{vmatrix} 
+						-\dfrac{3}{4} & -1\\
+						1 & \dfrac{5}{4}\\
+					\end{vmatrix} 
+					+
+					\begin{vmatrix}
+						\dfrac{3}{4} & 0\\
+						0 & \dfrac{3}{4}
+					\end{vmatrix}
+					= 
+					\begin{vmatrix} 
+						0 & -1\\
+						1 & 2\\
+					\end{vmatrix}
+				\end{gather*}
+			\item
+				\begin{gather*}
+					A^{3} = 
+					\begin{vmatrix}
+						-128 & 25\\
+						-650 & 127\\
+					\end{vmatrix}
+				\end{gather*}
+				
+				1. Характеристический многочлен: 
+				\begin{gather*}
+					\begin{vmatrix} 
+						t + 128 & -25\\
+						-650 & t - 127
+					\end{vmatrix}
+					= 0 \Leftrightarrow
+					t^{2} + 128t - 127t - 127 \cdot 128 - 650 \cdot 25 = t^{2} + t - 6 = 0 \Leftrightarrow
+					t = -3, t = 2
+				\end{gather*}
+				
+				2. $\sqrt[3]{A^{3}} = aA + bE$, где $at + b$ принимает в $t = -3, t = 2$ те же значения, что и в $\sqrt[3]{t}$. 
+				\begin{gather*}
+					\begin{cases}
+						-3a + b = \sqrt[3]{-3},\\
+						2a + b = \sqrt[3]{2};\\
+					\end{cases}
+				\\
+					a = 
+					\dfrac{
+					\begin{vmatrix} 
+						\sqrt[3]{-3} & 1\\
+						\sqrt[3]{2} & 1 
+					\end{vmatrix}
+					}{
+					\begin{vmatrix}
+						-3 & 2\\ 
+						1 & 1\\ 
+					\end{vmatrix}}
+					= \dfrac{\sqrt[3]{2} - \sqrt[3]{-3}}{5}
+					\quad
+					b = 
+					\dfrac{
+					\begin{vmatrix}
+						-3 & \sqrt[3]{3}\\
+						2 & \sqrt[3]{2}\\
+					\end{vmatrix}
+					}{
+					\begin{vmatrix}
+						-3 & 2\\
+						1 & 1
+					\end{vmatrix}} 
+					= \dfrac{3\sqrt[3]{2} + 2\sqrt[3]{-3}}{5}
+				\end{gather*}
+				Тогда 
+				\begin{gather*}
+					aA + bE = \dfrac{\sqrt[3]{2} - \sqrt[3]{-3}}{5}
+					\begin{vmatrix}
+						-128 & 25\\
+						-650 & 127\\
+					\end{vmatrix}
+					+ \dfrac{3\sqrt[3]{2} + 2\sqrt[3]{-3}}{5}
+					\begin{vmatrix}
+						1 & 0\\
+						0 & 1\\
+					\end{vmatrix}
+					\\
+					=
+					\begin{vmatrix}
+						-128\dfrac{\sqrt[3]{2} - \sqrt[3]{-3}}{5} & 25\dfrac{\sqrt[3]{2} - \sqrt[3]{-3}}{5}\\
+						-650\dfrac{\sqrt[3]{2} - \sqrt[3]{-3}}{5} & 127\dfrac{\sqrt[3]{2} - \sqrt[3]{-3}}{5}\\
+					\end{vmatrix}
+					+
+					\begin{vmatrix} 
+						\dfrac{3\sqrt[3]{2} + 2\sqrt[3]{-3}}{5} & 0\\
+						0 & \dfrac{3\sqrt[3]{2} + 2\sqrt[3]{-3}}{5}
+					\end{vmatrix}
+					\\
+					=
+					\begin{vmatrix}
+						-25 \sqrt[3]{2} + 26 \sqrt[3]{-3} & 5\sqrt[3]{2} - 5\sqrt[3]{-3}\\
+						-130 \sqrt[3]{2} + 130 \sqrt[3]{-3} & 26 \sqrt[3]{2} - 25\sqrt[3]{-3}\\
+					\end{vmatrix}
+				\end{gather*}
+				
+			\item
+				\begin{gather*}
+					A^{2} =
+					\begin{vmatrix}
+						-18 & -5\\
+						80 & 22
+					\end{vmatrix} 
+				\end{gather*}
+				
+				1. Характеристический многочлен:
+				\begin{gather*}
+					\begin{vmatrix}
+						t + 18 & 5\\
+						-80 & t - 22
+					\end{vmatrix}
+					= 0 \Leftrightarrow
+					t^{2} + 18t - 22t - 22 \cdot 18 + 5 \cdot 80 = t^{2} - 4t + 4 = (t - 2)^{2} = 0 \Leftrightarrow
+					t = 2
+				\end{gather*}
+				
+				2. $\sqrt{A^{2}} = aA^{2} + bE$, где $at + b$ принимает то же значение, что и $\sqrt{t}$, в $t = 2$. $t = 2$ -- двукратное собственное число, значит, если мы возьмем производную от обеих частей равенства $at + b = \sqrt{t}$, $t = 2$ по-прежнему будет ему удовлетворять. Запишем это: 
+				\begin{gather*}
+					\begin{cases}
+						2a + b = \sqrt{2}\\
+						a = \dfrac{1}{2\sqrt{2}}
+					\end{cases}
+				\end{gather*}
+				Получается, $a = \dfrac{1}{2\sqrt{2}}, \; b = \sqrt{2} - \dfrac{1}{\sqrt{2}} = \dfrac{1}{\sqrt{2}}$.
+				\begin{gather*}
+					A = 
+					\dfrac{1}{2\sqrt{2}}A^{2} + \dfrac{1}{\sqrt{2}}E =
+					\dfrac{1}{2\sqrt{2}} 
+					\begin{vmatrix} 
+						-18 & -5\\
+						80 & 22
+					\end{vmatrix} 
+					+ \dfrac{1}{\sqrt{2}}
+					\begin{vmatrix}
+						1 & 0\\
+						0 & 1
+					\end{vmatrix}
+					\\
+					= 
+					\begin{vmatrix}
+						-\dfrac{9}{\sqrt{2}} & -\dfrac{5}{2\sqrt{2}}\\
+						\\
+						\dfrac{40}{\sqrt{2}} & \frac{11}{\sqrt{2}}\\
+					\end{vmatrix}
+					+
+					\begin{vmatrix} 
+						\dfrac{1}{\sqrt{2}} & 0\\
+						\\
+						0 & \dfrac{1}{\sqrt{2}}\\
+					\end{vmatrix}
+					=
+					\begin{vmatrix}
+						-\dfrac{8}{\sqrt{2}} & -\dfrac{5}{2\sqrt{2}}\\
+						\\
+						\dfrac{40}{\sqrt{2}} & \dfrac{12}{\sqrt{2}}\\
+					\end{vmatrix}
+					=
+					\begin{vmatrix}
+						-4\sqrt{2} & -\dfrac{5 \sqrt{2}}{4}\\
+						\\
+						20 \sqrt{2} & 6 \sqrt{2}\\
+					\end{vmatrix}
+				\end{gather*}
+		\end{enumerate}
+		
+		\textbf{Ответ.} 
+		\begin{gather*}
+			\text{а)}
+				\begin{vmatrix}
+					-8\sqrt[5]{3} - 7 & -4\sqrt[5]{3} - 4\\
+					14\sqrt[5]{3} + 14 & 7\sqrt[5]{3} + 8
+				\end{vmatrix}
+			\\
+			\text{б)}
+				\begin{vmatrix}
+					0 & -1\\
+					1 & 2
+				\end{vmatrix} 
+			\\
+			\text{в)}
+				\begin{vmatrix}
+					-25 \sqrt[3]{2} + 26 \sqrt[3]{-3} & 5\sqrt[3]{2} - 5\sqrt[3]{-3}\\
+					-130 \sqrt[3]{2} + 130 \sqrt[3]{-3} & 26 \sqrt[3]{2} - 25\sqrt[3]{-3}
+				\end{vmatrix}
+			\\
+			\text{г)}
+				\begin{vmatrix}
+					-4\sqrt{2} & -\dfrac{5 \sqrt{2}}{4}\\
+					\\
+					20 \sqrt{2} & 6 \sqrt{2}\\
+				\end{vmatrix}
+		\end{gather*}
+	
+		
+		
+		\subsection{}
+		Над полем $\mathbb{Q}$ найдите минимальные многочлены следующих матриц и выясните, диагонализуемы ли они. 
+		\\
+		 \textbf{Способ:}\\
+		берем удобный вектор $\to$ применяем оператор $\to \ldots \to$ линейная зависимость между $e, \; F_{v}, \; F_{v}^{2}, \; \ldots \to$ проверяем: $\nu_{F, \; v}(F) = 0?$ 
+		
+		$\bullet \; = 0: \nu_{F}(t) = \nu_{F, \; V}(t)$ -- минимальный многочлен;
+		
+		$\bullet \; \neq 0:$ повторить процедуру на $\text{im}\ \nu_{F, \; v}(F)$. Тогда $\nu_{F}(t) = \nu_{F, v}(t) \cdot \ldots$\\ 
+		\\
+		а) 
+		\begin{gather*}
+			\begin{vmatrix}
+				1 & 0 & 2 & 2\\
+				0 & 1 & 0 & 0\\
+				0 & 0 & -2 & -1\\
+				0 & 0 & 1 & 0
+			\end{vmatrix}
+		\end{gather*}
+		$e_{3} = \begin{vmatrix} 0\\ 0\\ 1\\ 0\\ \end{vmatrix}$ -- прообраз $v = \begin{vmatrix} 2\\ 0\\ -2\\ 1 \end{vmatrix}$. Применяем $F_{e_{3}}$ еще раз: умножаем исходную матрицу на $F_{e_{3}}$\\
+		\begin{gather*}
+			F_{e_{3}}^{2} = 
+			\begin{vmatrix}
+				0\\ 0\\ 3\\ -2
+			\end{vmatrix}\quad 
+			F^{3}_{e_{3}} = 
+			\begin{vmatrix}
+				2\\ 0\\ -4\\ 3
+			\end{vmatrix} 
+		\end{gather*}
+		
+		Параллельно записываем по столбцам матрицы $e_{3},\ F_{e_{3}},\ F^{2}_{e_{3}},\ F^{3}_{e_{3}}$, чтобы увидеть линейную зависимость. Видим, что $F^{3}_{e_{3}}$ линейно выражается через другие столбцы матрицы
+		\begin{gather*}
+			\begin{vmatrix}
+				0 & 2 & 0 & 2\\
+				0 & 0 & 0 & 0\\
+				1 & -2 & 3 & -4\\
+				0 & 1 & -2 & 3
+			\end{vmatrix}
+		\end{gather*}
+		
+		Мы ищем линейную зависимость: ищем $\nu_{F, v}$, его коэффициенты -- коэффициенты линейной зависимости между записанными векторами.\\
+		Заметим, что 
+		\begin{gather*}
+			F^{3}_{e_{3}} - F_{e_{3}} = 
+			\begin{vmatrix} 
+				0\\ 0\\ -2\\ 2
+			\end{vmatrix}
+			= -F^{2}_{e_{3}} + e_{3} \quad \Leftrightarrow \quad 
+			F^{3}_{e_{3}} = -F^{2}_{e_{3}} + F_{e_{3}} + e_{3} \quad \Leftrightarrow \quad 
+			F^{3}_{e_{3}} + F^{2}_{e_{3}} - F_{e_{3}} - e_{3}
+		\end{gather*}	
+		Таким образом, мы нашли многочлен: $t^{3} + t^{2} - t - 1$\\
+		Единственный способ проверить минимальность: подставить в многочлен $F$. Найденный многочлен аннулирует прообраз третьего вектора (так как мы брали его), а также первого и второго, так как делится на $t - 1$, ведь $\nu_{F}(t) = \underset{v \in V}{\text{НОК}} \nu_{F, \; v}(t)$, а для первого и второго столбца $F_{e_{1}} - e_{1} = \begin{vmatrix} 0\\ 0\\ 0\\ 0\\ \end{vmatrix}, F_{e_{2}} - e_{2} = \begin{vmatrix} 0\\ 0\\ 0\\ 0\\ \end{vmatrix}$, то есть аннулирующий многочлен для них -- $t - 1$\\
+		Поэтому нам остается проверить, что многочлен аннулирует прообраз четвертого вектора, то есть проделать все то же самое для него. 
+		\begin{gather*}
+			e_{4} = 
+			\begin{vmatrix}
+				0\\ 0\\ 0\\ 1
+			\end{vmatrix}
+		\quad
+			F_{e_{4}} =
+			\begin{vmatrix}
+				2\\ 0\\ -1\\ 0
+			\end{vmatrix}
+		\quad
+			F^{2}_{e_{4}} = 
+			\begin{vmatrix} 
+				0\\ 0\\ 2\\ -1
+			\end{vmatrix}
+		\quad
+			F^{3}_{e_{4}} = 
+			\begin{vmatrix}
+				2\\ 0\\ -3\\ 2
+			\end{vmatrix}
+		\end{gather*}
+		
+		Заметим, что $F^{3}_{e_{4}} + F^{2}_{e_{4}} - F_{e_{4}} - e_{4} = \begin{vmatrix} 0\\ 0\\ 0\\ 0\\ \end{vmatrix}$. Значит, многочлен аннулирует и прообраз четвертого вектора. Таким образом, $t^{3} + t^{2} - t - 1$.\\
+		\\\\
+		\textbf{б)}
+		\begin{gather*}
+			\begin{vmatrix}
+				1 & 0 & 0 & 0\\
+				0 & 1 & 0 & 0\\
+				-1 & 1 & 1 & 1\\
+				-2 & 2 & -1 & 3
+			\end{vmatrix}
+		\end{gather*}
+		
+		Возьмем 
+		\begin{gather*}
+			e_{1} = 
+			\begin{vmatrix}
+				0\\ 0\\ 0\\ 1\\
+			\end{vmatrix}
+		\quad
+			F_{e_{1}} =
+			\begin{vmatrix}
+				1\\ 0\\ -1\\ -2
+			\end{vmatrix}
+		\quad
+			F^{2}_{e_{1}} =
+			\begin{vmatrix}
+				1\\ 0\\ -4\\ -7
+			\end{vmatrix}
+		\quad 
+			F^{3}_{e_{1}} = 
+			\begin{vmatrix}
+				1\\ 0\\ -12\\ -19
+			\end{vmatrix}
+		\end{gather*}
+		
+		Параллельно записываем вычисленные значения по столбцам матрицы:
+		\begin{gather*}
+			\begin{vmatrix}
+				0 & 1 & 1 & 1\\
+				0 & 0 & 0 & 0\\ 
+				0 & -1 & -4 & -12\\ 
+				1 & -2 & -7 & -19
+			\end{vmatrix}
+		\end{gather*}
+		Если векторы линейно зависимы (это нужно проверять после вычисления каждого нового применения оператора), то 
+		\begin{gather*}
+			\begin{vmatrix}
+				0 & 1 & 1 & 1\\
+				0 & -1 & -4 & -12\\
+				1 & -2 & -7 & -19
+			\end{vmatrix}
+			\begin{vmatrix}
+				\lambda_{1}\\
+				\lambda_{2}\\
+				\lambda_{3}\\
+				\lambda_{4}
+			\end{vmatrix}
+			= 0
+		\\
+			\lambda_{1} = 
+			\begin{vmatrix}
+				1 & 1 & 1\\
+				-1 & -4 & -12\\
+				-2 & -7 & -19
+			\end{vmatrix}
+			= -4
+		\quad 
+			\lambda_{1} = -
+			\begin{vmatrix}
+				0 & 1 & 1\\
+				0 & -4 & -12\\
+				1 & -7 & -19
+			\end{vmatrix}
+			= -8
+		\end{gather*}
+		Аналогично, закрыв третий и четвертый столбцы с знаками $+$ и $-$ соответственно, вычисляем $\lambda_{3} = 5, \lambda_{4} = 1$.
+		\begin{gather*}
+			\begin{vmatrix} 
+				0 & 1 & 1\\
+				0 & -1 & -12\\
+				1 & -2 & -19
+			\end{vmatrix}
+			=
+			\begin{vmatrix}
+				0 & 0 & -11\\
+				0 & -1 & -12\\
+				1 & 0 & 5
+			\end{vmatrix}
+			= 11
+		\quad
+			-
+			\begin{vmatrix} 
+				0 & 1 & 1\\
+				0 & -1 & -4\\
+				1 & -2 & -7
+			\end{vmatrix}
+			= -
+			\begin{vmatrix}
+				0 & 0 & -3\\
+				0 & -1 & -4\\
+				1 & 0 & 1
+			\end{vmatrix}
+			= -3
+		\end{gather*}
+		
+		Получили, что $-8 F_{e_{1}} + 11 F_{e_{1}}^{2} - 3 F_{e_{1}}^{3} = 0$. Значит, многочлен -- $-3t^{3} + 11t^{2} - 8t$. 
+		
+		*не сходится ответ* 
+		
