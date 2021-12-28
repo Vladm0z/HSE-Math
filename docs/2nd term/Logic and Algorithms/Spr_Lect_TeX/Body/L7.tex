@@ -1,0 +1,164 @@
+\section{Лекция 7 (02.08.2021)}
+
+\begin{defn}
+множество называется транзитивным, если $\cup T \subset T$
+\end{defn}
+
+\begin{lem}
+ У каждого множества есть транзитивное замыкание
+\end{lem}
+\begin{proof}
+Определим по трансфинитной рекурсии последовательность множеств $g$ такую, что $g(0) = X,\ g(n+1) = \cup g(n)$. Действительно, рассмотрим условие $\varphi(x,y):\ x$ -- конечная последовательность и
+$$
+y =
+\begin{cases}
+	X,\ \text{если}\ \operatorname{dom} x = 0\\
+	\cup x(n),\ \text{если}\ \operatorname{dom} x = n+1
+\end{cases}
+$$
+Последовательность $g$ получается, как единственная непродолжаемая трансинитная последовательность, удовлетворяющая рекурсивному условию, заданному $\varphi$.\\
+Положим $T = \bigcup_{n \in \mathbb{N}} g(n) = \bigcup \operatorname{ran} g$. Очевидно, что $T$ -- транзитивное и $X \subset T$.\\
+Проверим, что $T$ является $\subset$-наименьшим из таких множеств.\\
+Предположим, что $X \subset S$ для некоторого транзитивного множества $S$
+\vskip 0.1in
+Имеем $g(0) = X \subset S$. Кроме того, если $g(m) \subset S$, то $g(m+1) = \bigcup g(m) \subset \bigcup S \subset S$
+\vskip 0.1in
+По принципу математической индукции получаем, что $g(m) \subset S$ для любого $m \in \mathbb{N}$
+\vskip 0.1in
+Следовательно, $T = \bigcup_{n \in \mathbb{N}} g(n) \subset S$. Доказали, что $T$ является $\subset$-наименьшим из транзитивных множеств, содержащих $X$ в качестве подмножества
+\end{proof}
+
+\begin{lem}
+Объединение семейства транзитивных -- транзитивно
+\end{lem}
+\begin{lem}
+Пусть $X$ -- транзитивно, тогда $X \subset P(X)$ и $P(X)$ транзитивно
+\end{lem}
+\begin{proof}
+Проверим, что $X \subset P(X)$. Если $x \in X$, то $x \subset X$ по транзитивности $X$. Следовательно $x \in P(X)$
+\vskip 0.1in
+Проверим транзитивность $P(X)$. Если $y \in P(X)$, то $y \subset X \subset P(X)$. Следовательно, $P(X)$ является транзитивным множеством.
+\end{proof}
+
+\begin{theo}[Иерархия фон Неймана]
+По трансфинитной рекурсии для каждого ординала $\xi$ определим множество $\mathbb{V}_{\xi}$ так, что $\mathbb{V}_0 = \varnothing,\quad \mathbb{V}_{\eta + 1} = P(\mathbb{V}_{\eta}),\quad \mathbb{V}_{\lambda} = \bigcup_{\eta < \lambda}\mathbb{V}_{\eta}$\\
+Действительно, рассмотрим условие $\varphi(x,y):\ x$ -- трансинитная последовательность и
+$$
+y =
+\begin{cases}
+	\varnothing,\ \text{if}\ \operatorname{dom} x = 0\\
+	P(x(\eta)),\ \text{if}\ \operatorname{dom} x = \eta + 1\\
+	\cup \operatorname{ran} x
+\end{cases}
+$$
+Видим, что для любой трансфинитной последовательности $x$ существует ровно одно множество $y$, удовлетворяющего $\varphi(x,y)$. Мы находимся в условиях теоремы о трансфинитной рекурсии
+\vskip 0.1in
+Получаем, что для любого ординала $\alpha$ существует единственная трансинитная последовательность длины $\alpha$, удовлетворяющая рекурсивному условию, заданному $\varphi$
+\vskip 0.1in
+В силу единственности получающиеся трансинитные последовательности продолжают одна другую.
+\vskip 0.1in
+Множество $\mathbb{V}_{\xi}$ определяется, как член с номером $\xi$ для некоторой (или любой достаточно длинной) трансфинитной последовательности, удовлетвряющей рекурсивному условию
+\vskip 0.1in
+Так определенный бесконечный ряд множеств $\mathbb{V}_{\xi}$ называется иерархией фон Неймана
+\end{theo}
+
+$$
+\mathbb{V}_0 = \varnothing\\
+\mathbb{V}_1 = \{\varnothing\}\\
+\mathbb{V}_2 = \{\varnothing, \{\varnothing\}\}\\
+\ldots
+$$
+
+\begin{lem}
+Для любых ординалов $\alpha, \beta$ имеет место следующее: $\mathbb{V}_{\alpha}$ транзитивно, $\mathbb{V}_{\beta} \subset \mathbb{V}_{\alpha}$, если $\beta < \alpha$
+\end{lem}
+\begin{proof}
+Оба пункта получаются трансинитой индукцией по ординалу $\alpha$. Разберем первый пункт
+\vskip 0.1in
+Рассмотрим ординал $\alpha$ такой, что для всех $\gamma < \alpha$ множество $\mathbb{V}_{gamma}$ транзитивно. Если $\alpha = 0$, то $\mathbb{V}_{0} = \varnothing$ является транзитивным.
+\vskip 0.1in
+Если $\alpha = \alpha_0 + 1$ для некоторого $\alpha_0$, то $\mathbb{V}_{\alpha} = P(\mathbb{V}_{\alpha_0})$. Поскольку $\mathbb{V}_{\alpha_0}$ транзитивно по предположению, монжесьвл $\mathbb{V}_{\alpha}$ транзитивно.
+\vskip 0.1in
+Если $\alpha$ -- предельный ординал, то $\mathbb{V}_{\alpha}$ является объединением транзитивных множеств, и, следовательно транзитивно.
+\vskip 0.1in
+По индукции заключаем, что $\mathbb{V}_{\alpha}$ транзитивно для любого $\alpha$.
+\vskip 0.1in
+Чтобы получить утверждение второго пункта, надо индукцией по $\alpha$ доказать, что для всех $\alpha$ верно $\forall \beta < \alpha\quad \mathbb{V}_{\beta} \subset \mathbb{V}_{\alpha}$.
+\end{proof}
+
+\begin{theo}[$\in$-индукция]
+Пусть $\varphi$ -- некоторое свойство множеств, тогда
+$$
+\forall x\ (\forall y \in x\ \varphi(y) \to \varphi(x)) \to \forall x \varphi(x)
+$$
+\end{theo}
+\begin{proof}
+Допустим, что $\varphi(x)$ не выполнено для некоторого множества $x$ и $\forall a\ (\forall b \in a\ \varphi(b) \to \varphi(a))$
+\vskip 0.1in
+Рассмотрим подмножество $Z$ множества $T = TC(\{x\})$, состоящее из множеств, которые не удовлетворяют свойству $\varphi$.
+\vskip 0.1in
+Видим, что множество $Z$ непусто. Тогда по аксиоме регулярности оно содержит элемент $z$ такой, что $z \cup Z = \varnothing$
+\vskip 0.1in
+В силу транзитивности множества $T$, все элементы множества $z$ лежат в $T$ (и не лежат в $Z$). Получаем, что $\varphi(z)$ верно, поскольку $\varphi(y)$ верно для любого $y \in z$. Проиворечие.
+\end{proof}
+
+\begin{theo}
+Для всякого множества $x$ существует ординал $\alpha$ такой, что $x \in \mathbb{V}_{\alpha}$
+\end{theo}
+\begin{proof}
+Рассмотрим свойство $\varphi$: существует ординал $\alpha$ такой, что $x \in \mathbb{V}_{\alpha}$
+\vskip 0.1in
+Предположим, что нам дано множество $y$, все элементы которого обладают свойством $\varphi$, то есть $\forall z \in y\ \varphi(z)$
+\vskip 0.1in
+Теперь рассмотрим условие $\psi(c,d):\ d$ -- наименьший ординал, для которого $c \in \mathbb{V}_{d}$. Заметим, что для любого элемента $z$ множества $y$ существует такой ординал $\beta$, что выполнено $\psi(z, \beta)$
+\vskip 0.1in
+Кроме того, для любого множества $c$ существуе не более одного мнодества $d$, удволетворяющего условию $\psi(c,d)$. По аксиоме подстановки существуе множество $D = \{d\ |\ \exists c \in y\ \psi(c,d)\}$
+\vskip 0.1in
+Видим, что $D$ -- это множество ординалов. Возьмем точную верхнюю грань $\sup D$ всех элементов множества $D$. Получаем, что $y \subset \mathbb{V}_{\sup D}$, а потому $y \in \mathbb{V}_{\sup D+1}$. Следовательно, имеет место $\varphi(y)$
+\vskip 0.1in
+Согласно принципу $\in$-индукции $\varphi(x)$ верно для любого множества $x$
+\end{proof}
+
+\begin{defn}
+Рангом множества $x$ по фон Нейману незывается наименьший ординал $\alpha$, для которого $x \in \mathbb{V}_{\alpha + 1}$, или, что эквивалентно, $x \subset \mathbb{V}_{\alpha}$.
+\vskip 0.1
+данный ординал обозначается $\operatorname{rnk} x$
+\end{defn}
+
+\begin{lem}
+$\forall x:\ x \notin \mathbb{V}_{\operatorname{rnk} x}$
+\end{lem}
+
+\begin{proof}
+Предположим, что $x \in \mathbb{V}_{\operatorname{rnk} x}$ для некоторого ординала $\beta$, то по определению ранга $\operatorname{rnk} x = \beta + 1$ для некотрого ординала $\beta$, то по определению ранга $\operatorname{x} \leqslant \beta$. Противоречие.
+\vskip 0.1in
+Осталось рассмотреть случай, когда $\operatorname{rnk} x$ -- предельный ординал. В этом случае
+$$
+\mathbb{V}_{\operatorname{rnk} x} = \bigcup_{\gamma < \operatorname{rnk} x} \mathbb{V}_{\gamma}
+$$
+Видим, что $x \in \mathbb{V}_{\gamma}$ для некоторого $\gamma < \operatorname{rnk} x,\ x \in \mathbb{V}_{\gamma} \subset \mathbb{V}_{\gamma + 1}$ и $\operatorname{rnk} x \leqslant \gamma$. Противоречие.
+\end{proof}
+
+\begin{lem}
+Для любого множества $x$ ранг $\operatorname{rnk} x = \sup\{\operatorname{rnk} y+1\ |\ y \in x\}$
+\end{lem}
+
+\begin{proof}
+Во-первых
+$$
+\forall y \in x\quad y \in \mathbb{V}_{\operatorname{rnk} y+1}\\
+x \subset \bigcup_{y \in x} \mathbb{V}_{\operatorname{rnk} y+1} \subset \mathbb{V}_{\sup\{\operatorname{rnk} y+1\ |\ y \in x\}}
+$$
+Получаем $\operatorname{rnk} x \leqslant \sup\{\operatorname{rnk} y+1\ |\ y \in x\}$
+\vskip 0.1in
+Теперь проверим, что $\operatorname{rnk} y+1 \leqslant \operatorname{rnk} x$ для любого $y \in x$. Если $\operatorname{rnk} x < \operatorname{rnk} y+1$, то $\operatorname{rnk} x < \operatorname{rnk} y$ и
+$$
+y \in x \subset \mathbb{V}_{\operatorname{rnk} x} \subset \mathbb{V}_{\operatorname{rnk} y}
+$$
+Что противоречит предыдущей лемме
+\vskip 0.1in
+Следовательно, $\operatorname{rnk} y+1 \leqslant \operatorname{rnk} x$ для любого $y \in x$, и
+$$
+\sup\{\operatorname{rnk} y+1\ |\ y \in x\} \leqslant \operatorname{rnk} x
+$$
+\end{proof}

@@ -1,0 +1,66 @@
+\section{Лекция 14 (03.22.2021)}
+
+\begin{defn}
+Пусть $M, M^{\prime}$ - модели сигнатуры $\Omega .$ $M^{\prime}-$ подмодель $M$, если\\
+- $M^{\prime} \subset M$ как множество,\\
+- $c_{M}=c_{M^{\prime}}$ для всех $c \in$ Const $_{\Omega}$,\\
+- $f_{M}\left(m_{1}, \ldots, m_{k}\right)=f_{M^{\prime}}\left(m_{1}, \ldots, m_{k}\right)$
+для всех $k$ -местных $f \in$ Fun $_{\Omega}$ и $m_{1}, \ldots, m_{k} \in M^{\prime}$,\\
+- $P_{M}\left(m_{1}, \ldots, m_{k}\right)=P_{M^{\prime}}\left(m_{1}, \ldots, m_{k}\right)$
+для всех $k$ -местных $P \in \operatorname{Pred}_{\Omega}$ и $m_{1}, \ldots, m_{k} \in M^{\prime} .$
+\end{defn}
+Обозначение подмодели: $M^{\prime} \subset M .$
+\begin{defn}
+Подмодель $M^{\prime} \subset M-$ элементарная, если
+$$
+M^{\prime} \vDash A\left(m_{1}, \ldots, m_{k}\right) \Leftrightarrow M \vDash A\left(m_{1}, \ldots, m_{k}\right)
+$$
+для любой формулы $A\left(a_{1}, \ldots, a_{k}\right)$ и $m_{1}, \ldots, m_{k} \in M^{\prime} .$
+$\left(\right.$ Тогда, в частности, $\left.M^{\prime} \equiv M .\right)$ Обозначение элементарной подмодели: $M^{\prime} \prec M .$
+\end{defn}
+
+Мощность сигнатуры $\Omega$
+$$
+|\Omega|:=\mid \text { Const }_{\Omega} \cup \text { Fun }_{\Omega} \cup \operatorname{Pred}_{\Omega} \mid
+$$
+\begin{theo}[Лёвенгейм - Сколем - Тарский]
+Для любой модели $M$ сигнатуры $\Omega$ существует $M^{\prime} \prec M$ такая, что
+$$
+\left|M^{\prime}\right| \leq \max \left(|\Omega|, \aleph_{0}\right)
+$$
+Определение. Зафиксируем модель $M$ и $m_{0} \in M .$ Для каждой формулы $\exists x A(x, \vec{a})$, где $\vec{a}=\left(a_{1}, \ldots, a_{k}\right)-$ список свободных переменных, и для каждого $\vec{m} \in M^{k}$ положим
+$$
+S_{\exists x A(x, \vec{m})}:=\left\{\begin{array}{ll}
+\{e \in M \mid M \vDash A(e, \vec{m})\}, & \text { если это множество непусто; } \\
+m_{0}, & \text { иначе. }
+\end{array}\right.
+$$
+Функция выбора для семейства множеств $\left(S_{\exists x A(x, \vec{m})}\right)_{\vec{m} \in M^{k}}$ называется сколемовской функцией для формулы $\exists x A(x, \vec{a})$ и обозначается $s_{\exists x A(x, \vec{a})}\left(\right.$ или короче: $\left.s_{\exists x A}\right) .$ $\left(\right.$ Случай $k=0$ тоже включается; тогда просто берем $\left.s_{\exists x A} \in M .\right)$
+Таким образом:
+$$
+s_{\exists x A}(\vec{m}) \in S_{\exists x A(x, \vec{m})}
+$$
+и тогда
+$$
+M \vDash A\left(s_{\exists x A}(\vec{m}), \vec{m}\right)
+$$
+если
+$$
+M \vDash \exists x A(x, \vec{m})
+$$
+\end{theo}
+\begin{proof}
+Пусть $M_{0}:=\left\{m_{0}\right\}$ (это множество, еще не модель). По рекурсии строим счетную последовательность множеств $M_{0} \subset M_{1} \subset M_{2} \ldots$ Их объединение даст $M^{\prime} .$
+$$
+\begin{array}{l}
+M_{n+1}:=M_{n} \cup\left\{s_{\exists x A(x, \vec{a})}\left[M_{n}^{k}\right] \mid \exists x A(x, \vec{a}) \in F m\right\}, \\
+(F m-\text { множество всех формул нашей сигнатуры). } \\
+M^{\prime}:=\bigcup_{n} M_{n}(\text { как множество }) .
+\end{array}
+$$
+Его можно превратить в модель $M^{\prime} \subset M$, положив
+- $M^{\prime} \vDash P(\vec{m}) \Leftrightarrow M \vDash P(\vec{m})$,\\
+- $c_{M^{\prime}}=s_{\exists x}(x=c)$\\
+- $f_{M^{\prime}}(\vec{m})=s_{\exists x(x=f(\vec{a}))}(\vec{m}) .$\\
+Доказываем, что $M^{\prime} \prec M-$ искомая.
+\end{proof}

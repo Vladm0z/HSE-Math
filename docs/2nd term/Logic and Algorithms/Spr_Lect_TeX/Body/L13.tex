@@ -1,0 +1,80 @@
+\section{Лекция 13 (03.1.2021)}
+
+Все сигнатуры с равенством, все модели нормальные.
+\begin{defn}
+Теория сильно категорична, если все ее модели изоморфны.\\
+Теория конечно аксиоматизируема, если она эквивалентна конечной теории.
+\end{defn}
+
+\begin{theo}
+Пусть $\Omega$ - конечная сигнатура, $M$ - конечная модель $\Omega$. Тогда\\
+- $Th(M)$ конечно аксиоматизируема.\\
+- $Th(M)$ сильно категорична.
+\end{theo}
+\begin{proof}
+Пусть $M$ - конечная модель конечной сигнатуры $\Omega$. Строим формулу $A_{M}$, которая полностью описывает $M$.\\
+Пусть $M = \left\{m_{1}, \ldots, m_{n}\right\} $. Положим
+$$
+A_{M} := \exists x_{1} \ldots \exists x_{n} B_{M}\left(x_{1}, \ldots, x_{n}\right)
+$$
+где
+$$
+\begin{array}{c}
+B_{M}\left(a_{1}, \ldots, a_{n}\right):=\bigwedge_{1 \leq i<j \leq n}\left(a_{i} \neq a_{j}\right) \wedge \forall y \bigvee_{i=1}^{n}\left(y=a_{i}\right) \wedge \\
+\bigwedge\left\{c=a_{i} \mid c \in \text { Const }_{\Omega}, M \vDash c=m_{i}\right\} \wedge \\
+\bigwedge\left\{f\left(a_{i_{1}}, \ldots, a_{i_{k}}\right)=a_{j} \mid f \in F u n_{\Omega}, M \vDash f\left(m_{i_{1}}, \ldots, m_{i_{k}}\right)=m_{j}\right\} \wedge \\
+\bigwedge\left\{P\left(a_{i_{1}}, \ldots, a_{i_{k}}\right) \mid P \in \operatorname{Pred}_{\Omega}, M \vDash P\left(m_{i_{1}}, \ldots, m_{i_{k}}\right)\right\} \wedge \\
+\bigwedge\left\{\neg P\left(a_{i_{1}}, \ldots, a_{i_{k}}\right) \mid P \in \operatorname{Pred}_{\Omega}, M \vDash \neg P\left(m_{i_{1}}, \ldots, m_{i_{k}}\right)\right\}
+\end{array}
+$$
+\end{proof}
+\begin{lem}
+Для модели $M^{\prime}$ сигнатуры $\Omega$
+$$
+M^{\prime} \vDash A_{M} \Leftrightarrow M^{\prime} \cong M
+$$
+\end{lem}
+\begin{proof}
+$(\Leftarrow)$ Проверяем $M \vDash A_{M}$, это следует из $M \vDash B_{M}\left(m_{1}, \ldots, m_{n}\right)$.\\
+$(\Rightarrow)$ Предположим, что $M^{\prime} \vDash A_{M}$ и построим изоморфизм $M$ на $M^{\prime}$\\
+По определению истинности, найдутся $m_{1}^{\prime}, \ldots, m_{n}^{\prime} \in M^{\prime}$, для которых
+$$
+M^{\prime} \vDash B_{M}\left(m_{1}^{\prime}, \ldots, m_{n}^{\prime}\right)
+$$
+Докажем, что отображение $\varphi$, переводящее каждый $m_{i}$ в $m_{i}^{\prime}$ - искомый изоморфизм
+\end{proof}
+\begin{proof}
+Окончание доказательства теоремы.\\
+Заметим: $T h(M) \sim\left\{A_{M}\right\} $.
+1. По лемме $1.7$ $A_{M} \in T h(M)$ и значит,
+$$
+M^{\prime} \vDash T h(M) \Rightarrow M^{\prime} \vDash A_{M}
+$$
+2. Обратно, если $M^{\prime} \vDash A_{M}$, то по лемме $1.7, M^{\prime} \cong M $. И тогда $M^{\prime} \vDash T h(M)$
+\end{proof}
+
+$T h(M)$ сильно категорична, т.к. эквивалентная ей теория $\left\{A_{M}\right\}$ сильно категорична по лемме
+\begin{corol}
+Если $M-$ конечная модель и $M^{\prime} \equiv M$, то $M^{\prime} \cong M $.
+\end{corol}
+\begin{proof}
+Если $M^{\prime} \equiv M$, то $M^{\prime} \vDash T h(M) $. Тогда, по теореме $1.6, M^{\prime} \cong M$
+\end{proof}
+
+$k$ -местный предикат на множестве $M-$ это отображение $\gamma: M^{k} \longrightarrow\{0,1\}$\\
+$k$ -местное отношение на множестве $M-$ это множество $R \subset M^{k} $.\\
+Рассмотрим формулу $A(\vec{b})$, где $\vec{b}=\left(b_{1}, \ldots, b_{k}\right) . k$ -местный предикат, определимый формулой $A(\vec{b})$ в модели $M,-$ это $A_{M}: M^{k} \longrightarrow\{0,1\}$ такое, что для всех $m_{1}, \ldots, m_{k}$
+$$
+A_{M}\left(m_{1}, \ldots, m_{k}\right)=\left|A\left(m_{1}, \ldots, m_{k}\right)\right|_{M}
+$$
+\begin{theo}
+Пусть $\alpha-$ автоморфизм модели,$A\left(b_{1}, \ldots, b_{k}\right)-$ формула в ее сигнатуре. Тогда для всех $m_{1}, \ldots, m_{k} \in M$
+$$
+A_{M}\left(\alpha\left(m_{1}\right), \ldots, \alpha\left(m_{k}\right)\right)=A_{M}\left(m_{1}, \ldots, m_{k}\right)
+$$
+$\mathrm{B}$ сокращенной записи:
+$$
+A_{M}(\alpha \vec{m})=A_{M}(\vec{m})
+$$
+Таким образом, определимый в $M$ предикат инвариантен при всех автоморфизмах $M$
+\end{theo}

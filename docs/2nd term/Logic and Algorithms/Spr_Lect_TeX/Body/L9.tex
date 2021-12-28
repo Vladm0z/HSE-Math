@@ -1,0 +1,256 @@
+\section{Лекция 9 (02.16.2021)}
+
+\begin{defn}
+Пусть $A$ -- замкнутая флома сигнатуры $\Sigma(M)$. Отношение $M \vDash  A$ формула A истинна в модели М определяется индукцией по построению A
+$$
+\begin{array}{l}
+M \vDash P\left(t_{1}, \ldots, t_{n}\right) \stackrel{\text { def }}{\Longleftrightarrow} P_{M}\left(\left(t_{1}\right)_{M}, \ldots,\left(t_{n}\right)_{M}\right)=1, \text { если } \\
+A=P\left(t_{1}, \ldots, t_{n}\right)-\text { атомарная формула; }
+\end{array}
+$$
+\end{defn}
+\vskip 0.2in
+Стандартные определения для булевых связок
+$$
+\begin{array}{l}
+M \vDash(B \rightarrow C) \stackrel{\text { def }}{\Longleftrightarrow}(M \not \models B \text { или } M \vDash C)\\
+M \vDash \neg B \stackrel{\text { def }}{\Longleftrightarrow} M \not \models B \text { ; }\\
+M \vDash(A \wedge B) \stackrel{\text { def }}{\Longleftrightarrow}(M \vDash A \text { и } M \vDash B)\\
+M \vDash(A \vee B) \stackrel{\text { def }}{\Longleftrightarrow}(M \vDash A \text { или } M \vDash B)
+\end{array}
+$$
+\vskip 0.2in
+Кванторы
+$$
+\begin{array}{l}
+M \vDash(\forall x A[a / x]) \stackrel{\text { def }}{\Longleftrightarrow} \text { для всех } c \in M M \vDash A[a / \underline{c}] \\
+M \vDash(\exists x A[a / x]) \stackrel{\text { def }}{\Longleftrightarrow} \text { существует } c \in M M \vDash A[a / \underline{c}]
+\end{array}
+$$
+\vskip 0.2in
+Нельзя говорить об истинности или ложности незамкнутых формул, поскольку их истинностные значения зависят от выбора значений параметров -- входящих в формулу свободныз переменных\\
+Пример: формула $a+1=b$ в стандартной модели арифметики может быть как истинной, так и ложной
+\vskip 0.1in
+Сокращение: вместо
+$$
+\underset{\chi}{M} \vDash A\left[a_{1} / \underline{c}_{1}, \ldots a_{n} / \underline{c}_{n}\right]
+$$
+пишут
+$$
+M \models A\left[a_{1} / c_{1}, \ldots a_{n} / c_{n}\right]
+$$
+или даже
+$$
+M \models A\left[c_{1}, \ldots c_{n}\right]
+$$
+\vskip 0.2in
+Пример.\\
+В модели $(\mathbb{N} ;=, S,+, \cdot, 0)$ истинна формула
+$$\exists x, y, z(\neg x=0 \wedge \neg y=0 \wedge x \cdot x+y \cdot y=z \cdot z)$$
+и ложна формула 
+$$\exists x, y, z(\neg x=0 \wedge \neg y=0 \wedge x \cdot x \cdot x+y \cdot y \cdot y=z \cdot z \cdot z)$$
+\vskip 0.2in
+Пример\\
+В модели $\left(\mathbb{R}^{2} ;=, \cong, B\right)$ истинна формула
+$$\forall x, y, y^{\prime}, z\left(B(x, y, z) \wedge B\left(x, y^{\prime}, z\right) \rightarrow B\left(x, y, y^{\prime}\right) \vee B\left(x, y^{\prime}, y\right)\right)$$
+Эта же формула верна и в модели $\left(H^{2} ;=, \cong,\right)$. В).
+\vskip 0.2in
+Любая формула $A$ от свободных переменных $b_{1}, \ldots, b_{n}$ определяет $n$ -местный предикат $A_{M}$ в модели $M:$
+$$
+A_{M}\left(x_{1}, \ldots, x_{n}\right)=1 \stackrel{\text { def }}{\longleftrightarrow} M \vDash A\left[b_{1} / x_{1}, \ldots, b_{n} / x_{n}\right]
+$$
+Пример.\\
+В модели $(\mathbb{N} ;=,+)$ формула $\exists x(x+x=a)$ определяет предикат «а чётно», т.е. множество чётных чисел.
+\vskip 0.2in
+\begin{defn}
+Предикат $P\left(x_{1}, \ldots, x_{n}\right)$ называется определимым в модели $(M ; \Sigma),$ если $P=A_{M}$ для некоторой формулы $A$ языка $\mathcal{L}_{\Sigma}$.
+\end{defn}
+\begin{defn}
+Функция $f$ называется определимой в модели $M,$ если определим её график, то есть предикат $G_{f}\left(x_{1}, \ldots, x_{n}, y\right) \stackrel{\text { def }}{\Longleftrightarrow} f\left(x_{1}, \ldots, x_{n}\right)=y$
+\end{defn}
+\vskip 0.2in
+Пример.
+В модели $(\mathbb{Z} ; \leqslant)$ предикат $b=a+1$ определим формулой
+$$
+\neg b \leqslant a \wedge \forall x(x \leqslant a \vee b \leqslant x)
+$$
+Следовательно, функция $s(x) \rightleftharpoons x+1$ определима в $(\mathbb{Z} ; \leqslant)$.
+\vskip 0.2in
+Определим следующие предикаты в $\left(\mathbb{R}^{2} ;=, \cong, B\right)$
+$$
+\text { o } a \neq b \rightleftharpoons \neg a=b
+$$
+$c \in ab$ «с лежит на прямой $ab$»
+$$
+c \in a b \rightleftharpoons(B(c, a, b) \vee B(a, c, b) \vee B(a, b, c))
+$$
+$ab\|cd$ «прямые а $a b$ и $c d$ параллельны»
+$$
+a b \| c d \rightleftharpoons a \neq b \wedge c \neq d \wedge \neg \exists x(x \in a b \wedge x \in c d)
+$$
+\vskip 0.2in
+«Через точку $z$ вне прямой $xy$ можно провести не более одной прямой, параллельной данной.»
+$$\forall x, y, z\left(x \neq y \wedge \neg z \in x y \rightarrow \forall u, v\left(z u\|x y \wedge zv \| x y \rightarrow v \in z u\right)\right)$$
+Верно в $\mathbb{R}^{2},$ но не в $\mathrm{H}^{2}$.
+\vskip 0.2in
+\begin{defn}
+Формула $A\left(b_{1}, \ldots, b_{n}\right)$ сигнатуры $\sum$ выполнима в модели $(M, \Sigma),$ если для некоторых констант $c_{1}, \ldots, c_{n} \in M$ предложение $A\left[b_{1} / \underline{c}_{1}, \ldots, b_{n} / \underline{c}_{n}\right]$ ( сигнатуры $\Sigma(M)$) истинно.
+Формула $A$ сигнатуры $\sum$ выполнима, если она выполнима в некоторой модели $(M, \Sigma)$.
+\end{defn}
+\vskip 0.2in
+\begin{defn}
+Формула $A$ общезначима (тождественно истинна), если $\neg A$ не выполнима
+\end{defn}
+\begin{defn}
+Формула $A$ тождественно ложна, если $A$ не выполнима.
+\end{defn}
+Пример.\\
+Формулы $P(a) \vee \neg P(a), \exists x \forall y A(x, y) \rightarrow \forall y \exists x A(x, y)$ общезначимы. Формула $P\left(a_{0}\right) \rightarrow P\left(a_{1}\right)$ выполнима, но не общезначима.
+\vskip 0.3in
+Общезначимые формулы представляют собой универсальные законы логики, истинные вне зависимости от предметной области и интерпретации входящих в них предикатных символов.
+\vskip 0.1in
+Логическое следование утверждения $B$ из утверждений $A_{1}, \ldots, A_{n}$ сводится к проверке общезначимости формулы $A_{1} \wedge A_{2} \wedge \cdots \wedge A_{n} \rightarrow B$
+\vskip 0.1in
+Entscheidungsproblem: найти алгоритм, определяющий по данной формуле $A$, общезначима ли она. Гильберт считал этот вопрос важнейшей математической проблемой.
+\vskip 0.3in
+- Пропозициональные переменные: $\operatorname{Var}=\left\{P_{0}, P_{1}, \ldots\right\}$.\\
+- Связки: $\neg, \wedge, \vee, \rightarrow ;$ константы $\perp($ ложь $), \top($ истина $)$.\\
+- Формулы $F_m$ строятся по правилам:\\
+(1) Если $P \in \operatorname{Var}$ или $P \in\{\top, \perp\},$ то $P$ -- формула;\\
+(2) Если $A$ и $B$ - формулы, то $(\neg A),(A \wedge B),(A \vee B)$, $(A \rightarrow B)$ -- формулы.\\
+- $F_m$ есть наименьшее множество, удовлетворяющее условиям $1$ и $2$.
+\vskip 0.2in
+\begin{lem}
+Любая формула $F$, отличная от переменной или константы, однозначно представляется в виде $(A \wedge B),(A \vee B),(A \rightarrow B)$ или $(\neg A)$ для некоторых формул $A, B$.
+\end{lem}
+\begin{proof}
+Соображения баланса скобок в формуле.
+\end{proof}
+\begin{defn}
+- $A$ и $B$ называются непосредственными подформулами $F$;
+- $G$ - подформула $F$, если $G \stackrel{\circ}{=} F_{\text {или }} G$ - подформула одной из непосредственных подформул $F$.
+\end{defn}
+\vskip 0.2in
+- Опускаем внешние скобки;\\
+- Приоритет связок: $\neg, \wedge, \vee, \rightarrow ;$ $\neg P \wedge Q \rightarrow R$читается как $(((\neg P) \wedge Q) \rightarrow R)$\\
+- Кратные $\wedge$ и $\vee$ ассоциируем влево:
+$A \wedge B \wedge C$ читается как $((A \wedge B) \wedge C)$.\\
+\vskip 0.2in
+\begin{defn}
+Истинностные значения: $\mathbb{B} \rightleftharpoons\{\text{Л}, \text{И}\} \rightleftharpoons\{0,1\}$ .\\
+Булевы функции: $f: \mathbb{B}^{n} \rightarrow \mathbb{B}$.
+\end{defn}
+\vskip 0.2in
+Функции $f: \mathbb{B}^{n} \rightarrow \mathbb{B}$ принято задавать таблицами истинности
+вида 
+\begin{tabular}{cccc|c}
+$x_{1}$ & $x_{2}$ & $\ldots$ & $x_{n}$ & $f\left(x_{1}, x_{2}, \ldots, x_{n}\right)$ \\
+\hline 0 & 0 & $\ldots$ & 0 & $f(0,0, \ldots, 0)$ \\
+0 & 0 & $\ldots$ & 1 & $f(0,0, \ldots, 1)$ \\
+$\ldots$ & $\ldots$ & $\ldots$ & $\ldots$ & $\ldots$ \\
+1 & 1 & $\ldots$ & 1 & $f(1,1, \ldots, 1)$
+\end{tabular}
+В такой таблице $2^{n}$ строк
+\vskip 0.2in
+\begin{defn}
+Оценка переменных: функция $f: \mathrm{Var} \rightarrow \mathbb{B}$.
+Любая оценка продолжается естественным образом до отображения $f: F_m \rightarrow \mathbb{B}$.
+\end{defn}
+\begin{defn}
+$f(A)=$ значение формул $A$ при оценке $f$. Определяется индукцией по построению A:
+\end{defn}
+\vskip 0.2in
+Значение $f(A)$ определяется индукцией по построению $A:$
+$$
+\begin{array}{l}
+f(\top)=1 ; f(\perp)=0 \\
+f(\neg A)=1-f(A) \\
+f(A \wedge B)=\min (f(A), f(B)) \\
+f(A \vee B)=\max (f(A), f(B)) \\
+f(A \rightarrow B)=\max (1-f(A), f(B))
+\end{array}
+$$
+В частности, $f(A \rightarrow B)=1 \Longleftrightarrow f(A) \leq f(B)$
+\vskip 0.2in
+\begin{lem}
+Пусть $\operatorname{Var}=\left\{P_{1}, \ldots, P_{n}\right\}$\\
+Тогда существует взаимно-однозначное соответствие между оценками $f: \operatorname{Var} \rightarrow \mathbb{B}$ и наборами $\vec{x}=\left(x_{1}, \ldots, x_{n}\right) \in \mathbb{B}^{n}$.
+$$
+f \longmapsto\left(f\left(P_{1}\right), \ldots, f\left(P_{\mathfrak{q}}\right)\right) \in \mathbb{B}^{n}
+$$
+$\vec{x}=\left(x_{1}, \ldots, x_{n}\right) \longmapsto f_{\vec{x}},$ где оценка $f_{\vec{x}}$ определена таблицей
+$$
+\begin{array}{c|c|c|c}
+P_{1} & P_{2} & \ldots & P_{n} \\
+\hline x_{1} & x_{2} & \ldots & x_{n}
+\end{array}
+$$
+\end{lem}
+\vskip 0.2in
+\begin{defn}
+Таблица истинности формулы $A$ от $n$ переменных есть булева функция $\varphi_{A}: \mathbb{B}^{n} \rightarrow \mathbb{B}$ такая, что
+$$
+\varphi_{A}(\vec{x})=f_{\vec{x}}(A)
+$$
+для всех $\vec{x} \in \mathbb{B}^{n}$
+\end{defn}
+\vskip 0.2in
+\begin{theo}
+Для любой функции $\varphi: \mathbb{B}^{n} \rightarrow \mathbb{B}$ найдётся такая формула A от $n$ переменных, что $\varphi=\varphi_{A}$ При этом можно считать, что $A$ содержит лишь связки $\neg$ и $\vee$.
+\end{theo}
+\begin{proof}
+Для $x \in \mathbb{B}$ положим
+$$
+P^{x}=
+\begin{cases}
+P,\text { если } x=\text{И} \\
+\neg P, \text { если } x=\text{Л}
+\end{cases}
+$$
+Для $\vec{x}=\left(x_{1}, \ldots, x_{n}\right) \in \mathbb{B}^{n}$ обозначим
+$$
+A_{\vec{x}} \rightleftharpoons \bigwedge_{i=1}^{n} P_{i}^{x_{i}}
+$$
+где $\bigwedge_{j=1}^{m} B_{j} \rightleftharpoons\left(\left(B_{1} \wedge B_{2}\right) \wedge \cdots \wedge B_{m}\right)$
+\vskip 0.1
+Имеем: для любой оценки $f$
+$$
+f\left(A_{\vec{x}}\right)=\text{И} \Longleftrightarrow f=f_{\vec{x}}
+$$
+Пусть список $\vec{x}_{1}, \ldots, \vec{x}_{m}$ исчерпывает все $\vec{x} \in \mathbb{B}^{n}$ для которых $\varphi(\vec{x})=h$, то есть
+$$
+\varphi(\vec{x})=\text{И} \Longleftrightarrow \exists j \vec{x}=\vec{x}_{j}
+$$
+Положим
+$$
+A \rightleftharpoons \bigvee_{j=1}^{m} A_{\vec{x}_{j}}
+$$
+Тогда
+$$
+\begin{array}{ll}
+f_{\vec{x}}(A)=\text{И} & \Longleftrightarrow \quad \exists j\ f_{\vec{x}} \left(A_{\vec{x}_{j}}\right)=\text{И}\\
+&\Longleftrightarrow \quad \exists j\ \vec{x} = \vec{x}_{j}\\
+&\Longleftrightarrow \quad \varphi(\vec{x})=\text{И}
+\end{array}
+$$
+Значит, $\varphi_{A}(\vec{x})=f_{\vec{x}}(A)= \varphi(\vec{x})$
+\end{proof}
+\vskip 0.2in
+\begin{defn}
+Формула $A$ выполнима, если $\exists f: f(A)=\text{И}$.
+\end{defn}
+\begin{defn}
+Формула $A$ - тавтология, если $\forall f: f(A)=\text{И}$.
+\end{defn}
+\begin{defn}
+Формула $A$ - тождественно ложна, если $\forall f: f(A)=\text{Л}$.
+\end{defn}
+\vskip 0.2in
+\begin{lem}
+Следующие условия равносильны.\\
+(1) Формула $A$ тождественно ложна.\\
+(2) Формула $A$ не выполнима.\\
+(3 Формула $\neg A$ - тавтология.
+\end{lem}
+Пример:\\
+$\neg(P \rightarrow P)$ тождественно ложна (и не выполнима); $P \rightarrow P$ тавтология; $P \rightarrow Q$ выполнима, но не тавтология.

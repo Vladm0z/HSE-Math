@@ -1,0 +1,263 @@
+\section{Лекция 10 (02.22.2021)}
+
+\begin{defn}
+Формула $A\left(b_{1}, \ldots, b_{n}\right)$ сигнатуры $\sum$ общезначима, если для любой модели $(M ; \Sigma)$ и любых констант $c_{1}, \ldots, c_{n} \in M$ $M \vDash A\left[b_{1} / \underline{c}_{1}, \ldots, b_{n} / \underline{c}_{n}\right]$
+\end{defn}
+
+\begin{defn}
+Формулы $A$ и $B$ сигнатуры $\sum$ равносильны (обозначение $A \equiv B),$ если в любой модели $(M ; \Sigma)$ они определяют один и тот же предикат, то есть если $A_{M}=B_{M}$.
+\end{defn}
+
+Утверждение.\\
+$A \equiv B \Longleftrightarrow$ формула $A \leftrightarrow B$ общезначима.\\
+$A \leftrightarrow B$ есть сокращение для $(A \rightarrow B) \wedge(B \rightarrow A) .$
+\vskip 0.1in
+Равносильности логики высказываний
+$$
+\begin{array}{rl|rl}
+A \wedge B & \equiv B \wedge A & A \vee B & \equiv B \vee A \\
+A \wedge(B \wedge C) & \equiv(A \wedge B) \wedge C & A \vee(B \vee C) & \equiv(A \vee B) \vee C \\
+A \wedge A & \equiv A & A \vee A & \equiv A \\
+A \wedge(B \vee C) & \equiv(A \wedge B) \vee(A \wedge C) & A \vee(B \wedge C) & \equiv(A \vee B) \wedge(A \vee C) \\
+A \vee(A \wedge B) & \equiv A & A \wedge(A \vee B) & \equiv A \\
+\neg(A \wedge B) & \equiv \neg A \vee \neg B & \neg(A \vee B) & \equiv \neg A \wedge \neg B \\
+\perp & \equiv A \wedge \neg A & T & \equiv A \vee \neg A \\
+\neg \neg A & \equiv A & A \rightarrow B & \equiv \neg A \vee B
+\end{array}
+$$
+Кванторы
+$$
+\begin{aligned}
+\forall x A[a / x] & \equiv \forall y A[a / y] \\
+\exists x A[a / x] & \equiv \exists y A[a / y] \\
+(\forall x A[a / x] \vee B) & \equiv \forall x(A[a / x] \vee B) \\
+(\exists x A[a / x] \vee B) & \equiv \exists x(A[a / x] \vee B) \\
+(\forall x A[a / x] \wedge B) & \equiv \forall x(A[a / x] \wedge B) \\
+(\exists x A[a / x] \wedge B) & \equiv \exists x(A[a / x] \wedge B) \\
+\neg \forall x A[a / x] & \equiv \exists x \neg A[a / x] \\
+\neg \exists x A[a / x] & \equiv \forall x \neg A[a / x]
+\end{aligned}
+$$
+
+Стандартные факты:\\
+(1) Допустимость правил подстановки и замены подформулы
+на эквивалентную\\
+(2) Переименование связанных переменных\\
+(3) Теорема о предварённой нормальной форме
+\vskip 0.2in
+
+(1) Обогатим язык логики первого порядка пропозициональными переменными. Можно считать переменную $P$ нульместным предикатным символом\\
+(2) Распространим на расширенный язык все синтаксические понятия, включая понятие формулы.\\
+(3) Пропозициональные переменные считаются атомарными формулами.
+\vskip 0.2in
+
+\begin{defn}
+$C[P / A]$ означает результат замены всех вхождений $P$ в формулу $C$ на формулу $A .$ (т
+\end{defn}
+Замечание.\\
+$C[P / A]$ не всегда является формулой. Если $C=\forall x(Q(x) \wedge P)$ и $A=\exists x R(x),$ то $C[P / A]=\forall x(Q(x) \wedge \exists x R(x))$
+\vskip 0.2in
+
+\begin{lem}
+$C[P / A]$ - формула, если и только если любое вхождение $P$ в формулу С не находится в области действия квантора по переменной $x \in$ BdVar, входящей в А.
+\end{lem}
+\begin{defn}
+Говорим, что разрешена подстановка формулы А вместо $P$ в С, если выполнено условие предыдущей леммы.
+\end{defn}
+
+\begin{theo}
+Если $A \equiv B$ и пазрешена подстановка формул $A, B$ вместо $P$ в $C,$ то $C[P / A] \equiv C[P / B]$
+\end{theo}
+\begin{proof}
+индукция по построению формулы С. Шаг индукции на основе леммы:
+\begin{lem}
+Если $A \equiv A^{\prime}$ и $B \equiv B^{\prime},$ то\\
+(1) ( $A \wedge B \equiv A^{\prime} \wedge B^{\prime}, \quad A \vee B \equiv A^{\prime} \vee B^{\prime}, \quad \neg A \equiv \neg A^{\prime}$,\\
+(2) $\forall \times A[a / x] \equiv \forall \times A^{\prime}[a / x]$ (если $х$ не входит в $A$ и $A^{\prime}$)\\
+(3) ( $\exists x A[a / x] \equiv \exists x A^{\prime}[a / x]$ (если $x$ не входит в $A$ и $A^{\prime}$).\\
+\end{lem}
+\end{proof}
+
+(1) Пропозициональная переменная $P$ в модели $M$
+интерпретируется как логическая константа, то есть $P_{M}$ is $\mathbb{B}$.\\
+(2) Считается $M \models P_{M},$ если $P_{M}= \text{И}$ и $M \not \models P_{M}$, если $P_{M}=\text{Л}$.\\
+(3) Понятие общезначимой формулы распространяется на формулы расширенного языка.
+\vskip 0.2in
+
+\begin{theo} 
+Пусть формула $A$ общезначима и разрешена подстановка формулы $C$ вместо $P$ в $A$, тогда общезначима формула $A[P / C]$
+\end{theo}
+\begin{proof}
+(1) Допустим, $M \not \models f(A[P / C])$ при некоторой оценке $f$.\\
+(2) Расширим $M$ до модели $(M, P)$ сигнатуры с переменной $P$ :
+$P_{M}= \text{И} \Longleftrightarrow M \vDash f(C)$\\
+(3) Индукцией по построению формулы $B$ проверим, что
+$$
+(M, P) \vDash B \Longleftrightarrow M \vDash B[P / C]
+$$
+для любой замкнутой формулы $B$, в которую разрешена подстановка $C$ вместо $P$.\\
+(4) Отсюда получаем $(M, P) \not \models f(A)$.
+\end{proof}
+
+\begin{corol}
+Если $A \equiv B$ и разрешена подстановка $C$ вместо $P$ в $A$ и $B$, то $A[P / C] \equiv B[P / C]$
+\end{corol}
+
+\begin{lem}
+Пусть $y \in \mathrm{BdVar}$ не входит в формулу $B$. Тогда $B[x / y]$ есть формула и $B[x / y] \equiv B$.
+\end{lem}
+\begin{proof}
+Применяем индукцию по числу вхождений кванторов по переменной $\times$ в В. Каждая подформула $\forall \times C[a / x]$ или $\exists \times C[a / x]$ заменяется на эквивалентную $\forall y C[a / y]$ или $\exists y C[a / y]$.
+\end{proof}
+
+\begin{defn}
+Формула А называется предварённой, если А имеет вид $\mathrm{Q} x_{1} \mathrm{Q} x_{2} \ldots \mathrm{Q} x_{n} A_{0}\left[b_{1} / x_{1}, \ldots, b_{n} / x_{n}\right],$ где $\mathrm{Q}$ означает квантор $\forall$ или $\exists$, а формула $A_{0}$ бескванторная.
+\end{defn}
+\begin{theo}
+Для каждой формулы $А$ можно указать эквивалентную ей предварённую формулу $A^{\prime}$ от тех же свободных переменных.
+\end{theo}
+\begin{proof}
+Последовательно выносим кванторы наружу, используя основные эквивалентности и леммы о замене связанных переменных и о подстановке. Разбор алгоритма на семинарских занятиях.
+\end{proof}
+\vskip 0.8in
+
+\begin{defn}
+Теорией сигнатуры $\sum$ называем произвольное множество $T$ замкнутых формул языка $\mathcal{L}_{\Sigma} .$ Элементы $A \in T$ называем нелогическими аксиомами $T$.
+\end{defn}
+Пример.\\
+Теория отношения эквивалентности:\\
+(1) $\forall x R(x, x)$\\
+(2) $\forall x, y(R(x, y) \rightarrow R(y, x))$\\
+(3) $\forall x, y, z(R(x, y) \wedge R(y, z) \rightarrow R(x, z))$
+\vskip 0.2in
+
+Пример\\
+Модель $(M ;<)$ есть строгий частичный порядок, если в $(M ;<)$ истинны следующие предложения:\\
+(1) $\forall x, y, z(x<y \wedge y<z \rightarrow x<z)$\\
+(2) $\forall x \neg x<x$
+\vskip 0.2in
+
+Пример\\
+Простой граф - это модель вида $(V ; E),$ где $E-$ бинарный предикат смежности, причём отношение $E$ симметрично и иррефлексивно:\\
+(1) $\forall x \neg E(x, x)$\\
+(2) $\forall x, y(E(x, y) \rightarrow E(y, x))$
+\vskip 0.2in
+
+Пример.\\
+$(M ;=, \cdot, 1)$ есть группа, если $M$ есть модель следующей теории (при условии, что `$=$' в $M$ понимается как равенство):\\
+(1) $\forall x, y, z \quad x \cdot(y \cdot z)=(x \cdot y) \cdot z$\\
+(2) $\forall x(1 \cdot x=x \wedge x \cdot 1=x)$\\
+(3) $\forall x \exists y(x \cdot y=1 \wedge y \cdot x=1)$
+\vskip 0.3in
+
+Пусть $\Sigma$ - сигнатура, содержащая выделенный предикатный символ $=$
+\begin{defn}
+Нормальной моделью называем модель $(M ; \Sigma),$ в которой $=$ интерпретируется как равенство $\{\langle x, x\rangle \chi \mid x \in M\}$.
+\end{defn}
+\vskip 0.2in
+
+\begin{defn}
+Аксиомы равенства для $\Sigma$ - универсальные замыкания следующих формул:\\
+(1) аксиомы отношения эквивалентности для $=$\\
+(2)
+$$
+a_{1}=b_{1} \wedge a_{2}=b_{2} \wedge \cdots \wedge a_{n}=b_{n} \rightarrow
+\left(P\left(a_{1}, \ldots, a_{n}\right) \leftrightarrow P\left(b_{1}, \ldots, b_{n}\right)\right)
+$$
+(3)
+$$
+a_{1}=b_{1} \wedge a_{2}=b_{2} \wedge \cdots \wedge a_{n}=b_{n} \rightarrow
+\left(f\left(a_{1}, \ldots, a_{n}\right)=f\left(b_{1}, \ldots, b_{n}\right)\right)
+$$
+для всех $f \in \operatorname{Func}_{\Sigma}$ and $P \in \operatorname{Pred}_{\Sigma}$
+\end{defn}
+\vskip 0.3in
+
+Предложсение.\\
+Если $(\mathrm{M} ; \Sigma)$ - нормальная модель, то в $\mathrm{M}$ истинны все
+аксиомы равенства.
+\begin{defn}
+Теорией с равенством называем теорию сигнатуры $\sum$ с
+равенством, содержащую все аксиомы равенства.
+\end{defn}
+\vskip 0.2in
+
+\begin{theo}
+Пусть $T$ - теория с равенством. Если $T$ выполнима, то $T$ имеет нормальную модель.
+\end{theo}
+\begin{proof}
+Пусть $M \vDash T .$ Предикат $=_{M}$ есть отношение эквивалентности на М. Положим $M^{\prime} \rightleftharpoons M /=_{M}$ - множество классов эквивалентности и $\varphi: M \rightarrow M^{\prime}$ сопоставляет любому $x \in M$ его класс $\varphi(x) \in M^{\prime}$\\
+Интерпретируем предикатные и функц. символы в $M^{\prime}:$ 
+$$P_{M^{\prime}}\left(\varphi\left(x_{1}\right)^{\left\{\mathfrak{m}_{2}\right.} \ldots, \varphi\left(x_{n}\right)\right) \stackrel{\text { def }}{\Longleftrightarrow} P_{M}\left(x_{1}, \ldots, x_{n}\right)\\
+f_{M^{\prime}}\left(\varphi\left(x_{1}\right), \ldots, \varphi\left(x_{n}\right)\right):=\varphi\left(f_{M}\left(x_{1}, \ldots, x_{n}\right)\right)
+$$
+В силу аксиом равенства в $M$, определение корректно и $M^{\prime}$ -- нормальная модель.\\
+Индукцией по построению формулы $A$ проверяем
+$$
+M \vDash A\left[x_{1}, \ldots, x_{n}\right] \Longleftrightarrow M^{\prime} \vDash A\left[\varphi\left(x_{1}\right), \ldots, \varphi\left(x_{n}\right)\right]
+$$
+Отсюда следует $M^{\prime} \vDash T$.
+\end{proof}
+\vskip 0.4in
+
+Формальная арифметика Пеано\\
+Сигнатура $\Sigma=\{0, S,+, \cdot,=\}$\\
+(1) аксиомы равенства для $\Sigma$\\
+(2) $\neg S(a)=0, \quad S(a)=S(b) \rightarrow a=b$\\
+(3) $a+0=a, \quad a+S(b)=S(a+b)$\\
+(4) $a \cdot 0=0, \quad a \cdot S(b)=a \cdot b+a$\\
+(5) (Схема аксиом индукции)
+$A[a / 0] \wedge \forall x(A[a / x] \rightarrow A[a / S(x)]) \rightarrow \forall x A[a / x]$
+для любой формулы А.
+\vskip 0.3in
+
+Теория множеств $\text{ZFC}$\\
+Сигнатура $\Sigma=\{=, \in\}$\\
+(1) (Аксиомы равенства)\\
+(2) (Экстенсинальность) $a=b \leftrightarrow \forall x(x \in a \leftrightarrow x \in b)$\\
+(3) (Пара) $\exists z \forall x(x \in z \leftrightarrow(x=a \vee x=b))$\\
+(4) (Объединение) $\exists z \forall x(x \in z \leftrightarrow \exists y(x \in y \wedge y \in a))$\\
+(5) (Степень) $\exists z \forall x(x \in z \leftrightarrow \forall y(y \in x \rightarrow y \in a))$\\
+(6) (Схема выделения) $\exists z \forall x(x \in Z \leftrightarrow(x \in a \wedge \varphi[b / x]))$ для всех формул $\varphi$ сигнатуры $\Sigma$\\
+(7) (Бесконечность) $\exists z(\varnothing \in z \wedge \forall x(x \in z \rightarrow x \cup\{x\} \in z))$\\
+(8) (Регулярность) $\exists z(z \in a \wedge \forall x(x \in a \rightarrow x \notin z))$\\
+(9) (Схема подстановки)\\
+(10) (Аксиома выбора)
+\vskip 0.3in
+
+Аксиоматика Тарского:\\
+G1. $a b \cong b a$\\
+G2. $a b \cong p q \wedge a b \cong r s \rightarrow p q \cong r s$\\
+G3. $a b \cong c c \rightarrow a=b$\\
+G4. $Babd \wedge Bbcd \rightarrow Babc$\\
+G5. $\exists x( Bqax \wedge a x \cong b c)$
+G6. $(a \neq b \wedge B a b c \wedge B a^{\prime} b^{\prime} c^{\prime} \wedge a b \cong a^{\prime} b^{\prime} \wedge b c \cong b^{\prime} c^{\prime} \wedge a d \cong a^{\prime} d^{\prime} \wedge b d \cong b^{\prime} d^{\prime}) \rightarrow c d \cong c^{\prime} d^{\prime}$ (Аналог равенства треугольников)\\
+G7. (аксиома Паша)\\
+$Bapc \wedge B q c b \rightarrow \exists x(\operatorname{Baxq} \wedge B b p x)$\\
+G8. $\exists x, y, z(\neg B x y z \wedge \neg B y z x \wedge \neg B z x y)$\\
+G9. $(\operatorname{dim} \leq 2)$
+$\left(p_{1} \neq p_{2} \wedge a p_{1} \cong a p_{2} \wedge b p_{1} \cong b p_{2} \wedge c p_{1} \cong c p_{2}\right) \rightarrow$
+$a \in b c$\\
+G10. (аксиома Евклида)\\
+G11. (схема аксиом непрерывности)
+$$
+\begin{aligned}
+\exists u \forall x, y(C[a / x] \wedge D[a / y] \rightarrow B u x y) & \rightarrow \\
+\exists v \forall x, y^{\prime} &(C[a / x] \wedge D[a / y] \rightarrow B x v y)
+\end{aligned}
+$$
+Здесь $x, y, u, v$ не входят в $C, D .$\\
+G11'. (аксиома непрерывности 2-го порядка)
+$$
+\begin{array}{r}
+\forall X, Y(\exists u \forall x, y(x \in X \wedge y \in Y \rightarrow B u x y) \rightarrow \\
+\left.\exists v \forall x, y\left(x \in X^{\prime} \wedge y \in Y \rightarrow B x v y\right)\right)
+\end{array}
+$$
+\vskip 0.2in
+\begin{theo}[Тарксого о полноте] 
+Для любого предложения А языка элементарной геометрии, если $\left(\mathbb{R}^{2} ;=, B, \cong\right) \vDash A,$ то А логически следует из аксиом $G 1-G 11$
+\end{theo}
+\begin{theo}
+Существует алгоритм проверки формулы А на выполнимость в $\mathbb{R}^{2}$
+\end{theo}

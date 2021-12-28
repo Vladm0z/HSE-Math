@@ -1,0 +1,58 @@
+\section{Лекция 15 (03.23.2021)}
+
+\begin{defn}
+Фильтр на множестве $I-$ это непустое $\mathcal{F} \subset \mathcal{P}(I)$ со свойствами
+$\bullet X, Y \in \mathcal{F} \Rightarrow(X \cap Y) \in \mathcal{F}$
+$\bullet X \in \mathcal{F} \& X \subset Y \Rightarrow Y \in \mathcal{F}$
+Фильтр $\mathcal{F}$ собственный, если $\varnothing \notin \mathcal{F}$ Ультрафильтр - максимальный по включению собственный фильтр.
+\end{defn}
+\begin{lem}
+Свойства ультрафильтров:\\
+- $X \in \mathcal{F} \& Y \in \mathcal{F} \Leftrightarrow(X \cap Y) \in \mathcal{F}$\\
+- $X \notin \mathcal{F} \Leftrightarrow(I \backslash X) \in \mathcal{F}$
+\end{lem}
+\begin{lem}
+Любой собственный фильтр можно расширить до ультрафильтра,
+\end{lem}
+
+\begin{defn}
+Фильтр $\mathcal{F}$ главный, если $\bigcap \mathcal{F} \neq \varnothing .$
+\end{defn}
+\begin{lem}
+Ультрафильтр $\mathcal{U}$ главный, если и только если существует конечное $J \in \mathcal{U}$. 
+\end{lem}
+\begin{defn}
+Пусть задан ультрафильтр $\mathcal{U}$ на $I .$ Рассмотрим свойства элементов $I$ (одноместные предикаты). Свойство Ф верно почти всегда (относительно $\mathcal{U})$, если
+$$
+\{i \mid \Phi(i)\} \in \mathcal{U}
+$$
+Обозначение: $\forall^{\infty} i \Phi(i) .$
+\end{defn}
+\begin{lem}
+Свойства квантора $\forall^{\infty} .$\\
+- $\forall^{\infty} i(\Phi(i) \wedge \Psi(i)) \Leftrightarrow \forall^{\infty} i \Phi(i) \wedge \forall^{\infty} i \Psi(i)$\\
+- $\forall^{\infty} i \neg \Phi(i) \Leftrightarrow \neg \forall^{\infty} i \Phi(i) .$
+\end{lem}
+
+\begin{lem}
+Пусть $\left(M_{i}\right)_{i \in I}-$ семейство моделей сигнатуры $\Omega, \mathcal{U}$ ультрафильтр на $I .$ Тогда
+$$
+\alpha \approx_{\mathcal{U}} \beta:=\forall^{\infty} i\left(\alpha_{i}=\beta_{i}\right)
+$$
+задает отношение эквивалентности на множестве $\prod M_{i} .$
+\end{lem}
+Класс элемента $\left(\alpha_{i}\right)_{i \in I}$ обозначается $\left[\alpha_{i}\right]_{i \in I} .$
+
+\begin{defn}
+Пусть $\left(M_{i}\right)_{i \in I}-$ семейство моделей сигнатуры $\Omega .$ $\mathcal{U}-$ ультрафильтр на $I .$ Ультрапроизведение семейства $\left(M_{i}\right)_{i \in I}$ по ультрафильтру $\mathcal{U}$ задается следующим образом.
+- Носитель $M$ это $\prod_{i \in I} M_{i} / \approx_{\mathcal{U}} .$
+$c_{M}:=\left[c_{M_{i}}\right]_{i \in I}$
+$f_{M}\left(\left[m_{i}^{1}\right], \ldots,\left[m_{i}^{k}\right]\right):=\left[f_{M_{i}}\left(m_{i}^{1}, \ldots, m_{i}^{k}\right)\right]$
+$M \vDash P\left(\left[m_{i}^{1}\right], \ldots,\left[m_{i}^{k}\right]\right) \Leftrightarrow \forall^{\infty} i M_{i} \vDash P\left(m_{i}^{1}, \ldots, m_{i}^{k}\right)$
+Обозначение: $\prod_{\mathcal{U}} M_{i} .$
+\end{defn}
+\begin{theo}[Лось]
+$$
+\prod_{\mathcal{U}} M_{i} \vDash A\left(\left[m_{i}^{1}\right], \ldots,\left[m_{i}^{k}\right]\right) \Leftrightarrow \forall^{\infty} i M_{i} \vDash A\left(m_{i}^{1}, \ldots, m_{i}^{k}\right)
+$$
+\end{theo}

@@ -1,0 +1,201 @@
+\section{Лекция 11 (03.01.2021)}
+
+Исчисление предикатов сигнатуры $\sum$ задаётся след. аксиомами и правилами вывода.
+\vskip 0.1in
+Аксиомы:\\
+A1. Подстановочные примеры тавтологий,\\
+A2. $\forall x A[a / x] \rightarrow A[a / t]$\\
+A3. $A[a / t] \rightarrow \exists x A[a / x]$
+\vskip 0.2in
+
+Подстановочным примером тавтологии $A$ мы называем результат замены всех пропозициональных переменных $A$ на некоторые формулы сигнатуры $\sum$.
+\vskip 0.1in
+Пример:\\
+$B \vee \neg B,$ где $B-$ любая формула. В А2 и АЗ $A$ - любая формула сигнатуры $\sum$ и $t-$ любой терм $(\times$ не входит в $A)$.
+\vskip 0.2in
+
+Правила вывода:\\
+R1. $\frac{A \quad A \rightarrow B}{B}$ (modus ponens)\\
+R2. $\frac{A \rightarrow B}{A \rightarrow \forall x B[a / x]}$\\
+R3. $\frac{B \rightarrow A}{\exists x B[a / x] \rightarrow A}$
+\vskip 0.1in
+Здесь а не входит в $A$(и $x$ не входит в $B$).\\
+Правила R2 и R3 называются правилами Бернайса.
+\vskip 0.2in
+
+\begin{defn}
+Выводом в исчислении предикатов называется конечная последовательность формул, каждая из которых либо является аксиомой, либо получается из предыдущих формул по одному из правил вывода $R_1, R_2, R_3$
+\end{defn}
+
+Пример
+$\forall x A[A / x] \to A\qquad (A2)$\\
+$\forall x A[A / x] \to \forall y A[a / y]\qquad (R2)$
+\vskip 0.2in
+
+\begin{defn}
+Формула $A$ называется выводимой в исчислении предикатов или теоремой исчисления предиеатов если существует вывод, в котором последняя формула есть $A$
+\end{defn}
+
+\begin{defn}
+Вывод в теории $T$ называется конечная последовательность формул, каждая из которых либо приндлежит множеству $T$, либо является логической аксиомой вида $A_1, A_2, A_3$, либо получается из предыдущих формул по одному из правил $R_1, R_2, R_3$
+\end{defn}
+
+\begin{defn}
+Формула $A$ называется выводимой (доказуемой) в теории $T$ или теоремой $T$ (обозначение $T \vdash A),$ если существует вывод в $T$, в котором последняя формула есть $A$.
+\end{defn}
+\begin{defn}
+Формула $\mid A$ опровержима в $T$, если $T \vdash \neg А$.
+\end{defn}
+\begin{defn}
+Формула $A$ независима от $T$, если $T \not \models A$ и $T \not \vdash A$.
+\end{defn}
+\vskip 0.1in
+Если $T \subseteq U$ и $T \vdash A$, то $U \vdash A$ (монотонность)\\
+Если $T \vdash A$, то существует такое конечное множество $T_0 \subseteq T$, что $T_0 \vdash A$ (компактность)\\
+Если $T \vdash A$ и для каждой аксиомы $B \in T$ имеет место $U \vdash B$, то $U \vdash A$ (транзитивность)
+\vskip 0.2in
+
+\begin{defn}
+Теорией сигнатуры $\sum$ называем произвольно множество $T$ замкнутых формул языка $\zeta_{\sum}$. Теорию $T \cup \{A\}$ обозначают также $T,A$ или $T + A$
+\end{defn}
+
+\begin{theo}
+Для любой теории $T$ и любой замкнутой формулы $A$
+$$
+T, A \vdash B \Leftrightarrow T \vdash A \to B
+$$
+\end{theo}
+
+\begin{proof}
+Индукция по длине вывода $T, A \vdash B$\\
+Если $B$ является логической аксиомой или $B \in T$, то в $T$ выводимо:
+$$
+\begin{array}{ll}
+	B\\
+	B \to (A \to B)& \text{(тавтология)}\\
+	A \to B& \text{(MP)} 
+\end{array}
+$$
+Если $A = B$, то используем $A \to A$
+\vskip 0.2in
+
+Пусть $B$ получена из $C$ и $C \rightarrow B$ по modus ponens.
+Имеем $T \vdash(A \rightarrow C)$ и $_{\chi} T \vdash(A \rightarrow(C \rightarrow B))$ по предположению
+индукции.
+Соединяем эти два вывода и достраиваем так:
+$$
+\begin{array}{ll}
+(A \rightarrow(C \rightarrow B)) \rightarrow((A \rightarrow C) \rightarrow(A \rightarrow B)) & (\text { тавтология }) \\
+(A \rightarrow C) \rightarrow(A \rightarrow B) & (\mathrm{MP}) \\
+A \rightarrow B & (\mathrm{MP})
+\end{array}
+$$
+\vskip 0.1in
+
+Допустим $B=(C \rightarrow \forall \times D[a / x])$ получена из $C \rightarrow D$ по $R 2 .$ По пр. индукции
+$$
+T \vdash A \rightarrow(C \rightarrow D)
+$$
+Надо построить вывод
+$$
+T \vdash A \rightarrow(C \rightarrow \forall x D[a / x])
+$$
+\vskip 0.1in
+Достраиваем вывод $A \rightarrow(C \rightarrow D)$ в $T:$
+$$
+\begin{array}{ll}
+A \rightarrow(C \rightarrow D) \\
+(A \rightarrow(C \rightarrow I D)) \rightarrow(A \wedge C \rightarrow D) & (\text { тавтология }) \\
+(A \wedge C) \rightarrow D & (\mathrm{MP}) \\
+(A \wedge C) \rightarrow \forall \times D[a / x] & (\mathrm{R} 2, A \text { замкнута })
+\end{array}
+$$
+$$
+A \rightarrow(C \rightarrow \forall \times D[a / x])
+$$
+(аналогично)\\
+Правило $R3$ рассматривается аналогично.
+\end{proof}
+
+\begin{defn}
+Теория $T$ противоречива, если существует $A$ такая, что $T \vdash A$ и $T \vdash \neg A$. В противном случае теория $T$ называется непротиворечивой.
+\end{defn}
+
+\begin{corol}
+$T \cup \{A\}$ противоречива $\Leftrightarrow T \vdash \neg A$.
+\end{corol}
+\vskip 0.2in
+
+\begin{theo}[О корректности]
+Если $M \models T$ и $T \vdash A$, то $M \models A$
+\end{theo}
+\begin{proof}
+Индукция по длине вывода $A$ в $T$
+\end{proof}
+
+\begin{corol}
+Если $\vdash A$, то $A$ общезначима.
+\end{corol}
+\vskip 0.2in
+
+\begin{corol}
+Если теория $T$ имеет модель, то $T$ непротиворечива
+\end{corol}
+
+\begin{corol}
+Следующие теории непротиворечивы:\\
+Исчесление предикатов(пустая теория)\\
+Теория групп\\
+Элементарная геометрия\\
+Формальная арифметика
+\end{corol}
+
+\begin{corol}Если существует модель $M$ теории $T$ для которой $M \not \models A,$ то $T \not \models A$
+\end{corol}
+Пример\\
+Модель Пуанкаре $\mathrm{H}^{2}$ показывает, что аксиома Евклида независима от остальных аксиом элементарной геометрии.
+
+\begin{theo}[Геделя о полноте]
+(1) Всякая непротиворечивая теория Т выполнима, то есть имеет модель $M \vDash T$.\\
+(2) Если $T \not$ А, то найдётся модель $M \vDash T$ для которой $M \not \models A$
+\end{theo}
+
+Покажем равносильность этих утверждений.\\
+$(1 \Rightarrow 2):$ Если $T \not \models A,$ то $T \cup\{\neg A\}$ непротиворечива. Действительно, если $T, \neg A$ противоречива, то $T \vdash \neg \neg A,$ а Значит $T \vdash A($ используем тавтологию $\neg \neg A \rightarrow A) .$ Следовательно, $T \cup\{\neg A\}$ имеет модель $M .$\\
+$(2 \Rightarrow 1):$ Пусть $T$ непротиворечива. Возьмём $A=(B \wedge \neg B) .$ Тогда $T \not \models$ А, следовательно у теории $T$ дблжна быть модель (опровергающая $A$ ).
+\vskip 0.3in
+
+\begin{theo}[Геделя-Мальцева о компактности]
+Теория Т выполнима $\Longleftrightarrow$ любое конечное подмножество $T_{0} \subseteq T$ выполнимо.
+\end{theo}
+\begin{proof}
+Если $T$ невыполнима, то существует вывод противоречия в $T$, использующий лишь конечное число аксиом $T$.
+\end{proof}
+
+Пример.\\
+Пусть $(\mathbb{N} ;=, S,+, \cdot, 0)$ - стандартная модель арифметики и Th $(\mathbb{N})$ есть множество всех истинных в $\mathbb{N}$ предложеній.
+Добавим к сигнатуре новую константу с и рассмотрим теорию
+$$
+T \rightleftharpoons T h(\mathbb{N}) \cup\{\neg c=0, \neg c=S 0, \neg c=S S 0, \ldots\}
+$$
+
+Терм $\bar{n} \rightleftharpoons S S \ldots S 0(n$ раз $)$ называем нумералом. Нумераль служат именами натуральных чисел.
+\begin{lem}
+Каждая конечная подтеория $T_{0} \subseteq T$ выполнима.
+Доказательство. $T_{0}$ содержит лишь конечное число аксиом вида $c \neq \bar{n}_{1}, \ldots,$ $c \neq \bar{n}_{k} .$ Интерпретируем константу с в стандартной модели как любое число $m>n_{1}, \ldots, n_{k} .$
+\end{lem}
+
+По теореме о компактности существует (нормальная) модель $M \vDash$ Т. Модель $M$ обладает следующими свойствами:\\
+- $\mathbb{N}$ изоморфна начальному сегменту $M$; вложение $\mathbb{N} \rightarrow M$ задаётся функцией $\varphi: n \longmapsto \bar{n}_{M}$.\\
+- $M \vDash T h(\mathbb{N})$\\
+- $M \not \models \mathbb{N},$ в частности $c_{M} \in M$ есть «бесконечно большое число», поскольку $c_{M}$ отлично от всякого $n \in \mathbb{N}$.
+\vskip 0.2in
+
+Следовательно, те же аксиомы выполнены и в М. Поэтому предикат $<_{M}$ на $M$ представляет собой строгий линейный порядок с наименьшим элементом 0. При этом каждый элемент имеет последователя, и каждый элемент, кроме 0,
+имеет непосредственного предшественника.
+
+\begin{proof}
+Если $G_{1}<G_{2},$ возьмём чётные $x_{1} \in G_{1}$ и $x_{2} \in G_{2}$ и рассмотрим $y=\left(x_{1}+x_{2}\right) / 2($ функция $g(x)=x / 2$ определима в $\mathbb{N},$ а значит и в $M$ ).
+Если $y \in G_{1},$ то $\left(x_{1}+x_{2}\right) / 2=x_{1}+\bar{n}$ для некоторого $n \in \mathbb{N}$ Тогда $2 x_{1}+2 \bar{n}=x_{1}+x_{2},$ откуда $x_{1}+2 \bar{n}=x_{2},$ то есть $x_{2} \in G_{1}$
+Аналогично показываем $y \notin G_{2}$.
+\end{proof}

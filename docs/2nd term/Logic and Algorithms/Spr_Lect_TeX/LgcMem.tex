@@ -1,0 +1,179 @@
+\documentclass[11pt,a4paper,oldfontcommands]{memoir}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A,T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[dvips]{graphicx}
+\usepackage{xcolor}
+\usepackage{times}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath, amsfonts,amssymb,amsthm, enumitem, enumerate, changepage, adjustbox, ragged2e, longtable, setspace, hhline, multicol, tabto, float, multirow, makecell, gensymb, young, booktabs, array, paralist, verbatim, subfig, fancyhdr, indentfirst, misccorr, graphicx, calc, contour, ulem, tikz, epsfig, epstopdf, titling, url, array, tikz-cd, latexsym, soul, extarrows, pdfpages}
+\usepackage{enumerate}
+\usepackage[vcentermath]{youngtab}
+\usepackage[all]{xy}
+
+%\usepackage{mdframed}
+%\newmdtheoremenv{theo}{Теорема}
+
+\newtheorem{theo}{Теорема}[section]
+\newtheorem{corol}{Следствие}[theo]
+\newtheorem{lem}[theo]{Лемма}
+\theoremstyle{definition}
+\newtheorem*{defn}{Определение}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Замечание}
+
+
+\usepackage{ulem} 
+\usepackage{contour}
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+
+\newcommand{\myuline}[1]{%
+	\uline{\phantom{#1}}%
+	\llap{\contour{white}{#1}}%
+}
+
+
+
+
+\graphicspath{{Pics/}}
+\DeclareGraphicsExtensions{.pdf, .png, .tif, .eps, .tiff, .psd, .jpg}
+
+\usepackage[
+breaklinks=true,colorlinks=true,
+%linkcolor=blue,urlcolor=blue,citecolor=blue,% PDF VIEW
+linkcolor=black,urlcolor=black,citecolor=black,% PRINT
+bookmarks=true,bookmarksopenlevel=2]{hyperref}
+
+\usepackage{geometry}
+% PDF VIEW
+% \geometry{total={210mm,297mm},
+% left=25mm,right=25mm,%
+% bindingoffset=0mm, top=25mm,bottom=25mm}
+% PRINT
+\geometry{total={210mm,297mm},
+	left=20mm,right=20mm,
+	bindingoffset=10mm, top=25mm,bottom=25mm}
+
+\OnehalfSpacing
+%\linespread{1.3}
+
+%%% CHAPTER'S STYLE
+\chapterstyle{bianchi}
+%\chapterstyle{ger}
+%\chapterstyle{madsen}
+%\chapterstyle{ell}
+%%% STYLE OF SECTIONS, SUBSECTIONS, AND SUBSUBSECTIONS
+\setsecheadstyle{\Large\bfseries\sffamily\raggedright}
+\setsubsecheadstyle{\large\bfseries\sffamily\raggedright}
+\setsubsubsecheadstyle{\bfseries\sffamily\raggedright}
+
+
+%%% STYLE OF PAGES NUMBERING
+%\pagestyle{companion}\nouppercaseheads 
+%\pagestyle{headings}
+%\pagestyle{Ruled}
+\pagestyle{plain}
+\makepagestyle{plain}
+\makeevenfoot{plain}{\thepage}{}{}
+\makeoddfoot{plain}{}{}{\thepage}
+\makeevenhead{plain}{}{}{}
+\makeoddhead{plain}{}{}{}
+
+
+\maxsecnumdepth{subsection} % chapters, sections, and subsections are numbered
+\maxtocdepth{subsection} % chapters, sections, and subsections are in the Table of Contents
+
+
+%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%
+
+\begin{document}
+	
+	%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%
+	%   TITLEPAGE
+	%
+	%   due to variety of titlepage schemes it is probably better to make titlepage manually
+	%
+	%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%
+	\thispagestyle{empty}
+	
+	{%%%
+		\sffamily
+		\centering
+		\Large
+		
+		~\vspace{\fill}
+		
+		{\huge 
+			Логика и Алгоритмы
+		}
+		
+		\vspace{2.5cm}
+		
+		{\LARGE
+			Владислав Мозговой
+		}
+		
+		\vspace{4.5cm}
+		Факультет математики\\
+		НИУ Высшая Школа Экономики
+		
+		\vspace{3.5cm}
+		
+		Лекторы: Л.Д.Беклемишев, В.Б.Шехтман, А.В.Кудинов, Д.С.Шамканов.
+		
+		\vspace{\fill}
+		
+		Весна 2021
+		
+		%%%
+	}%%%
+	
+	\cleardoublepage
+	%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%
+	%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%
+	
+	\tableofcontents*
+	
+	\clearpage
+	
+	%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%
+	%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%
+	
+	\chapter{Теория множеств ZF с Аксиомой выбора}
+	\input{Body/L1}
+	\input{Body/L2}
+	\input{Body/L3}
+	\input{Body/L4}
+	\input{Body/L5}
+	\input{Body/L6}
+	\input{Body/L7}
+	
+	\chapter{Логика Предикатов}
+	\input{Body/L8}
+	\input{Body/L9}
+	\input{Body/L10}
+	\input{Body/L11}
+
+	\chapter{Теория Моделей}
+	\input{Body/L12}
+	\input{Body/L13}
+	\input{Body/L14}
+	\input{Body/L15}
+	\input{Body/L16}
+	\input{Body/L21}
+
+	\chapter{Алгоритмы}
+	\input{Body/L22}
+	
+
+	\chapter{Дополнительно}
+	
+	
+	\bibliographystyle{unsrt}
+	\bibliography{sample}
+	
+\end{document}
+

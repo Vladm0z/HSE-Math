@@ -1,0 +1,96 @@
+\section{Лекция 21 (04.27.2021)}
+
+Рассматриваем модели в конечной сигнатуре $\Omega$ без функциональных символов. Игра Эренфойхта $G_{n}\left(M, \mathbf{m}, M^{\prime}, \mathbf{m}^{\prime}\right)$ длины $n$ на моделях $M, M^{\prime}$ с начальной позицией $\left(\mathrm{m}, \mathrm{m}^{\prime}\right)$, где $\mathrm{m} \in M^{k}, \mathrm{~m}^{\prime} \in M^{\prime k}$ для
+некоторого $k$ описывается правилами:\\
+- Ходы делаются поочередно, первый ход делает $\forall$, каждый игрок делает $n$ ходов.\\
+- Ход $\forall-$ это пара $(M, l)$, где $l \in M$ или $\left(M^{\prime}, l^{\prime}\right).$ Ответный ход $\exists-$ в другой модели.\\
+- Партия- последовательность ходов по этим правилам. Законченная партия - длины 2n. Последняа позиция $p(\pi)$ в партии $\pi$ определяется по рекурсии:\\
+$p()=\left(\mathbf{m}, \mathbf{m}^{\prime}\right).$ Если $p(\pi)=(\mathbf{d}, \mathbf{e})$, то
+$$
+p(\pi,(M, l))=(\mathrm{d} l, \mathbf{e}), p\left(\pi,\left(M^{\prime}, l^{\prime}\right)\right)=\left(\mathbf{d}, \mathbf{e} l^{\prime}\right)
+$$
+- $\exists$ выигрывает законченную партию $\pi$, если $p(\pi)$ задает частичный изоморфизм.\\
+\\
+Частичный изоморфизм:
+$M, \mathbf{m} \equiv_{0} M^{\prime}, \mathbf{m}^{\prime}$, если
+$$
+M \vDash A(\mathbf{m}) \Leftrightarrow M^{\prime} \vDash A\left(\mathbf{m}^{\prime}\right)
+$$
+для любой простой атомарной $A(\mathbf{a}).$ Простые атомарные формулы:
+$$
+a_{i}=a_{j}, a_{i}=c, P\left(a_{1}, \ldots, a_{n}\right)
+$$
+\begin{defn}
+Стратегия для $\exists$.
+$\sigma$: партии нечетной длины $<2 n \longrightarrow$ допустимые ходы
+Партия $\pi=\chi_{1}, \ldots, \chi_{2 n}$ согласована с $\sigma$, если
+$$
+\forall p<n \chi_{2 p}=\sigma\left(\chi_{1}, \ldots, \chi_{2 p-1}\right)
+$$
+$\sigma$ - выигрышная для $\exists$, если для любой партии $\pi$, согласованной с $\sigma, \pi$ выиграна $\exists$
+\end{defn}
+\begin{defn}
+Игровая эквивалентность $(M, \mathrm{~m}) \approx_{n}\left(M^{\prime}, \mathrm{m}^{\prime}\right)$, если
+$\exists$ имеет выигрышную стратегию в $G_{n}\left(M, \mathbf{m}, M^{\prime}, \mathbf{m}^{\prime}\right).$
+\end{defn}
+\begin{lem}
+$\approx_{n}$ задает отношение эквивалентности.
+\end{lem}
+\begin{lem}
+$\left(\right.$ Индуктивное определение $\left.\approx_{n}\right)$
+$(M, \mathbf{m}) \approx_{n+1}\left(M^{\prime}, \mathbf{m}^{\prime}\right) \Leftrightarrow\left\{\begin{array}{l}\forall d \in M \exists d^{\prime} \in M^{\prime}(M, \mathbf{m} d) \approx_{n}\left(M^{\prime}, \mathbf{m}^{\prime} d^{\prime}\right) \\ \forall d^{\prime} \in M^{\prime} \exists d \in M(M, \mathbf{m} d) \approx_{n}\left(M^{\prime}, \mathbf{m}^{\prime} d^{\prime}\right).\end{array}\right.$
+\end{lem}
+
+\begin{defn}
+$q(A)-$ кванторная глубина формулы $A$ определяется по рекурсии:\\
+$q(A)=0$ для атомарной $A$,\\
+$q(\neg A)=q(A)$\\
+$q(A * B)=\max (q(A), q(B))$, где $*$ - бинарная связка,\\
+$q(\forall x A[a \backslash x])=q(\exists x A[a \backslash x])=q(A)+1.$
+\end{defn}
+\begin{defn}
+Формульная эквивалентность $(M, \mathbf{m}) \equiv_{n}\left(M^{\prime}, \mathbf{m}^{\prime}\right)$, если
+для любой простой формулы $A(\mathbf{a})$, где $q(A) \leq n$
+$$
+M \vDash A(\mathbf{m}) \Leftrightarrow M^{\prime} \vDash A\left(\mathbf{m}^{\prime}\right)
+$$
+\end{defn}
+
+\begin{theo}[Эренфойхта - Фраиссе]
+$$
+\qquad(M, \mathbf{m}) \approx_{n}\left(M^{\prime}, \mathbf{m}^{\prime}\right) \Leftrightarrow(M, \mathbf{m}) \equiv_{n}\left(M^{\prime}, \mathbf{m}^{\prime}\right). \\
+$$
+\end{theo}
+\begin{corol}
+$$
+M \equiv M^{\prime} \Leftrightarrow \forall n M \approx_{n} M^{\prime}.
+$$
+\end{corol}
+
+Рассмотрим сигнатуру $\Omega_{1}$ с 1-местными предикатами и равенством.
+\begin{defn}
+Замкнутая формула $A$ финитно выполнима, если она имеет конечную модель
+\end{defn}
+\begin{theo}[Лёвенгейм, 1915]
+Всякая выполнимая формула $A$ сигнатуры $\Omega_{1}$ выполнима в модели мощности $\leq 2^{k} \cdot n$, где $n=q(A)($ для простой $A)$, $k-$ число предикатных символов в $A .$
+\end{theo}
+\begin{corol}
+Конечный спектр формулы в $\Omega_{1}$ не может быть paвeн $2 \mathbf{N}$.
+\end{corol}
+\begin{defn}
+Бесконечная игра Эренфойхта $G_{\omega}\left(M, \mathbf{m}, M^{\prime}, \mathbf{m}^{\prime}\right)$ задается теми же правилами, что $G_{n}\left(M, \mathbf{m}, M^{\prime}, \mathbf{m}^{\prime}\right)$, с отличиями:\\
+число ходов бесконечно, 
+\\
+бесконечная партия выиграна $\exists$, если выигран любой ее начальный отрезок четной длины.\\
+\\
+Игровая эквивалентность $M \approx_{\omega} M^{\prime}$ определяется соответственно.
+\end{defn}
+\begin{theo}
+Для счетных моделей сигнатуры $\Omega$
+$$
+M \approx_{\omega} M^{\prime} \Leftrightarrow M \cong M^{\prime}
+$$
+\end{theo}
+\begin{theo}[Кантор]
+Теория $D L O_{\leftrightarrow}$ счетно категорична.
+\end{theo}
