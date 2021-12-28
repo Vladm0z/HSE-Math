@@ -1,0 +1,237 @@
+\newpage		
+	\section{Грассмановы многочлены и определители}
+		
+		\subsection{ГЛ5 1}
+		\begin{gather*}
+			\det
+			\begin{pmatrix}
+				3 & 2 & 7\\
+				5 & 2 & 7\\
+				x & y & z
+			\end{pmatrix}
+			= 14y - 4z = 2(7y - 2z) 
+		\end{gather*}
+		
+		\subsection{ГЛ5 2*}
+		Итоговая матрица имеет вид: 
+		\begin{gather*}
+			A = 
+			\begin{pmatrix}
+				a_{1\ 1} & a_{1\ 2} & a_{1\ 3}\\
+				a_{2\ 1} & a_{2\ 2} & a_{2\ 3}\\
+				a_{3\ 1} & a_{3\ 2} & a_{3\ 3}
+			\end{pmatrix}
+		\end{gather*}
+		Её определитель:
+		\begin{multline*}
+			\det A = ( a_{1\ 1} \cdot a_{2\ 2} \cdot a_{3\ 3} + a_{1\ 2} \cdot a_{2\ 3} \cdot a_{3\ 1} + a_{1\ 3} \cdot a_{2\ 1} \cdot a_{3\ 2}) - \\( a_{3\ 1} \cdot a_{2\ 2} \cdot a_{1\ 3} + a_{3\ 2} \cdot a_{2\ 3} \cdot a_{1\ 1} + a_{3\ 3} \cdot a_{2\ 1} \cdot a_{1\ 2})
+		\end{multline*}
+		Заметим, что если первый поставит $0$ в угол, то, независимо от действий второго, первый ставит $0$ в любой из углов, имебщих общую сторону с изначальным углом. И тогда после следующего хода, независимо от того как пошёл соперник, надо потавить на $\circ$ или $\times$ в зависимости от того, какая тройка необнулилась:
+	 	\begin{gather*}
+	 		\begin{pmatrix}
+	 			0 & \circ & \\
+	 			\circ &  & \\
+	 			0 &  & \circ \\
+	 		\end{pmatrix}
+ 		\qquad
+ 			\begin{pmatrix}
+ 				0 & \times & \\
+ 				 &  & \times\\
+ 				0 & \times & \\
+ 			\end{pmatrix}
+	 	\end{gather*}
+ 	
+		\subsection{ГЛ5 3}
+		
+		\subsection{ГЛ5 4}
+		
+		\subsection{ГЛ5 5}
+		Изначальная матрица:\\
+		\begin{gather*}
+			A=
+			\begin{vmatrix}
+				{a_{1\ 1}} & {a_{1\ 2}} & {\dots} & {a_{1\  n}}\\
+				{a_{2\ 1}} & {a_{2\ 2}} & {\dots} & {a_{2\  n}}\\
+				{\dots} & {} & {} & {\dots}\\
+				{a_{m\  1}} & {a_{m\  2}} & {\dots} & {a_{m\  n}}
+			\end{vmatrix}
+			_{m \times n}
+		\end{gather*}
+		Пусть ее минор $t < \min(m,\ n)$\\
+		
+		Без ограничения общности предположим, что верхний левый минор $\ne 0$:\\
+		\begin{gather*}
+		\Delta=A
+			\begin{pmatrix}
+				{1} & {2} & {\dots} & {\tau}\\
+				{1} & {2} & {\dots} & {\tau}
+			\end{pmatrix}
+		\end{gather*}
+		Рассмотрим систему\\
+		\begin{gather*}
+			\begin{cases} 
+				a_{1\ 1} x_{1}+\cdots+a_{1\  \tau} x_{\tau} = a_{1\  q} \\
+				\cdots \\
+				a_{\tau\  1} x_{1}+\cdots+a_{\tau\  \tau} x_{\tau} = a_{\tau\  q}
+			\end{cases}
+			\\
+			q \in \{ \tau + 1,\ \cdots,\ n \}
+		\end{gather*}
+		\\
+		Эта система совместна и имеет единственное решение поскольку определитель матрицы левых частей, по условию, отличен от нуля.\\
+		Запишем ее решение:\\
+		\begin{gather*}
+			x_i = 
+			\frac{
+			\begin{vmatrix}
+				a_{1\ 1} & \cdots & a_{1\ i-1} & a_{1\ i} & a_{1\ i+1} & \cdots & a_{1\ \tau}\\
+				a_{2\ 1} & \cdots & a_{2\ i-1} & a_{2\ i} & a_{2\ i+1} & \cdots & a_{2\ \tau}\\
+				\vdots & & \vdots & \vdots & \vdots &  & \vdots\\
+				a_{\tau\ 1} & \cdots & a_{\tau\ i-1} & a_{\tau\ i} & a_{\tau\ i+1} & \cdots & a_{\tau\ \tau}
+			\end{vmatrix}
+			}{\Delta}
+		\end{gather*}
+		Докажем, что этот же набор является решением и уравнения\\
+		\begin{gather*}
+			a_{s\  1} x_{1}+\cdots+a_{s\ \tau} x_{\tau}=a_{s\  q} \quad \text{при} \ \forall s \in\{\tau+1, \ldots, m\}
+		\end{gather*}
+		Подставим решения и домножим все на $\Delta$:
+		\begin{gather*}
+		a_{s\  q} \Delta-a_{s\ \tau}
+			\begin{vmatrix}
+				{a_{1\ 1}} & {a_{1\ 2}} & {\ldots} & {a_{1\  \tau-1}} & {a_{1\  q}} \\
+				{a_{2\ 1}} & {a_{2\ 2}} & {\ldots} & {a_{2\  \tau-1}} & {a_{2\  q}} \\
+				{\vdots} & {} & {\vdots} & {} \\
+				{a_{\tau\  1}} & {a_{\tau\  2}} & {\ldots} & {a_{\tau\  \tau-1}} & {a_{\tau\  q}}
+			\end{vmatrix}
+		-a_{s\  \tau-1}
+			\begin{vmatrix}
+				{a_{1\ 1}} & {\ldots} & {a_{1\  q}} & {a_{1\  \tau}} \\
+				{a_{2\ 1}} & {\ldots} & {a_{2\  q}} & {a_{2\  \tau}} \\
+				{\vdots} & {} & {} & {\vdots} \\
+				{a_{\tau\  1}} & {\ldots} & {a_{p\  q}} & {a_{\tau\  \tau}}
+			\end{vmatrix}
+		-\cdots-a_{s\ 1}
+			\begin{vmatrix}
+				{a_{1\  q}} & {a_{1\ 2}} & {\ldots} & {a_{1\  \tau}} \\
+				{a_{2\  q}} & {a_{2\ 2}} & {\ldots} & {a_{2\  \tau}} \\
+				{\vdots} & {} & {} & {\vdots} \\
+				{a_{\tau\  q}} & {a_{2\  q}} & {\ldots} & {a_{\tau\  \tau}}
+			\end{vmatrix}		
+		\end{gather*}
+		последнее выражение представляет собой разложение определителя\\
+		\begin{gather*}
+			\begin{vmatrix}
+				{a_{1\ 1}} & {\dots} & {a_{1\  \tau}} & {a_{1\  q}}\\
+				{a_{2\ 1}} & {\dots} & {a_{2\  \tau}} & {a_{2\  q}}\\
+				{\vdots} & {} & {} & {\vdots}\\
+				{a_{\tau\ 1}} & {\cdots} & {a_{\tau\  \tau}} & {a_{\tau\  q}}\\
+				{a_{s\  1}} & {\dots} & {a_{s\  \tau}} & {a_{s\  q}}
+			\end{vmatrix}
+		\end{gather*}
+		Этот определитель равен 0
+		\begin{gather*}
+			\begin{cases} 
+				a_{1\ 1} x_{1}+\cdots+a_{1\ \tau} x_{\tau} = a_{1\ q}\\
+				\cdots\\
+				a_{\tau\ 1} x_{1}+\cdots+a_{\tau\ \tau} x_{\tau} = a_{\tau\ q}\\
+				a_{\tau+1\ 1} x_{1}+\cdots+a_{\tau+1\ \tau} x_{\tau} = a_{\tau+1\ q}\\
+				\cdots\\
+				a_{m\ 1} x_{1}+\cdots+a_{m\ \tau} x_{\tau} = a_{m\ q} 
+			\end{cases}
+		\end{gather*}
+		Но это означает, что столбец матрицы $A_{}$ с номером $q_{}$ является линейной комбинацией первых $\tau$ столбцов этой матрицы. Поскольку это утверждение справедливо для любого значения $q \in \{ \tau +1,\dots, n \}$, то заключаем, что ранг системы столбцов матрицы $A_{}$ равен $\tau$.
+		
+		\subsection{ГЛ5 6*}
+		
+		\subsection{ГЛ5 7}
+		\begin{gather*}
+			\frac{\partial^{k} \det(A)}{\partial a_{i_{1} j_{1}}\: \partial a_{i_{2} j_{2}} \ldots \partial a_{i_{k} j_{k}}}
+		\end{gather*}
+		Если $i_k = i_l,\ j_k = j_l$, то мы получим $0$ в первой строке\\
+		Если $i_k \ne i_l,\ j_k \ne j_l$, то раскладывая по $i$-ой строке: все члены кроме $a_{i_{k} j_{k}}$ зануляются, так как количество споособов перенести строку наверх $(-1)^{i_k + 1}$, количество способов перенести стобец с $a_{i_{k} j_{k}}$ на первое место $(-1)^{j_k + 1}$. Откуда $(-1)^{i_k + 1} \cdot (-1)^{j_k + 1} = (-1)^{i+j+2} = (-1)^{i+j}$ тогда $\frac{\partial \det(A)}{\partial a_{i_{k} j_{k}}} = \det (-1)^{i_k + j_k} \cdot A_{i_{k} j_{k}}$\\
+		По индукции получим:\\
+		\begin{gather*}
+			\frac{\partial^{k} \det(A)}{\partial a_{i_{1} j_{1}}\: \partial a_{i_{2} j_{2}} \ldots \partial a_{i_{k} j_{k}}} = \det(-1)^{i_1 + j_1 + \ldots + i_k + j_k} \cdot A_{(i_1 j_1 ) \ldots (i_k j_k )}
+		\end{gather*}	
+		
+		\subsection{ГЛ5 8}
+		Заметим, что мы рассматриваем матрицу Кирхгофа\\
+		А)\\
+		Определитель матрицы Кирхгофа равен нулю $\det K=0$:
+		\begin{gather*}
+			\det K = 
+			\begin{vmatrix}
+				k_{1, 1} & k_{1, 2} & \cdots & k_{1, n} \\
+				k_{2, 1} & k_{2, 2} & \cdots & k_{2, n} \\        
+				\vdots & \vdots & \ddots & \vdots \\
+				k_{n, 1} & k_{n, 2} & \cdots & k_{n, n}
+			\end{vmatrix}
+		\end{gather*}
+		
+		Прибавим к первой строке все остальные строки:
+		\begin{gather*}
+			\begin{vmatrix}
+				k_{1, 1} + k_{2, 1} + \cdots + k_{n, 1} & k_{1, 2} + k_{2, 2} + \cdots + k_{n, 2} & \cdots & k_{1, n} + k_{2, n} + \cdots + k_{n, n} \\
+				k_{2, 1} & k_{2, 2} & \cdots & k_{2, n} \\        
+				\vdots & \vdots & \ddots & \vdots \\
+				k_{n, 1} & k_{n, 2} & \cdots & k_{n, n}
+			\end{vmatrix}
+		\end{gather*}
+		
+		Так как сумма элементов каждого столбца равна $0$, получим:
+		
+		\begin{gather*}
+			\det K = 
+			\begin{vmatrix}
+				0 & 0 & \cdots & 0 \\
+				k_{2, 1} & k_{2, 2} & \cdots & k_{2, n} \\        
+				\vdots & \vdots & \ddots & \vdots \\
+				k_{n, 1} & k_{n, 2} & \cdots & k_{n, n}
+			\end{vmatrix} = 0
+		\end{gather*}
+		\\
+		Б*)\\
+		\\
+		В*)\\
+			
+		\subsection{ГЛ5 9}
+		А)\\
+		Да $A_{12} A_{34} - A_{13} A_{24} + A_{14} A_{23} = 0$\\
+		Пример:
+		\begin{gather*}
+			\begin{pmatrix}
+				1 & 3 & 3 & 1\\
+				-1 & -1 & 1 & 2
+			\end{pmatrix}\\
+			2 \cdot 5 - 4 \cdot 7 + 3 \cdot 6 = 0
+		\end{gather*}
+		Б)\\
+		$A_{12} A_{34} - A_{13} A_{24} + A_{14} A_{23} = 0$\\
+		Тогда $A_{12} A_{34} + A_{14} A_{23} = A_{13} A_{24}$
+		\begin{enumerate}
+			\item $\{3,4,5,6,7,8\} \quad 6 \cdot 8 = 48 $\\
+			$3 \cdot 4 + 5 \cdot 7 = 12 + 35 \ne 48$\\
+			$3 \cdot 5 + 4 \cdot 7 = 15 + 28 \ne 48$\\
+			$3 \cdot 7 + 4 \cdot 5 = 21 + 20 \ne 48$\\
+			\item $\{3,4,5,6,7,8\} \quad 5 \cdot 8 = 40 $\\
+			$3 \cdot 4 + 6 \cdot 7 = 12 + 42 \ne 40$\\
+			$3 \cdot 6 + 4 \cdot 7 = 18 + 28 \ne 40$\\
+			$3 \cdot 7 + 4 \cdot 6 = 21 + 24 \ne 40$\\
+			\item $\{3,4,5,6,7,8\} \quad 4 \cdot 8 = 32 $\\
+			$3 \cdot 5 + 6 \cdot 7 = 15 + 42 \ne 32$\\
+			$3 \cdot 6 + 5 \cdot 7 = 18 + 35 \ne 32$\\
+			$3 \cdot 7 + 5 \cdot 6 = 21 + 30 \ne 32$\\		
+		\end{enumerate}
+		Следовательно такой матрицы нет
+	
+		\subsection{ГЛ5 10*}
+		
+		\subsection{ГЛ5 11}
+		А)\\
+		\\
+		Б)\\
+		\\
+		В*)\\
+		
+		\subsection{ГЛ5 12*}
