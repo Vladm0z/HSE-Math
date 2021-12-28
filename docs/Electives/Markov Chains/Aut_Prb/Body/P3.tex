@@ -1,0 +1,92 @@
+\section{Лист 3}
+    \begin{prob}
+    \end{prob}
+    \begin{proof}
+    \begin{gather*}
+        \mathbb{P} (\varepsilon_{n+1} = i_{n+1} |\ \varepsilon_{n} = i_{n}, \ldots, \varepsilon_{0} = i_{0})
+        = \mathbb{P} (\varepsilon_{n+1} = i_{n+1}|\ \varepsilon_{n} = i_{n})\\
+        \varepsilon_{n+1} = \eta_{n}^{1} + \ldots + \eta_{n}^{\varepsilon_{n}}\\
+        \mathbb{P}(\varepsilon_{n+1} = i_{n+1}|\ \varepsilon_{n} = i_{n}, \ldots, \varepsilon_{0} = i_{0})
+        = \mathbb{P}(\eta_{n}^{1} + \ldots + \eta_{n}^{\varepsilon_{n}} = i_{n+1}|\ \varepsilon_{n} = i_{n}, \ldots, \varepsilon_{0} = i_{0})
+        = \mathbb{P}(\eta_{n}^{1} + \ldots + \eta_{n}^{i_n} = i_{n+1}|\ \varepsilon_{n} = i_{n}, \ldots, \varepsilon_{0} = i_{0})
+    \end{gather*}
+    \begin{gather*}
+        \mathbb{P}(\eta_{n}^{i} = 2) = p\\
+        \mathbb{P}(\eta_{n}^{i} = 0) = 1-p\\
+        \text{найти: } \mathbb{P}(\varepsilon_{k+1} = m|\ \varepsilon_{k} = n)\\
+        \varepsilon_{k+1} = \eta_{k}^{1} + \ldots + \eta_{k}^{n}
+    \end{gather*}
+    $m$ либо нечетное, либо четное $m > 2n$, иначе ${{n}\choose{\frac{m}{2}}}$ -- количество способов расставить $\frac{m}{2}$ чисел на $n$ мест, тогда
+    \begin{gather*}
+        \mathbb{P}(\varepsilon_{k+1} = m|\ \varepsilon_{k} = n) = {{n}\choose{\frac{m}{2}}} p^{\frac{m}{2}} (1-p)^{n - \frac{m}{2}}
+    \end{gather*}
+    \end{proof}
+\vskip 0.6in
+
+
+    \begin{prob}
+    \end{prob}
+    \begin{proof}
+        Заметим что в стратегии колиной мамы мы ставим одну и ту же сумму, введем обозначение $P_{i\ m}(N)$ -- что Коля, начиная с $i$ рублями, действуя по маминой $m$ стратегии, дойдет до $N = 800$ рублей. По определению $P_{0\ m}(N) = 0,\ P_{N\ m}(N) = 1$. Заметим, что $P_{i\ m} = 0.4 \cdot P_{i+100\ m} + 0.6 \cdot P_{i-100\ m}$, это можно записать как
+        \begin{gather*}
+            0.4 \cdot P_{i\ m} + 0.6 \cdot P_{i\ m} = 0.4 \cdot P_{i+100\ m} + 0.6 \cdot P_{i-100\ m}\\
+            \Leftrightarrow P_{i+100\ m} - P_{i\ m} = \frac{0.6}{0.4}(P_{i\ m} - P_{i-100\ m})
+        \end{gather*}
+        тогда так как
+        \begin{gather*}
+            P_{200\ m} - P_{100\ m} = \frac{0.6}{0.4}(P_{100\ m} - P_{0\ m}) = \frac{0.6}{0.4} P_{100\ m}
+        \end{gather*}
+        то
+        \begin{gather*}
+            P_{i+100\ m} - P_{i\ m}
+            = \left(\frac{0.6}{0.4}\right)^i P_{1\ m}\\
+            P_{i+100\ m} - P_{1\ m}
+            = \sum\limits_{k=1}^{i} (P_{k+100\ m} - P_{k\ m})
+            = \sum\limits_{k=1}^{i} \left(\frac{0.6}{0.4}\right)^k P_{100\ m}
+        \end{gather*}
+        и общая формула
+        \begin{gather*}
+            P_{i+100\ m} = P_{100\ m} \sum\limits_{k=0}^{i} \left(\frac{0.6}{0.4}\right)^k
+        \end{gather*}
+        Воспользуемся тем, что $P_{N\ m} = 1$
+        \begin{gather*}
+            1 = P_{N\ m} = P_{100\ m} \cdot \frac{1 - \left(\frac{0.6}{0.4}\right)^{N}}{1 - \frac{0.6}{0.4}}\\
+            P_{100\ m} = \frac{1 - \frac{0.6}{0.4}}{1 - \left(\frac{0.6}{0.4}\right)^{N}}\\
+            P_{i\ m} = \frac{1 - \left(\frac{0.6}{0.4}\right)^{i}}{1 - \left(\frac{0.6}{0.4}\right)^{N}}\\
+        \end{gather*}
+        То есть при 300 руб вероятность
+        \begin{gather*}
+            P_{300\ m} = \frac{1 - \left(\frac{0.6}{0.4}\right)^{3}}{1 - \left(\frac{0.6}{0.4}\right)^{8}}
+            = \frac{608}{6305}
+        \end{gather*}
+        \vskip 0.2in
+        Рассмотрим теперь стратегию колиного папы, введем обозначение $P_{i\ f}(N)$ по аналогии с прошлым пунктом. Составим уравнение, аналогичное прошлому пункту, исходя из данной стратегии
+        \begin{gather*}
+            P_{i\ f} =
+            \begin{cases}
+                0.4 \cdot P_{N\ f} + 0.6 \cdot P_{2i-N\ f}
+                \ i \in [\frac{N}{2}, N]\\
+                0.4 \cdot P_{2i\ f} + 0.6 \cdot P_{0\ f}
+                \qquad i \in [0,\frac{N}{2}]
+            \end{cases}\\
+            =
+            \begin{cases}
+                0.4 + 0.6 \cdot P_{2i-N\ f}
+                \quad i \in [\frac{N}{2}, N]\\
+                0.4 \cdot P_{2i\ f}
+                \quad i \in [0,\frac{N}{2}]
+            \end{cases}
+        \end{gather*}
+        Заметим, что $P_{N/2\ f} = 0.4 \cdot P_{N\ f} + 0.6 \cdot P_{0\ f} = 0.4$
+        То есть при 300 руб вероятность
+        \begin{gather*}
+            P_{300\ f}
+            = 0.4 \cdot P_{600\ f} + 0.6 \cdot P_{0\ f}\\
+            = 0.4 \cdot (0.4 \cdot P_{800\ f} + 0.6 \cdot P_{400\ f}) + 0.6 \cdot P_{0\ f}\\
+            = 0.4 \cdot (0.4 \cdot 1 + 0.6 \cdot 0.4) + 0.6 \cdot 0
+            = 0.4 \cdot 0.64
+            = 0.256
+            = \frac{32}{125}
+        \end{gather*}
+        И так как $\frac{32}{125} > \frac{608}{6305}$, то стратегия колиного отца лучше 
+    \end{proof}

@@ -1,0 +1,189 @@
+\section{Лист 1}
+    \begin{prob}
+        Завершите доказательство эквивалентности двух определений ңепей маркова.
+    \end{prob}
+    \begin{proof}
+        \begin{enumerate}
+        \item[(Def 1)] Случайные величины $\xi_0, \ldots, x_T$ образуют марковскую цепь с переходными вероятностями $p_k(i,j)$, если $\forall k \geqslant 1$ выполнено
+            \begin{enumerate}
+            \item \begin{gather*}
+                \mathbb{P}(\xi_k = i_k\ |\ \xi_{k-1} = i_{k-1}, \ldots, \xi_0 = i_0)
+                = \mathbb{P}(\xi_k = i_k\ |\ \xi_{k-1} = i_{k-1})
+                \quad \forall i_0, \ldots, i_k \in X\\
+                \mathbb{P}(\xi_{k-1}=i_{k-1}, \ldots, \xi_0 = i_0) \ne 0
+            \end{gather*}
+            \item \begin{gather*}
+                \mathbb{P}(\xi_k = j\ |\ \xi_{k-1}=i) = p_{k}(i,j)
+            \end{gather*}
+            \end{enumerate}
+        \item[(Def 2)] Последовательность $\xi_0, \ldots, x_T$ образуют марковскую цепь с переходными вероятностями $p_k(i,j)$, если
+            \begin{gather*}
+                \mathbb{P}(\xi_0 = i_0, \ldots, \xi_T = i_T)
+                = p^{(0)}_{i_{0}} p_1(i_0, i_1) \ldots p_T(i_{T-1}, i_T)
+                \quad \forall 1 \leqslant i_1, \ldots, i_T \leqslant L\\
+                p_{i_0}^{(0)} = p(\xi_0 = i_0)
+            \end{gather*}
+        \end{enumerate}
+        То есть необходимо доказать равносильнось следующих утверждений:
+        \begin{enumerate}
+        \item[(1)]
+            \begin{gather*}
+                \mathbb{P}(\xi_k = i_k\ |\ \xi_{k-1}=i_{k-1}, \ldots, \xi_0 = i_0)
+                = \mathbb{P}(\xi_k = i_k\ |\ \xi_{k-1} = i_{k-1})
+            \end{gather*}
+        \item[(2)]
+            \begin{gather*}
+                \mathbb{P}(\xi_0 = i_0, \ldots, \xi_T = i_T)
+                = p_k(i,j)
+            \end{gather*}
+        \end{enumerate}
+        И требуется доказать
+        \begin{gather*}
+            \mathbb{P}(\xi_0 = i_0, \ldots, \xi_T = i_T)
+            = \mathbb{P}(\xi_0 = i_0) p_1(i_0, i_1) \ldots p_T(i_{T-1}, i_T)
+        \end{gather*}
+        Из (2):
+        \begin{gather*}
+            p_1(i_0, i_1) = \mathbb{P}(\xi_1 = i_1\ |\ \xi_0 = i_0)\\
+            p_2(i_1, i_2) = \mathbb{P}(\xi_2 = i_2\ |\ \xi_1 = i_1)\\
+            \vdots\\
+            p_T(i_{T-1}, i_{T}) = \mathbb{P}(\xi_T = i_T\ |\ \xi_{T-1} = i_{T-1})\\
+            \mathbb{P}(\xi_0 = i_0) \mathbb{P}(\xi_1 = i_1\ |\ \xi_0 = i_0)
+            = \mathbb{P}(\xi_0 = i_0 \cap \xi_1 = i_1)
+            := \mathbb{P}(\xi_0 = i_0, \xi_1 = i_1)
+        \end{gather*}
+        Будем сворачивать $\mathbb{P}(\xi_0 = i_0) p_1(i_0, i_1) \ldots p_T(i_{T-1}, i_T)$, на $k$ шаге будет
+        \begin{gather*}
+            \mathbb{P}(\xi_0 = i_0, \xi_1 = i_1, \ldots, \xi_k = i_k)
+            \mathbb{P}(\xi_{k+1} = i_{k+1}\ |\ \xi_k = i_k)\\
+            = \mathbb{P}(\xi_0 = i_0, x_1 = i_1, \ldots, \xi_k = i_k)
+            \mathbb{P}(\xi_{k+1} = i_{k+1}\ |\ \xi_{k} = i_{k}, \xi_{k-1} = i_{k-1}, \ldots, \xi_0 = i_0)\\
+            = \mathbb{P}(\bigcap \limits_{j=0}^{k+1} (\xi_j = i_j))\\
+            := \mathbb{P}(\xi_0 = i_0, \ldots, \xi_{k+1} = i_{k+1})
+        \end{gather*}
+        Следовательно все свернется и получится формула, которую нужно доказать
+    \end{proof}
+\vskip 0.6in
+
+
+    \begin{prob}
+        Пусть последовательность случайных величин $\xi_{0}, \ldots, \xi_{T}$ образует марковскую цепь со множеством состояний $X .$ Докажите, что для любого $n$ и любых множеств $A \subset X \times \ldots \times X$ ($T-n$ раз), $C \subset X \times \ldots \times X$ ($n-1$ раз) и любого $a \in X$ выполнено
+        \begin{gather*}
+            \mathbb{P}\left(
+                    \left(\xi_{T}, \ldots, \xi_{n+1}\right) \in A
+                    \mid \xi_{n}=a,\left(\xi_{n-1}, \ldots, \xi_{0}\right) \in C
+                    \right)
+            = \mathbb{P}\left(\left(\xi_{T}, \ldots, \xi_{n+1}\right) \in A \mid \xi_{n}=a\right)
+        \end{gather*}
+        В частности, $\mathbb{P}\left(\xi_{n+k}=i \mid \xi_{n}=j,\left(\xi_{n-1}, \ldots, \xi_{0}\right) \in C\right)=\mathbb{P}\left(\xi_{n+k}=i \mid \xi_{n}=j\right)$.
+    \end{prob}
+    \begin{proof}
+        \begin{gather*}
+            \mathbb{P}((\xi_T, \ldots, \xi_{n+1}) \in A\ |\ \xi_n = a, (\xi_{n-1}, \ldots, \xi_0) \in C)\\
+            = \mathbb{P}((\xi_T, \ldots, \xi_{n+1}) \in A\ |\ \xi_n = a)
+        \end{gather*}
+        Поскольку $\xi_0, \ldots, \xi_T$ образуют цепь маркова, то по оопределению выполнено
+        \begin{gather*}
+            X = (x_1, \ldots, x_k) \Rightarrow \sum\limits_{i=1}^{k} \mathbb{P}(\xi_a = x_i) = 1
+        \end{gather*}
+        Расмотрим цепь
+        \begin{gather*}
+            \mathbb{P}((\xi_T, \ldots, \xi_{n+1}) \in A\ |\ \xi_n = a, \xi_{n-1} = (x_1, \ldots, x_k))
+        \end{gather*}
+        И распишем по $\xi_{n-1}$
+        \begin{gather*}
+            \mathbb{P}((\xi_T, \ldots, \xi_{n+1}) \in A\ |\ \xi_n = a, \xi_{n-1} = (x_1, \ldots, x_k))\\
+            = \mathbb{P}((\xi_T, \ldots, \xi_{n+1}) \in A\ |\ \xi_n = a, \xi_{n-1} = x_1)
+            + \mathbb{P}((\xi_T, \ldots, \xi_{n+1}) \in A\ |\ \xi_n = a, \xi_{n-1} = x_2)
+            + \ldots
+            + \mathbb{P}((\xi_T, \ldots, \xi_{n+1}) \in A\ |\ \xi_n = a, \xi_{n-1} = x_k)
+            = \mathbb{P}((\xi_T, \ldots, \xi_{n+1}) \in A\ |\ \xi_n = a)
+            (\mathbb{P}(\xi_{n-1} = x_1) + \ldots + \mathbb{P}(\xi_{n-1} = x_k))
+            = \mathbb{P}((\xi_T, \ldots, \xi_{n+1}) \in A\ |\ \xi_n = a)
+        \end{gather*}
+        Аналогично для
+        \begin{gather*}
+            \mathbb{P}((\xi_T, \ldots, \xi_{n+1}) \in A\ |\ \xi_n = a, (\xi_{n-1}, \ldots, \xi_0) \in C)
+            = \mathbb{P}((\xi_T, \ldots, \xi_{n+1}) \in A\ |\ \xi_n = a)
+        \end{gather*}
+    \end{proof}
+\vskip 0.6in
+
+
+    \begin{prob}
+        Пусть последовательность случайных величин $\xi_{0}, \xi_{1}, \ldots$ образует МЦ. Рассмотрим биекщию $f: X \mapsto X$. Верно ли, что последовательность $f\left(\xi_{0}\right), f\left(\xi_{1}\right), \ldots$ образует МЦ? А если не предполагать биективности $f$? Если ответ отрищательный привести контрпример.
+    \end{prob}
+    \begin{proof}
+        Пусть матрица переходов имеет вид
+        \begin{gather*}
+        \begin{pmatrix}
+            1 & 0 & 0\\
+            0 & \frac{1}{2} & \frac{1}{2}\\
+            \frac{1}{3} & \frac{1}{3} & \frac{1}{3}
+        \end{pmatrix}\\
+        \mathbb{P}(\xi_3 = 3\ |\ \xi_0 = 2, \xi_1 = 3, \xi_2 = 1)
+        = \mathbb{P}(\xi_3 = 3\ |\ \xi_2 = 1)
+        = 0\\
+        \mathbb{P}(\xi_2 = 1\ |\ \xi_0 = 3, \xi_1 = 2)
+        = \mathbb{P}(\xi_2 = 1\ |\ \xi_1 = 2)\\
+        f: (1, 2, 3) \mapsto (1, 1, 1)\\
+        \mathbb{P}(\xi_2 = 1\ |\ \xi_0 = 1 \xi_1 = 1) = \frac{1}{3^3}\\
+        \mathbb{P}(\xi_2 = 1\ |\ \xi_1 = 1)
+        = \frac{\mathbb{P}(\xi_2 = 1 \cap \xi_1 = 1)}{\mathbb{P}(x_1 = 1)}
+        = \frac{\frac{1}{9}}{\frac{1}{3}}
+        = \frac{1}{3}
+        \end{gather*}
+    \end{proof}
+\vskip 0.6in
+
+
+    \begin{prob}
+        Небезызвестно, что математические способности нередко передаются от тестя к зятю. Предположим, что $80 \%$ зятьев выпускников матфака также заканчивают матфак, а остальные - мех-мат, $40 \%$ зятьев выпускников мех-мата заканчивают мех-мат, а остальные поровну распределяются между матфаком и истфаком; зятья выпускников истфака же распределяются так: $70 \%$ заканчивают истфак, $20 \%$ - матфак и $10 \%$ мех-мат.
+        \begin{itemize}
+        \item[(1)] Придумайте марковскую цепь, описываюшую данный процесс.
+        \item[(2)] Найдите вероятность того, что зять зятя выпускника матфака закончит матфак.
+        \item[(3)] Найдите ту же вероятность для модифицированной цепи, в которой зять выпускника матфака всегда идет на матфак.
+        \end{itemize}
+    \end{prob}
+    \begin{proof}
+        \begin{itemize}
+        \item[(1)] Событие $A_{ij}$ - зять выпускника $i$ заканчивает $j$, исход - последовательность людей заканчивается на каком-то факультете, матрица переходов выглядит следующим образом (1 - матфак, 2 - мехмат, 3 истфак)
+            \begin{gather*}
+            \begin{pmatrix}
+                0.8 & 0.2 & 0\\
+                0.3 & 0.4 & 0.3\\
+                0.2 & 0.1 & 0.7
+            \end{pmatrix}
+            \end{gather*}
+        \item[(2)] Возведем матрицу выше в квадрат и рассмотрим значения $A_{11}$
+            \begin{gather*}
+            \begin{pmatrix}
+                0.8 & 0.2 & 0\\
+                0.3 & 0.4 & 0.3\\
+                0.2 & 0.1 & 0.7
+            \end{pmatrix}^2
+            =
+            \begin{pmatrix}
+                0.7 & 0.24 & 0.06\\
+                0.42 & 0.25 & 0.33\\
+                0.33 & 0.15 & 0.52
+            \end{pmatrix}
+            \end{gather*}
+            То есть вероятность $70 \%$
+        \item[(3)] Возведем новую матрицу в квадрат и рассмотрим значения $A_{11}$
+            \begin{gather*}
+            \begin{pmatrix}
+                1 & 0 & 0\\
+                0.3 & 0.4 & 0.3\\
+                0.2 & 0.1 & 0.7
+            \end{pmatrix}^2
+            =
+            \begin{pmatrix}
+                1 & 0 & 0\\
+                0.48 & 0.19 & 0.33\\
+                0.37 & 0.11 & 0.52
+            \end{pmatrix}
+            \end{gather*}
+            То есть вероятность $100 \%$
+        \end{itemize}
+    \end{proof}

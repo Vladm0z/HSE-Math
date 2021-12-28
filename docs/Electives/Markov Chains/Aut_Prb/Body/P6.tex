@@ -1,0 +1,90 @@
+\section{Лист 6}
+    \begin{prob}
+        Рассмотрим однородную марковскую цепь $\xi_{0}, \xi_{1}, \ldots$ с вероятностями перехода $\left(p_{i j}\right)$ и момент остановки $\tau$. Докажите сильиое марковское свойство (strong Markov property):
+        \begin{gather*}
+            \mathbb{P}
+            \left(
+                \xi_{\tau+1}= j \mid \xi_{\tau}=i, \left(
+                                                        \xi_{\tau-1}, \ldots, \xi_{0}
+                                                    \right) \in B_{<\tau}, \tau<\infty
+            \right)
+            = \mathbb{P}
+            \left(
+                \xi_{\tau+1}=j \mid \xi_{\tau}=i, \tau<\infty
+            \right)
+            = p_{i j}
+        \end{gather*}
+        для всех $i, j$ и произвольного набора множеств $B_{<n} \subset X^{\times n}, n \geqslant 1$.
+        \vskip 0.4in
+        Let $\left\{X_{n}\right\}$ be a homogeneous Markov chain with a transition probability matrix $\mathbf{P}=\left\{p_{i j}\right\}$ and let $\tau$ be a stopping time with respect to $\left\{X_{n}\right\}$. Then for any integer $k$,
+        \begin{gather*}
+            P\left(X_{\tau+k}=j \mid X_{\tau}=i, 0 \leq \ell<\tau, X_{\ell}=i_{\ell}\right)=P\left(X_{k}=j \mid X_{0}=i\right)=p_{i j}^{(k)}
+        \end{gather*}
+        and
+        \begin{gather*}
+            P\left(X_{\tau+k}=j \mid X_{\tau}=i\right)=P\left(X_{k}=j \mid X_{0}=i\right)=p_{i j}^{(k)}
+        \end{gather*}
+    \end{prob}
+    \begin{proof}
+        We first prove the first equality.
+        \begin{gather*}
+        \begin{aligned}
+            P\left(X_{\tau+k}=j \mid X_{\tau}=i, 0 \leq \ell<\tau, X_{\ell}=i_{\ell}\right) &=\frac{P\left(X_{\tau+k}=j, X_{\tau}=i, 0 \leq \ell<\tau, X_{\ell}=i_{\ell}\right)}{P\left(X_{\tau}=i, 0 \leq \ell<\tau, X_{\ell}=i_{\ell}\right)} \\
+            &=\frac{\sum_{r=1}^{\infty} P\left(X_{\tau+k}=j, X_{\tau}=i, 0 \leq \ell<\tau, X_{\ell}=i_{\ell}, \tau=r\right)}{P\left(X_{\tau}=i, 0 \leq \ell<\tau, X_{\ell}=i_{\ell}\right)}
+        \end{aligned}
+        \end{gather*}
+        Now, because $\tau$ is a stopping time, the event $\{\tau=r\}$ can be expressed as $X_{0}, \cdots, X_{r}$ so the Markov property implies
+        \begin{gather*}
+            P\left(X_{\tau+k}=j \mid X_{\tau}=i, 0 \leq \ell<\tau, X_{\ell}=i_{\ell}, \tau=r\right)=P\left(X_{\tau+k}=j, X_{\tau}=i\right)=p_{i j}^{(k)}
+        \end{gather*}
+        Therefore, equation becomes
+        \begin{gather*}
+        \begin{aligned}
+            P\left(X_{\tau+k}=j \mid X_{\tau}=i, 0 \leq \ell<\tau, X_{\ell}=i_{\ell}\right) & \\
+            =& \frac{\sum_{r=1}^{\infty} P\left(X_{\tau+k}=j, X_{\tau}=i, 0 \leq \ell<\tau, X_{\ell}=i_{\ell}, \tau=r\right)}{P\left(X_{\tau}=i, 0 \leq \ell<\tau, X_{\ell}=i_{\ell}\right)} \\
+            =& \sum_{r=1}^{\infty} P\left(X_{\tau+k}=j \mid X_{\tau}=i, 0 \leq \ell<\tau, X_{\ell}=i_{\ell}, \tau=r\right)\\
+            & \cdot P\left(X_{\tau}=i, 0 \leq \ell<\tau, X_{\ell}=i_{\ell}, \tau=r\right) \\
+            =& \frac{\sum_{r=1}^{\infty} p_{i j}^{(k)} P\left(X_{\tau}=i, 0 \leq \ell<\tau, X_{\ell}=i_{\ell}, \tau=r\right)}{P\left(X_{\tau}=i, 0 \leq \ell<\tau, X_{\ell}=i_{\ell}\right)} \\
+            =& p_{i j}^{(k)} \frac{\sum_{r=1}^{\infty} P\left(X_{\tau}=i, 0 \leq \ell<\tau, X_{\ell}=i_{\ell}, \tau=r\right)}{P\left(X_{\tau}=i, 0 \leq \ell<\tau, X_{\ell}=i_{\ell}\right)} \\
+            =& p_{i j}^{(k)}
+        \end{aligned}
+        \end{gather*}
+        The second equality follows simply from the first equality:
+        \begin{gather*}
+        \begin{aligned}
+            P\left(X_{\tau+k}=j \mid X_{\tau}=i\right) &=\frac{\sum_{r=1}^{\infty} P\left(X_{\tau+k}=j \mid X_{r}=i, \tau=r\right) P\left(X_{r}=i, \tau=r\right)}{P\left(X_{\tau}=i\right)} \\
+            &=p_{i j}^{(k)} \frac{\sum_{r=1}^{\infty} P\left(X_{r}=i, \tau=r\right)}{P\left(X_{\tau}=i\right)} \\
+            &=p_{i j}^{(k)}
+        \end{aligned}
+        \end{gather*}
+    \end{proof}
+\vskip 0.6in
+
+
+ 
+    \begin{prob}
+        Рассмотрим экспоненциально эргодическую марковскую цепь с множеством значений $X = \{1, 2, \ldots\}$ и стащионарным состоянием $\pi$. Допустим, что $\pi_{1} > 0$ Рассмотрим следуюшую последовательность моментов остановки:
+        \begin{gather*}
+            \tau_{1} = \left\{\inf k \geqslant 0: \xi_{k}=1\right\},
+            \quad
+            \tau_{n} = \left\{\inf k>\tau_{n-1}: \xi_{k}=1\right\},
+            \quad n \geqslant 2
+        \end{gather*}
+        где $\inf \emptyset := \infty$. Таким образом, $\tau_{n}$ - $n$-ый момент попадания процесса в состояние $1$.
+        \begin{itemize}
+        \item[(а)] Докажите, что пля каждого начального распределения $p^{(0)}$ верно $\mathbb{E}\left(\tau_{1}\right)^{r}<\infty$ для любого $r \geq 0$ (говорят, что случайная величина $\tau_{1}$ имеет коиечиые момеиmal. Как следствие, покажите, что при каждом начальном распределении $p^{(0)}$ имеем $\mathbb{P}\left(\tau_{1}<\infty\right)=1$
+        \item[(б)] Докажите, что случайные величины $\tau_{1}$ и $\tau_{2}-\tau_{1}$ независимы, а если начальное распределение удовлетворяет $p_{1}^{(0)}=1$ (то есть, в начальный момент времени мы сидим в состоянии 1), то они одинаково распределены. Выведите отсода, что, В частности, $\mathbb{E}\left(\tau_{2}\right)^{r}<\infty \forall r>0$
+        \item[(в)] Рассуждая аналогично, докажите, что $\tau_{1}, \tau_{2}-\tau_{1}, \tau_{3}-\tau_{2}, \ldots$ последовательность независимых случайных величин. Покажите, что эти случайные величины, кроме $\tau_{1}$, имеют одинаковое распределение, а в случае, когда $p_{1}^{(0)}=1$, и $\tau_{1}$ имеет то же распределение. Покажите, что, в частности, $\mathbb{E}\left(\tau_{n}\right)^{r}<\infty \forall r>0$
+        \item[(г)] Докажите, что $\tau_{n} / n \rightarrow \mathbb{E}\left(\tau_{2}-\tau_{1}\right)$ при $n \rightarrow \infty$, п.н.
+        \item[(д)] Сфорулируем эту задачу сейчас, а сделать ее нужсно будет после того, как обсудим ЗБЧ: Докажите, что $\mathbb{E} \left(\tau_{2} - \tau_{1}\right) = \left(\pi_{1}\right)^{-1}$.
+        \end{itemize}
+    \end{prob}
+    \begin{proof}
+        \begin{itemize}
+        \item[(а)] 
+        \item[(б)] 
+        \item[(в)] 
+        \item[(г)] 
+        \item[(д)] 
+        \end{itemize}
+    \end{proof}
