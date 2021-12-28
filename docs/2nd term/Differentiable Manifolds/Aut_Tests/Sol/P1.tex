@@ -1,0 +1,58 @@
+\includepdf{Tasks/v9}
+\newpage
+\section*{Решения}
+\subsection*{Задача 1}
+	\begin{gather*}
+	dx(v) = dx((6y + z)\frac{d}{d x} + (x+3y)\frac{d}{d y}) = 6y + z\\
+	dy(v) = dy((6y + z)\frac{d}{d x} + (x+3y)\frac{d}{d y}) = x + 3y\\
+	dz(v) = dz((6y + z)\frac{d}{d x} + (x+3y)\frac{d}{d y}) = 0\\
+	\\
+	\omega (v) = xy^3z \cdot dx(v) + 5x^2y^2z \cdot dy(v) + xy^2 \cdot dz(v) =\\
+	xy^3 z(6y + z) + 5x^2 y^2 + z(x + 3y) + xy^2 \cdot 0 =
+	xy^2 z(6y^2 + yz + 5x^2 + 15xy)
+	\end{gather*}
+\vskip 0.4in
+
+
+\subsection*{Задача 2}
+	\begin{gather*}
+	d \omega = \\
+	\frac{d}{d x} xy^3 z dx \wedge dx + \frac{d}{dy} xy^3z dy \wedge dx +
+	\frac{d}{dz}xy^3 z dz \wedge dx + \frac{d}{dx} 5x^2 y^2 z dx \wedge dy +\\
+	\frac{d}{dz} 5x^2 y^2 z dz \wedge dy + \frac{d}{dx} xy^2 dx \wedge dz +
+	\frac{d}{dy} xy^2 dy \wedge dz =\\
+	\\
+	3xy^2 z dy \wedge dx + xy^3 dz \wedge dx + 10xy^2 z dx \wedge dy + 5x^2 y^2 dz \wedge dy + y^2 dx \wedge dz + 2xy dy \wedge dz =\\
+	7xy^2 z dx \wedge dy + (xy^3 - y^2) dz \wedge dx + (2xy - 5x^2 y^2) dy \wedge dz
+	\end{gather*}
+\vskip 0.4in
+
+
+\subsection*{Задача 3}
+	\begin{gather*}
+	(xy^3z dx + 5x^2 y^2z dy + xy^2 dz) \wedge (7xy^2z dx \wedge dy +(xy^3 - y^2)dz \wedge dx +(2xy - 5x^2y^2)dy \wedge dz) =\\
+	xy^3 z(2xy - 5x^2 y^2) dx \wedge dy \wedge dz + 5x^2 y^2 z (xy^3 - y^2) dy \wedge dz \wedge dx +
+	xy^2 7xy^2z dz \wedge dx \wedge dy =\\
+	(2x^2 y^4 z - 5x^3 y^5 z + 5x^3 y^5 z - 5x^2 y^4 z + 7x^2 y^4 z) dx \wedge dy \wedge dz =\\
+	4x^2 y^4 z dx \wedge dy \wedge dz
+	\end{gather*}
+\vskip 0.4in
+
+
+\subsection*{Задача 4}
+	\begin{gather*}
+	z = x^2 + y^2\qquad dz = 2xdx + 2ydy\\
+	F^* \omega = F^* (xy^3 z dx + 5x^2 y^2 z dy + xy^2 dz) =\\
+	F^* (xy^3 z dx) + F^* (5x^2 y^2 z dy) + F^* (x y^2 dz) =\\
+	(xy^3 z \circ F)(dx \circ F) + (5x^2 y^2 z \circ F) d(y \circ F) + (xy^2 \circ F)(dz \circ F) =\\
+	xy^3(x^2 + y^2)dx + 5x^2 y^2(x^2 + y^2) dy + 2x^2 y^2 dx + 2xy^3 dy =\\
+	(x^3 y^3 + x y^5 + 2x^2 y^2)dx + (5x^4 y^2 + 5x^2 y^4 + 2xy^3)dy
+	\end{gather*}
+\vskip 0.4in
+
+
+\subsection*{Задача 5}
+	\begin{gather*}
+	\nu = \frac{4}{3} x^3 y^4 z dy \wedge dz\\
+	d \nu = \frac{d}{dx} \frac{4}{3} x^3 y^4 z dx \wedge dy \wedge dz
+	\end{gather*}
