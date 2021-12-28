@@ -1,0 +1,74 @@
+\newpage
+	\section{Домашнее задание 1}
+		\subsection{1}
+		A)\\
+		\begin{gather*}
+			ff^{-1}(N_1) = N_1
+		\end{gather*}
+		Докажем, что любой элемент первогомножества лежит во 2 и наоборот\\
+		1)\\
+		пусть $n \in N_1$ тогда у него $\exists !m$ прообраз при $f$, т.е. $f(m) = n$ и $f^{-1}(n) = m$ $\Longrightarrow$ $m \in f^{-1}(N_2)$ теперь, т.к. f-биекция, $f(m) = n$, т.е. $n \in ff^{-1}(N_2)$
+		\\
+		2)\\
+		пусть $n \in ff^{-1}(N_1)$ тогда $\exists m\in f^{-1}(N_1): \quad f(m) = n$, причем такое m единственно и у m есть единственный прообраз при $f^{-1}$
+		\\ \\
+		B)\\
+		\begin{gather*}
+			f^{-1}(N_1 \cap N_2) = f^{-1}(N_1) \cap f^{-1}(N_2)
+		\end{gather*}
+		докажем аналогично (A)\\
+		1)\\
+		$m \in f^{-1}(N_1 \cap N_2)$, значит $\exists n \in N_1 \cap N_2: \quad f(m) = n$\\
+		$n \in N_1 \cap N_2 \quad \Longleftrightarrow \quad n \in N_1 \quad \text{и} \quad n \in N_2$. Значит, образ n при $f^{-1}$ лежит в $f^{-1}(N_1)$ и в $f^{-1}(N_2)$, т.е. в $f^{-1}(N_1) \cap f^{-1}(N_2)$
+		\\
+		2)\\
+		пусть $m \in f^{-1}(N_1) \cap f^{-1}(N_2)$, тогда $\exists n \in N_1 \quad \text{и} \quad n \in N_2: \quad f(m) = n$ Тогда если $n \in N_1 \quad \text{и} \quad n \in N_2 \quad \Longleftrightarrow \quad n \in N_1 \cap N_2$. Значит, образ n при $f^{-1}$ лежит в $f^{-1}(N_1 \cap N_2)$
+		\\
+		
+		\subsection{2}
+		1)\\
+		Пронумеруем элементы m множества M\\
+		$a_1$, $a_2$, ... $a_m$
+		\\
+		2)\\
+		Прономеруем элементы y множества $B(M)$ \\
+		\begin{gather*}
+			X \subset B \quad \forall X \in 2^{m} \quad \text{сопоставим}
+			\begin{cases}
+				y_i = 0 \quad a_i \notin X \\
+				y_i = 1 \quad a_i \in X 
+			\end{cases}
+		\end{gather*}
+		$Y \in \{0, 1\}^M$\\
+		Между $B(M)$ и $(0, 1, ...)$ существует биекция
+		\\
+		3)\\
+		Рассмотрим множество $\{0, 1\}^M$ \\
+		Каждому элементу m множества M при отображении во множество $\{0, 1\}^M$ может соответствовать либо 1, либо 0. Поэтому элементы множества $\{0, 1\}^M$ можно пронумеровать так:
+		\begin{gather*}
+			\begin{cases}
+				x_i = 0 \quad \text{если} \quad a_i \longrightarrow 0 \\
+				x_i = 1 \quad \text{если} \quad a_i \longrightarrow 1 
+			\end{cases}
+		\end{gather*}
+		Аналогично можно занумеровать отображения из $(0, 1, ...)$ в $\{0, 1\}^M$
+		\\
+		
+		\subsection{3}
+		A)\\
+		Последовательность $\{ a_n \}$ ограничена\\
+		\begin{gather*}
+			\exists B > 0, B \in \mathbb{R} \quad \forall n: |a_n| \leq B
+		\end{gather*}
+		
+		B)\\
+		Последовательность $\{ a_n \}$ неограничена\\
+		\begin{gather*}
+			\forall B > 0, B \in \mathbb{R} \quad  \exists n: |a_n| \geq B
+		\end{gather*}
+		
+		C)\\
+		Последовательность $\{ a_n \}$ неограниченно возрастает (стремится к бесконечности)\\
+		\begin{gather*}
+			\forall B > 0, B \in \mathbb{R} \quad  \exists n: a_i \geq B \quad i\geq n
+		\end{gather*}
