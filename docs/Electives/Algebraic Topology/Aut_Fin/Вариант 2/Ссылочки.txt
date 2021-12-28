@@ -1,0 +1,12 @@
+1) курсы MIT https://ocw.mit.edu/courses/mathematics/18-905-algebraic-topology-i-fall-2016/lecture-notes/
+2) math stack exchange
+2.1) https://math.stackexchange.com/questions/1018078/how-to-prove-that-s2n1-s1-is-homeomorphic-to-mathbb-cpn-under-a-given
+2.2) https://math.stackexchange.com/questions/47451/consequences-of-degree-theory/47500#47500
+2.3) https://math.stackexchange.com/questions/2130231/relative-homology-groups-of-the-solid-torus-relative-to-the-torus-exterior
+2.4) https://math.stackexchange.com/questions/1003045/homotopy-equivalence-for-sn-with-finite-k-punctures
+2.5) https://math.stackexchange.com/a/1003059
+2.6) https://math.stackexchange.com/questions/2922875/degree-of-map-between-spheres
+3) Теория Морса http://www.mathnet.ru/supplement/conf/1515/lecture4.pdf
+4) Степени отображений https://core.ac.uk/download/pdf/79054506.pdf
+5) Эйлерова характеристика поверхности https://dxdy.ru/topic37797.html
+
