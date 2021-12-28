@@ -1,0 +1,82 @@
+\newpage
+\section{Введение}
+	$x^2 + y^2 + z^2 = 3xyz$\\
+	Однородный многочлен от $x, y$ степени 2\\
+	Заметим, что $f(tx,ty) = t^2 \cdot f(x,y)$\\
+	\\
+	\textbf{Пример:} $f(x,y) = ax^2 + bxy + cy^2 \quad a,b,c \in \mathbb{R}$ --- квадратичная форма\\
+	\\
+	Рассмотрим $\mathbb{Z}^2 \{ (m,n); \: m,n \in \mathbb{Z}\}$ и обозначим $\mathbb{Z}^{2 \star} = \mathbb{Z}^2 / (0,0)$\\
+	Пусть $m(f) = \min{|f(x,y)|, \: (x,y) \in \mathbb{Z^{2\star}}}$, тогда $m(\lambda f) = m(f) \cdot \lambda$\\
+	\textbf{Число Маркова}\\
+	$C(f) = \frac{m(f)}{\sqrt{\Delta f}}$\\
+	\\
+	На курсе планируется рассмотреть несколько вопросов:\\
+	1) Как устроен спектр Маркова(т.е. какие значения может принимать $C(f)$)\\
+	2) Какую область $C(f)$ занимает на $\mathbb{R}$\\
+	
+\section{Появление группы}
+	$x,y \in \mathbb{Z}^{2 \star}, \quad (x,y) \to (ax + by, \: cx + dy)$\\
+	$A =
+	\begin{pmatrix}
+	a & b \\ c & d
+	\end{pmatrix}
+	\in GL(2, \mathbb{Z}) \ \text{-- группа обратимых матриц}$\\
+	1) $a,b,c,d \in \mathbb{Z}$
+	2) $\det \begin{pmatrix} a & b \\ c & d \end{pmatrix} = ad-bc = \pm 1$
+	\\
+	\textbf{Задача}\\
+	Показать, что $\mathbb{Z}^2$ изоморфно $\mathbb{Z}^{2 \: \star}$\\
+	Где $\mathbb{Z}^{2 \: \star} \ = \ \mathbb{Z}^2 / (0, 0)$\\
+	\\
+	Пусть $F(x,y) = f(\alpha x + \beta y,\: \gamma x + \delta y)$ \\ \\
+	\textbf{Задача}\\
+	Докажите, что: $|\Delta(F)| = |\Delta(f)|$\\ \\
+	\begin{gather*}
+	f_1 \sim f_2 \: \Leftrightarrow \\
+	1) f_1(x,y) = f_2(\alpha x + \beta y,\: \gamma x + \delta y)\\
+	2) 
+		\begin{cases} 
+			C(f_1) = C(f_2)\\
+			C(\lambda f) = C(f)
+		\end{cases}
+	\end{gather*}
+	
+	\textbf{Примеры:}\\
+	a)\\
+	$f(x,y) = 0 \\
+	\exists m,n \in \mathbb{Z}^{2 \star}$\\
+	б)\\
+	$(p_n, q_n): \: p_n,q_n \in \mathbb{Z}\\
+	q_n > 0\\
+	|f(p_n, q_n)| \to 0$
+	\\
+
+\section{Теория диофантовых приближений}
+	Пусть $\omega \in \mathbb{R} / \mathbb{Q}$\\
+	Существует бесконечно много пар $(p_n, q_n)$, $p_n, q_n \in \mathbb{Z}$, $q_n > 0$ таких что: \\
+	\begin{equation*}
+	|\omega - \frac{p_n}{q_n}| < \frac{1}{q^2_n}
+	\end{equation*}
+	\textbf{Задача}\\
+	Проверить это утверждение, представив $\omega$ в виде цепной дроби, а также проверить, выполнено ли это утверждение для $\frac{1}{q^k_n}, \ k \in \mathbb{Z}$\\ \\
+	$f = x^2 + \omega^2 y^2\\
+	\Delta (f) = b^2 - 4ac = 4\omega^2 > 0$\\
+	\begin{equation*}
+	|f(p_n, q_n)| = |p^2_n - (\omega q_n)^2| = q^2_n |(\frac{p_n}{q-n} - \omega)(\frac{p_n}{q-n} + \omega)| < q^2_n \frac{C(\omega)}{q^3_n} = \frac{C(\omega)}{q_n} |\omega - \frac{p_n}{q_n}| < \frac{1}{q^3_n}
+	\end{equation*}
+	
+	\textbf{Построим $\omega$}
+	\begin{equation*}
+	\omega = \sum_{n=1}^{\inf} 10^{-n!}
+	\end{equation*}
+	Заметим что в этом случае $\omega$ это десятичная непериодическая дробь из 0 и 1\\
+	\\
+	$\mathbf{\Delta (f) < 0}\\
+	f_0(x,y) = x^2+xy+y^2\\
+	|\Delta| = 3\\
+	C(f_0) = \frac{1}{\sqrt{3}}$ \\ \\
+	\textbf{Теорема}\\
+	Если $\Delta(f) < 0$, то $C(f) \leqslant \frac{1}{\sqrt{3}}$ и $C(f) = \frac{1}{\sqrt{3}} \ \Leftrightarrow \text{\[ f_0 \]}$\\
+	Спектр Маркова для $\Delta (f) < 0$ это отрезок $[ 0; \frac{1}{\sqrt{3}}] \ \Leftrightarrow \\
+	\rho \in [ 0; \frac{1}{\sqrt{3}}] \quad \exists [f]: \: C(f)=\rho$
