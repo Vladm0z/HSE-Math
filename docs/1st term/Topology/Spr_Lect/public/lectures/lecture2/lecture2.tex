@@ -1,0 +1,216 @@
+\documentclass[../../main.tex]{subfiles}
+ 
+\begin{document}
+
+\section{Лекция 2. 6 ноября 2019 г.}
+\vspace{10pt}
+
+{\large Открытые множества в метрическом пространстве. Топологические пространства. Метризуемость. Хаусдорфовость. Сравнение топологий. Замкнутые мнжества. Примеры: дискретная и антидискретная топологии, топология Зарисского.}
+
+\vspace{10pt}
+
+\subsection{Открытые множества в метрическом пространстве}
+
+$(X, \ro)$ - метрическое пространство, $x \in X, r \geq 0$.
+
+\defn Открытый шар с центром в $x$ радиуса $r$ - это 
+$$B_r(x) = \left\{ y \in X \colon \ro(y, x) < r \right\}$$
+
+\textit{Замкнутый шар} с центром в $x$ радиуса $r$ - это
+$$\overline{B}_r(x) = \left\{ y\in X \colon \ro(y, x) \leq r \right\}$$
+
+\textbf{Пример. } \quad $x = \R \rightarrow B_r(x) = (x - r, x + r); \quad \overline{B}_r(x) = [x - r, x+r] $
+
+\textbf{Упражнение.} Нарисовать $B_1(o)$ на $(\R^2, \ro_p)$ для $p = 1, p = 2, p = \infty$.
+
+\textbf{Пример. } $X = C[a,b]$ с равномерной метрикой
+
+
+\begin{minipage}{0.4\linewidth}
+(картинка графика)
+\end{minipage}
+\begin{minipage}{0.6\linewidth}
+$\overline{B}_r(f)$ состоит из тех непрерывных функций, графики которых содержатся в заштрихованном множестве
+\end{minipage}
+\vspace{10pt}
+
+\defn $(X, \ro)$ - метрическое пространство, $A \subset X, x \in A$
+
+$x$ - \underline{внутренняя точка} $A \lra \ex \eps > 0 \colon B_{\eps}(x) \subset A$ 
+
+$A$ называется \underline{открытым} $\lra$ все его точки - внутренние
+
+\textbf{Предложение 1}. Открытый шар $B_r(x)$ открыт.
+
+\textbf{Доказательство}
+
+\begin{minipage}{0.4\linewidth}
+(картинка док-ва)
+\end{minipage}
+\begin{minipage}{0.6\linewidth}
+Пусть $y \in B_r(x)$, т.е $\ro(y,x) < r$.
+
+Положим $\eps = r - \ro(y,x)$
+
+Покажем: $B_{\eps}(y) \subset B_r(x)$ (*)
+
+Пусть $z \in B_{\eps}(y)$
+
+$\ro(z, x) \leq \ro(z,y) + \ro(y,x)< \eps + \ro(y,x) = r \Rightarrow z \in B_r(x) \Rightarrow $ (*) доказано $\Rightarrow B_r(x)$ открыто $\square$
+\end{minipage}
+
+\textbf{Предложение 2}.
+
+(1) $\varnothing$ открыто
+
+(2) $X$ открыто
+
+(3) $\left\{ U_i \right\}_{i \in I}$ - семейство открытых множеств в $X \rightarrow \bigcup_{i \in I} U_i$ открыто
+
+(4) $U_1, U_2, \ldots, U_n \subset X$ - открыты $\Rightarrow \bigcap^{n}_{i = 1} U_i$ открыто
+
+\textbf{Доказательство} (1), (2) очевидны
+
+(3) $x \in \bigcup_{i \in I} U_i \Rightarrow \ex i_0 \in X \colon x \in U_{i_o} \Rightarrow \ex \eps > 0 \colon B_{\eps}(x) \subset U_{i_0} \Rightarrow B_{\eps}(x) \subset \bigcup_{i \in I} U_i$
+
+(4) достаточно для $n = 2$
+
+$x \in U_1 \cap U_2$
+
+$\ex \eps_1 \eps_2 > 0 \colon B_{\eps_1}(x) \subset U_1, B_{\eps_2} \subset U_2$
+
+Обозначим $\eps = \min\left\{\eps_1, \eps_2 \right\} \Rightarrow B_{\eps}(x) \subset  U_1 \cap U_2 $
+
+\subsection{Топологические пространства}
+
+\defn Пусть $X$ - множество, $\tau \subset 2^{X} $
+
+$\tau$ называется \underline{топологией} на $X$, если
+
+(1) $\varnothing \in \tau$
+
+(2) $X \in \tau$
+
+(3) $\left\{U_i \right\}_{i \in I}$ - семейство множеств из $\tau \Rightarrow \bigcup_{i \in I} U_i \in \tau$
+
+(4) $U_1, \ldots U_n \in \tau \Rightarrow \bigcap^n_{i = 1} U_i \in \tau$
+
+$\left(X, \tau \right)$ называется \underline{топологическим пространством}
+
+Множества из $\tau$ называются \underline{открытыми}
+
+\textbf{Наблюдение.} Из предложения 2: каждая метрика $\ro$ на множестве $X$ порождает топологию $\tau_{\ro}$ на $X$
+
+\defn 
+
+Топологическое пространство $\left(X, \tau \right)$ называется \underline{метризуемым} $\lra \ex$ метрика $\ro\colon X\times X \rightarrow [0;\; +\infty) \colon \tau_{\ro} = \tau$
+
+\textit{Замечение} Если $\tau = \tau_{\ro}$, то такая $\ro$ не единственная!
+
+Например: $\tau_{\ro} = \tau_{2\ro}$
+
+\textbf{Пример-упражнение} Метрики $\ro_1, \ro_2, \ro_{\infty}$ на $\K^n$ (где $\K = \R$ либо $\mathbb{C}$) порождают одну и ту же топологию на $\K^n$
+
+\textbf{Пример 1} (дискретная топология)
+
+$X$ - $\fo$ множество, $\tau = 2^X$
+
+Рассмотрим $\ro\colon X\times X \rightarrow [0;\:+\infty), \quad \ro(x,y) = \begin{cases} 1, \text{ если } x\neq y, \\ 0 \text{ иначе}  \end{cases}$
+
+Заметим: $\tau = \tau_{\ro}$
+
+Действительно: $B_1(x) = {x} \Rightarrow {x}$ открыто в $\tau_{\ro} \: \fo x \in X \Rightarrow$ каждое $A \subset X$ открыто в $\tau_{\ro}$, т.к. $A = \bigcup_{x\in A} {x} \Rightarrow \tau_{\ro} = \tau$ - дискретная топология
+
+\textbf{Пример 2}. (антидискретная топология)
+
+$X$ - $\fo$ множество, $\tau = \left\{ \varnothing, X \right\}$
+
+\defn Пусть $\tau_1, \tau_2$ - топологии на множестве $X$
+
+Говорят, что $\tau_1$ грубее $\tau_2$ ($\tau_2$ \textit{тоньше} $\tau_1$), если $\tau_1 \subset \tau_2$
+
+Синонимы: грубее = слабее, тоньше = сильнее
+
+Дискретная - самая тонкая, антидискретная - самая грубая.
+
+\defn \underline{Окрестность} точки $x$ в топологическом пространстве $X$ - любое открытое множество $U \subset X$, содержащее $x$
+
+\subsection{Хаусдорфово топологическое пространство}
+
+\defn 
+
+Топологическое пространство $X$ называется \underline{хаусдорфовым} $\lra \fo x, y \in X, x \neq y, \ex$ окрестности $U \ni x, V \ni y \colon U \cap V = \varnothing$
+
+\textbf{Предложение}. Метризуемое топологическое пространство хаусдорфово.
+
+\textit{Доказательство:} Пусть $\left(X, \ro \right)$ - метр. пространство, $x, y \in X, x \neq y$. Обозначим $a = \ro(x, y),\;\; a > 0$
+
+\begin{minipage}{0.8\linewidth}
+Из неравенства треугольника: $B_{\frac a 2}(x) \cap B_{\frac a 2}(y) = \varnothing$
+\end{minipage}
+\begin{minipage}{0.2\linewidth}
+(картинка с шарами)
+\end{minipage}
+
+\textit{Следствие:} Антидискретная тополония на множестве, содержащем более 1 элемента, неметризуема (т.к. неухаусдорфова)
+
+\defn Пусть $X$ - топологическое пространство.
+
+Множество $F \subset X$ называется \underline{замкнутым} $\lra$ $X \backslash F$ открыто.
+
+\begin{minipage}{0.8\linewidth}
+\textit{Предложение.} Пусть $X$ - топологическое пространство, $\tau' = \left\{ F \subset X: F \text{ замкнуто} \right\}$. Тогда:
+
+(1) $\varnothing \in \tau'$
+
+(2) $x \in \tau'$
+
+(3) $\left\{ F_i \right\}$ - семейство множество из $\tau' \Rightarrow \bigcap_{i \in I} F_i \in \tau'$
+
+(4) $F_1, F_2, \ldots, F_n \in \tau' \Rightarrow \bigcup^n_{i = 1} F_i$ замкнуто
+\end{minipage}45
+\begin{minipage}{0.2\linewidth}
+Напоминание:
+
+$X \backslash \bigcap_{i \in I} F_i = \bigcup_{i \in I}\left( X \backslash F_i \right)$
+
+$X \backslash \bigcup_{i \in I} F_i = \bigcap_{i \in I}\left( X \backslash F_i \right)$
+
+\end{minipage}
+
+\textit{Наблюдение:} Если $X$ - множество, $\tau' \subset 2^X$ удовлетворяет (1) - (4) из предл. $\Rightarrow \left\{X \backslash F \colon F \in \tau' \right\}$ - топология на $X$
+
+\subsection{Топология Зарисского}
+
+\textbf{Пример} (топология Зарисского)
+
+$X$ - множество, $\K = \R$ или $\mathbb{C}$.
+
+\defn $A \subset \K^X$ - \underline{подалгебра} в $K^X$, если
+
+(1) $A$ - векторное подпространство в $K^X$
+
+(2) $1 \in A$ (где 1 - функция, тождественно равная единице)
+
+(3) $f, g \in A \Rightarrow fg \in A$ ($fg$ - поточечное произведение $f$ и $g$)
+
+Зафиксируем какую-либо подалгебру $A \subset \K^X$
+
+$\fo S \subset A$ обозначим $V(S) = \left\{ x \in x \colon\;\; \fo f \in S \;\; f(x) = 0 \right\}$ 
+
+\textit{Упражнение.} На $X$ существует топология, в которой $F \subset X$ замкнуто $\lra  F = V(S)$ для некоторого $S \subset A$. \\Она называется \underline{топологией Зарисского}
+
+Важный частный случай: $X = \K^n,\; A = \K[t_1,\ldots, t_n]$
+
+\textit{Упражнение:} Описать топологию Зарисского в явном виде для следующих случаев:
+
+(1) $X$ - любое множество, $A = \K^X$
+
+(2) $X = \K, \; A = \K[t]$
+
+(3) $X = [a, b] \subset \R, \; A = C[a,b]$
+
+
+
+
+\end{document}
