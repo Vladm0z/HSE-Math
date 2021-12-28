@@ -1,0 +1,51 @@
+
+\ProvidesPackage{Cup}
+
+\geometry{a4paper}
+
+\usepackage{graphicx} 
+\graphicspath{{Pics/}}
+\DeclareGraphicsExtensions{.pdf, .png, .tif, .eps, .tiff, .psd, .jpg}
+
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{young}
+\usepackage[vcentermath]{youngtab}
+\usepackage[all]{xy}
+\usepackage{tikz}
+\usepackage[english]{babel}
+\usepackage{booktabs}
+\usepackage{array} 
+\usepackage{paralist} 
+\usepackage{verbatim}
+\usepackage{subfig}
+\usepackage{fancyhdr}
+\usepackage{import}
+\usepackage{subfiles}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt} 
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} 
+\usepackage[nottoc, notlof, notlot]{tocbibind}
+\usepackage[titles, subfigure]{tocloft}
+
+\definecolor{linkcolor}{HTML}{0000FF} % цвет ссылок
+\definecolor{urlcolor}{HTML}{0000FF} % цвет гиперссылок
+\hypersetup{pdfstartview=FitH,  linkcolor=linkcolor, urlcolor=urlcolor, colorlinks=true}
+
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape}
+\newcommand{\intl}{\mathop{\int}\limits}
+\newcommand{\liml}{\mathop{\lim}\limits}
+\newcommand{\suml}{\mathop{\sum}\limits}
+\newcommand{\supl}{\mathop{\sup}\limits}
+\newcommand{\infl}{\mathop{\inf}\limits}
+\newcommand{\longrightarrowl}{\mathop{\longrightarrow}\limits}
+\newcommand{\Int}{\int\limits}
+\newcommand{\ignore}[1]{} %для комментов
