@@ -1,0 +1,24 @@
+\subsection*{ГЛ11 2}
+\begin{gather*}
+	\text{GL}_n(F_q) = \bigcup\limits_{i=0}^{n-1}(q^n - q^i)
+\end{gather*}
+1 строка: $q^n - 1$ (все, кроме нулевой)\\
+2 строка: $q^n - q$ (так как строки не пропорц.)\\
+$\ldots$\\
+n строка: $q^n - 1$\\
+\begin{gather*}
+	\phi:\ \text{GL}_n \to \text{det}(\text{GL}_n)\\
+	\text{ker}(\phi) = 	\text{SL}_n\\
+\end{gather*}
+$\phi$ -- гомоморфизм, так как $A \cdot B \to \text{det}(A) \cdot \text{det}(B) \to \text{det}(A \cdot B)$
+\begin{gather*}
+	|\text{ker}(\phi)| \cdot |\text{im}(\phi)| = |\text{GL}_n|\\
+	|\text{im}(\phi) = q-1|\\
+	\# \text{SL}_n = \frac{\bigcup\limits_{i=0}^{n-1}(q^n - q^i)}{q-1}
+\end{gather*}
+\begin{gather*}
+	h: \text{GL}_n(F_q) \to \text{PGL}_n(F_q) = \text{GL}_n(F_q)/\sim\\
+	\sim: A \sim B \Leftrightarrow A= \lambda B \quad \lambda \in F*_q\\
+	\# \text{PGL}_n(F_q) = \frac{\# \text{GL}_n(F_q)}{q-1} = \#\text{SL}_n
+\end{gather*}
+		

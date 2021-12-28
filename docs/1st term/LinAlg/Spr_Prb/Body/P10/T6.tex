@@ -1,0 +1,63 @@
+\subsection*{ГЛ10 6}
+$\text{sgn}(\text{tr}A^2)$
+\begin{enumerate}
+\item 
+	разберем случай $\text{Mat}_2(\mathbb{R})$\\
+	\begin{gather*}
+		\text{tr}
+		\begin{pmatrix}
+			a_{11} & a_{12}\\
+			a_{21} & a_{22}
+		\end{pmatrix}^2 = a_{11}^2 + 2a_{12}a_{21} + a^2_{22}\\
+		q = 
+		\begin{pmatrix}
+			1 & 0 & 0 & 0\\
+			0 & 0 & 2 & 0\\
+			0 & 2 & 0 & 0\\
+			0 & 0 & 0 & 1						
+		\end{pmatrix}
+		\quad
+		\begin{matrix}
+			\Delta_1 > 0\\
+			\Delta_2 = 0\\
+			\Delta_3 < 0\\
+			\Delta_4 < 0
+		\end{matrix}
+	\end{gather*}
+\item 
+	$\text{Mat}_{n}(\mathbb{R})$\\
+	Всего $n^2$ элементов
+	\begin{gather*}
+		\text{tr}A^2 = \sum\limits^{n}_{i=1}a^2_{ii} + 2\sum\limits^{n}_{\substack{i<j \\ i = 1}}a_{ij}a_{ji}
+	\end{gather*}
+	Запишем матрицу грама, упорядочив столбцы по возрастанию суммы индексов:\\
+	$a_{11},\ a_{12},\ a_{21},\ a_{22},\ a_{13},\ a_{31},\ a_{23},\ a_{32},\ a_{33},\ldots$\\
+	Тогда матрица грама состоит из блоков 
+	$\begin{pmatrix}
+		0 & 2\\
+		2 & 0
+	\end{pmatrix} \simeq H^2$
+	на диагонали и $1$ при $a_{ii}$\\
+	Так как между $a_{k^2k^2}$ и $a_{(k+1)^2(k+1)^2}$ ровно $k$ гиперболических пространств, то $(p_{(k+1)^2-1}, m_{(k+1)^2-1}) = (p_{k^2}+k, m_{k^2}+k)$\\
+	Так как знак $\Delta_{(k+1)^2}$ определяется суммой всех $H^2\ ((-1)^{\sum H^2})$, и $\Delta_{(k+1)^2} \cdot \Delta_{(k+1)^2-1} > 0$, следовательно $\text{sgn} = (p_{k^2}+k+1, m_{k^2}+k)$, откуда по индукции получаем:
+	\begin{gather*}
+		\Delta_{1} > 0\quad (1,0)\\
+		\Delta_{2} = 0\\
+		\Delta_{3} < 0\\
+		\Delta_{4} < 0\quad (3,1)\\
+		\Delta_{5} = 0\\
+		\Delta_{6} > 0\\
+		\Delta_{7} = 0\\
+		\Delta_{8} < 0\\
+		\Delta_{9} < 0\quad (6,3)\\
+		\Delta_{10} = 0\\
+		\Delta_{11} > 0\\
+		\Delta_{12} = 0\\
+		\Delta_{13} < 0\\
+		\Delta_{14} = 0\\
+		\Delta_{15} > 0\\
+		\Delta_{16} > 0\quad (10,6)\\
+	\end{gather*}
+	Откуда: $\text{sgn}(1+2+\ldots+n, 1+2+\ldots+(n-1)) = \text{sgn}(\frac{1+n}{2}\cdot n, \frac{n}{2}(n-1))$
+\end{enumerate}
+		

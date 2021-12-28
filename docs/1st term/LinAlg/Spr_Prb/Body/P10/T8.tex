@@ -1,0 +1,46 @@
+\subsection*{ГЛ10 8}
+$f: \Omega_{2n} \simeq \Omega_{2n}$\\
+Симплек. группа $\text{Sp}(\Omega_{2n})$
+\begin{gather*}
+	\text{Sp}_{2n}(k) = \{F \in \text{Mat}_{2n}(k)\ |\ F^t IF = I\}\quad I = 
+	\begin{pmatrix}
+		0 & E\\
+		-E & 0
+	\end{pmatrix}
+\end{gather*}
+Изотропные подпространства:\\
+Каждое изотропное подпространство $U_1 \subset \Omega_{2n}$\\
+$U_1 \subset L_1$ по определению и $\Omega_{2n} = L_1 \oplus L_1^{\prime}$ (по теореме: $\forall\ L_1\ \exists\ L_1^{\prime}\ |\ V = L_1 \oplus L_1^{\prime}$. Так как каждое изотропное содержится в симплексе $W,\ \text{dim}(W) = 2\text{dim}(U)$)
+\begin{gather*}
+	\forall U_2 \subset \Omega_{2n}\ \exists L_2\ |\ U_2 \subset L_2
+\end{gather*}
+и
+\begin{gather*}
+	\Omega_{2n} = L_2 \oplus L_2^{\prime}
+\end{gather*}
+Следовательнос существует изометрич. изоморфизм $f: \Omega_{2n} \simeq \Omega_{2n}\quad U_1 \to U_2$\\
+\\
+Симплектические прдпространства:\\
+пусть $W_1 \simeq \Omega_{2k},\ W_2 \simeq \Omega_{2k}$ -- изометрич. изоморфизм\\
+$W_1^{\perp}, W_2^{\perp} \simeq \Omega_{2(n-k)}$\\
+$W_1 \oplus W_1^{\perp} \simeq \Omega_{2k} + \Omega_{2(n-k)} \simeq W_2 \oplus W_2^{\perp}$\\
+Композиция изморфизмов = изоморфизм\\
+Базис в\\
+$U = L_1 \oplus L_1^{\prime}\quad \langle u \rangle, \langle u^{\prime} \rangle$\\
+$V = L_2 \oplus L_2^{\prime}\quad \langle v \rangle, \langle v^{\prime} \rangle$
+\begin{gather*}
+	\begin{pmatrix}
+		u_1 & \ldots & u_n & u_1^{\prime} & \ldots & u_n^{\prime}\\
+		0 & \ldots & 0 & 1 & 0 & 0\\
+		\vdots & \ddots & \vdots & 0 & \ddots & 0\\
+		0 & \ldots & 0 & 0 & \ldots & 1\\
+		-1 & 0 & 0 & 0 & \ldots & 0\\
+		0 & \ddots & 0 & \vdots & \ddots & \vdots \\
+		0 & 0 & -1 & 0 & \ldots & 0\\
+	\end{pmatrix}\\
+	f(u_i) = V_i\\
+	f(u_i^{\prime}) = V_i^{\prime}\\
+	\Rightarrow\\
+	f \in \text{Sp}(V)\\
+	f \mid_{L_1} L_1 \simeq L_2 \Rightarrow \text{Sp}(V) \curvearrowright \{L \subset V\} \text{ транзитивно}
+\end{gather*}

@@ -1,0 +1,63 @@
+\subsection*{ГЛ10 4}
+Так как $\left(y_{0}, y_{1}\right) = \left(x_{0}, x_{1}\right)A$, то:
+\begin{gather*}
+	f(y_0,y_1) = f((x_0, x_1)A) = ((x_0, x_1)A)^Tf((x_0, x_1)A) = A^T (x_0 x_1)^T f (x_0 x_1) A = A^T f(x_0, x_1) A	
+\end{gather*}
+Обозначим
+\begin{gather*}
+	A = 
+	\begin{pmatrix}
+		a & b \\
+		c & d
+	\end{pmatrix}
+	\Rightarrow 
+	(y_0, y_1) = (ax_0+cx_1, bx_0+dx_1)
+\end{gather*}
+Обозначим базис в пространстве $W$ $e_1 = x_{0}^{2}, e_2 = x_{0} x_{1}, e_3 = x_{1}^{2}$.\\
+Тогда любая квадратичная форма $Q \in W$ имеет вид $Q = \alpha e_1+2\beta e_2+\gamma e_3$, 
+$Q = 
+\begin{pmatrix}
+	\alpha & \beta \\
+	\beta & \gamma
+\end{pmatrix}$\\
+Так как 
+\begin{gather*}
+	y_0^2 = a^2x_0^2 + 2ac x_0 x_1 + c^2 x_1^2\quad y_1^2 = b^2x_0^2 + 2bd x_0 x_1 + d^2 x_1^2\quad y_0y_1 = ab x_0^2 + (ad+bc)x_0x_1 + cdx_1^2
+\end{gather*}
+То замена базиса под действием оператора $S^2A: W \rightarrow W$ имеет матрицу
+\begin{gather*}
+	Xe = 
+	\begin{pmatrix}
+		a^2 & 2ac & c^2 \\ 
+		ab & ad+bc & cd \\
+		b^2 & 2bd & d^2
+	\end{pmatrix}
+	\begin{pmatrix}
+		e_1\\ e_2\\ e_3 
+	\end{pmatrix}
+	 = 
+	\begin{pmatrix}
+		e_1^{'} \\
+		e_2^{'} \\
+		e_3^{'}
+	\end{pmatrix}
+\end{gather*}
+И линейный оператор действует на матрицу сопряжением
+\begin{gather*}
+	S^2A(Q) \rightarrow A^{T}QA = 
+	\begin{pmatrix}
+		\alpha a^2 + 2\beta ac + \gamma c^2 & \beta(ad+bc)+\alpha ab + \gamma cd\\
+		\beta(ad+bc)+\alpha ab + \gamma cd & \alpha b^2 + 2\beta bd + \gamma d^2
+	\end{pmatrix}
+\end{gather*}
+Следовательно
+\begin{gather*}
+	\text{tr}X = a^2 + ad + bc + d^2 = (a+d)^2 - ad + bc =\text{tr}^{2} A - \text{det} A\\
+	\text{det}X = 
+	a^3d^3+a^2bcd^2+4ac^2b^2d-b^2c^2ad-b^3c^3-4bcd^2a^2 = \\
+	(ad)^3-(bc)^3-3abcd(ad-bc) = 
+	(ad-bc)((ad)^2+abcd+(bc)^2-3abcd) = \\
+	(ad-bc)^3 = 
+	\text{det}^3A
+\end{gather*}
+		

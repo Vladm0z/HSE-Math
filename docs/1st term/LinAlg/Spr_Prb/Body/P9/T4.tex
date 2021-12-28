@@ -1,0 +1,37 @@
+\subsection*{ГЛ9 4*}
+Пусть $x$ -- точка в выпуклой оболочке $P$. Тогда $x$ является выпуклой комбинацией конечного числа точек в $P$
+\begin{gather*}
+	\mathbf{x}=\sum\limits_{j=1}^k \lambda_j \mathbf{x}_j
+\end{gather*}
+где каждый $x_{j}$ находится в $P$, каждый $\lambda_{j}$ является (w.l.o.g.) положительным, а $\sum\limits_{j = 1}^k\lambda_j = 1$. \\
+Предположим, что $k > d+1$ (иначе доказывать нечего). Тогда векторы $x_{2} - x_{1}, \ldots, x_{k} - x_{1}$ линейно зависимы, поэтому существуют действительные скаляры $\mu_{2}, \ldots, \mu_{k}$, не все ноль, так что
+\begin{gather*}
+	\sum\limits_{j=2}^k \mu_j (\mathbf{x}_j-\mathbf{x}_1)=\mathbf{0}
+\end{gather*}
+Если $\mu_{1}$ определить как
+\begin{gather*}
+	\mu_1:= -\sum\limits_{j=2}^k \mu_j
+\end{gather*}
+То
+\begin{gather*}
+	\sum\limits_{j=1}^k \mu_j \mathbf{x}_j=\mathbf{0}\\
+	\sum\limits_{j=1}^k \mu_j=0
+\end{gather*}		
+и не все $\mu_{j}$ равны нулю. Следовательно, хотя бы один $\mu_{j} > 0$.\\
+Потом,
+\begin{gather*}
+	\mathbf{x} = \sum\limits_{j=1}^k \lambda_j \mathbf{x}_j-\alpha\sum\limits_{j=1}^k \mu_j \mathbf{x}_j = \sum\limits_{j=1}^k (\lambda_j-\alpha\mu_j) \mathbf{x}_j
+\end{gather*}
+для любого вещественного $\alpha$. В частности, равенство будет иметь место, если $\alpha$ определено как
+\begin{gather*}
+	\alpha:=\min_{1\leq j \leq k} \left\{ \tfrac{\lambda_j}{\mu_j}:\mu_j>0\right\}=\tfrac{\lambda_i}{\mu_i}
+\end{gather*}
+Обратите внимание, что $\alpha > 0$, и для каждого $j$ между $1$ и $k$,
+\begin{gather*}
+	\lambda_j-\alpha\mu_j \geq 0
+\end{gather*}
+В частности, $\lambda_{i} - \alpha\mu_{i} = 0$ по определению $\alpha$. Следовательно,
+\begin{gather*}
+	\mathbf{x} = \sum\limits_{j=1}^k (\lambda_j-\alpha\mu_j) \mathbf{x}_j
+\end{gather*}
+где все $\lambda_{j} - \alpha\mu_{j}$ неотрицательны, их сумма равна единице, и, кроме того, $\lambda_i - \alpha\mu_i = 0$. Другими словами, $x$ представляется выпуклой комбинацией не более чем $k-1$ точек из $P$. Этот процесс может повторяться до тех пор, пока $x$ не будет представлен в виде выпуклой комбинации не более чем $d + 1$ точек в $P$.

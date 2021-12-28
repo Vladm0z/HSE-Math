@@ -1,0 +1,18 @@
+\subsection*{ГЛ10 5}
+$\text{det}(tE - X) = t^n - \delta_1(x)t^{n-1} + \delta_2(x)t^{n-2} - \ldots$\\
+$\delta_2(x) = q(a_{11},a_{12},a_{21},a_{22},\ldots) = a_{22}a_{11} - a_{12}a_{21} + \ldots = \sum\limits^{n}_{\substack{i = 1\\ i<j}}a_{ii}a_{jj} - \sum\limits^{n}_{\substack{k \ne l\\ k = 1\\ k < l}}a_{kl}a_{lk}$\\
+Тогда составим матрицу грама, упорядочив $a_{kl}$ по возрастанию суммы индексов:
+\begin{gather*}
+	\Delta_{1} = 0\\
+	\Delta_{3} < 0\quad (1,1)\\
+	\Delta_{4} > 0\quad (1,2)\\
+	\Delta_{6} < 0\\
+	\Delta_{8} > 0\quad (3,5)\\
+	\Delta_{9} < 0\quad (3,6)
+\end{gather*}
+Блоки $\begin{pmatrix} 0 & -1\\ -1 & 0 \end{pmatrix} \simeq H_2\quad \text{sgn}(H_2) = (1,1)$\\
+Докажем по индукции:\\
+Между $a_{kk} \times a_{kk}$ и $a_{(k+1)} \times a_{(k+1)}$ находится $k$ гиперболических пространств, то $(p_{(k+1)^2-1}, m_{(k+1)^2-1}) = (p_{k^2} + k, m_{k^2} + k)$ ($p_{(k+1)^2-1}$ -- минор перед $a_{(k+1)} \times a_{(k+1)}$, так как этот элемент стоит на $(k+1)^2$ месте)\\
+$\Delta_{(k+1)^2} \cdot \Delta_{(k+1)^2} < 0$ откуда $\text{sgn} = (p_{k^2}+k, m_{k^2}+k+1)$\\
+Ответ: $(\frac{n}{2}(n-1), \frac{n+1}{2}\cdot n)$\\
+		

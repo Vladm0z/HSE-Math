@@ -1,0 +1,102 @@
+\subsection*{ГЛ10 3}
+Пусть 
+\begin{gather*}
+	A = 
+	\begin{pmatrix}
+		a & b \\
+		c & d
+	\end{pmatrix}
+\end{gather*}
+Тогда форма $q: A \mapsto \text{det} A = ad-bc$ является квадратичной формой, так как ее можно представить в виде 
+\begin{gather*}
+	q(A, A)=A^TqA=
+	\begin{pmatrix}
+		a & b & c & d
+	\end{pmatrix}
+	\begin{pmatrix}
+		0 & 0 & 0 & \frac{1}{2} \\
+		0 & 0 & -\frac{1}{2} & 0\\
+		0 & -\frac{1}{2} & 0 & 0 \\
+		\frac{1}{2} & 0 & 0 & 0
+	\end{pmatrix}
+	\begin{pmatrix}
+		a\\ b\\ c\\	d
+	\end{pmatrix}
+	=ad-bc
+\end{gather*}
+По определению, поляризация имеет вид 
+\begin{gather*}
+	2 \widetilde{\text{det}}(X, Y)=\text{det}(X+Y)-\text{det}X-\text{det}Y
+\end{gather*}
+Пусть 
+\begin{gather*}
+	X = 
+	\begin{pmatrix}
+		a_1 & b_1 \\
+		c_1 & d_1
+	\end{pmatrix}
+	\qquad
+	Y = 
+	\begin{pmatrix}
+		a_2 & b_2 \\
+		c_2 & d_2
+	\end{pmatrix}
+\end{gather*}
+Тогда 
+\begin{gather*}
+	2\widetilde{\text{det}}(X, Y)=
+	\begin{vmatrix}
+		a_1 + a_2 & b_1 + b_2 \\
+		c_1 + c_2 & d_1 + d_2
+	\end{vmatrix}
+	-
+	\begin{vmatrix}
+		a_1 & b_1 \\
+		c_1 & d_1
+	\end{vmatrix}
+	-
+	\begin{vmatrix}
+		a_2 & b_2 \\
+		c_2 & d_2
+	\end{vmatrix}
+	=
+	a_1d_2+a_2d_1-b_1c_2-b_2c_1
+\end{gather*}
+Пусть 
+\begin{gather*}
+	Y^{?}=
+	\begin{pmatrix}
+	a & b \\
+	c & d \\
+	\end{pmatrix}
+	\\
+	\text{tr}\left(X \cdot Y^{?}\right) = a_1a+b_1c+c_1b+d_1d = a_1d_2+a_2d_1-b_1c_2-b_2c_1
+\end{gather*}
+Следовательно 
+\begin{gather*}
+	Y^{?}=
+	\begin{pmatrix}
+		d_2 & -b_2 \\
+		-c_2 & a_2
+	\end{pmatrix}
+\end{gather*}
+Таким образом, линейное преобразование $Y \mapsto Y^{?}$ имеет вид $Y \mapsto \text{det}Y \cdot Y^{-1}$\\
+Форма $\text{det}$ не является гиперболической, тк не существует базиса, в котором $\text{det}$ имеет вид 
+\begin{gather*}
+	A^T
+	\begin{pmatrix}
+		0 & 0 & 0 & \frac{1}{2}\\
+		0 & 0 & -\frac{1}{2} & 0\\
+		0 & -\frac{1}{2} & 0 & 0\\
+		\frac{1}{2} & 0 & 0 & 0
+	\end{pmatrix}
+	\qquad
+	A =
+	\begin{pmatrix}
+		0 & 0 & 0 & 1\\
+		0 & 0 & 1 & 0\\
+		0 & 1 & 0 & 0\\
+		1 & 0 & 0 & 0
+	\end{pmatrix}
+\end{gather*}
+Так как при смене базиса каждое число в матрице умножается на квадрат числа, и, следовательно, нельзя поменять знак у чисел $-\frac{1}{2}$.
