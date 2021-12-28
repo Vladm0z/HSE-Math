@@ -1,0 +1,35 @@
+\noindent
+\textbf{Task}\\
+Let $f_n$ be the Fibonacci sequence $f_1 = 1,\ f_2 = 2$\\
+Prove that each positive integer admits a unique representation in a form\\
+$a_1f_1 + a_2f_2 + \ldots + a_nf_n + \ldots$ such that
+\begin{enumerate}
+\item[$\cdot$] each $a_i$ is either 0 or 1
+\item[$\cdot$] there are finitely many numbers $a_i$ equal to 1
+\item[$\cdot$] no two consequent numbers $a_i$ are equal to 1
+\end{enumerate}
+\textbf{Solution}\\
+We'll proof this statement by induction\\
+If we can represent $1, \ldots, n$ as sum of Fibonacci numbers, we also can represent $n+1$
+Basis:
+\begin{gather*}
+	1 = f_1\\
+	2 = f_2\\
+	3 = f_3\\
+	4= f_1 + f_3
+\end{gather*}
+Step:\\
+If $n+1$ is a Fibonacci number, it is  itself representation.\\
+Suppose that $n+1$ isn't a Fibonacci number, then
+\begin{gather*}
+	\exists i \in \mathbb{Z}: F_i < n+1 < F_{i+1}\\
+	n+1 - F_i = m\\
+	m < F_i
+\end{gather*}
+Then we can represent $n+1$ as representation of $m$ plus $F_i$\\
+\\
+\noindent
+Then proof the uniqueness\\
+$n \in \mathbb{N}$ and n has 2 representations: $A_1,A_2$\\
+Let $A_1' = A_1\slash A_2,\ A_2' = A_2\slash A_1$, so $A_1' \cap A_2' = \varnothing$ and $A_1',\ A_2'$ represent the same number.\\
+Suppose the the largest element of $A_1'$ larger then the largest element of $A_2'$, but it means that $A_1'$ represent larger number, cause sum of elements of $A_2'$ less then the largest element of $A_1'$ (else $A_2'$ should have this number in it's representation). It follows that there cannot be 2 different representations.

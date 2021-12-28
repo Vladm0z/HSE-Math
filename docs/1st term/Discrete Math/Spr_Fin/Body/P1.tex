@@ -1,0 +1,25 @@
+\textbf{Task}
+\begin{gather*}
+	\prod_{n \geq 1}\left(1+t q^{2 n-1}\right)
+	=
+	\sum_{k \geq 0} \frac{t^{k} q^{k^{2}}}{\left(1-q^{2}\right)\left(1-q^{4}\right) \ldots\left(1-q^{2 k}\right)}
+\end{gather*}
+\textbf{Solution}\\
+Notice that the coefficient of $t^k$ on the left side depends on the $k$ brackets from which we take $tq^m$. Enumerate this brackets by odd numbers, where $2n'+1$ connected with $(1+tq^{2n'+1})$.\\
+Let $i$ is the minimal degree of coefficient $q^i$ of $t^k$ and $i$ is the sum of odd numbers from $1$ to $2k-1$.\\
+Then consider some other coefficient $q^n$ and we can choose any bracket instead of $2k-1$. In other words, we can increase $2k-1$ by $0, 2, 4, 6, \ldots$. A generating function of this bracket is $q^{2k-1}(1+q^2+q^4+\ldots) = \frac{q^{2k-1}}{1 -q^2}$.
+\vskip 0.1in
+\noindent
+Then consider next bracket $2k-3$, smallest number by which we can increase the number of this bracket is 4, since we cannot increase $2k-3$ by $2$. A generating function of this bracket is $q^{2k-3}(1+q^4+\ldots) = \frac{q^{2k-3}}{1-q^4}$.\\
+Similarly for all other brackets.
+\begin{gather*}
+	\frac{q}{1-q^{2k}} \cdot \ldots \cdot \frac{q^{2k-1}}{1-q^2} = \frac{q^{k^2}}{(1-q^2) \cdot \ldots \cdot (1-q^{2k})}
+\end{gather*}
+Which proves the equation.
+
+
+
+
+
+
+

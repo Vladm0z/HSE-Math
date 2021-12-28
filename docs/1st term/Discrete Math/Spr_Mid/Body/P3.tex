@@ -1,0 +1,18 @@
+\newpage		
+	\section*{}
+	\textbf{Task}\\
+	Prove the equality:
+	\begin{gather*}
+		\sum\limits_{k=0}^{n} {{n}\choose{k}}^2 = {{2n}\choose{n}}
+	\end{gather*}
+	\textbf{Solution}\\
+	We know that
+	\begin{gather*}
+		{{n}\choose{k}} = {{n}\choose{n-k}}
+	\end{gather*}
+	Then
+	\begin{gather*}
+		\sum\limits_{k=0}^{n} {{n}\choose{k}}^2 = 
+		\sum\limits_{k=0}^{n} {{n}\choose{k}}{{n}\choose{n-k}}
+	\end{gather*}
+	Then we can see that this is the same as choosing $n-k$ objectsfrom the set of power $n$ and $k$ from the other set with the same size. Then, considering the sum of ${{n}\choose{k}}{{n}\choose{n-k}}$ for all possible k, we get the number of ways to select $n$ objects from a set of size $2n$. 

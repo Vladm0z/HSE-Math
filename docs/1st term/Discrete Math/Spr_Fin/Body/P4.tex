@@ -1,0 +1,30 @@
+\textbf{Task}
+(Another $q$-binomial theorem) The variables $x$ and $y$.
+ do not commute, but they satisfy the following relation: $yx=qxy$. If $a$ is any expression containing $x$, $y$ or $q$, than $qa=aq$. Prove that
+\begin{gather*}
+	(x+y)^{n}=\sum_{k=0}^{n}
+	\begin{bmatrix}
+	n \\ k
+	\end{bmatrix}
+	x^k y^{n-k}\\
+	\text{For example,}\\
+	(x+y)^{2}=x^{2}+(1+q) x y+y^{2}	
+\end{gather*}
+\textbf{Solution}\\
+When we multiply $(x+y)^n$, each term is a string of length $n$ which contains $x$ and $y$. If there are $k$ letters $y$ in string, we can define it as $x^{n-k}y^{k}$ and each change from one letter to another contributing a factor of $q$. Coefficient of this term is $q^{a}$, where $a$ is the number of changes. Let $\alpha(n,k)$ be the sum of these coefficients over all strings with $k$ letters $y$. Then $\alpha(n,k)$ is a polynomial in $q$, and
+\begin{gather*}
+	(x+y)^{n}
+	=
+	\sum\limits_{k=0}^{n} \alpha(n, k) x^{n-k} y^{k}	
+\end{gather*}
+We identify the coefficients $\alpha(n,k)$ with Gaussian coefficients.
+\begin{gather*}
+	(x+y)^{n}=(x+y)^{n-1}(x+y)=\left(\sum\limits_{k=0}^{n-1} C(n-1, k) x^{n-1-k} y^{k}\right)(x+y)
+\end{gather*}
+Multiplying by $x$, we have to change this $x$ over all $k$ letters $y$ to reach the required form, giving a factor of $q^k$. Multiplying by $y$, no changes are required. So we have
+\begin{gather*}
+	\alpha(n, k)
+	=
+	q^{k} \alpha(n-1, k) + \alpha(n-1, k-1)
+\end{gather*}
+Thus the coefficients $\alpha(n,k)$ satisfy the same recurrence and initial conditions as the Gaussian coefficients, and so are equal to them.

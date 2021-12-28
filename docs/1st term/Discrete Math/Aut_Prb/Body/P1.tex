@@ -1,0 +1,194 @@
+\newpage	
+	\section{Листок 1. Множества, отображения, высказывания.}
+		\subsection{1}
+		1)
+		\begin{gather*}
+			x \in \overline{A \cup B} 
+			\Longrightarrow 
+			\begin{cases}
+				x \notin A \\
+				x \notin B \\
+			\end{cases}
+			\Longrightarrow 
+			\begin{cases}
+				x \in \overline{A} \\
+				x \in \overline{B} \\
+			\end{cases}
+			\Longrightarrow 
+			x \in \overline{A} \cap \overline{B} 
+		\end{gather*}
+		2)
+		\begin{gather*}
+			\begin{cases}
+				x \in A/B \Longrightarrow x \in \overline{B}\\
+				x \in B/A \Longrightarrow x \in \overline{A}\\
+				x \in U/(A \cup B) \Longrightarrow x \in \overline{A} \cup \overline{B}
+			\end{cases}
+			\Longrightarrow
+			\overline{A \cap B} = \overline{A} \cup \overline{B}
+		\end{gather*}
+		
+		\subsection{2}
+				
+		
+		\subsection{3}
+		\begin{gather*}
+			x \bar y \cup y \bar z \cup z \bar x = x \bar z \cup z \bar y \cup y \bar x
+		\end{gather*}
+		A)\\
+		\begin{gather*}
+			\begin{matrix}
+				x & \bar y & x \bar y \\
+				1 & 0 & 0 \\
+				0 & 1 & 0
+			\end{matrix}
+		\qquad
+			\begin{matrix}
+				z & \bar x & z \bar x \\
+				1 & 0 & 0 \\
+				0 & 1 & 0
+			\end{matrix}
+		\qquad
+			\begin{matrix}
+				y & \bar z & y \bar z \\
+				1 & 0 & 0 \\
+				0 & 1 & 0
+			\end{matrix}		
+		\end{gather*}				
+		
+		\begin{gather*}
+			\begin{matrix}
+				y & \bar x & y \bar x \\
+				1 & 0 & 0 \\
+				0 & 1 & 0
+			\end{matrix}
+		\qquad
+			\begin{matrix}
+				x & \bar z & x \bar z \\
+				1 & 0 & 0 \\
+				0 & 1 & 0
+			\end{matrix}
+		\qquad
+			\begin{matrix}
+				z & \bar y & z \bar y\\
+				1 & 0 & 0 \\
+				0 & 1 & 0
+			\end{matrix}		
+		\end{gather*}				
+		
+		\begin{gather*}
+		0 \cup 0 \cup 0 = 0 \cup 0 \cup 0
+		\end{gather*}
+		\\
+		B)\\
+		$x \bar{y} = \overline{\bar{x} + y}$ так как $\overline{A} + \overline{B} = \overline{A * B}$ то 
+		\begin{gather*}
+			\overline{\overline{x} + y} + \overline{\overline{y} + z} + \overline{\overline{z} + x} = 
+			\overline{(\overline{x} + y)(\overline{y} + z)(\overline{z} + x)} = 
+			\overline{\overline{xyz} + xyz}
+		\end{gather*}
+		Аналогично
+		\begin{gather*}
+		\overline{\overline{x} + z} + \overline{\overline{z} + y} + \overline{\overline{y} + x} = \overline{\overline{xyz} + xyz}
+		\end{gather*}
+		\\
+		
+		\subsection{4}
+		A)
+		Требуется показать, что \\
+		(1) $f: M \longrightarrow N$ сюръекция \\
+		$\Longleftrightarrow$ \\
+		(2) существует $g: N \longrightarrow M$ такое, что $f o g = Id_N$ \\
+		
+		(1) $\Longrightarrow$ (2) \\ \\
+		Рассмотрим $g$ такое, что $g(x) = $ самый первый прообраз элемента $x$ относительно $f$ (мы считаем, что множества упорядочены, и мы можем так считать, так как они конечны). Заметим, что так как $f$ - сюръекция, то хотя бы один прообраз есть, то есть функция определена для всех $x$ принадлежащих $N$. Тогда очевидно, что $f \circ g = Id_N$ \\
+		
+		(2) $\Longrightarrow$ (1) \\ \\
+		Заметим, что если $f \circ g = Id_N$, то любой элемент из $N$ можно получить из $f$, что и означает, что $f$ - сюръекция\\ \\
+		B)		
+		Требуется показать, что \\
+		(1) $f: M \longrightarrow N$ инъекция \\
+		$\Longleftrightarrow$ \\
+		(2) существует $g: N \longrightarrow M$ такое, что $g \circ f = Id_M$ \\
+		
+		
+		(1) $\Longrightarrow$ (2) \\ \\		
+		Рассмотрим $g$ такое, что $g(x) = $ прообраз элемента $x$ относительно $f$, если такой есть, иначе это первый элемент. Заметим, что так как $f$ - инъекция, то прообраза не более 1, то есть функция определена для всех $x$ принадлежащих $N$. Тогда очевидно, что $g(f(x)) = f^-1(f(x)) = x \Longrightarrow g \circ f = Id_M$ \\
+		
+		(2) $\Longrightarrow$ (1) \\ \\ 	
+		Заметим, что если $g \circ f = Id_M$, и при этом $f(x_1)=f(x_2)$, то $g \circ f(x_1) = x_1$, $g \circ f(x_2) = x_2$, но $g \circ f(x_1) = g \circ f(x_2)$ $\Longleftrightarrow$ $x_1 = x_2$
+		
+		\subsection{5}
+		 а)\\
+		Пусть $f$ сюръективно. Тогда так как $f$ сюръективно, то $ \forall \; x \in N \;: \quad \exists \; y \in M \;: \quad f(y)=x$ Рассмотрим равенство из условия для $y$.\\
+		\begin{gather*}
+		g_1(f(y))=g_2(f(y)) \qquad g_1(x)=g_2(x) 
+		\end{gather*}
+		Т.е. для любого $x$ из N результаты отображений $g_1$ и $g_2$ равны. Значит отображения равны.\\
+		Пусть равенство выполнено. Докажем, что отображение сюръективно. Пусть это не так, тогда покажем, что равенство необязательно выполнено. Пусть $\exists \; x \in N \;:\quad \forall \; y \in M \;:\quad \; f(y)\ne x$. Тогда $x$ при $g_1$ может отображаться в элемент $a$, а при $g_2$ в $b$, при этом равенство композиций будет выполнено, но равенство $g_1=g_2$ - нет.\\
+		б)\\
+		
+		\subsection{6}
+		A)\\
+		$A \subset \Omega$\\
+		$X_A: \quad \Omega \to {0, 1}$ \\
+		$
+		\begin{cases}
+			X_A(x) = 1 \quad \text{если} \quad x \notin A\\
+			X_A(x) = 0 \quad \text{если} \quad x \in A
+		\end{cases}
+		$\\
+		A) A $\longrightarrow$ $X_A$\\
+		Доказать:\\
+		$B(\Omega) \longleftrightarrow \{ 0, 1 \}^{\Omega}$
+		Доказательство:\\
+		Сопоставим элементы множества $\Omega$ с элементами $B(\Omega)$\\
+		\begin{gather*}
+			\begin{cases}
+				a_i = 1 \quad \text{если} \quad a_i \notin A_i\\
+				a_i = 0 \quad \text{если} \quad a_i \in A_i
+			\end{cases}
+		\end{gather*}
+		Аналогично $A \to X_A$
+		\\
+		B)\\
+		\\
+		\subsection{7}
+	
+	
+		\subsection{8}
+		A)\\
+		\\
+		B)\\
+		Рассмотрим множество $Y_1$, состоящее из элементов множества $Y$, у которых есть прообраз относительно функции $f$. Тогда пусть $q: X \longrightarrow Y_1$ такое, что q(x) = f(x) для каждого x принадлежащего $X$, $p: Y_1 \longrightarrow Y$ такое, что $p(y) = y$ для каждого $y$ из $Y_1$. Нетрудно видеть, что  $p \circ q = f$
+		
+		\subsection{9}
+		Заметим, что для каждого $x$ принадлежащего $M$ верно, что существует натуральное $n_x$, что $f^{n_x} = x$, так как среди элементов $x$, $f(x)$, $f^2(x)$ ... $f^{|M|}(x)$ есть 2 одинаковых (пусть это $f^a(x)$ и $f^b(x)$), при этом если $a$ или $b \ne 0$, то $f^{a-1}(x)$ и $f^{b-1}(x)$ тоже равны, так как $f$ - сюръекция $\Longrightarrow$ среди этих элементов 2 одинаковых, один из которых - $x$, из чего следует, что такое $n_x$ есть. Пусть произведение всех $n_i = N$, тогда $f^N = Id_N$, так как каждый $x$ переходит в себя в $f^{n_x}$, $f^{2*n_x}$ ..., из чего $x \longrightarrow x$ в $f^N$, что верно для всех $x$, читд
+		
+		\subsection{10}
+	
+		\subsection{11}
+		
+		\subsection{12}
+		
+		\subsection{13}
+		
+		\subsection{14}
+		A)\\
+		Предположим $\sqrt(2) = \frac{p}{q}$, тогда $2 = \frac{p^2}{q^2}$, при этом степень вхождения $2$ в $p^2$ и $q^2$ - чётно, и чётное число минус чётное = чётное, следовательно степень вхождения $2$ в $\frac{p^2}{q^2}$ - чётно (считаем, что степень вхождения отрицательная, если в $q^2$ она больше чем в $p^2$) что $\ne 1$. Противоречие.\\
+		B)\\
+		Предположим, что простых чисел конечно. Тогда рассмотрим число = (произведению всех простых чисел) + 1. Заметим, что оно не делится ни на одно простое число $\Longrightarrow$ оно простое - противоречие.
+		
+		\subsection{15}
+		Если число простое, то оно целое. Очевидно, что если число целое, то это не значит, что оно простое. Аналогично с если число не простое, то оно не целое(любое составное число). При этом $A \longrightarrow B$ $\Longleftrightarrow$ $!B \longrightarrow !A$, в чём можно убедится, сравнив таблици истинности:
+		$
+		\begin{matrix}
+			a & b & !b & !a & a \longrightarrow b & !b \longrightarrow !a \\
+			0 & 0 & 1 & 1 & 1 & 1 \\
+			0 & 1 & 0 & 1 & 1 & 1 \\
+			1 & 0 & 1 & 0 & 0 & 0 \\
+			1 & 1 & 0 & 0 & 1 & 1 			
+		\end{matrix}
+		$
+		
+		\subsection{16}

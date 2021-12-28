@@ -1,0 +1,25 @@
+\noindent
+\textbf{Task}\\
+Let $D(n,m)$ be the number of ways to move from the point $(0,0)$ to the point $(n,m)$ moving each time one step upwards or one step rightwards. Give a closed form for the generating function
+\begin{gather*}
+	F(x, y)=\sum_{n=0}^{\infty} \sum_{m=0}^{\infty} D(n, m) x^{n} y^{m} = \\
+	= 1 + x + y + x^{2} + y^{2} + 2xy + \ldots
+\end{gather*}
+\vskip 0.1in
+\noindent
+\textbf{Solution}\\
+It is known that
+\begin{gather*}
+(x+y)^n = \sum_{k=0}^{n} {{n} \choose {k}} x^k y^{n-k}
+\end{gather*}
+Thus
+\begin{gather*}
+	\sum_{n=0}^{\infty} \sum_{m=0}^{\infty} {{n} \choose {m}} x^{n-m} y^{m}  =\\
+	\sum_{n=0}^{\infty} \left(\sum_{m=0}^{n} {{n} \choose {m}} x^{n-m} y^{m} \right) =\\
+	\sum_{n=0}^{\infty} \left(\sum_{k=0}^{n} {{n} \choose {k}} x^{k} y^{n-k} \right) =\\
+	\sum_{n=0}^{\infty} \sum_{k=0}^{n} (x+y)^n =\\
+	\sum_{n=0}^{\infty} {{n} \choose {0}} x^n + \sum_{n=0}^{\infty} {{n+1} \choose {1}} x^n y + \sum_{n=0}^{\infty} {{n+2} \choose {2}} x^n y^2 + \ldots =\\
+	\sum_{n=0}^{\infty} {{n} \choose {0}} x^n + \sum_{n=1}^{\infty} {{n} \choose {1}} x^{n-1} y + \sum_{n=2}^{\infty} {{n} \choose {2}} x^{n-2} y^2 + \ldots =\\
+	1 + (x+y) + (x+y)^2 + \ldots =\\
+	1 + x + y + x^{2} + y^{2} + 2xy + \ldots
+\end{gather*}

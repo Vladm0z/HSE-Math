@@ -1,0 +1,22 @@
+\newpage		
+	\section*{Catalan sequence}
+	\textbf{Task}\\
+	Let $c_n$ be the Catalan sequence. Find the limit $\lim\limits_{n \to \infty} \frac{c_{n+1}}{c_{n}}$\\
+	\\
+	\textbf{Solution}\\
+	\begin{gather*}
+		c_n = \frac{1}{n+1} {{2n}\choose{n}}
+	\end{gather*}
+	Then
+	\begin{gather*}
+		\lim\limits_{n \to \infty} \frac{c_{n+1}}{c_{n}} = 
+		\lim\limits_{n \to \infty} \frac{\frac{1}{n+2} {{2n+2}\choose{n+1}}}{\frac{1}{n+1} {{2n}\choose{n}}} = \\ \\
+		\lim\limits_{n \to \infty} \frac{\frac{1}{n+2} \frac{(2n+2)!}{(n+1)!((2n+2) - (n+1))!}}{\frac{1}{n+1} \frac{(2n)!}{n!((2n) - (n))!}} =  
+		\lim\limits_{n \to \infty} \frac{\frac{1}{n+2} \frac{(2n+2)!}{(n+1)!(n+1)!}}{\frac{1}{n+1} \frac{(2n)!}{n!n!}} = \\ \\
+		\lim\limits_{n \to \infty} \frac{(n+1) \frac{(2n+2)!}{(n+1)!(n+1)!}}{(n+2) \frac{(2n)!}{n!n!}} =
+		\lim\limits_{n \to \infty} \frac{(n+1) (2n+2)!n!n!}{(n+2) (2n)!(n+1)!(n+1)!} = \\ \\
+		\lim\limits_{n \to \infty} \frac{(n+1)(2n+1)(2n+2)}{(n+2)(n+1)(n+1)} = 
+		\lim\limits_{n \to \infty} \frac{2(n+1)(2n+1)}{(n+2)(n+1)} = \\ \\
+		\lim\limits_{n \to \infty} \frac{4n+2}{n+2} = 
+		\lim\limits_{n \to \infty} \frac{4+\frac{2}{n}}{1+\frac{2}{n}} = 4
+	\end{gather*}
