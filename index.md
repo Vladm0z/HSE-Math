@@ -7,8 +7,8 @@
 - [1 курс](https://vladm0z.github.io/HSE-Math/first_term)
 - [2 курс](https://vladm0z.github.io/HSE-Math/second_term)
 - [3 курс](https://vladm0z.github.io/HSE-Math/third_term)
-- [4 курс]()
-- [курсы по выбору]()
+- [4 курс](https://vladm0z.github.io/HSE-Math/fourth_term)
+- [курсы по выбору](https://vladm0z.github.io/HSE-Math/elective)
 
 ### Контакты
 
