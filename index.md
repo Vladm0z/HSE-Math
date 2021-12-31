@@ -5,8 +5,8 @@
 ### Материалы
 
 - [1 курс](https://vladm0z.github.io/HSE-Math/first_term)
-- [2 курс]()
-- [3 курс]()
+- [2 курс](https://vladm0z.github.io/HSE-Math/second_term)
+- [3 курс](https://vladm0z.github.io/HSE-Math/third_term)
 - [4 курс]()
 - [курсы по выбору]()
 
