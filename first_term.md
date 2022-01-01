@@ -1,6 +1,6 @@
 # Материалы 1 курса образовательной программы "Математика" МФ ВШЭ
 
-### Алгебра
+## Алгебра
 
 #### Осень
 - [Задачи Семинаров](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Algebra/Aut_Sem/Sem.pdf)
@@ -14,9 +14,8 @@
 - [Домашние задания](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Algebra/Spr_HW/AlgHWo.pdf)
 - [Лекции]()
 
-<br/>
 
-### Матанализ
+## Матанализ
 
 #### Осень
 - [Задачи](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Calculus/Aut_Prb/ClcPrbPrv.pdf)
@@ -27,9 +26,8 @@
 - [Первая контрольная]()
 - [Вторая контрольная]()
 
-<br/>
 
-### Дискретная Математика
+## Дискретная Математика
 
 #### Осень
 - [Листки с Задачами](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Discrete%20Math/Aut_Prb/Problems.pdf)
@@ -39,9 +37,8 @@
 - [Промежуточная Контрольная](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Discrete%20Math/Spr_Mid/DiMCrs.pdf)
 - [Итоговый экзамен](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Discrete%20Math/Spr_Fin/DiMCrs.pdf)
 
-<br/>
 
-### Линейная Алгебра и Геометрия
+## Линейная Алгебра и Геометрия
 
 #### Осень
 - [Лекции](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/LinAlg/Lectures.pdf)
@@ -62,9 +59,8 @@
 - [Четвертая Контрольная](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/LinAlg/Spr_Tests/kr_04_sol.pdf)
 - [Итоговый эказмен](https://docs.google.com/viewer?url=)
 
-<br/>
 
-### Топология
+## Топология
 
 #### Осень
 - [Лекции](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Topology/Aut_Lec/TopLec.pdf)
