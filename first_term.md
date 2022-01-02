@@ -18,6 +18,7 @@
 ## Матанализ
 
 #### Осень
+- [Досрок Задачи](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Calculus/Aut_pre/Calc_preprob.pdf)
 - [Задачи](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Calculus/Aut_Prb/ClcPrbPrv.pdf)
 - [Коллоквиум](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Calculus/Aut_Mid/%D0%9D%D0%B5%20%D0%BC%D0%BE%D0%B5/%D0%9C%D0%B0%D1%82%D0%B0%D0%BD%20%D0%B1%D0%B8%D0%BB%D0%B5%D1%82%D1%8B.pdf)
 - [Итоговый Экзамен](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Calculus/Aut_Fin/ClcExmPrv.pdf)
@@ -47,6 +48,7 @@
 - [Первая Контрольная](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/LinAlg/Aut_Test/Test_1/GeoExmPrv.pdf)
 - [Вторая Контрольная](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/1st%20term/LinAlg/Aut_Test/Test_2/GeoExmPrv.pdf)
 - [Коллоквиум](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/LinAlg/Aut_Mid/%D0%91%D0%B8%D0%BB%D0%B5%D1%82%D1%8B.pdf)
+- [Коллоквиум Задачи](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/LinAlg/Aut_Mid/Col_Prob.pdf)
 - [Итоговый эказмен](https://docs.google.com/viewer?url=)
 
 #### Весна
