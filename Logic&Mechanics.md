@@ -34,6 +34,12 @@
 - [6 Домашнее Задание](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_HW/V2/%D0%9A%D0%BE%D0%B2%D0%B0%D0%BB%D0%B5%D0%B2%D0%B0%20%D0%94%D0%97-6.pdf)
 - [7 Домашнее Задание](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_HW/V2/%D0%9A%D0%BE%D0%B2%D0%B0%D0%BB%D0%B5%D0%B2%D0%B0%20%D0%94%D0%97-7.pdf)
 
+#### Пятиминутки
+
+- [Первая 0.00.2022]()
+- [Вторая 0.00.2022]()
+- [Третья 0.00.2022]()
+
 #### Контрольные
 - [1 Контрольная Работа](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Fin/%D0%9A%D1%801.pdf)
 - [2 Контрольная Работа](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Fin/%D0%9A%D1%802.pdf)
