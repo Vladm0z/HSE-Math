@@ -94,3 +94,12 @@
 - [9 Семинар](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Projective%20Algebraic%20Geometry/Seminar_09.pdf)
 - [10 Семинар](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Projective%20Algebraic%20Geometry/Seminar_10.pdf)
 
+
+## Теория Представлений
+
+- [Полезная литература](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Representation%20theory/repb.pdf)
+
+
+## Машинное Обучение
+
+
