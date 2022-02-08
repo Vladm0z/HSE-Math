@@ -36,9 +36,9 @@
 
 #### Пятиминутки
 
-- [Первая 0.00.2022]()
-- [Вторая 0.00.2022]()
-- [Третья 0.00.2022]()
+- [Первая 01.11.2022](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Test/%D0%BF%D1%8F%D1%82%D0%B8%D0%BC%D0%B8%D0%BD%D1%83%D1%82%D0%BA%D0%B0%2019%D1%8F%D0%BD%D0%B22021.pdf)
+- [Вторая 01.25.2022](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Test/%D0%BF%D1%8F%D1%82%D0%B8%D0%BC%D0%B8%D0%BD%D1%83%D1%82%D0%BA%D0%B0%2002%D1%84%D0%B5%D0%B22021.pdf)
+- [Третья 0.00.2022](https://docs.google.com/viewer?url=)
 
 #### Контрольные
 - [1 Контрольная Работа](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Fin/%D0%9A%D1%801.pdf)
