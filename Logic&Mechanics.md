@@ -26,17 +26,17 @@
 - [Лекции (TeX)](https://docs.google.com/viewer?url=)
 
 #### Официальные лекции
-- [Лекция 1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/2nd%20term/Mechanics/Spr_Lect/Lect_1.pdf)
-- [Лекция 2-3](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/2nd%20term/Mechanics/Spr_Lect/Lect_2-3.pdf)
-- [Лекция 4](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/2nd%20term/Mechanics/Spr_Lect/Lect_4.pdf)
-- [Лекция 5-6](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/2nd%20term/Mechanics/Spr_Lect/Lect_5-6.pdf)
-- [Лекция 7](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/2nd%20term/Mechanics/Spr_Lect/Lect_7.pdf)
-- [Лекция 8](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/2nd%20term/Mechanics/Spr_Lect/Lect_8.pdf)
-- [Лекция 10](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/2nd%20term/Mechanics/Spr_Lect/Lect_1.pdf)
-- [Лекция 11](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/2nd%20term/Mechanics/Spr_Lect/Lect_11.pdf)
-- [Лекция 12](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/2nd%20term/Mechanics/Spr_Lect/Lect_12.pdf)
-- [Лекция 13](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/2nd%20term/Mechanics/Spr_Lect/Lect_13.pdf)
-- [Лекция 14](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/2nd%20term/Mechanics/Spr_Lect/Lect_14.pdf)
+- [Лекция 1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Lect/Lect_1.pdf)
+- [Лекция 2-3](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Lect/Lect_2-3.pdf)
+- [Лекция 4](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Lect/Lect_4.pdf)
+- [Лекция 5-6](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Lect/Lect_5-6.pdf)
+- [Лекция 7](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Lect/Lect_7.pdf)
+- [Лекция 8](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Lect/Lect_8.pdf)
+- [Лекция 10](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Lect/Lect_1.pdf)
+- [Лекция 11](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Lect/Lect_11.pdf)
+- [Лекция 12](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Lect/Lect_12.pdf)
+- [Лекция 13](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Lect/Lect_13.pdf)
+- [Лекция 14](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Lect/Lect_14.pdf)
 
 
 #### Домашние Задания
