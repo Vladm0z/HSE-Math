@@ -2,6 +2,8 @@
 
 На данной странице расположены различные материалы (конспекты лекций, подсказки к решениям и задачи прошлых лет) оп математика
 
+[Расписание](https://docs.google.com/spreadsheets/d/19CPvqW1vCcw9r6oVsR4Mk-WiBZIBr6Ix-q-DLxIttaQ/edit)
+
 ### Материалы
 
 - [1 курс](https://vladm0z.github.io/HSE-Math/first_term)
