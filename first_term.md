@@ -2,6 +2,10 @@
 
 ## Алгебра
 
+#### Рекомендованная литература
+- [Gorodentsev A. - Algebra 1](https://drive.google.com/file/d/156ccmGIfMORKVQu4gYXKUUHdHLST4xxw/view?usp=sharing)
+- [Gorodentsev A. - Algebra 2](https://drive.google.com/file/d/159OyZUirsPdUzcZrNTRQ30sbpfwGHCbx/view?usp=sharing)
+
 #### Осень
 - [Задачи Семинаров](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Algebra/Aut_Sem/Sem.pdf)
 - [Лекции 1 модуль](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Algebra/Aut_Lect/%D0%90%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0%201%20%D0%BA%D1%83%D1%80%D1%81%201%20%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8C.pdf)
@@ -19,6 +23,7 @@
 
 #### Осень
 - [Досрок Задачи](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Calculus/Aut_pre/Calc_preprob.pdf)
+- [Лекции](https://drive.google.com/file/d/1-L01gxOImh9Vq1mT3YpuDUHMrkM8Jzot/view?usp=sharing)
 - [Задачи](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Calculus/Aut_Prb/ClcPrbPrv.pdf)
 - [Коллоквиум](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Calculus/Aut_Mid/%D0%9D%D0%B5%20%D0%BC%D0%BE%D0%B5/%D0%9C%D0%B0%D1%82%D0%B0%D0%BD%20%D0%B1%D0%B8%D0%BB%D0%B5%D1%82%D1%8B.pdf)
 - [Итоговый Экзамен](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Calculus/Aut_Fin/ClcExmPrv.pdf)
@@ -40,6 +45,10 @@
 
 
 ## Линейная Алгебра и Геометрия
+
+#### Рекомендованная литература
+- [Gorodentsev A. - Algebra 1](https://drive.google.com/file/d/156ccmGIfMORKVQu4gYXKUUHdHLST4xxw/view?usp=sharing)
+- [Gorodentsev A. - Algebra 2](https://drive.google.com/file/d/159OyZUirsPdUzcZrNTRQ30sbpfwGHCbx/view?usp=sharing)
 
 #### Осень
 - [Лекции](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/LinAlg/Lectures.pdf)
