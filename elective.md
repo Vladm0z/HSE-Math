@@ -1,5 +1,7 @@
 # Материалы НИСов и курсов по выбору МФ ВШЭ
 
+[Чаты](https://docs.google.com/spreadsheets/d/1PFKLBc5wA0VeiGLUdnD_NTabWlatYwStFjMnfti0_z0/edit#gid=0)
+
 ## Алгебраическая Топология
 
 - [Лекции](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algebraic%20Topology/Aut_Lect/%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D0%B8%20%D0%90%D0%BB%D0%B3%D1%82%D0%BE%D0%BF.pdf)
@@ -16,24 +18,29 @@
 ## Функциональный Анализ
 
 #### Первый Модуль
-- [Лекции](https://docs.google.com/viewer?url=)
-- [Задачи](https://docs.google.com/viewer?url=)
-- [Контрольная](https://docs.google.com/viewer?url=)
+- [Лекции](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Functional%20analysis/1%20unit/fa_lec_1-7.pdf)
+- [Задачи](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Functional%20analysis/1%20unit/fa_list_1-5.pdf)
+- [Контрольная](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Functional%20analysis/1%20unit/fa_test_1.pdf)
+- [Контрольная (повторная)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Functional%20analysis/1%20unit/fa_test_1bis.pdf)
+- [Зачет](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Functional%20analysis/1%20unit/fa_zch_1.pdf)
 
 #### Второй Модуль
-- [Лекции](https://docs.google.com/viewer?url=)
-- [Задачи](https://docs.google.com/viewer?url=)
-- [Контрольная](https://docs.google.com/viewer?url=)
+- [Лекции](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Functional%20analysis/2%20unit/fa_lec_8-13.pdf)
+- [Задачи](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Functional%20analysis/2%20unit/fa_list_6-9.pdf)
+- [Контрольная](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Functional%20analysis/2%20unit/fa_exam_2.pdf)
+- [Контрольная (повтроная)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Functional%20analysis/2%20unit/fa_exam_2bis.pdf)
+- [Коллокивум](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Functional%20analysis/2%20unit/colloq1.pdf)
 
 #### Третий Модуль
-- [Лекции](https://docs.google.com/viewer?url=)
-- [Задачи](https://docs.google.com/viewer?url=)
-- [Контрольная](https://docs.google.com/viewer?url=)
+- [Лекции](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Functional%20analysis/3%20unit/fa_lec_14-21.pdf)
+- [Задачи](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Functional%20analysis/3%20unit/fa_list_10-16.pdf)
+- [Зачет](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Functional%20analysis/3%20unit/fa_zch_3.pdf)
 
 #### Четвертый Модуль
-- [Лекции](https://docs.google.com/viewer?url=)
-- [Задачи](https://docs.google.com/viewer?url=)
-- [Контрольная](https://docs.google.com/viewer?url=)
+- [Лекции](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Functional%20analysis/4%20unit/fa_lec_22-27.pdf)
+- [Задачи](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Functional%20analysis/4%20unit/fa_list_17-21.pdf)
+- [Контрольная](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Functional%20analysis/4%20unit/fa_exam_4.pdf)
+- [Контрольная (повторная)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Functional%20analysis/4%20unit/fa_exam_4bis.pdf)
 
 
 ## Геометрия и Группы
