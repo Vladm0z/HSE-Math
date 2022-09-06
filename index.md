@@ -2,8 +2,9 @@
 
 На данной странице расположены различные материалы (конспекты лекций, подсказки к решениям и задачи прошлых лет) оп математика
 
-[Расписание](https://docs.google.com/spreadsheets/d/19CPvqW1vCcw9r6oVsR4Mk-WiBZIBr6Ix-q-DLxIttaQ/edit)
-[Курсы по выбору и НИСы 2022-2023](https://math.hse.ru/topics2223)
+- [Расписание](https://docs.google.com/spreadsheets/d/19CPvqW1vCcw9r6oVsR4Mk-WiBZIBr6Ix-q-DLxIttaQ/edit)
+- [Курсы по выбору и НИСы 2022-2023](https://math.hse.ru/topics2223)
+- [Книги](https://libgen.is/)
 
 ### Материалы
 
