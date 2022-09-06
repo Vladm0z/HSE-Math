@@ -44,3 +44,6 @@
 
 - [Страница с материалами](https://vladm0z.github.io/HSE-Math/Logic&Mechanics)
 
+
+### ГОСЫ
+-[]()
