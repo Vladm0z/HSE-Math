@@ -46,4 +46,4 @@
 
 
 ### ГОСЫ
--[PDF](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/%D0%93%D0%BE%D1%81%D1%8B/backup_090622.pdf)
+- [PDF](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/%D0%93%D0%BE%D1%81%D1%8B/backup_090622.pdf)
