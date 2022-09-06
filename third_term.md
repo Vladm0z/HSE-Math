@@ -19,7 +19,8 @@
 
 ## Основы Python
 
-#### Осень
+#### Контесты
+
 - [1 Контест](https://github.com/Vladm0z/HSE-Math/tree/main/docs/3rd%20term/Python%20basics/Aut_Prb/1_%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20Python)
 - [2 Контест](https://github.com/Vladm0z/HSE-Math/tree/main/docs/3rd%20term/Python%20basics/Aut_Prb/2_%D0%A3%D1%81%D0%BB%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D0%B8)
 - [3 Контест](https://github.com/Vladm0z/HSE-Math/tree/main/docs/3rd%20term/Python%20basics/Aut_Prb/3_%D0%A6%D0%B8%D0%BA%D0%BB%D1%8B)
@@ -31,6 +32,8 @@
 - [9 Контест](https://github.com/Vladm0z/HSE-Math/tree/main/docs/3rd%20term/Python%20basics/Aut_Prb/9_%D0%9E%D0%9E%D0%9F)
 - [10 Контест](https://github.com/Vladm0z/HSE-Math/tree/main/docs/3rd%20term/Python%20basics/Aut_Prb/10_PD/Mini)
 - [11 Контест](https://github.com/Vladm0z/HSE-Math/tree/main/docs/3rd%20term/Python%20basics/Aut_Prb/12_Np/Mini)
+
+#### Домашние Задания
 - [Первое Домашнее Задание](https://github.com/Vladm0z/HSE-Math/tree/main/docs/3rd%20term/Python%20basics/Aut_HW/Game%20of%20life)
 - [Второе Домашнее Задание](https://github.com/Vladm0z/HSE-Math/tree/main/docs/3rd%20term/Python%20basics/Aut_HW/Math)
 - [Третье Домашнее Задание часть 1](https://github.com/Vladm0z/HSE-Math/blob/main/docs/3rd%20term/Python%20basics/Aut_HW/pd%20and%20np/HW3_pandas.ipynb)
