@@ -4,6 +4,7 @@
 
 - [Расписание](https://docs.google.com/spreadsheets/d/19CPvqW1vCcw9r6oVsR4Mk-WiBZIBr6Ix-q-DLxIttaQ/edit)
 - [Курсы по выбору и НИСы 2022-2023](https://math.hse.ru/topics2223)
+- [Описания курсов](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/course_book_22_23.pdf)
 - [Книги](https://libgen.is/)
 
 ### Материалы
