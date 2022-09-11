@@ -40,13 +40,13 @@
 - [Третье Домашнее Задание часть 2](https://github.com/Vladm0z/HSE-Math/blob/main/docs/3rd%20term/Python%20basics/Aut_HW/pd%20and%20np/HW3_numpy.ipynb)
 
 
-### Логика и Алгоритмы, а также Механика
+## Логика и Алгоритмы, а также Механика
 
 - [Страница с материалами](https://vladm0z.github.io/HSE-Math/Logic&Mechanics)
 
-### Экономика
+## Экономика
 
 - [Официальный диск](https://drive.google.com/drive/folders/1_FxoF0R_27UhAaOWAPqgWgKdFtBwBBkh)
 
-### ГОСЫ
+## ГОСЫ
 - [PDF](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/%D0%93%D0%BE%D1%81%D1%8B/backup_090622.pdf)
