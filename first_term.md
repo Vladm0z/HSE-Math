@@ -25,6 +25,8 @@
 - [Досрок Задачи](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Calculus/Aut_pre/Calc_preprob.pdf)
 - [Лекции](https://drive.google.com/file/d/1-L01gxOImh9Vq1mT3YpuDUHMrkM8Jzot/view?usp=sharing)
 - [Задачи](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Calculus/Aut_Prb/ClcPrbPrv.pdf)
+- [Лист 1 (2021)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/1st%20term/Calculus/Aut_Prb/calc_1_21.pdf)
+- [Лист 2 (2021)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/1st%20term/Calculus/Aut_Prb/calc_2_21.pdf)
 - [Коллоквиум](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Calculus/Aut_Mid/%D0%9D%D0%B5%20%D0%BC%D0%BE%D0%B5/%D0%9C%D0%B0%D1%82%D0%B0%D0%BD%20%D0%B1%D0%B8%D0%BB%D0%B5%D1%82%D1%8B.pdf)
 - [Итоговый Экзамен](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Calculus/Aut_Fin/ClcExmPrv.pdf)
 
@@ -52,8 +54,9 @@
 
 #### Осень
 - [Лекции](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/LinAlg/Lectures.pdf)
-- [Задачи](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/LinAlg/Aut_Prb/GeoPrbPrv.pdf)
-- [Задачи Семинаров](https://docs.google.com/viewer?url=)
+- [Задачи (2019-2020)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/LinAlg/Aut_Prb/GeoPrbPrv.pdf)
+- [Листки 1-5 (2021-2022)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/1st%20term/LinAlg/Aut_Prb/Gorod_1-5.pdf)
+- [Листки 6-15 (2021-2022)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/1st%20term/LinAlg/Spr_Prb/Gorod_6.pdf)
 - [Первая Контрольная](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/LinAlg/Aut_Test/Test_1/GeoExmPrv.pdf)
 - [Вторая Контрольная](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/LinAlg/Aut_Test/Test_2/GeoExmPrv.pdf)
 - [Третья Контрольная](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/LinAlg/Aut_Test/Test_3/Test_3.pdf)
@@ -63,7 +66,8 @@
 
 #### Весна
 - [Лекции](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/LinAlg/Lectures.pdf)
-- [Задачи](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/LinAlg/Spr_Prb/GeoPrb.pdf)
+- [Задачи (2019-2020)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/LinAlg/Aut_Prb/GeoPrbPrv.pdf)
+- [Листки 6-15 (2021-2022)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/1st%20term/LinAlg/Spr_Prb/Gorod_6.pdf)
 - [Задачи Семинаров](https://docs.google.com/viewer?url=)
 - [Первая Контрольная](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/LinAlg/Spr_Tests/kr_01_sol.pdf)
 - [Вторая Контрольная](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/LinAlg/Spr_Tests/kr_02_sol.pdf)
@@ -84,3 +88,5 @@
 - [Коллоквиум](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Topology/Spr_Mid/TopCol.pdf)
 - [Итоговый экзамен](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Topology/Spr_Fin/TopExm.pdf)
 
+#### Ященко
+- [Задачи](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Topology/Aut_Prb/Topology_sirius.pdf)
