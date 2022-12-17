@@ -264,11 +264,14 @@ V = \int_{0}^{1} \int_{0}^{1} \int_{0}^{x \cdot \frac{1-x}{1+x}} dzdxdy =
 	\end{gather*}
 	Тогда
 	\begin{gather*}
-		V = \int_{0}^{2\pi} \int_{0}^{1} \int_{0}^{1} f(\rho) \rho d \rho d \phi dz = 
-		\int_{0}^{2\pi} \int_{0}^{1} \rho^2 d \rho d \phi =
-		\int_{0}^{2\pi} \frac{1}{3} \rho^3 \bigg|_{0}^{1} d \phi =
-		\frac{1}{3} \phi \bigg|_{0}^{2\pi} =
-		\frac{2\pi}{3}
+	\begin{aligned}
+		V & = \int_{0}^{1} \int_{0}^{2\pi} \int_{0}^{1} f(\rho) \rho d \rho d \phi dz\\
+		& = \int_{0}^{1} \int_{0}^{2\pi} \frac{\rho^3}{3} \bigg|_{0}^{z} d \phi dz\\
+		& = \int_{0}^{1} \int_{0}^{2\pi} \frac{z^3}{3} d \phi dz\\
+		& = \int_{0}^{1} \frac{2\pi}{3} z^3 dz\\
+		& = \frac{\pi z^4}{6} \bigg|_{0}^{1}
+		& = \frac{\pi}{6}
+	\end{aligned}
 	\end{gather*}
 \vskip 0.4in
 
@@ -281,13 +284,17 @@ V = \int_{0}^{1} \int_{0}^{1} \int_{0}^{x \cdot \frac{1-x}{1+x}} dzdxdy =
 	Тогда $z = \sqrt{x^2 + y^2} = \sqrt{r^2} = 2$.\\
 	Перейдем к цилиндрическим координатам $x^2 + y^2 = r^2$ и $dxdydz = rdrd\phi dz$ и
 	\begin{gather*}
-		V = \iiint_U rdrd\phi dz = \int_{0}^{2\pi} d\phi \int_{0}^{2} rdr \int_{0}^{6 - r^2} dz = 
-		\int_{0}^{2\pi} d\phi \int_{0}^{2} rdr (6 - r^2) =\\
-		\int_{0}^{2\pi} d\phi \int_{0}^{2} (-r^3 + 6r) dr =
-		\int_{0}^{2\pi} d\phi \cdot \left(-\frac{r^4}{4} + 3r^2\right)\bigg|_{0}^{2} =\\
-		\int_{0}^{2\pi} 8 d\phi = 
-		8 \int_{0}^{2\pi} d\phi =
-		16\pi
+	\begin{aligned}
+		V & = \iiint_U r dr d\phi dz\\
+		& = \int_{0}^{2} \int_{0}^{2\pi} \int_{r}^{6 - r^2} r d\phi dz dr\\
+		& = \int_{0}^{2} \int_{0}^{2\pi} rz \bigg|_{r}^{6-r^2} d\phi dr\\
+		& = \int_{0}^{2} \int_{0}^{2\pi} 6r-r^3-r^2 d\phi dz\\
+		& = \int_{0}^{2} 2\pi(6r-r^3-r^2) dr\\
+		& = 2\pi (3r^2 - \frac{r^4}{4} - \frac{r^3}{3}) \bigg|_{0}^{2}\\
+		& = 2\pi (12-4-\frac{8}{3})
+		& = 2\pi \cdot \frac{16}{3}
+		& = \frac{32}{3}\pi
+	\end{aligned} 
 	\end{gather*}
 \vskip 0.4in
 
