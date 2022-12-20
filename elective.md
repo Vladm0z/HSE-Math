@@ -2,6 +2,7 @@
 
 [Чаты](https://docs.google.com/spreadsheets/d/1PFKLBc5wA0VeiGLUdnD_NTabWlatYwStFjMnfti0_z0/edit#gid=0)
 
+
 ## Алгебраическая Топология
 
 - [Лекции](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algebraic%20Topology/Aut_Lect/%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D0%B8%20%D0%90%D0%BB%D0%B3%D1%82%D0%BE%D0%BF.pdf)
@@ -10,9 +11,30 @@
 - [Вторая Контрольная](https://docs.google.com/viewer?url=x-github-client://openRepo/https://github.com/Vladm0z/HSE-Math?branch=main&filepath=docs%2FElectives%2FAlgebraic%20Topology%2FAut_Fin%2F%D0%AD%D0%BA%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD_%D0%9C%D0%B5%D0%B4%D0%B2%D0%B5%D0%B4%D0%B5%D0%B2%D0%B0.pdf)
 
 
+## Основные приложения математики
+
+Приглашенные лекторы читают 1-2 лекции, после чего вы должны выбрать какого-то одного и получить у него зачет (обычно небольшой листок с задачами/что-то аналогичное) 
+
+
 ## Криптография
 
 - [Экзамен](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Crypto/Crypto_Exam.pdf)
+
+
+## Discrete Optimization and Integer Programming
+- [Экзамен](https://github.com/Vladm0z/HSE-Math/tree/main/docs/Electives/Discrete%20Optimization%20and%20Integer%20Programming/Exam)
+- [Листок 1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Discrete%20Optimization%20and%20Integer%20Programming/%D0%9B%D0%B8%D1%81%D1%82%D0%BA%D0%B8/DOIP.pdf)
+- [Листок 2 (условия)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Discrete%20Optimization%20and%20Integer%20Programming/%D0%9B%D0%B8%D1%81%D1%82%D0%BA%D0%B8/ProblemList2.pdf)
+- [Листок 2 (решения)](https://github.com/Vladm0z/HSE-Math/tree/main/docs/Electives/Discrete%20Optimization%20and%20Integer%20Programming/MiniZinc/HW1)
+- [Лекция 0](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Discrete%20Optimization%20and%20Integer%20Programming/%D0%9F%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8/0%20About.pdf)
+- [Лекция 1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Discrete%20Optimization%20and%20Integer%20Programming/%D0%9F%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8/1%20Introduction.pdf)
+- [Лекция 2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Discrete%20Optimization%20and%20Integer%20Programming/%D0%9F%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8/2%20Classical%20optimization%20methods.pdf)
+- [Лекция 3](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Discrete%20Optimization%20and%20Integer%20Programming/%D0%9F%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8/3%20Linear%20Programming.pdf)
+- [Лекция 4](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Discrete%20Optimization%20and%20Integer%20Programming/%D0%9F%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8/4%20Linear%20programming%20modeling%20with%20MiniZinc.pdf)
+- [Лекция 5](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Discrete%20Optimization%20and%20Integer%20Programming/%D0%9F%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8/5%20Integer%20programming%20introduction.pdf)
+- [Лекция 6](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Discrete%20Optimization%20and%20Integer%20Programming/%D0%9F%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8/6%20IP%2C%20RCPSP%2C%20Multi-criteria.pdf)
+- [Лекция 7](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Discrete%20Optimization%20and%20Integer%20Programming/%D0%9F%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8/7%20Shortest%20Path%20Problem.pdf)
+- [Лекция 8](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Discrete%20Optimization%20and%20Integer%20Programming/%D0%9F%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8/8%20Minimum%20Spanning%20Tree.pdf)
 
 
 ## Функциональный Анализ
@@ -80,6 +102,11 @@
 - [Первая Контрольная](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Markov%20Chains/Aut_Test/%D0%9C%D0%BE%D0%B7%D0%B3%D0%BE%D0%B2%D0%BE%D0%B9%D0%92%D0%A0_%D0%BA%D1%80.pdf)
 - [Вторая Контрольная](https://docs.google.com/viewer?url=)
 - [Коллоквиум](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Markov%20Chains/Aut_Fin/%D0%A6%D0%9C%20%D1%8D%D0%BA%D0%B7.pdf)
+
+
+## Mathematics in Information Transmission
+- [Листок 1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Mathematics%20in%20Information%20Transmission/Problems/Listok1.pdf)
+- [Листок 2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Mathematics%20in%20Information%20Transmission/Problems/Listok2.pdf)
 
 
 ## Римановы поверхности
