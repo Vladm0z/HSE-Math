@@ -1,2 +1,8 @@
 *.pwc
 *.ini
+*.aux
+*.bcf
+*.synctex
+*.bbl
+*.out
+*.run.xml
