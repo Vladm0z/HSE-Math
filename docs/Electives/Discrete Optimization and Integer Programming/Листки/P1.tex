@@ -1,0 +1,506 @@
+\section{Problem List 1}
+
+
+\begin{prob}
+    Find critical points of the following function on $\mathbb{R}^2$ and analyze each point about whether it is a local/global minimum/maximum or saddle point
+    $$
+    f(x) = 3 x_1 x_2 - x_1 x_2^2 - x_1^2 x_2
+    $$
+\end{prob}
+
+\begin{proof}
+    Заметим что критические точки удовлетворяют условиям
+    \begin{gather*}
+        \frac{\partial f}{\partial x_1} = 3x_1 - x_1^2 - 2x_1 x_2 = x_1 (3 - 2x_2 - x_1) = 0\\
+        \frac{\partial f}{\partial x_2} = 3x_2 - x_2^2 - 2x_1 x_2 = x_2 (3 - 2x_1 - x_2) = 0
+    \end{gather*}
+    то есть это
+    $(x_1, x_2) \in \{(0,0), (1, 1), (0, 3), (3, 0)\}$
+    Расммотрим
+    \begin{gather*}
+        \frac{\partial^2}{\partial x_1^2} (-x_1^2 x_2 - x_1 x_2^2 + 3 x_1 x_2) = -2x_2\\
+        \frac{\partial^2}{\partial x_1 \partial x_2} (-x_1^2 x_2 - x_1 x_2^2 + 3 x_1 x_2) = -2x_1 - 2x_2 + 3\\
+        \frac{\partial^2}{\partial x_2^2} (-x_1^2 x_2 - x_1 x_2^2 + 3 x_1 x_2) = -2x_1
+    \end{gather*}
+    Откуда
+    \begin{gather*}
+        D = \frac{\partial^2 f}{\partial x_1^2} \frac{\partial^2 f}{\partial x_2^2} - \left(\frac{\partial^2 f}{\partial x_1 \partial x_2}\right)^2 = 4x_1 x_2 - (2x_1 + 2x_2 - 3)^2
+    \end{gather*}
+    Тогда $D(0,0) = -9 < 0$ то есть это седло, $D(0,3) = -9 < 0$ тоже седло, $D(1,1) = 3 > 0$ и так как $\frac{\partial^2}{\partial x^2} (-x_1^2 x_2 - x_1 x_2^2 + 3x_1 x_2) \mid_{((x_1,x_2)=(1,1))} = -2 < 0$ то это максимум, $D(3,0) = -9 < 0$ то есть это седло
+\end{proof}
+\vskip 0.4in
+
+
+
+
+
+\begin{prob}
+    Find the maximum of the function $F(x)=\sum_{i=1}^n \log \left(\alpha_i+x_i\right)$ with $\alpha_i>$ $0, i=1, \ldots, n$ subject to constraints: $x_1+\ldots+x_n=1$. Prove that your solution is the global optimum.
+\end{prob}
+
+\begin{proof}
+    Так как $log$ - вогнутая функция, а $\alpha_i + x$ - линейная функция, то итоговая функция также вогнутая, а следовательно локальный максимум также является и глобальным максимумом
+    Рассмотрим
+    \begin{gather*}
+        L(x) = \sum\limits_{i=1}^{n} log(\alpha_i + x_i) + \lambda (\sum\limits_{i=1}^{n} x_i - 1)\\
+        \begin{cases}
+            \frac{\partial L}{\partial x_i} = \frac{1}{\alpha_i + x_i} + \lambda = 0\\
+            \sum\limits_{i = 1}^{n} x_i = 1
+        \end{cases}\\
+        \frac{1}{\lambda} = -(\alpha_i + x_i)\\
+        \sum\limits_{i = 1}^{n} \frac{1}{\lambda}
+        = -\sum\limits_{i = 1}^{n} (\alpha_i + x_i)
+        = -\sum\limits_{i = 1}^{n} \alpha_i - 1\\
+        \tilde{x_i} = \frac{1}{n}(\sum\limits_{i = 1}^{n} \alpha_i + 1) - \alpha_i\\
+        H =
+        \begin{pmatrix}
+            -\frac{1}{(\alpha_1 + x_1)^2} & & 0\\
+            & \ddots &\\
+            0 & & -\frac{1}{(\alpha_n + x_n)^2}
+        \end{pmatrix}
+    \end{gather*}
+    Так как $H$ определен отрицательно, то точка $(\tilde{x_i})$ - локальный максимум, а следовательно и глобальный тоже (так как максимум один)
+\end{proof}
+\vskip 0.4in
+
+
+
+
+
+\begin{prob}
+    Using method of Lagrange multipliers in optimization problem
+    $$
+    \min \left(-\prod_{i=1}^n x_i\right) \quad \text { s.t. } \quad \sum_{i=1}^n x_i=1, \quad x_i \geq 0,
+    $$
+    prove the Arithmetic-Mean Geometric-Mean inequality
+    $$
+    \frac{1}{n} \sum_{i=1}^n x_i \geq\left(\prod_{i=1}^n x_i\right)^{1 / n}, \quad x_i \geq 0
+    $$
+\end{prob}
+
+\begin{proof}
+    Заметим, что $\min(-\prod_{i=1}^{n} x_i)$ достигается при тех же значениях $x_i$ что и $\max(\prod_{i=1}^{n} x_i)$\\
+    Пусть $L(x) = \prod_{i = 1}^{n} x_i + \lambda(\sum\limits_{i = 1}^{n} - 1)$
+    родифференцируем по $x_i$, получим $n$ уравнений вида
+    \begin{gather*}
+        \frac{\partial L}{\partial x_i} = \prod_{j \ne i} x_j + \lambda = 0\\
+        x_i(\prod_{j \ne i} x_j + \lambda) = \prod_{i = 1}^{n} x_i + \lambda x_i = 0\\
+        \sum\limits_{j = 1}^{n}(\prod_{i = 1}^{n} x_i + \lambda x_j) = n \prod_{i = 1}^{n} x_i + \lambda (\sum\limits_{i = 1}^{n} x_i) = n \prod_{i = 1}^{n} x_i + \lambda = 0\\
+        \lambda = -n \prod_{i = 1}^{n} x_i\quad \text{тогда}\quad
+        \prod_{j \ne i}x_j = n \prod_{i = 1}^{n} x_i\quad \text{то есть}\quad
+        x_i = \frac{1}{n}\\
+        \prod_{i = 1}^{n} x_i \leqslant \left(\frac{1}{n}\right)^{n}
+        \Leftrightarrow \sqrt[n]{\prod_{i = 1}^{n} x_i} \leqslant \frac{1}{n}
+        = \frac{1}{n} \cdot 1
+        = \frac{1}{n} \sum\limits_{i = 1}^{n} x_i
+    \end{gather*}
+\end{proof}
+\vskip 0.4in
+
+
+
+
+
+\begin{prob}
+    Using method of Lagrange multipliers in optimization problem
+    $$
+    \min _{x_i \in \mathbb{R}^n}\left(-\operatorname{det}\left(x_1, \ldots, x_n\right)\right)\quad \text{s.t.}\qquad \left\|x_i\right\|^2=1
+    $$
+    , prove Hadamard inequality
+    $$
+    \operatorname{det}\left(x_1, \ldots, x_n\right) \leq \prod_{i=1}^n\left\|x_i\right\|
+    $$
+\end{prob}
+
+\begin{proof}
+    Утверждение можно записать как $-1 \leqslant f(x_1, \ldots, x_n) \leqslant 1$ где $f$ - функция от n векторов и $|x_i| = 1$, то есть
+    $$
+    F_k (x_1, \ldots, x_n) := \frac{1}{2} (x_{1k}^2 + \ldots + x_{nk}^2 - 1) = 0\qquad 1 \leqslant k \leqslant n
+    $$
+    Тогда функция лагранжа имеет вид
+    $$
+    \Phi = f - \sum\limits_{k = 1}^{n} \lambda_k F_k
+    $$
+    Продифференцируем по всем $x_{ik}$, получим $n^2$ уравнений
+    $\frac{\partial \Phi}{\partial x_{ik}} = X_{ik} - \lambda_k x_{ik} = 0$
+    где $X_{ik}$ - кофактор $x_{ik}$ в определителе $f$
+    Домножим $\frac{\partial \Phi}{\partial x_{ik}}$ на $x_{ir}$ и просуммируем по $i$:
+    $$
+    \sum\limits_{i=1}^{n} x_{ir} X_{ir} - \lambda_k x_r \cdot x_k = 0\\
+    \lambda_k x_r x_k = 
+    \begin{cases}
+        \det(X)\quad (r = k)\\
+        0\quad (r \ne k)
+    \end{cases}
+    $$
+    При $r = k$ можно заметить что все $\lambda_k$ имеют одинаковое значение $\det(X) \ne 0$ в экстремуме, а при $r \ne k$ можно заметить $x_r x_k = 0$. Откуда $X' \cdot X = \text{Id}$, то есть $|\det(X)| = 1$
+\end{proof}
+\vskip 0.4in
+
+
+
+
+
+\begin{prob}
+    Find a local minimum of the following function using the Gradient Descent method with the best step size starting from the point $x^0=(1,3)$
+    $$
+    f(x)=x_1^3+4 x_1^2+2 x_1 x_2+\frac{5}{2} x_2^2
+    $$
+\end{prob}
+
+\begin{proof}
+    \begin{gather*}
+        \nabla f = \left( \frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2} \right)
+        = (3x_1^2 + 8x_1 + 2x_2, 2x_1 + 5x_2)\\
+        \nabla f(x_0) = \nabla f(1,3) = (17, 17)\\
+        x_1 = x_0 - \alpha_0 \nabla f(x_0)\\
+        f(x_1) \to \min:
+        f(x_1) = f(1 - 17\alpha, 3 - 17\alpha)
+        = (1 - 17\alpha)^3 + 4(1 - 17\alpha)^2 + 2(1 - 17\alpha)(3 - 17\alpha) + \frac{5}{2}(3 - 17\alpha)^2
+    \end{gather*}
+    Минимум $f(x_1)$ в точке экстремума:
+    \begin{align*}
+        f(x_1)' &= -3 \cdot 17 (1 - 17\alpha)^2 + 8(-17)(1 - 17\alpha)
+        + 2(-17 \cdot 4 + 17^2 \cdot 2\alpha) + 5 \cdot (-17) (3 - 17\alpha)\\
+        &= -17(3 - 6 \cdot 17 \alpha + 17^2 \cdot 3 \alpha^2 + 8 - 8 \cdot 17 \alpha + 8 - 17 \cdot 4 \alpha + 15 - 5 \cdot 17 \alpha)\\
+        &= -17(34 + 3 \cdot 17^2 \alpha^2 - 23 \cdot 17 \alpha)\\
+        &= -17^2(51 \alpha^2 - 23 \alpha + 2)
+    \end{align*}
+    \begin{gather*}
+        f(x_1)' = 0 \Leftrightarrow
+        51\alpha^2 - 23\alpha + 2 = 0\\
+        \alpha = \frac{2}{17}\\
+        \alpha = \frac{1}{3}
+    \end{gather*}
+    Так как у параболы ветви внизу, то минимум будет в $\alpha = \frac{2}{17}$\\
+    То есть $x_1 = (1, 3) - \frac{2}{17}(17, 17) = (-1, 1)$
+    \begin{gather*}
+        \nabla f(x_1) = (-3, 3)\\
+        x_2 = x_1 - \alpha_1 (-3, 3) = (-1 + 3\alpha, 1 - 3\alpha)\\
+        f(x_2) = (3\alpha - 1)^3 + 4(3\alpha - 1)^2 + 2(3\alpha - 1)^2 + 2(3\alpha - 1)(1 - 3\alpha) + \frac{5}{2}(1 - 3\alpha)^2\\
+        = (3\alpha - 1)^3 + 4 (3\alpha - 1)^2 - 2(3\alpha - 1)^2 + \frac{5}{2}(3\alpha - 1)^2
+        = (3\alpha - 1)^2(3\alpha + \frac{7}{2})\\
+        f(x_2)' = (3\alpha + \frac{7}{2}) \cdot 2 \cdot 3 (3\alpha - 1) + (3\alpha - 1)^2 \cdot 3\\
+        = 54\alpha^2 + 3\alpha(-6 + 21) - 21 + 27\alpha^2 - 18\alpha + 3
+        = 81\alpha^2 + 27\alpha - 18
+    \end{gather*}
+    Корни $\alpha = \frac{1}{3}$ и $\alpha = -\frac{2}{3}$ парабола с ветвями вверх, то есть минимум $f(x_2)^3$ в $\alpha = \frac{1}{3}$\\
+    \begin{gather*}
+        x_2 = (-1, 1) - \frac{1}{3}(-3, 3) = (0,0)\\
+        \nabla f(x_2) = (0, 0)\\
+        H =
+        \begin{pmatrix}
+            6x_1 + 8 & 2\\
+            2 & 5
+        \end{pmatrix}\\
+        D(0,0) = 6(5 \cdot 0 + 6) = 36 > 0,\qquad f_{xx}(0,0) = 8 > 0
+    \end{gather*}
+    То есть это минимум
+\end{proof}
+\vskip 0.4in
+
+
+
+
+
+\begin{prob}
+    Let $f: \mathbb{R}^n \rightarrow \mathbb{R}$ be differentiable function and let $x \in \mathbb{R}^n$ be such that $\nabla f(x) \neq 0$. The approximation
+    $$
+    f(x+h)=f(x)+\nabla f(x)^t h+o(h), \quad\|h\|_2 \rightarrow 0
+    $$
+    motivates the problem of finding best descent direction $h$ on some subset $D \subset \mathbb{R}^n$ :
+    $$
+    \min _{h \in D} \nabla f(x)^t h .
+    $$
+    Find optimal $h$ if the set $D$ is given by the constraint
+    \begin{itemize}
+        \item[a)] $\|h\|_2 \leq 1$,
+        \item[b)] $\|h\|_1 \leq 1$,
+        \item[c)] $\|h\|_{\infty} \leq 1$,
+        \item[d)] $h^t Q h \leq 1$, where $Q \in \operatorname{Mat}_{n \times n}(\mathbb{R})$ is positive definite matrix
+    \end{itemize}
+\end{prob}
+
+\begin{proof}
+\begin{itemize}
+        \item[a)]
+            \begin{gather*}
+                L = \sum\limits_{i = 1}^{n} \varphi_i h_i + \lambda(\sum\limits_{i = 1}^{n} h_i^2 - c)\\
+                \begin{cases}
+                    \frac{\partial L}{\partial h_i} = \varphi_i + 2 \lambda h_i = 0\\
+                    \sum\limits_{i = 1}^{n} h_i^2 = c
+                \end{cases}\\
+                c = \sum\limits_{i = 1}^{n} h_i^2
+                = \sum\limits_{i = 1}^{n} \frac{\varphi_i^2}{4 \lambda^2}
+                = \frac{\sum\limits_{i = 1}^{n} \varphi_i^2}{4 \lambda^2}\\
+                \lambda^2 = \frac{\sum\limits_{i = 1}^{n} \varphi_i^2}{4 c}\\
+                h_i = -\frac{\varphi_i \sqrt{c}}{\sqrt{\sum\limits_{i = 1}^{n} \varphi_i^2}}\\
+                \min \langle \varphi, h \rangle
+                = -\frac{\sum\limits_{i=1}^{n}\varphi_i^2 \sqrt{c}}{\sqrt{\sum\limits_{i = 1}^{n} \varphi_i^2}}
+                = -\sqrt{c} \sqrt{\sum\limits_{i = 1}^{n} \varphi_i^2}
+            \end{gather*}
+            То есть минимум $h = -\frac{\varphi_i}{\sqrt{\sum\limits_{i = 1}^{n} \varphi_i^2}}$
+        \item[b)]
+            \begin{gather*}
+                -\max_{i}|\varphi_i| \leq \min_{n}(\varphi, h)\\
+                \max_{i} \geq \sum\limits_{i=1}^{n} |\varphi_i h_i|
+                = \sum\limits_{i=1}^{n} |\varphi_i||h_i|\\
+                \sum\limits_{i=1}^{n} |\varphi_i||h_i|
+                \leq \max_{i} |\varphi_i| \sum\limits_{i=1}^{n} |h_i|
+                = \max_{i} |\varphi_i|
+            \end{gather*}
+            Тогда $h = (0,0, \ldots, -\text{sign}(\varphi_i), 0, 0, \ldots)$ где $i = \text{argmax}(\varphi_i)$
+        \item[c)] 
+            \begin{gather*}
+                ||h||_{\infty} \leq 1 \Leftrightarrow \max_{i} |h_i| \leq 1\\
+                \max_{i} |h_i| \leq 1 \Leftright \forall i:\quad |h_i| \leq 1
+            \end{gather*}
+            Значит $\langle \varphi, h \rangle \to \min \Leftrightarrow \forall i:\quad \varphi_i h_i \to \min$\\
+            Аналогично ($b$) получим $h_i = -\text{sign} \varphi_i$
+
+        \item[d)] 
+    \end{itemize}
+\end{proof}
+\vskip 0.4in
+
+
+
+
+
+\begin{prob}
+    Find a local minimum of the following function using the Newton Method starting from the point $x^0=(1,2)$
+    $$
+    f(x)=2 x_1^2+x_1 x_2+x_2^2 .
+    $$
+\end{prob}
+
+\begin{proof}
+    $x_0 = (1,2)$
+    Тогда
+    \begin{gather*}
+        x_1 = x_0 - \frac{f'(x_0)}{f''(x_0)}\\
+        f'(x) = 
+        \begin{bmatrix}
+            4x + y\\
+            x + 2y
+        \end{bmatrix}\\
+        f''(x) =
+        \begin{bmatrix}
+            4 & 1\\
+            1 & 2
+        \end{bmatrix}\\
+        f''(x)^{-1} f'(x) = 
+        \begin{bmatrix}
+            4 & 1\\
+            1 & 2
+        \end{bmatrix}^{-1}
+        \cdot
+        \begin{bmatrix}
+            4 + 2\\
+            1 + 4
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            1\\
+            2
+        \end{bmatrix}\\
+        x_1 = x_0 - 
+        \begin{bmatrix}
+            1\\
+            2
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            0\\
+            0
+        \end{bmatrix}
+    \end{gather*}
+    Минимум достигается в $(0,0)$
+\end{proof}
+\vskip 0.4in
+
+
+
+
+
+\begin{prob}
+    Find a minimum on the set $X=\left\{2 x_1-x_2=6\right\} \subset \mathbb{R}^2$ of the following function using the Penalty Method with squared penalty function
+    $$
+    f(x) = 4x_1^2 + 4x_1 + x_2^2 - 8x_2 + 5
+    $$
+\end{prob}
+
+\begin{proof}
+    Quadratic penalty function:
+    \begin{gather*}
+        Q(x, c = 4x_1^2 + 4x_1 + x_2^2 - 8x_2 + 5 + \frac{c}{2}(2x_1 - x_2 - 6)^2)
+    \end{gather*}
+    Тогда для $c = 1$
+    \begin{gather*}
+        \nabla Q(x, 1) =
+        \begin{pmatrix}
+            12x_1 - 2x_2 + 8\\
+            -2x_1 + 3x_2 - 2
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            0\\ 0
+        \end{pmatrix}\\
+        \begin{pmatrix}
+            x_1\\ x_2
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            \frac{7}{8}\\
+            \frac{5}{4}
+        \end{pmatrix}
+    \end{gather*}
+    для $c = 10$
+    \begin{gather*}
+        \nabla Q(x, 10) =
+        \begin{pmatrix}
+            4(12x_1 - 2x_2 - 29)\\
+            -20x_1 + 12x_2 - 52
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            0\\ 0
+        \end{pmatrix}\\
+        \begin{pmatrix}
+            x_1\\ x_2
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            2\\
+            -1
+        \end{pmatrix}
+    \end{gather*}
+
+    \begin{gather*}
+        \lim_{c \rightarrow \infty}
+        \nabla Q(x, c) =
+        \begin{pmatrix}
+            2c(2x_1 - x_2 - 6) + 8x_1 + 4\\
+            -c(2x_1 - x_2 - 6) + 2(x_2 - 4)
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            0\\ 0
+        \end{pmatrix}
+    \end{gather*}
+    При $c \ne 0$: $x_2 = \frac{2(cx_1 - 3c + 2x_1 + 1)}{c}$ чтобы было выполнено $2c(2x_1 - x_2 - 6) + 8x_1 + 4 = 0$ и при $c \ne -2$: $x_2 = \frac{2(cx_1 - 3c + 4)}{c + 2}$ чтобы $-c(2x_1 - x_2 - 6) + 2(x_2 - 4) = 0$, т.е. при $\lim_{c \rightarrow \infty}$: $x_2 = 2(x_1 - 3)$\\
+    Откуда $4x_1^2 + 4x_1 + x_2^2 - 8x_2 + 5 = 4x_1^2 + 4x_1 + (2(x_1 - 3))^2 - 8(2(x_1 - 3)) + 5 = 8x_1^3 - 36x_1 + 89$, то есть вершина параболы $x_1 = \frac{36}{16} = \frac{9}{4}$, откуда $x_2 = -\frac{3}{2}$ и значение в этой точке $\frac{97}{2}$, гессиан $H = \begin{pmatrix} 8 & 0\\ 0 & 2 \end{pmatrix}$, его определитель $\text{det}(H) = 16 > 0$ и $f_{x_1 x_1}(x_1, x_2) = 8 > 0$, то есть это минимум
+\end{proof}
+\vskip 0.4in
+
+
+
+
+
+\begin{prob}
+    Solve the following LP problem using the simplex method
+    \begin{gather*}
+        f(x) = x_1 + 3x_2 - x_3 \rightarrow \min , \\
+        x_1 + x_2 + x_3 \geq 3, \\
+        -x_1 + 2x_2 \geq 2, \\
+        -x_1 + 5x_2 + x_3 \leq 7, \\
+        x_1, x_2, x_3 \geq 0 .
+    \end{gather*}
+\end{prob}
+
+\begin{proof}
+    Рассмотрим
+    \begin{gather*}
+    \begin{cases}
+        x_1 + x_2 + x_3 \geq 3, \\
+        x_1 - 2x_2 \leq -2, \\
+        -x_1 + 5x_2 + x_3 \leq 7
+    \end{cases}
+    \end{gather*}
+    Добавим переменные
+    \begin{gather*}
+    \begin{cases}
+        x_1 + x_2 + x_3 - a_1 = 3, \\
+        x_1 - 2x_2 - a_2 = -2, \\
+        -x_1 + 5x_2 + x_3 + a_3 = 7
+    \end{cases}
+    \end{gather*}
+    И еще 2 переменные такие что $b_1 + b_2 = 5 - 3x_2 - x_3 + a_1 + a_2$
+    \begin{gather*}
+    \begin{cases}
+        x_1 + x_2 + x_3 - a_1 + b_1 = 3,\\
+        x_1 - 2x_2 - a_2 + b_2 = -2,\\
+        -x_1 + 5x_2 + x_3 + a_3 = 7
+    \end{cases}
+    \end{gather*}
+    Тогда одно из решений: $(x_1, x_2, x_3, a_1, a_2, a_3, b_1, b_2) = (0, 0, 0, 0, 0, 7, 3, 2)$ и $b_1 + b_2 = 5$
+    \begin{gather*}
+    \begin{cases}
+        x_1 + x_2 + x_3 - a_1 + b_1 = 3,\\
+        x_1 - 2x_2 - a_2 + b_2 = -2,\\
+        -x_1 + 5x_2 + x_3 + a_3 = 7
+    \end{cases}
+    \Leftrightarrow
+    \begin{cases}
+        x_1 + x_2 + x_3 - a_1 + b_1 = 3,\\
+        -\frac{1}{2}x_1 + x_2 - \frac{1}{2}a_2 + \frac{1}{2}b_2 = 1,\\
+        -x_1 + 5x_2 + x_3 + a_3 = 7
+    \end{cases}
+    \Leftrightarrow\\
+    \begin{cases}
+        \frac{3}{2}x_1 + x_3 - a_1 + \frac{1}{2}a_2 + b_1 - \frac{1}{2}b_2 = 2,\\
+        -\frac{1}{2}x_1 + x_2 - \frac{1}{2}a_2 + \frac{1}{2}b_2 = 1,\\
+        \frac{3}{2}x_1 + x_3 + \frac{5}{2}a_2 + a_3 - \frac{5}{2}b_2 = 2
+    \end{cases}
+    \Leftrightarrow
+    \begin{cases}
+        x_1 + \frac{2}{3}x_3 - \frac{2}{3}a_1 + \frac{1}{3}a_2 + \frac{2}{3}b_1 - \frac{1}{3}b_2 = \frac{4}{3},\\
+        -\frac{1}{2}x_1 + x_2 - \frac{1}{2}a_2 + \frac{1}{2}b_2 = 1,\\
+        \frac{3}{2}x_1 + x_3 + \frac{5}{2}a_2 + a_3 - \frac{5}{2}b_2 = 2
+    \end{cases}
+    \Leftrightarrow\\
+    \begin{cases}
+        x_1 + \frac{2}{3}x_3 - \frac{2}{3}a_1 + \frac{1}{3}a_2 + \frac{2}{3}b_1 - \frac{1}{3}b_2 = \frac{4}{3},\\
+        x_2 + \frac{1}{3}x_3 - \frac{1}{3}a_1 - \frac{1}{3}a_2 + \frac{1}{3}b_1 + \frac{1}{3}b_2 = \frac{5}{3},\\
+        a_1 + 2a_2 + a_3 - b_1 - b_2= 0
+    \end{cases}
+    \end{gather*}
+    То есть частное решение $(x_1, x_2, x_3, a_1, a_2, a_3, b_1, b_2) = (\frac{4}{3}, \frac{5}{3}, 0, 0, 0, 0, 0, 0)$ и $b_1 + b_2 = 5 - \frac{5}{3} \cdot 3 = 0$, откуда
+    \begin{gather*}
+    \begin{cases}
+        x_1 + \frac{2}{3}x_3 - \frac{2}{3}a_1 + \frac{1}{3}a_2 = \frac{4}{3},\\
+        x_2 + \frac{1}{3}x_3 - \frac{1}{3}a_1 - \frac{1}{3}a_2 = \frac{5}{3},\\
+        a_1 + 2a_2 + a_3 = 0
+    \end{cases}
+    \end{gather*}
+    Тогда
+    \begin{align*}
+        F &= x_1 + 3x_2 - x_3\\
+        &= \left(\frac{4}{3} - \frac{2}{3}x_3 + \frac{2}{3}a_1 - \frac{1}{3}a_2\right) + 3x_2 - x_3\\
+        &= \frac{4}{3} + 3x_2 - \frac{5}{3}x_3 + \frac{2}{3}a_1 - \frac{1}{3}a_2\\
+        &= \frac{4}{3} + 3(\frac{5}{3} - \frac{1}{3}x_3 + \frac{1}{3}a_1 + \frac{1}{3}a_2) - \frac{5}{3}x_3 + \frac{2}{3}a_1 - \frac{1}{3}a_2\\
+        &= \frac{19}{3} - \frac{8}{3}x_3 + \frac{5}{3}a_1 + \frac{2}{3}a_2
+    \end{align*}
+    Откуда
+    \begin{gather*}
+    \begin{cases}
+        x_1 + \frac{2}{3}x_3 - \frac{2}{3}a_1 + \frac{1}{3}a_2 = \frac{4}{3}\\
+        x_2 + \frac{1}{3}x_3 - \frac{1}{3}a_1 - \frac{1}{3}a_2 = \frac{5}{3}\\
+        a_1 + 2a_2 + a_3 = 0
+    \end{cases}
+    \Leftrightarrow
+    \begin{cases}
+        \frac{3}{2}x_1 + x_3 - a_1 + \frac{1}{2}a_2 = 2\\
+        x_2 + \frac{1}{3}x_3 - \frac{1}{3}a_1 - \frac{1}{3}a_2 = \frac{5}{3}\\
+        a_1 + 2a_2 + a_3 = 0
+    \end{cases}
+    \Leftrightarrow\\
+    \begin{cases}
+        \frac{3}{2}x_1 + x_3 - a_1 + \frac{1}{2}a_2 = 2\\
+        -\frac{1}{2}x_1 + x_2 - \frac{1}{2}a_2 = 1\\
+        a_1 + 2a_2 + a_3 = 0
+    \end{cases}
+    \end{gather*}
+    То есть $(x_1, x_2, x_3) = (0, 1, 2)$, откуда $F = 1$
+\end{proof}
+

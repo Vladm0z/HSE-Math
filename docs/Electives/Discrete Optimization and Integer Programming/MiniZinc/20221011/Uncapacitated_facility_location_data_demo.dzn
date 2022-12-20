@@ -1,0 +1,14 @@
+% UNCAPACITATED FACILITY LOCATION PROBLEM
+% number of facilities
+n = 3;
+% number of customers
+m = 5;
+% facility opening cost
+c = [1000, 1000, 1000];
+% customer serving cost 
+d = [|
+  4, 5, 6, 8, 10|
+  6, 4, 3, 8, 10|
+  9, 7, 4, 3, 4|];
+  
+  

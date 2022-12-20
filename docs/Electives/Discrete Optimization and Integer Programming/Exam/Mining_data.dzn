@@ -1,0 +1,11 @@
+NbMines = 4;
+NbYears = 5;
+
+%Units are millions of $ for costs, millions of tons for ore
+Royalties = [5, 4, 4, 5];
+LimExtract = [2, 2.5, 1.3, 3];
+LimWork = 3;
+OreQual = [1.0, 0.7, 1.5, 0.5];
+BlendQual = [0.9, 0.8, 1.2, 0.6, 1.0];
+BlendPrice = 10;
+DiscountFactor = [1.0, 0.9, 0.81,  0.729, 0.6561]

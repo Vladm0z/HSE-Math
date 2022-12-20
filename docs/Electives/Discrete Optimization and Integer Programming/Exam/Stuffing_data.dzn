@@ -1,0 +1,26 @@
+Totalshifts = 3;
+Nbshifts = 2;
+
+Weekdays={Mon, Tue, Wed, Thu, Fri};
+
+Skills= {cashier, cooker, cleaner};
+
+People= {Abe, Beth, Charles, David, Emy, Frank, George, Helen};
+
+Req = array3d(Weekdays, 1..Totalshifts, Skills, [
+  1,1,1,   3,3,2,   2,2,1,
+  1,1,1,   3,3,2,   2,2,1,
+  1,1,1,   3,3,2,   2,2,1,
+  1,1,1,   3,3,2,   2,2,1,
+  1,1,1,   3,3,2,   2,2,1
+   ]);
+
+HasSkill = [|
+  1, 1, 1|
+  1, 0, 1|
+  0, 1, 1|
+  1, 0, 1|
+  1, 1, 1|
+  1, 1, 0|
+  1, 1, 0|
+  1, 1, 1|];
