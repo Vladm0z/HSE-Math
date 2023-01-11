@@ -57,13 +57,13 @@
 
 
 #### Домашние Задания
-- [1 Домашнее Задание](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_HW/V2/%D0%9A%D0%BE%D0%B2%D0%B0%D0%BB%D0%B5%D0%B2%D0%B0%20%D0%94%D0%97-1.pdf)
-- [2 Домашнее Задание](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_HW/V2/%D0%9A%D0%BE%D0%B2%D0%B0%D0%BB%D0%B5%D0%B2%D0%B0%20%D0%94%D0%97-2.pdf)
-- [3 Домашнее Задание](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_HW/V2/%D0%9A%D0%BE%D0%B2%D0%B0%D0%BB%D0%B5%D0%B2%D0%B0%20%D0%94%D0%97-3.pdf)
-- [4 Домашнее Задание](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_HW/V2/%D0%9A%D0%BE%D0%B2%D0%B0%D0%BB%D0%B5%D0%B2%D0%B0%20%D0%94%D0%97-4.pdf)
-- [5 Домашнее Задание](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_HW/V2/%D0%9A%D0%BE%D0%B2%D0%B0%D0%BB%D0%B5%D0%B2%D0%B0%20%D0%94%D0%97-5.pdf)
-- [6 Домашнее Задание](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_HW/V2/%D0%9A%D0%BE%D0%B2%D0%B0%D0%BB%D0%B5%D0%B2%D0%B0%20%D0%94%D0%97-6.pdf)
-- [7 Домашнее Задание](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_HW/V2/%D0%9A%D0%BE%D0%B2%D0%B0%D0%BB%D0%B5%D0%B2%D0%B0%20%D0%94%D0%97-7.pdf)
+- [1 Домашнее Задание](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_HW/HW_1/Moz_HW1.pdf)
+- [2 Домашнее Задание](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_HW/HW_2/Moz_HW2.pdf)
+- [3 Домашнее Задание](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_HW/HW_3/Moz_HW3.pdf)
+- [4 Домашнее Задание](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_HW/HW_4/Moz_HW4.pdf)
+- [5 Домашнее Задание](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_HW/HW_5/Moz_HW5.pdf)
+- [6 Домашнее Задание](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_HW/HW_6/Moz_HW6.pdf)
+- [7 Домашнее Задание](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_HW/HW_7/Moz_HW7.pdf)
 
 #### Пятиминутки
 
