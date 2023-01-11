@@ -39,6 +39,23 @@
 - [Лекция 14](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Lect/Lect_14.pdf)
 
 
+#### Официальные семинары
+- [Семинар 12.01.2021](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Sem/sem1_harmonic.pdf)
+- [Семинар 19.01.2021](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Sem/sem2_reaction.pdf)
+- [Семинар 26.01.2021](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Sem/sem3_phase.pdf)
+- [Семинар 02.02.2021](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Sem/sem4_work.pdf)
+- [Семинар 09.02.2021](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Sem/sem5_work.pdf)
+- [Семинар 16.02.2021](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Sem/sem6_work.pdf)
+- [Семинар 02.03.2021](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Sem/sem7_lagrange.pdf)
+- [Семинар 09.03.2021](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Sem/sem8_lagrange.pdf)
+- [Семинар 16.03.2021](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Sem/sem9-10_var.pdf)
+- [Семинар 23.03.2021](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Sem/sem11_var.pdf)
+- [Семинар 06.04.2021](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Sem/sem12_ex.pdf)
+- [Семинар 11.05.2021](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Sem/sem15_poisson.pdf)
+- [Семинар 18.05.2021](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Sem/sem16_canonic.pdf)
+
+
+
 #### Домашние Задания
 - [1 Домашнее Задание](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_HW/V2/%D0%9A%D0%BE%D0%B2%D0%B0%D0%BB%D0%B5%D0%B2%D0%B0%20%D0%94%D0%97-1.pdf)
 - [2 Домашнее Задание](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_HW/V2/%D0%9A%D0%BE%D0%B2%D0%B0%D0%BB%D0%B5%D0%B2%D0%B0%20%D0%94%D0%97-2.pdf)
@@ -50,14 +67,20 @@
 
 #### Пятиминутки
 
-- [Первая 01.11.2022](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Test/%D0%BF%D1%8F%D1%82%D0%B8%D0%BC%D0%B8%D0%BD%D1%83%D1%82%D0%BA%D0%B0%2019%D1%8F%D0%BD%D0%B22021.pdf)
-- [Вторая 01.25.2022](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Test/%D0%BF%D1%8F%D1%82%D0%B8%D0%BC%D0%B8%D0%BD%D1%83%D1%82%D0%BA%D0%B0%2002%D1%84%D0%B5%D0%B22021.pdf)
-- [Третья 02.08.2022](https://docs.google.com/viewer?url=)
-- [Четвертая 02.22.2022](https://docs.google.com/viewer?url=)
-- [Пятая 03.15.2022](https://docs.google.com/viewer?url=)
+- [1-я пятиминутка 2021](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Tests/sem2_2021.pdf)
+- [2-я пятиминутка 2021](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Tests/sem4_2021.pdf)
+- [3-я пятиминутка 2022](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Tests/sem5_2022.pdf)
+- [5-я пятиминутка 2022](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Tests/sem10_2022.pdf)
+- [6-я пятиминутка 2022](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Tests/sem12_2022.pdf)
+- [7-я пятиминутка 2022](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Tests/sem15_2022.pdf)
+- [Пятиминутка 17.05.2022](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Tests/sem17052022.pdf)
+- [Пятиминутка 20.04.2021](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Tests/sem20042021.pdf)
+- [Пятиминутки сборник](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Tests/sem_tests.pdf)
+
 
 #### Контрольные
-- [1 Контрольная Работа](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Fin/%D0%9A%D1%801.pdf)
-- [2 Контрольная Работа](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Fin/%D0%9A%D1%802.pdf)
-- [3 Контрольная Работа](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Fin/%D0%9A%D1%803.pdf)
-- [4 Контрольная Работа](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Fin/%D0%9A%D1%80.pdf)
+- [1 Контрольная Работа Вариант 1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Fin/ex1_v1_2021_prob.pdf)
+- [1 Контрольная Работа Вариант 2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/2nd%20term/Mechanics/Spr_Fin/ex1_v2_2021_prob.pdf)
+- [2 Контрольная Работа Вариант 2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/2nd%20term/Mechanics/Spr_Fin/ex2_v2_2021_prob.pdf)
+- [3 Контрольная Работа](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/2nd%20term/Mechanics/Spr_Fin/ex3_2021_prob.pdf)
+- [4 Контрольная Работа](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/2nd%20term/Mechanics/Spr_Fin/ex4_2021_prob.pdf)
