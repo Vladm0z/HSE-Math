@@ -1,6 +1,10 @@
 # Материалы НИСов и курсов по выбору МФ ВШЭ
 
-[Чаты](https://docs.google.com/spreadsheets/d/1PFKLBc5wA0VeiGLUdnD_NTabWlatYwStFjMnfti0_z0/edit#gid=0)
+Разные таблицы с чатами:
+
+- [Таблица 1](https://docs.google.com/spreadsheets/d/1PFKLBc5wA0VeiGLUdnD_NTabWlatYwStFjMnfti0_z0/edit#gid=0)
+- [Таблица 2](https://docs.google.com/spreadsheets/d/1h93DZ_7MfkVQIKj8kcEQIgRSFtmSEAchtj0xbwFMPLg/edit#gid=0)
+
 
 
 ## Алгебраическая Топология
