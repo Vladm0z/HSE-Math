@@ -1,5 +1,7 @@
 # Материалы 1 курса образовательной программы "Математика" МФ ВШЭ
 
+Программы могут меняться со временем, но большая часть материалов все равно остается актуальной (в связи с повторным использованием задач, множеством теорем, которые будут расказаны в любом случае и прочих элементов образовательной программы), иногда что-то может совпадать дословно, но в любом случае стоит обращать внимание на формулировки
+
 ## Алгебра
 
 #### Рекомендованная литература
@@ -31,8 +33,7 @@
 - [Итоговый Экзамен](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Calculus/Aut_Fin/ClcExmPrv.pdf)
 
 #### Весна
-- [Первая контрольная]()
-- [Вторая контрольная]()
+- [Коллоквиум (2021-2022)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Calculus/Aut_Fin/ClcExm_2122.pdf)
 
 
 ## Дискретная Математика
@@ -83,7 +84,8 @@
 - [Задачи](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Topology/Spr_Prb/TopPrb.pdf)
 
 #### Весна
-- [Лекции](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Topology/Spr_Lect/public/main.pdf)
+- [Лекции (2021-2022)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Topology/Aut_Lec/TopLec_2122.pdf)
+- [Лекции (2019-2020)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Topology/Spr_Lect/public/main.pdf)
 - [Задачи](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Topology/Spr_Prb/TopPrb.pdf)
 - [Коллоквиум](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Topology/Spr_Mid/TopCol.pdf)
 - [Итоговый экзамен](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/1st%20term/Topology/Spr_Fin/TopExm.pdf)
