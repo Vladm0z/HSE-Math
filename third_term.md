@@ -45,13 +45,20 @@
 
 - [Страница с материалами](https://vladm0z.github.io/HSE-Math/Logic&Mechanics)
 
+
+
 ## Экономика
 
-- [Официальный диск](https://drive.google.com/drive/folders/1_FxoF0R_27UhAaOWAPqgWgKdFtBwBBkh)
+- [Материалы](https://drive.google.com/drive/folders/1aHOf7m23X1zjFWjhg1fHmT31C_DV4eQ1?usp=sharing)
+
+
 
 ## Право
 
-- [Неофициальный диск]()
+- [Материалы](https://drive.google.com/drive/folders/1ueTFSD69eYuHsRcKTMqyFOmoy8btWK9b?usp=sharing)
+
+
 
 ## ГОСЫ
+(рано или поздно файл обновится)
 - [PDF](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/%D0%93%D0%BE%D1%81%D1%8B/backup_090622.pdf)
