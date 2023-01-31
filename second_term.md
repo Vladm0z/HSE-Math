@@ -33,7 +33,8 @@
 
 
 ## Гладкие Многообразия
-- [Лекции](https://docs.google.com/viewer?url=)
+- [Лекции (модуль 1)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Differentiable%20Manifolds/Aut_Lect_unit1.pdf)
+- [Лекции (модуль 2)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Differentiable%20Manifolds/Aut_Lect_unit2.pdf)
 - [Задачи Первый Листок](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Differentiable%20Manifolds/Aut_Prb/%D0%93%D0%BB%D0%B0%D0%B4%D0%BA%D0%B8%D0%B5_1.pdf)
 - [Задачи Второй Листок](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Differentiable%20Manifolds/Aut_Prb/%D0%93%D0%BB%D0%B0%D0%B4%D0%BA%D0%B8%D0%B5_2.pdf)
 - [Задачи Третий Листок](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Differentiable%20Manifolds/Aut_Prb/%D0%93%D0%BB%D0%B0%D0%B4%D0%BA%D0%B8%D0%B5_3.pdf)
