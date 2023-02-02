@@ -14,6 +14,15 @@
 - [Первая Контрольная](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algebraic%20Topology/Aut_Mid/AGmidterm2.pdf)
 - [Вторая Контрольная](https://docs.google.com/viewer?url=x-github-client://openRepo/https://github.com/Vladm0z/HSE-Math?branch=main&filepath=docs%2FElectives%2FAlgebraic%20Topology%2FAut_Fin%2F%D0%AD%D0%BA%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD_%D0%9C%D0%B5%D0%B4%D0%B2%D0%B5%D0%B4%D0%B5%D0%B2%D0%B0.pdf)
 
+## Алгоритмы Huawei
+
+-[HW 1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algorithms%20as%20Math%20Research/HW/Halg_hw1.pdf)
+-[HW 2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algorithms%20as%20Math%20Research/HW/Halg_hw2.pdf)
+-[CW 1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algorithms%20as%20Math%20Research/Class%20work/Halg_cw1.pdf)
+-[CW 2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algorithms%20as%20Math%20Research/Class%20work/Halg_cw2.pdf)
+-[Лекция 1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algorithms%20as%20Math%20Research/Lectures/Lecture_1.pdf)
+-[A. Shen - "Algorithms and Programming"](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algorithms%20as%20Math%20Research/Algorithms%20and%20Programming_%20Problems%20and%20Solutions%20(2nd%20ed.)%20%5BShen%202009-12-17%5D.pdf)
+
 
 ## Основные приложения математики
 
