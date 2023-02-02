@@ -1,108 +1,95 @@
 \section{Problem List 1}
 
 \begin{prob}
-(3) The problem's input is numbers $n, k>1$ and a list $a_1, \ldots, a_n$ of positive integers. Construct an $O(n k)$ algorithm that computes $\max_{0<|i-j| \leqslant k} a_i \times a_j$, i. e. the maximal product of different elements with distance at most $k$. Try to construct an algorithm that uses $O(k)$ RAM (you can read the input sequence by elements).
+The problem's input is numbers $n, k>1$ and a list $a_1, \ldots, a_n$ of positive integers. Construct an $O(n k)$ algorithm that computes $\max_{0<|i-j| \leqslant k} a_i \times a_j$, i. e. the maximal product of different elements with distance at most $k$. Try to construct an algorithm that uses $O(k)$ RAM (you can read the input sequence by elements).
 \end{prob}
 
 \begin{proof}
-Заведем переменную $max\_product$ и приравняем ее к $a_1 \cdot a_2$, далее мы пойдем по списку, рассматривая каждый элемент $a_i$ и сравнивая $a_i \cdot a_j, j = i+k \text{ if } i+k \leq n, \text{else} j = n$ c $max\_product$, если $max\_product < a_i \cdot a_j$ то $max\_product = a_i \cdot a_j$, сложность алгоритма $O(nk)$, использование памяти $O(1)$
+Заведем переменную $max\_product$ и приравняем ее к $a_1 \cdot a_2$, далее мы пойдем по списку, рассматривая каждый элемент $a_i$ и сравнивая $a_i \cdot a_j$ ($j \in [i+1, i+k]$ если $i+k \leq n$, иначе $j \in [i+1, n]$) c $max\_product$, если $max\_product < a_i \cdot a_j$ то $max\_product = a_i \cdot a_j$, сложность алгоритма $O(nk)$ так как мы только перемножаем nk пар переменных и сравниваем их с $max\_product$, использование памяти $O(1)$ так как мы завели только одну переменную.
 \end{proof}
-\vskip 0.4in
+\vskip 0.6in
 
-
+\stepcounter{prob}
 
 
 \begin{prob}
-(3) There is an array of pairs $\left[\left(l_1, r_1\right), \ldots,\left(l_n, r_n\right)\right]$. A pair $\left(l_i, r_i\right)$ defines a segment $\left[l_i, r_i\right]$ on a line. Construct an $O(n \log n)$ algorithm that computes the Jordan measure of the union of the segments $\bigcup_{i=1}^n\left[l_i, r_i\right]$, i.e the union is a set of non-intersecting segments, the measure is the sum of their lengths.
+There is an array of pairs $\left[\left(l_1, r_1\right), \ldots,\left(l_n, r_n\right)\right]$. A pair $\left(l_i, r_i\right)$ defines a segment $\left[l_i, r_i\right]$ on a line. Construct an $O(n \log n)$ algorithm that computes the Jordan measure of the union of the segments $\bigcup_{i=1}^n\left[l_i, r_i\right]$, i.e the union is a set of non-intersecting segments, the measure is the sum of their lengths.
 \end{prob}
 
 \begin{proof}
-1) Put all the coordinates of all the segments in an auxiliary array points[]. 
-2) Sort it on the value of the coordinates. 
-3) An additional condition for sorting – if there are equal coordinates, insert the one which is the left coordinate of any segment instead of a right one. 
-4) Now go through the entire array, with the counter “count” of overlapping segments. 
-5) If the count is greater than zero, then the result is added to the difference between the points[i] – points[i-1]. 
-6) If the current element belongs to the left end, we increase “count”, otherwise reduce it.
-
-\begin{minted}[mathescape, linenos]{python}
-# Size of given segments list
+\begin{itemize}
+\item[]
+\item[(1)] Поместите все координаты всех отрезков в массив points[]
+\item[(2)] Отсортируем его
+\item[(3)] Если у каких-то двух отрезков совпала левая координата, приравняем правую координату меньшего к левой
+\item[(4)] Теперь пройдемся по всему массиву подсчитывая пересекающиеся отрезки
+\item[(5)] Если счетчик больше 0, то добавим результат к $\text{points} [i] - \text{points} [i-1] $ 
+\item[(6)] Если рассматриваемый элемент принадленжит левому концу, то мы увеличим count, иначе уменьшим
+\end{itemize}
+\vskip 0.2in
+\begin{lstlisting}
 n = len(segments)
- 
-# Initialize empty points container
 points = [None] * (n * 2)
  
-# Create a vector to store starting
-# and ending points
 for i in range(n):
     points[i * 2] = (segments[i][0], False)
     points[i * 2 + 1] = (segments[i][1], True)
      
-# Sorting all points by point value
 points = sorted(points, key=lambda x: x[0])
  
-# Initialize result as 0
 result = 0
- 
-# To keep track of counts of current open segments
-# (Starting point is processed, but ending point
-# is not)
 Counter = 0
  
-# Traverse through all points
 for i in range(0, n * 2):
-   
-    # If there are open points, then we add the
-    # difference between previous and current point.
     if (i > 0) & (points[i][0] > points[i - 1][0]) &  (Counter > 0):
         result += (points[i][0] - points[i - 1][0])
          
-    # If this is an ending point, reduce, count of
-    # open points.
     if points[i][1]:
         Counter -= 1
     else:
         Counter += 1
 return result
-\end{minted}
+\end{lstlisting}
+Мы просто считаем общую длину и вычитаем пересечения
 \end{proof}
-\vskip 0.4in
+\newpage
 
 
 
 
 \begin{prob}
-(5) The input is an array $a:=\left[a_1, \ldots, a_n\right]$ of different numbers. Construct an $O(n \log n)$ algorithm that cuts this array into the list of arrays such that the concatenation of sorted arrays from the list equals to the sorted array a. Moreover, the number of cuts should be maximal. More formally, cut is defined by a sequence of indices $i_1<\cdots<i_k$ and consists of arrays
+The input is an array $a:=\left[a_1, \ldots, a_n\right]$ of different numbers. Construct an $O(n \log n)$ algorithm that cuts this array into the list of arrays such that the concatenation of sorted arrays from the list equals to the sorted array a. Moreover, the number of cuts should be maximal. More formally, cut is defined by a sequence of indices $i_1<\cdots<i_k$ and consists of arrays
 \begin{gather*}
-    \left[a_1, \ldots a_{i_1}\right],\left[a_{i_1+1}, \ldots a_{i_2}\right], \ldots,\left[a_{i_{k-1}+1}, \ldots a_{i_k}\right] \text {. }
+    \left[a_1, \ldots a_{i_1}\right],\left[a_{i_1+1}, \ldots a_{i_2}\right], \ldots,\left[a_{i_{k-1}+1}, \ldots a_{i_k}\right]
 \end{gather*}
 In other words, we take the maximal number of continuous non-overlapping subarrays of $a$ that covers $a$, sort them, and get the sorted array $a$ as the result.
 \end{prob}
 
 \begin{proof}
-Отсортируем все множество за $O(n log n)$ чтобы узнать итоговое расположение элементов.
-
-Рассмотрим какой-нибудь элемент, который в итоге (после всех сортировок) должен стоять на позиции $a_{\text{correct}_1}$, а сейчас стоит на позиции $a_{\text{current}_1}$ (где $a_{\text{correct}_1} > a_{\text{current}_1}$) (если таких элементов нет, то все элементы стоят на своих позициях и множество можно разрезать на одноэлементные подмножества) то подмножество должно покрывать позицию $a_{\text{correct}_1}$ в изначальном (не отсортированном) множестве, то есть участок $a_{\text{current}_1}-a_{\text{correct}_1}$ в итоге будет в одном множестве. Мы будем записывать самую правую из таких границ в min_index (то есть приравнивать его к $a_{\text{correct}_1}$)
-
-Если же для элемента и его позиции выполнено $a_{\text{correct}_2} < a_{\text{current}_2}$ то он не мешает сортировке (то есть он может попасть на свою позицию и границу не нужно двигать правее). Однако левее него могут быть другие элементы из-за которых разрез нужно двигать вправо и тогда если $\text{min_index} = a_{\text{current}_2}$
-
-\begin{minted}[mathescape, linenos]{python}
+Отсортируем все множество за $O(n \log n)$ чтобы узнать итоговое расположение элементов.
+\vskip 0.1in \noindent
+Рассмотрим какой-нибудь элемент, который в итоге (после всех сортировок) должен стоять на позиции $a_{\text{correct}_1}$, а сейчас стоит на позиции $a_{\text{current}_1}$ (где $a_{\text{correct}_1} > a_{\text{current}_1}$) (если таких элементов нет, то все элементы стоят на своих позициях и множество можно разрезать на одноэлементные подмножества) то подмножество должно покрывать позицию $a_{\text{correct}_1}$ в изначальном (не отсортированном) множестве, то есть участок $a_{\text{current}_1}-a_{\text{correct}_1}$ в итоге будет в одном множестве. Мы будем записывать самую правую из таких границ в min\_index (то есть приравнивать его к $a_{\text{correct}_1}$)
+\vskip 0.1in \noindent
+Если же для элемента и его позиции выполнено $a_{\text{correct}_2} < a_{\text{current}_2}$ то он не мешает сортировке (то есть он может попасть на свою позицию и границу не нужно двигать правее). Однако левее него могут быть другие элементы из-за которых разрез нужно двигать вправо и тогда если $\text{min\_index} = a_{\text{current}_2}$
+\vskip 0.2in
+\begin{lstlisting}
 subarrays = []
 min_index = arr[0]
 for i in xrange(len(arr)):
     min_index = max(min_index, arr[i])
     if i == min_index:
         subarrays.append(i)
-\end{minted}
-
+\end{lstlisting}
+\vskip 0.1in \noindent
 То есть все кроме изначальной сортировки (чтобы узнать правильные позиции) сделано за один проход $O(n)$
 \end{proof}
-\vskip 0.4in
+\vskip 0.6in
 
 
 
 
 \begin{prob}
-(3) A peak of an array $\left[a_1, a_2, \ldots, a_n\right]$ is an element $a_i$ such that
+A peak of an array $\left[a_1, a_2, \ldots, a_n\right]$ is an element $a_i$ such that
 \begin{gather*}
     a_{i-1} \leqslant a_i \geqslant a_{i+1}
 \end{gather*}
@@ -110,44 +97,39 @@ for $1<i<n$ or the only of the corresponding inequalities holds for $i \in\{1, n
 \end{prob}
 
 \begin{proof}
-Введем переменные $l=0$ и $r=n-1$, решать задачу будем через цикл с условием $l \leq r$, решение будет аналогично бинарному поиску (откуда вытекает $O(\log n)$), где l и r - крайние элементы области поиска
-\begin{minted}[mathescape, linenos]{python}
-l = 0
-r = n-1
+Введем переменные $l = 1$ и $r = n$, решать задачу будем через цикл с условием $l \leq r$, решение будет аналогично бинарному поиску (откуда вытекает $O(\log n)$), где $l$ и $r$ - крайние элементы области поиска
+\begin{lstlisting}
+l = 1
+r = n
 
 while(l <= r):
-
-    # finding mid by binary right shifting.
     mid = (l + r) >> 1
 
-    # first case if mid is the answer
     if((mid == 0 or arr[mid - 1] <= arr[mid]) and (mid == n - 1 or arr[mid + 1] <= arr[mid])):
         break
 
-    # move the right pointer
     if(mid > 0 and arr[mid - 1] > arr[mid]):
         r = mid - 1
 
-    # move the left pointer
     else:
         l = mid + 1
 
 return mid
-\end{minted}
+\end{lstlisting}
 \end{proof}
-\vskip 0.4in
+\vskip 0.6in
 
 
 
 
 \begin{prob}
-(6) An array $\left[a_1, a_2, \ldots, a_n\right]$ of integers is stored in RAM. Construct an $O(n)$ algorithm that cuts the array into three parts $\left[a_1, \ldots, a_i\right],\left[a_{i+1}, \ldots, a_j\right]$, and $\left[a_{j+1}, \ldots, a_n\right]$ such that at least two parts have positive sums of their elements. It is guaranteed that such a cut exists. The output is indices $i$ and $j$.
+An array $\left[a_1, a_2, \ldots, a_n\right]$ of integers is stored in RAM. Construct an $O(n)$ algorithm that cuts the array into three parts $\left[a_1, \ldots, a_i\right],\left[a_{i+1}, \ldots, a_j\right]$, and $\left[a_{j+1}, \ldots, a_n\right]$ such that at least two parts have positive sums of their elements. It is guaranteed that such a cut exists. The output is indices $i$ and $j$.
 \end{prob}
 
 \begin{proof}
 \end{proof}
 
-\begin{comment}
+\iffalse
 Сперва за $O(n)$ мы можем проверить положительность $a_1, a_1 + a_2, \ldots, a_1 + \ldots + a_{n-2}$, и положительность $a_n, a_n + a_{n-1}, \ldots, a_n + \ldots + a_3$, заметим, что хотя бы одна из всех этих сумм положительна (иначе у нас нет положительного участка с концом в $a_1$ или $a_n$, но тогда каким бы ни было деление на 3 множества, хотя бы 2 из них будут отрицательными, что противоречит условию)
 Рассмотрим первую встретившуюся такую сумму, без ограничения общности предположим что это $a_1 + \ldots + a_k$, если средин сумм $a_n, a_n + a_{n-1}, \ldots, a_n + \ldots + a_{k+1}$ нет положительных, то рассмотрим участки $a_{k+1}, a_{k+1} + a_{k+2}, \ldots$ среди них должен быть положительный, иначе
-\end{comment}
+\fi
