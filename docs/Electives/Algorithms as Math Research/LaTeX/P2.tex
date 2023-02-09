@@ -1,0 +1,115 @@
+\section{Problem List 2}
+
+\begin{prob}
+The input is an integer array $a$ of $n$ elements. It is required to find the number of inversions in $a$, i.e., the pairs of indices $(i, j)$ such that $i<j$ and $a[i]>a[j]$. Construct an $O(n \log n)$ algorithm that finds the number of inversions in $a$.
+\end{prob}
+
+\begin{proof}
+Заметим, что число перестановок в bubble sort совпадает с числом инверсий (т.к. мы переставляем 2 числа только если есть инверсия)
+\end{proof}
+\vskip 0.6in
+
+
+
+\begin{prob}
+RAM stores $k$ arrays $A^1, A^2, \ldots, A^k$, each of which stores integers from 1 to $n$, and the sum of array lengths (total number of elements) is also equal to $n$. Build an algorithm that sorts all arrays in $O(n)$.
+\end{prob}
+
+\begin{proof}
+
+\end{proof}
+\vskip 0.6in
+
+
+
+\begin{prob}
+Let the integer array $a[1], \ldots, a[n]$ be strictly unimodal to the maximum. It means that there exists $t$ such that
+$$
+a[1]<a[2]<\cdots<a[t]>a[t+1]>\cdots>a[n-1]>a[n], \quad 1 \leqslant t \leqslant n .
+$$
+It is allowed to retrieve a single array's element per move (the input of the query is $i$ the output is $a[i])$. Prove that it is possible to find the maximum element $a[t]$ in at most $O(\log n)$ moves.
+\end{prob}
+
+\begin{proof}
+Start with $l = 1, h = n, x_0 = \frac{n}{\phi}$
+Then we have $p_l < p_{x_0}$
+and $p_{x_0} > \phi$, and the ratio of the lengths of the two sub-intervals is $\phi$. Call these two sub-intervals $L_0$ and $S_0$ (long and short).
+
+Now iterate as follows:
+Choose array index $x$ to divide $L_r$ into two sub-intervals with lengths in the ratio $\phi$ to $1$, so that the shorter of the two new sub-intervals is adjacent to $S_r$. Then set $S_{r+1}$ to be this shorter interval; and set $L_{r+1}$ to be either $S_r$, or the longer of the new sub-intervals, according as $p_x$ is greater or less than $p_{x_r}$. Then $x_{r+1}$ wil be $x_r$ (in the first case) or $x$ (in the second case). Because of the properties of $\phi$, $L_{r+1}$ is the same length as $S_r$ in either case.
+\end{proof}
+\vskip 0.6in
+
+
+
+\begin{prob}
+There are $n$ coins, the one of which is fake, and a pan balance that can be used to find which of any two given coins is heavier. Real coins all have the same weight, while a fake coin is lighter. You can put any number of coins on each pan. Prove that the fake coin can be found in $\log_3 n+c$ weighings.
+\end{prob}
+
+\begin{proof}
+Назовем множество монет однообразным если в нем нет фальшивых монет и уникальным если есть, обозначи множество как $C = \{c_1, \ldots, c_n\}$ для $n \geq 2$, будем обозначать число монет как $|A|$ и их массу как $||A||$, наш алгоритм будет состоять из деления всех монет на 3 примерно равных множества $C_1, C_2, C_3$ (2 из них в любом случае будут равны), после чего мы будем сравнивать 2 равных (без ограничения общности 1 и 2), если $||C_1|| = ||C_2||$, то на следующем шаге рассматриваем $C_3$ в случае неравенства рассматриваем множество с меньшей массой, заметим, что данный алгоритм находит монету за $\text{ceil}(\log_3 n)$.
+\end{proof}
+\vskip 0.6in
+
+
+
+\begin{prob}
+Prove that under the conditions of the previous problem, finding the fake coin requires $\log _3 n+c$ weighings.
+\end{prob}
+
+\begin{proof}
+Заметим что если представлять результаты взвешивания как ориаентированное decision tree то из каждой вершины будет выходить не более 3 ребер (случаи $>,\ =,\ <$), каждый возможный исход представлен в дереве, то есть число вершин не меньше чем число исходов, то есть для дерева глубины $a$ выполнено $n \leq \text{ число вершин } \leq \sum\limits_{i = 0}^{a} 3^i = \frac{3^{a+1} - 1}{2} < 3^{a+1}$, откуда $\log_3(n) < a+1$ и $a > \log_3(n) - 1$, а глубина дерева и является числом взвешиваний
+\end{proof}
+\vskip 0.6in
+
+
+
+\begin{prob}
+There are two sorted arrays of length $n$ of different elements. Propose $O\left(\log ^2 n\right)$ algorithm for finding the median in the array consisting of all given $2 n$ elements. Prove the correctness of the algorithm and estimate its complexity (number of comparisons). In this problem, retrieving an element is performed in $\mathrm{O}(1)$. Assume that both arrays are stored in RAM (so it is not needed to read the input).
+\end{prob}
+
+\begin{proof}
+There are two arrays: $A, B$ with lengths $n, m$. Finding median in the sorted array takes constant time (just access middle element or take a mean of two center elements).
+
+To find the median of all elements in $O(\min(\log n, \log m))$ perform the following steps:
+\begin{itemize}
+\item[(1)] If $(\text{length}(A) \leq 2 \text{ or } \text{length}(B) \leq 2)$ or $(A_{\text{last}} \leq B_{\text{first}} \text{ or } B_{\text{last}} \leq A_{\text{first}})$ calculate median and return.
+\item[(2)] Set $A_m = \text{median}(A), B_m = \text{median}(B)$ and compare them. If $A_m = B_m$ return result. If $A_m < B_m$ then discard first half of $A$ and the same amount of elements from the second half of $B$. else if $A_m > B_m$ then discard second half of $A$ and the same amount of elements from the first half of $B$
+\item[(3)] Goto 1
+\end{itemize}
+
+This algorithm runs in logarithmic time. Minimum in the complexity reflects the fact that when the smaller array has length $\leq 2$ the procedure terminates. At step $2$ the both arrays get halved (or procedure is terminated) so it will be performed at most $\log_2(\min(n,m))$ times.
+
+By calculate median there are two cases: at least one arrays length was $\leq 2$, so shift the median of the second array accordingly, or arrays do not overlap (or share the boundary element) then the median is the center element of two arrays concatenated in ascending order. In fact only index is calculated, no actual concatenation takes place.
+\end{proof}
+\vskip 0.6in
+
+
+
+\begin{prob}
+Determine whether the given number is the value of the given polynomial with natural (positive integer) coefficients at the natural point. Natural numbers $n, a_0, \ldots, a_n$, and $y$ are the problem's input. It is necessary to determine whether there exists a natural number $x$ such that
+$$
+y = a_n x^n + a_{n-1} x^{n-1} + \ldots + a_1 x + a_0.
+$$
+Construct an $O(n \log y)$ algorithm that solves this problem. Assume that arithmetic operations cost $O(1)$.
+\end{prob}
+
+\begin{proof}
+Заметим что если у уравнения есть решение, назовем его $b$, то выполняется равенство
+$$
+(x - b)(x^{n-1} + c_{n-2} x^{n-2} + c_{n-3} x^{n-3} + \ldots + c_1 x + c_0) = x^n + \frac{a_{n-1}}{a_n} x^{n-1} + \ldots + \frac{a_1}{a_n} x + \frac{a_{0} - y}{a_n}
+$$
+
+
+\end{proof}
+\vskip 0.6in
+
+
+
+\begin{prob}
+You have a 100-story building and a couple of marbles. You must identify the lowest floor for which a marble will break if you drop it from this floor. How fast can you find this floor if you are given an infinite supply of marbles? What if you have only two marbles? If the marble had not broken after the drop, it is as solid as before the drop, i.e. the number of flow had not changed.
+\end{prob}
+
+\begin{proof}
+Если шариков бесконечное количество, то мы можем сделать binary search за $O(\log_2 n) + c$ (так как по факту это поиск числа, в данном случае этажа, среди $\{1, \ldots, 100\}$), если их всего 2 то мы можем проверять каждый 2й этаж и когда 1 шарик разобьется, можно спуститься на этаж и также проверить его $n/2 + 1$
+\end{proof}

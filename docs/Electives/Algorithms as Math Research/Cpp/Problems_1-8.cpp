@@ -178,21 +178,21 @@ int main (){
 
 
 //problem 7
-
 #include <iostream>
 #include <algorithm>
 #include <vector>
  
 using namespace std;
-     
+
 int main (){
-    int N, d, x, y;
+    std::ios::sync_with_stdio(false); std::cin.tie(0);
+    int64_t n, x, y, out = 0;
     vector<int> arrX;
     vector<int> arrY;
 
-    cin >> N;
+    cin >> n;
 
-    for(int i = 0; i < N; i++){
+    for(int i = 0; i < n; i++){
         cin >> x >> y;
         arrX.push_back(x);
         arrY.push_back(y);}
@@ -200,10 +200,10 @@ int main (){
     sort(arrX.begin(), arrX.end());
     sort(arrY.begin(), arrY.end());
 
-    for(int i = 0; i < int(N/2); i++){
-        d += (arrX[N-1-i] - arrX[i]) + (arrY[N-1-i] - arrY[i]);}
+    for(int i = 0; i < n/2; i++){
+        out += (arrX[n-i-1] - arrX[i] + arrY[n-i-1] - arrY[i]);}
 
-    cout << d << "\n";
+    cout << out << endl;
 }
 
 
