@@ -79,8 +79,7 @@
 
 
 #### Контрольные
-- [1 Контрольная Работа Вариант 1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Fin/ex1_v1_2021_prob.pdf)
-- [1 Контрольная Работа Вариант 2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Fin/ex1_v2_2021_prob.pdf)
-- [2 Контрольная Работа Вариант 2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Fin/ex2_v2_2021_prob.pdf)
-- [3 Контрольная Работа](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Fin/ex3_2021_prob.pdf)
-- [4 Контрольная Работа](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Fin/ex4_2021_prob.pdf)
+- [1 Контрольная Работа - оба варианта с решениями](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/2nd%20term/Mechanics/Spr_Fin/Exam_1/ex1_LaTeX/Mech_E1.pdf)
+- [2 Контрольная Работа Вариант 2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Fin/Exam_2/ex2_v2_2021_prob.pdf)
+- [3 Контрольная Работа](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Fin/Exam_3/ex3_2021_prob.pdf)
+- [4 Контрольная Работа](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Mechanics/Spr_Fin/Exam_Final/ex4_2021_prob.pdf)
