@@ -1,0 +1,159 @@
+\section{2021 Вариант 2}
+
+\begin{prob}
+Найдите экстремаль функционала
+$$
+S[y]=2 y^2(\pi)+\int_0^\pi d x\left(\left(y^{\prime}(x)\right)^2-y^2(x)+3 y(x) \cos 2 x\right),
+$$
+заданного на пространстве дважды непрерывно дифференцируемых функций $y(x) \in C^2[0, \pi]$ c фиксированным граничным значением $y(0)=0$.
+\end{prob}
+
+\begin{proof}
+\begin{gather*}
+    \Delta S[y] = S[y + \delta y] - S[y]
+    = 2(y + \delta y)^2 (\pi) - 2 y^2 (\pi) + \int\limits_{0}^{\pi} dx ((y'(x) + (\delta y)^{\prime}(x))^2 - (y + \delta y)^2 (x) + 3(y(x) + \delta y(x)) \cos 2x - (y^{\partial}(x)) + y^2(x) - 3y(x) \cos 2x)
+    = 4 y \delta y (\pi) + 2 \delta y^2 (\pi) + \int\limits_{0}^{\pi} dx (2y^{\prime}(x) \delta y^{\prime}(x) + (\delta y^{\prime} (x))^2 - 2y \delta y(x) - (\delta y(x))^2 + 3 \delta y(x) \cos 2x)\\
+    \delta S[y] = 4 y(\pi) \delta y(\pi) + \int\limits_{0}^{\pi} dx (2y^{\prime}(x) \delta y^{\prime}(x) - 2y(x) \delta y(x) + 3 \delta y(x) \cos 2x)\\
+    \int\limits_{0}^{\pi} 2y^{\prime}(x) \delta y^{\prime}(x) dx
+    = \int\limits_{0}^{\pi} 2y^{\prime} d \delta y(x)
+    = 2y^{\prime}(x) \delta y(x) \bigg|_{0}^{\pi}
+    - \int\limits_{0}^{\pi} \delta y(x) d 2 y^{\prime} (x)
+    = 2y^{\prime}(x) \delta y(x) \bigg|_{0}^{\pi}
+    - 2\int\limits_{0}^{\pi} \delta y^{\prime\prime}(x) d 2 y(x)dx\\
+    \delta S[y] = 4 y(\pi) \delta y(\pi)
+    + \int\limits_{0}^{\pi} dx (3 \cos 2x - 2y(x) - 2y^{\prime\prime}(x)) \delta y(x)
+    + 2y^{\prime}(x) \delta y(x) \bigg|_{0}^{\pi}
+    = (4y(\pi) + 2y^{\prime}(\pi)) \delta y(\pi) - 2y^{\prime}(0) \delta y(0)
+    + \int\limits_{0}^{\pi} dx (3 \cos 2x - 2y - 2y^{\prime\prime}) \delta y\\
+    2y^{\prime\prime} 2 y - 3 \cos 2x = 0\\
+    y(x) = c_2 \sin x + c_1 \cos x - \frac{1}{2} \cos(2x)\\
+    y(0) = c_1 - \frac{1}{2} = 0\qquad
+    c_1 = \frac{1}{2}\\
+    Sy|_{x = \pi} \text{ - произвольна } \Rightarrow (4y + 2y^{\prime})|_{x = \pi} = 0\\
+    (2y + y^{\prime})|_{x = \pi} = 0\\
+    y^{\prime}(x) = c_2 \cos x - c_1 \sin x + \frac{1}{2} \cdot 2 \sin 2x\\
+    y^{\prime}(\pi) = -c_2\qquad y(\pi) = -c_1 - \frac{1}{2}\\
+    2y(\pi) + y^{\prime}(\pi) = -2c_1 - 1 - c_2 = 0\\
+    c_2 = -2c_1 - 1= -2 \cdot \frac{1}{2} - 1 = -2
+\end{gather*}
+Откуда $y(x) = -2\sin x + \frac{1}{2} \cos x - \frac{1}{2} \cos 2x$
+\end{proof}
+\vskip 0.6in
+
+
+
+
+
+\begin{prob}
+Найдите экстремаль функционала
+$$
+S[y(x)]=\int_0^{\pi / 2} d x\left(\left(y^{\prime \prime}\right)^2-81 y^2+18 x y^{\prime}\right),
+$$
+заданного на пространстве гладких функций $y(x) \in C^{\infty}[0, \pi / 2]$ с фиксированными граничными значениями:
+$$
+y(0) = 0, \quad
+y(\pi / 2) = -\frac{1}{9}, \quad
+y^{\prime}(0) = 0
+$$
+\end{prob}
+
+\begin{proof}
+\begin{gather*}
+    S[y + \delta y] - S[y]
+    = \int\limits_{0}^{\frac{\pi}{2}} dx ((y + 8y)^{\prime\prime})^2 - 81(y + 8y)^2 + 18(y+8y)^{\prime}x - (y^{\prime\prime})^2 + 81y^2 - 18y^{\prime}x)
+    = \int\limits_{0}^{\frac{\pi}{2}} ((\delta y^{\prime \prime})^2 - 81(\delta y)^2 + 18(\delta y)^{\prime} x + 2y^{\prime\prime} \delta y^{\prime\prime} - 162y \delta y )dx\\
+    \delta S[y]
+    = \int\limits_{0}^{\frac{\pi}{2}} (2y^{\prime\prime} \delta y^{\prime\prime} - 162 y \delta y)dx
+    = \int\limits_{0}^{\frac{\pi}{2}} 2y^{\prime\prime} d(\delta y^{\prime}) - 162 \int\limits_{0}^{\frac{\pi}{2}} y \delta y dx
+    = 2y^{\prime\prime} \delta y^{\prime} \bigg|_{0}^{\frac{\pi}{2}}
+    - 2\int\limits_{0}^{\frac{\pi}{2}} \delta y^{\prime} y^{\prime\prime\prime} dx
+    + \int\limits_{0}^{\frac{\pi}{2}} 162 y \delta y dx
+    = 2y^{\prime\prime} \delta y^{\prime} \bigg|_{0}^{\frac{\pi}{2}}
+    - 2y^{\prime\prime\prime} \delta y |_{0}^{\frac{\pi}{2}}
+    + 2\int\limits_{0}^{\frac{\pi}{2}} \delta y y^{\prime\prime\prime\prime} dy
+    - 162\int\limits_{0}^{\frac{\pi}{2}} y \delta y dx
+    = \int\limits_{0}^{\frac{\pi}{2}} (2y^{\prime\prime\prime\prime} - 162y) = 0\\
+    2y^{\prime\prime\prime\prime} - 162y = 0\\
+    y^{\prime\prime\prime\prime} - 81y = 0\\
+    t^4 - 81 = 0\qquad t = \pm 3, \pm 3i\\
+    y = c_1 e^{3x} + c_2 e^{3x} + c_3 \cos 3x + c_4 \sin 3x
+\end{gather*}
+\end{proof}
+\vskip 0.6in
+
+
+
+
+
+\begin{prob}
+Точечная частица массы $m$ движется без трения по поверхности, заданной соотнопением:
+$$
+z=\frac{1}{2\left(x^2+y^2\right)}
+$$
+где $x, y$ и $z$ - декартовы прямоугольные координаты в евклидовом пространстве $\mathbb{R}^3$. Частища соединена с началом координат невесомой пружиной, потенциальная энергия деформации пружины задается формулой:
+$$
+U(l)=\frac{k l^2}{2},
+$$
+где $l$ - длина пружины, $k$ - коэффициент ее упругости.
+\begin{itemize}
+\item[]
+\item[(a)] Составьте лагранжиан этой механической системы и выпините уравнения Эйлера-Лагранжa.
+\item[(б)] Приведите формулы для всех интегралов движения (законов сохранения).
+\item[(в)] Убедитесь, что уравнения движения допускают стационарнње репения, отвечаюпие постоянному значению $z$, и найдите, при каких условиях на начальные данные задачи такие репения существуют.
+\end{itemize}
+\end{prob}
+
+\begin{proof}
+\begin{itemize}
+\item[]
+    Введем цилиндрические координаты $\rho, z, \phi$
+    \begin{gather*}
+        \rho = \sqrt{x^2 + y^2} \Rightarrow
+        z = \frac{1}{2 \rho^2} \Leftrightarrow \rho^2 = \frac{1}{2z}\\
+        l = \sqrt{x^2 + y^2 + z^2} = \sqrt{\frac{1}{2z} + z^2}\\
+        L = T_{кин} - U\\
+        T_{кин} = \frac{m}{2}(\dot{\rho}^2 + \dot{z}^2 + \rho^2 \dot{\phi}^2)
+        = \frac{m}{2}(\frac{\dot{z}^2}{8z^3} + \dot{z}^2 + \frac{\dot{\phi}^2}{2z})\\
+        U = \frac{k}{2}(\frac{1}{2z} + z^2)
+    \end{gather*}
+\item[(a)]
+    \begin{gather*}
+        L = T - U = \frac{m}{2}(\frac{\dot{z}^2}{8z^3} + \dot{z}^2 + \frac{\dot{\phi}^2}{2z}) - \frac{k}{2}(\frac{1}{2z} + z^2)\\
+        L_{\phi} = \frac{d}{dt}(\frac{\partial L}{\partial \dot{\phi}}) - \frac{\partial L}{\partial \phi} = 0 \Rightarrow
+        \frac{d}{dt}(\frac{2 \dot{\phi} m}{4z}) = 0 \Rightarrow
+        I = \frac{\dot{\phi} m}{2z}\\
+        L_{z} = \frac{d}{dt}(\frac{\partial L}{\partial \dot{z}}) - \frac{\partial L}{\partial z} = 0 \Rightarrow
+        \frac{d}{dt}(\frac{2m \dot{z}}{16 z^3} + \frac{2 m \dot{z}}{2}) - (-\frac{3}{16} mz^2 \frac{1}{z^4} - \frac{m \dot{\phi}^2}{4z^2} + \frac{k}{4z^2} - \frac{2zk}{2})
+    \end{gather*}
+\item[(б)]
+    \begin{gather*}
+        \frac{\partial L}{\partial \phi} = 0 \Rightarrow \frac{\partial L}{\partial \dot{\phi}} = \text{const}\\
+        \frac{\partial L}{\partial t} = 0 \Rightarrow \text{выполняется ЗСЭ} E = T + U = \text{const}
+    \end{gather*}
+\item[(в)]
+    \begin{gather*}
+        z = \text{const} = z_0 \Rightarrow \dot{z} = 0\\
+        L_{z}|_{z = z_0} = \frac{m \dot{\phi}^2}{4z_0^2} - \frac{k}{4z_0^2} + z_0 k = 0 \Rightarrow
+        z_0^3 = \frac{m \dot{\phi}^2 - k}{4k}\\
+        z \ne 0\quad m \dot{\phi} \ne k
+    \end{gather*}
+\end{itemize}
+\end{proof}
+\vskip 0.6in
+
+
+
+
+
+\begin{prob}
+Точечная частица массы $m$ движется по окружности радиуса $R$. Вторая точечная частица такой же массы $m$ соединена жестким невесомым стержнем длины $\ell$ с первой частицей. Стержень может свободно вращаться в плоскости окружности $R$ вокруг первой частицы. Вненние силы отсутствуют, трения нет.
+\begin{itemize}
+\item[]
+\item[(a)] Составьте лагранжиан этой механической системы и выпишите ее уравнения движения.
+\item[(б)] Найдите все интегралы движения (сохраняющцеся величины).
+\end{itemize}
+\end{prob}
+
+\begin{proof}
+
+\end{proof}

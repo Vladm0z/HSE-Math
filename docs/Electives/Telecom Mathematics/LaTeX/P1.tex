@@ -1,0 +1,263 @@
+\section{23 Jan}
+
+\begin{prob}
+Should TXOP length be upper bounded?
+\end{prob}
+
+\begin{proof}
+Да, так как иначе ожидание может быть сколь угодно большим
+\end{proof}
+\vskip 0.6in
+
+
+
+\begin{prob}
+Let AP have opportunity set arbitrary CWmin and CWmax to each STA in BSS. There are two users in BSS. The first one wants to download file, while the second one has videocall. Which CWmin and CWmax to use for each STA?
+\end{prob}
+
+\begin{proof}
+У Видеозвонка приоритет выше, соответственно чтобы не было столкновений $\text{CW}_{\max \text{ vid}} < \text{CW}_{\min \text{ file}}$ 
+\end{proof}
+\vskip 0.6in
+
+
+
+\begin{prob}
+Let $b_{i, k}=\lim _{t \longrightarrow \infty} P\{s(t)=i, b(t)=k\}, i \in(0, m), k \in\left(0, W_i-1\right)$. Prove that
+\begin{itemize}
+\item[(a)]  $b_{i, 0}=p^i b_{0,0}$
+\item[(b)] $b_{m, 0}=\frac{p^m}{1-p} b_{0,0}$
+\item[(c)] $b_{i, k}=\frac{W_i-k}{W_i} \cdot \begin{cases}(1-p) \sum_{j=0}^m b_{j, 0} & i=0 \\ p \cdot b_{i-1,0} & 0<i<m \\ p\left(b_{m-1,0}+b_{m, 0}\right) & i=m\end{cases}$
+\item[(d)] $b_{0,0}=\frac{2(1-2 p)(1-p)}{(1-2 p)\left(W_0+1\right)+p W_0\left(1-(2 p)^m\right)}$
+\item[(e)] $\tau=\frac{2(1-2 p)}{(1-2 p)\left(W_0+1\right)+p W_0\left(1-(2 p)^m\right)}$
+\end{itemize}
+\end{prob}
+
+\begin{proof}
+
+\end{proof}
+\vskip 0.6in
+
+
+
+\begin{prob}
+Assume constant and independent collision probability of a packet transmitted by each station. Express $\tau$ in terms of $p$.
+\end{prob}
+
+\begin{proof}
+
+\end{proof}
+\vskip 0.6in
+
+
+
+\begin{prob}
+$X \sim \text{Uniform}(a, b)$ find $\tilde{X}$
+\end{prob}
+
+\begin{proof}
+\begin{gather*}
+    \frac{1}{b-a}
+\end{gather*}
+\end{proof}
+\vskip 0.6in
+
+
+
+\begin{prob}
+$\text{Exp}(\lambda)$ find $\tilde{X}$
+\end{prob}
+
+\begin{proof}
+\begin{gather*}
+    \int\limits_{0}^{\infty} a e^{-(s+a)t}dt
+    = -\frac{a}{s+a}(0-1)
+    = \frac{a}{s+a}
+\end{gather*}
+\end{proof}
+\vskip 0.6in
+
+
+
+\section{6 Feb}
+
+\begin{prob}
+Prove that for each random variable $X$ we have
+\begin{itemize}
+\item[(a)] $\widetilde{X}(0)=1$
+\item[(b)] $\widehat{X}(1)=1$
+\end{itemize}
+\end{prob}
+
+\begin{proof}
+\begin{itemize}
+\item[(a)] 
+    \begin{gather*}
+        \widetilde{X}(0)
+        = \int\limits_{0}^{\infty} e^{-0t} f_x(t)dt
+        = \int\limits_{0}^{\infty} f_x(t)dt
+        = 0
+    \end{gather*}
+\item[(b)] 
+    \begin{gather*}
+        \widetilde{X}(1)
+        = \sum\limits_{i = 0}^{\infty} P\{x = i\}
+        = 1
+    \end{gather*}
+\end{itemize}
+\end{proof}
+\vskip 0.6in
+
+
+
+\begin{prob}
+Define packet length distribution by the rules below:
+$$
+S =
+\begin{cases}
+    0 & \text { with probability } q\\
+    \frac{1}{1-q} & \text { with probability } 1-q
+\end{cases}
+$$
+Find $E S$ by using theorems 3 and 5 .
+\end{prob}
+
+\begin{proof}
+\begin{gather*}
+    \widetilde{S}(s) = q \cdot \widetilde{A}(s) + (1 - q) \widetilde{B}(s)
+    = q \cdot \int\limits_{0}^{\infty} e^{st} 0 dt + (1 - q) \int\limits_{0}^{\infty} e^{st} \frac{1}{1 - q} dt
+\end{gather*}
+\end{proof}
+\vskip 0.6in
+
+
+
+\begin{prob}
+Express $EB$ in terms of $S, \rho$.
+\end{prob}
+
+\begin{proof}
+\begin{gather*}
+    \widetilde{B}^{\prime}(s)
+    = \widetilde{S}^{\prime} (s + \lambda - \lambda \widetilde{B}(s))(1 - \widetilde{B}^{\prime}(s))\\
+    \widetilde{B}^{\prime}(0)
+    = \frac{ES}{1 - \rho}
+\end{gather*}
+\end{proof}
+\vskip 0.6in
+
+
+
+\section{13 Feb}
+
+\begin{prob}
+Let packet length be distributed by the rule:
+$$
+S =
+\begin{cases}
+    \frac{1}{q} & \text { with probability } q \\
+    \frac{1}{1-q} & \text { with probability } 1-q
+\end{cases}
+$$
+Find $E S_e$.
+\end{prob}
+
+\begin{proof}
+
+\end{proof}
+\vskip 0.6in
+
+
+
+\begin{prob}
+Express $EB = -\widetilde{B}^{\prime}(0)$ in terms of $S, \rho$.
+\end{prob}
+
+\begin{proof}
+\begin{gather*}
+    \widetilde{B}^{\prime}(s)
+    = \widetilde{S}^{\prime} (s + \lambda - \lambda \widetilde{B}(s))(1 - \widetilde{B}^{\prime}(s))\\
+    \widetilde{B}^{\prime}(0)
+    = \frac{ES}{1 - \rho}
+\end{gather*}
+\end{proof}
+\vskip 0.6in
+
+
+
+\begin{prob}
+Express $EB^2 = \widetilde{B}^{\prime\prime}(0)$ in terms of $S, \rho$.
+\end{prob}
+
+\begin{proof}
+\begin{gather*}
+    \widetilde{B}^{\prime\prime}(s)
+    = \widetilde{S}^{\prime\prime} (s + \lambda - \lambda \widetilde{B}(s))(1 - \widetilde{B}^{\prime}(s))^2
+    - \widetilde{S}^{\prime} (s + \lambda - \lambda \widetilde{B}(s)) \lambda \widetilde{B}^{\prime}(s)\\
+    \widetilde{B}^{\prime\prime}(0)
+    = \widetilde{S}^{\prime\prime} (0 + \lambda - \lambda \widetilde{B}(0))(1 - \widetilde{B}^{\prime}(0))^2
+    - \widetilde{S}^{\prime} (0 + \lambda - \lambda \widetilde{B}(0)) \lambda \widetilde{B}^{\prime}(0)\\
+    = \widetilde{S}^{\prime\prime} (0 + \lambda - \lambda \frac{ES}{\rho - 1})(1 - \frac{ES}{\rho - 1})^2
+    - \widetilde{S}^{\prime} (0 + \lambda - \lambda \frac{ES}{\rho - 1}) \lambda \frac{ES}{\rho - 1}
+    = ES^2 \cdot (1 + \lambda \frac{ES}{1 - \rho}) + ES \lambda \widetilde{B}^{\prime\prime}(0)\\
+    = \frac{ES^2 (1 + \frac{\lambda ES}{1 - \rho})^2}{1 - \lambda ES}
+    = \frac{ES^2 (1 - \frac{\rho}{1 - \rho})^2}{(1 - \rho)}
+    = \frac{ES^2}{(1 - \rho)^3}
+\end{gather*}
+\end{proof}
+\vskip 0.6in
+
+
+
+\begin{prob}
+Express $-EB^3 = \widetilde{B}^{\prime\prime\prime}(0)$ in terms of $S, \rho$.
+\end{prob}
+
+\begin{proof}
+\begin{gather*}
+    \widetilde{B}^{\prime\prime\prime}(s)
+    = \widetilde{S}^{\prime\prime\prime}(s + \lambda - \lambda \widetilde{B}(s))(1 - \lambda \widetilde{B}(s))^3
+    - \widetilde{S}^{\prime\prime}(s + \lambda - \lambda \widetilde{B}(s)) 2 (1 - \lambda \widetilde{B}(s)) \lambda \widetilde{B}^{\prime\prime}(s)\\
+    - \widetilde{S}^{\prime}(s + \lambda - \lambda \widetilde{B}(s)) \lambda \widetilde{B}^{\prime\prime\prime}(s)
+    - \widetilde{S}^{\prime\prime}(s + \lambda - \lambda \widetilde{B}(s)) (1 - \lambda \widetilde{B}^{\prime}(s)) \lambda \widetilde{B}^{\prime\prime}(s)\\
+    \widetilde{B}^{\prime\prime\prime}(0) = -\frac{ES^3 (1 - \rho) + 3 \lambda (ES^2)^2}{(1 - \rho)^5}
+\end{gather*}
+\end{proof}
+\vskip 0.6in
+
+
+
+\section{20 Feb}
+
+\begin{prob}
+Express $\text{Var}(B)$ in terms of $S$ and $\rho$
+\end{prob}
+
+\begin{proof}
+\begin{gather*}
+    \text{Var}(B) = E(B^2) - (EB)^2\\
+    = -(-\widetilde{B}^{\prime}(0))^2 + \widetilde{B}^{\prime\prime}(0)\\
+    = -\left(-\frac{ES}{1 - \rho}\right)^2 + \frac{ES^2}{(1 - \rho)^3}\\
+    = -\frac{ES^2}{(1 - \rho)^2} + \frac{E(S^2)}{(1 - \rho)^3}\\
+    = \frac{-(1 - \rho)(ES)^2 + E(S^2)}{(1 - \rho)^3}
+\end{gather*}
+\end{proof}
+\vskip 0.6in
+
+
+
+
+\begin{prob}
+Express $ET_{Q}^{FCFS} = ET_{Q}^{LCFS}$ in terms of $S$ and $\rho$
+\end{prob}
+
+\begin{proof}
+\begin{gather*}
+    ET_{Q}^{FCFS}
+    = \frac{\left(-s \lambda \widetilde{B}^{\prime}(s) - \lambda + \lambda \widetilde{B} (s)\right)^{\prime\prime}}{\left((s + \lambda - \lambda \widetilde{B}(s))^2\right)^{\prime\prime}}
+    = \frac{-\lambda (s \widetilde{B}^{\prime\prime\prime}(s) + \widetilde{B}^{\prime\prime})}{2(1 - \lambda \widetilde{B}^{\prime}(s))^2 - 2\lambda(\lambda(-\widetilde{B}(s)) + \lambda + s)\widetilde{B}^{\prime\prime}(s)}\\
+    = \frac{-\lambda (0 \widetilde{B}^{\prime\prime\prime}(0) + \widetilde{B}^{\prime\prime}(0))}{2(1 - \lambda \widetilde{B}^{\prime}(0))^2 - 2\lambda(\lambda(-\widetilde{B}(0)) + \lambda + s)\widetilde{B}^{\prime\prime}(0)}
+    = \frac{-\lambda \frac{ES^2}{(1 - \rho)^3}}{2(1 - \lambda \frac{ES}{1 - \rho})^2 - 2 \lambda (\lambda (-\frac{ES}{1 - \rho}) + \lambda) \frac{ES^2}{(1 - \rho)^3}}\\
+    = \frac{-\lambda \frac{ES^2}{(1 - \rho)^3}}{2(1 - \lambda \frac{ES}{1 - \rho})^2 - 2 \lambda^2 \frac{ES}{-1 + \rho} \frac{ES^2}{(1 - \rho)^3}}
+\end{gather*}
+\end{proof}
