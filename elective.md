@@ -23,9 +23,9 @@
 - [CW 1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algorithms%20as%20Math%20Research/CW/Halg_cw1.pdf)
 - [CW 2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algorithms%20as%20Math%20Research/CW/Halg_cw2.pdf)
 - [CW 3](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algorithms%20as%20Math%20Research/CW/Halg_cw3.pdf)
-- [Лекция 1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algorithms%20as%20Math%20Research/Lectures/Lecture 1.pdf)
-- [Лекция 2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algorithms%20as%20Math%20Research/Lectures/Lecture 2.pdf)
-- [Лекция 3](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algorithms%20as%20Math%20Research/Lectures/Lecture 3.pdf)
+- [Лекция 1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algorithms%20as%20Math%20Research/Lectures/Lecture_1.pdf)
+- [Лекция 2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algorithms%20as%20Math%20Research/Lectures/Lecture_2.pdf)
+- [Лекция 3](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algorithms%20as%20Math%20Research/Lectures/Lecture_3.pdf)
 - [A. Shen - "Algorithms and Programming"](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algorithms%20as%20Math%20Research/Algorithms%20and%20Programming_%20Problems%20and%20Solutions%20(2nd%20ed.)%20%5BShen%202009-12-17%5D.pdf)
 
 
