@@ -111,8 +111,8 @@ $$
         \rho = \sqrt{x^2 + y^2} \Rightarrow
         z = \frac{1}{2 \rho^2} \Leftrightarrow \rho^2 = \frac{1}{2z}\\
         l = \sqrt{x^2 + y^2 + z^2} = \sqrt{\frac{1}{2z} + z^2}\\
-        L = T_{кин} - U\\
-        T_{кин} = \frac{m}{2}(\dot{\rho}^2 + \dot{z}^2 + \rho^2 \dot{\phi}^2)
+        L = T - U\\
+        T = \frac{m}{2}(\dot{\rho}^2 + \dot{z}^2 + \rho^2 \dot{\phi}^2)
         = \frac{m}{2}(\frac{\dot{z}^2}{8z^3} + \dot{z}^2 + \frac{\dot{\phi}^2}{2z})\\
         U = \frac{k}{2}(\frac{1}{2z} + z^2)
     \end{gather*}
@@ -150,10 +150,43 @@ $$
 \begin{itemize}
 \item[]
 \item[(a)] Составьте лагранжиан этой механической системы и выпишите ее уравнения движения.
-\item[(б)] Найдите все интегралы движения (сохраняющцеся величины).
+\item[(б)] Найдите все интегралы движения (сохраняющиеся величины).
 \end{itemize}
 \end{prob}
 
 \begin{proof}
+\begin{itemize}
+\item[]
+\item[(a)] Для первой частицы
+    \begin{gather*}
+        x_1 = R \cos \phi\qquad \dot{x_1} = -R \sin \phi \dot{\phi}\\
+        y_1 = R \sin \phi\qquad \dot{x_2} = R \cos \phi \dot{\phi}
+    \end{gather*}
+    Для второй частицы
+    \begin{gather*}
+        x_2 = R \cos \phi + l \cos (\theta + \phi - \pi)
+        = R \cos \phi - l \cos(\theta + \phi)\\
+        y_2 = R \sin \phi + l \sin (\theta + \phi - \pi)
+        = R \sin \phi - l \sin(\theta + \phi)
+    \end{gather*}
+    Откуда
+    \begin{gather*}
+        T = \frac{m}{2}(\dot{x_1}^2 + \dot{y_1}^2) + \frac{m}{2}(\dot{x_2}^2 + \dot{y_2}^2)\\
+        = \frac{m}{2}(R^2 \dot{\phi}^2) + \frac{m}{2}(-R \sin \phi \dot{\phi} + l \sin (\theta + \phi)(\dot{\theta} + \dot{\phi}))^2
+        + (R \cos \phi \dot{\phi} - l \cos (\theta + \phi)(\dot{\theta} + \dot{\phi}))^2\\
+        = \frac{m}{2}(R^2 \dot{\phi}^2) + \frac{m}{2}(R^2 \dot{\phi}^2 + l^2(\dot{\theta} + \dot{\phi}) - 2\dot{\phi}(\dot{\theta} + \dot{\phi}) R l (\sin \phi \sin(\theta + \phi) + \cos \phi \cos(\theta + \phi)))\\
+        U = 0
+    \end{gather*}
+    Значит
+    \begin{gather*}
+        L = T = \frac{m}{2}(R^2 \dot{\phi}^2) + \frac{m}{2}(R^2 \dot{\phi}^2 + l^2 (\dot{\theta} + \dot{\phi})^2 - 2\dot{\phi}(\dot{\theta} + \dot{\phi})Rl \cos \theta)
+    \end{gather*}
+\item[(б)]
+    \begin{gather*}
+        \frac{\partial L}{\partial t} = 0 \Rightarrow \text{ выполняется ЗСЭ } E = T + U = T = const\\
+        \frac{\partial L}{\partial \phi} = 0 \Rightarrow \frac{\partial L}{\partial \dot{\phi}} = const\\
+        \frac{\partial L}{\partial \dot{\phi}} = 2m R^2 \dot{\phi} + 2l^2 \dot{\phi} + 2 \dot{\theta} l^2 - 2(2 \dot{\phi} ++ \dot{\theta}) R l \cos \theta = const  
+    \end{gather*}
+\end{itemize}
 
 \end{proof}
