@@ -40,9 +40,10 @@
 
 
 
-## Логика и Алгоритмы, а также Механика
+## Механика, Логика и Алгоритмы
 
-- [Страница с материалами](https://vladm0z.github.io/HSE-Math/Logic&Mechanics)
+- [Механика](https://vladm0z.github.io/HSE-Math/Mechanics)
+- [Логика и Алгоритмы](https://vladm0z.github.io/HSE-Math/Logic)
 
 
 
