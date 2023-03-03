@@ -14,7 +14,8 @@
 - [3 курс](https://vladm0z.github.io/HSE-Math/third_term)
 - [4 курс](https://vladm0z.github.io/HSE-Math/fourth_term)
 - [курсы по выбору](https://vladm0z.github.io/HSE-Math/elective)
-- [Логика и Алгоритмы, Механика](https://vladm0z.github.io/HSE-Math/Logic&Mechanics)
+- [Механика](https://vladm0z.github.io/HSE-Math/Mechanics)
+- [Логика и Алгоритмы](https://vladm0z.github.io/HSE-Math/Logic)
 
 ### Контакты
 
