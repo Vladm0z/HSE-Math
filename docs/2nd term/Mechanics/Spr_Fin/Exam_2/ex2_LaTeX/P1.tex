@@ -11,8 +11,16 @@ $$
 \begin{proof}
 \begin{gather*}
     \Delta S[y] = S[y + \delta y] - S[y]
-    = 2(y + \delta y)^2 (\pi) - 2 y^2 (\pi) + \int\limits_{0}^{\pi} dx ((y'(x) + (\delta y)^{\prime}(x))^2 - (y + \delta y)^2 (x) + 3(y(x) + \delta y(x)) \cos 2x - (y^{\partial}(x)) + y^2(x) - 3y(x) \cos 2x)
-    = 4 y \delta y (\pi) + 2 \delta y^2 (\pi) + \int\limits_{0}^{\pi} dx (2y^{\prime}(x) \delta y^{\prime}(x) + (\delta y^{\prime} (x))^2 - 2y \delta y(x) - (\delta y(x))^2 + 3 \delta y(x) \cos 2x)\\
+    = 2(y + \delta y)^2 (\pi) - 2 y^2 (\pi)\\
+    + \int\limits_{0}^{\pi} dx ((y'(x) + (\delta y)^{\prime}(x))^2
+        - (y + \delta y)^2 (x) + 3(y(x) + \delta y(x)) \cos 2x
+        - (y^{\partial}(x)) + y^2(x) - 3y(x) \cos 2x)\\
+    = 4 y \delta y (\pi) + 2 \delta y^2 (\pi)
+    + \int\limits_{0}^{\pi} dx (2y^{\prime}(x) \delta y^{\prime}(x)
+        + (\delta y^{\prime} (x))^2
+        - 2y \delta y(x)
+        - (\delta y(x))^2
+        + 3 \delta y(x) \cos 2x)\\
     \delta S[y] = 4 y(\pi) \delta y(\pi) + \int\limits_{0}^{\pi} dx (2y^{\prime}(x) \delta y^{\prime}(x) - 2y(x) \delta y(x) + 3 \delta y(x) \cos 2x)\\
     \int\limits_{0}^{\pi} 2y^{\prime}(x) \delta y^{\prime}(x) dx
     = \int\limits_{0}^{\pi} 2y^{\prime} d \delta y(x)
@@ -22,7 +30,7 @@ $$
     - 2\int\limits_{0}^{\pi} \delta y^{\prime\prime}(x) d 2 y(x)dx\\
     \delta S[y] = 4 y(\pi) \delta y(\pi)
     + \int\limits_{0}^{\pi} dx (3 \cos 2x - 2y(x) - 2y^{\prime\prime}(x)) \delta y(x)
-    + 2y^{\prime}(x) \delta y(x) \bigg|_{0}^{\pi}
+    + 2y^{\prime}(x) \delta y(x) \bigg|_{0}^{\pi}\\
     = (4y(\pi) + 2y^{\prime}(\pi)) \delta y(\pi) - 2y^{\prime}(0) \delta y(0)
     + \int\limits_{0}^{\pi} dx (3 \cos 2x - 2y - 2y^{\prime\prime}) \delta y\\
     2y^{\prime\prime} 2 y - 3 \cos 2x = 0\\
@@ -60,14 +68,14 @@ $$
 \begin{proof}
 \begin{gather*}
     S[y + \delta y] - S[y]
-    = \int\limits_{0}^{\frac{\pi}{2}} dx ((y + 8y)^{\prime\prime})^2 - 81(y + 8y)^2 + 18(y+8y)^{\prime}x - (y^{\prime\prime})^2 + 81y^2 - 18y^{\prime}x)
+    = \int\limits_{0}^{\frac{\pi}{2}} dx ((y + 8y)^{\prime\prime})^2 - 81(y + 8y)^2 + 18(y+8y)^{\prime}x - (y^{\prime\prime})^2 + 81y^2 - 18y^{\prime}x)\\
     = \int\limits_{0}^{\frac{\pi}{2}} ((\delta y^{\prime \prime})^2 - 81(\delta y)^2 + 18(\delta y)^{\prime} x + 2y^{\prime\prime} \delta y^{\prime\prime} - 162y \delta y )dx\\
     \delta S[y]
     = \int\limits_{0}^{\frac{\pi}{2}} (2y^{\prime\prime} \delta y^{\prime\prime} - 162 y \delta y)dx
     = \int\limits_{0}^{\frac{\pi}{2}} 2y^{\prime\prime} d(\delta y^{\prime}) - 162 \int\limits_{0}^{\frac{\pi}{2}} y \delta y dx
     = 2y^{\prime\prime} \delta y^{\prime} \bigg|_{0}^{\frac{\pi}{2}}
     - 2\int\limits_{0}^{\frac{\pi}{2}} \delta y^{\prime} y^{\prime\prime\prime} dx
-    + \int\limits_{0}^{\frac{\pi}{2}} 162 y \delta y dx
+    + \int\limits_{0}^{\frac{\pi}{2}} 162 y \delta y dx\\
     = 2y^{\prime\prime} \delta y^{\prime} \bigg|_{0}^{\frac{\pi}{2}}
     - 2y^{\prime\prime\prime} \delta y |_{0}^{\frac{\pi}{2}}
     + 2\int\limits_{0}^{\frac{\pi}{2}} \delta y y^{\prime\prime\prime\prime} dy
