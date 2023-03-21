@@ -1,0 +1,157 @@
+\section{Problem List 3}
+
+\begin{prob}
+Implement stack via two queues (regardless complexity).
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+\begin{itemize}
+\item[]
+\item[$\bullet$] push
+    \begin{itemize}
+        \item[-] запишем элемент в queue1
+    \end{itemize}
+\item[$\bullet$] pop:
+    \begin{itemize}
+        \item[-]  пока размер queue1 больше 1, перенесем элементы из queue1 в queue2 (a = queue1.deQueue(), queue2.enQueue(a))
+        \item[-]  queue1.deQueue() (получим искомый элемент), затем переименуем queue1 и queue2 друг с другом
+    \end{itemize}
+\end{itemize}
+\end{proof}
+\vskip 0.6in
+
+
+
+
+\begin{prob}
+The efficiency of Heap is based on the approach of storing an almost-complete binary tree in the array. Provide an approach to storing an almost-complete ternary tree in the array. How one can compute the index of the parent provided the index of the child is given? How to compute the indices of the children provided the index of the parent is given?
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+Мы можем хранить хранить элементы по аналогии с binary tree - для каждого элемента $n$ его дети будут находиться на позициях $3n-1, 3n, 3n+1$, соответстветственно для любого элемента $a$ его родитель будет на позиции $\left[ \frac{a+1}{3} \right]$.
+\end{proof}
+\vskip 0.6in
+
+
+
+
+\begin{prob}
+Construct an algorithm that finds the second maximum in a max-heap of size $n$ (stored in the array) with the minimum number of comparisons between the elements. Proof your lower bound.
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+Заметим что если элемент $A_j$ является потомком $A_i$ то индекс $A_i$ меньше индекса $A_j$, также заметим что наибольший элемент любого дерева является его корнем, тогда наибольший элемент всегда $A[1]$, а второй наибольший находится в корне одного из поддеревьев, связанных с $A[1]$, то есть $A[2]$ и $A[3]$, так как все остальные элементы меньше $A[2]$ или меньше $A[3]$. Тогда для нахождения 2го набиольшего элемента достаточно сравнить $A[2]$ с $A[3]$.
+Заметим, что поменяв левое и правое поддеревья, связанные с корнем, местами (то есть поменяв $A[2]$ с $A[3]$, $A[4], A[5]$ с $A[6], A[7]$ и т.д.) никаких проблем с деревом не возникнет, но при этом 2й максимум будет находиться в другой вершине, то есть хотя бы 1 сравнения провести необходимо.
+\end{proof}
+\newpage
+
+
+
+
+\begin{prob}
+A dynamical array data structure (std::vector in $\mathrm{C}++$) can be effectively used for the implementation of Queue (if the static-array approach is not an option). Recall that the deletion of $k$-th element from the array costs $O(n-k)$ since the shift of the last $n-k$ elements is required after the deletion. So, the naive implementation of Queue via a dynamic array (delete the first element on the extraction) results in $O\left(n^2\right)$ algorithm
+
+So, we describe another approach that requires at most $2 m$ memory if $m$ elements are in the queue. Denote the array by $A$. Let $b$ be an integer variable that stores an index of the queue's head. Firstly $b=0$ points to $A[0]$, but then it increases by one after each extraction (the extracted elements are still stored in $A$ ). If after the increment of $b$ the inequality $b \geqslant \left\lfloor\frac{n}{2}\right\rfloor$ holds (where $n$ is the size of $A$), the algorithm deletes $b$ first elements from the array, and $b$ is set back to 0.
+
+Describe the details of the deletion so that your approach leads to $O(n)$ algorithm, i.e. the amortized cost of each operation is $O(1)$.
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+Приведенный в условии extract выглядит следующим образом
+\begin{lstlisting}
+int Queue::extract(){
+    int output = A[b];
+    b += 1;
+    if (b == floor(n/2)){
+        A.deletion();
+        b = 0;
+        }
+    }
+    return output;
+}
+\end{lstlisting}
+И тогда нам надо записать Queue::deletion(), работающий за $O(n)$, сделаем это следующим образом
+\begin{lstlisting}
+int Queue::deletion(){
+    for(int i = 0; i < b; i++){
+        A[i] = A[i+b];
+        A[i+b] = NULL;
+    }
+}
+\end{lstlisting}
+Так как всего было записано $n$ элементов и deletion происходит когда $b = \frac{n}{2}$, то после данной операции все значения после $\frac{n}{2}$ станут NULL, то есть array уменьшится в 2 раза. Тогда extract каждого из первых $\left[\frac{n-1}{2}\right]$ элементов будет занимать $O(1)$ и следующий extract (вместе с deletion) будет занимать $O(n)$ так как в нем на каждом шаге из $\left[\frac{n}{2}\right]$ мы делаем 2 присвоения. То есть с каждым элементом $A[i],\quad 0 \leq i \leq \left[\frac{n}{2}\right]$ мы проводим 2 операции (1 в extract и 1 присвоение в deletion), а с элменетами $\left[\frac{n}{2}\right] < i$ - 1 операцию (в deletion) 
+Данный алгоритм в некоторой степени аналогичен Circular Queue (9 страница 3 лекции)
+\end{proof}
+\vskip 0.6in
+
+
+
+
+\begin{prob}
+A data structure PriorityQueue stores key-priority pairs and has the following operations:
+\begin{itemize}
+\item[-] insert $(k, p)$ - adds the element with the key $k$ and the priority $p$;
+\item[-] extract\_max() - returns a pair $(k, p)$ with maximal $p$;
+\item[-] set\_priority $(k, p)$ sets the priority $p$ to the key $k$.
+\end{itemize}
+Implement PriorityQueue with the following operations' costs:
+\begin{itemize}
+\item[-] insert - $O(1)$,
+\item[-] extract\_max - $O(n)$,
+\item[-] set\_priority - $O(1)$.
+\item[]
+\item[(1)] It is known that all keys are integers from 1 to $n$.
+\item[(2)] Solve the problem in the general case (you can solve only this part of the problem).
+\end{itemize}
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+Распишем следующие операции Priority queue воспользовавшись хэшированием
+Хэш функция имеет слеующие операции:
+\begin{itemize}
+\item[Search(F, k)] return F[k]
+\item[Insert(F, k)] F[key[k]] $\rightarrow$ k
+\item[Delete(F, k)] F[key[k]] $\rightarrow$ NIL
+\end{itemize}
+(в данном случае F - хэш функция)\\
+Тогда для Priority queue
+\begin{itemize}
+\item[insert] F[key[k]] $\rightarrow$ p (то есть пользуясь хэш функцией F мы записываем приоритет p в key[k])
+\item[extract\_max] Будем хранить список всех поданных значений, назовем его $A$, для получения максимума проитерируемся по всему списку, сравнивая приоритеты
+    \begin{lstlisting}
+    max_p = F[key[A[0]];
+    max_k = A[0];
+    for(int i = 1; i < length(A); i++){
+        if(F[key[A[i]]] > max_p){
+            max_p = F[key[A[i]];
+            max_k = A[i];
+        }
+    }
+    return max_k, max_p; 
+    \end{lstlisting}
+\item[set\_priority] F[key[k]] $\rightarrow$ p (то есть мы заменяем существующий приоритет на новый приоритет p)
+\end{itemize}
+Для работы с числами помимо целых, мы можем использовать конструкцию, аналогичную IEEE 754 - (1 бит на знак числа, несколько на экспоненту и оставшееся на само число)
+
+Так как число элементов не фиксировано то мы будем использовать динамическую хэш таблицу (21 страница 4 лекции)
+\end{proof}
+\vskip 0.6in
+
+
+
+
+\begin{prob}
+An array of size $n$ stores keys with repetitions. Assume that a key is (an arbitrarily large) number.
+\begin{itemize}
+\item[(1)] Design an algorithm that outputs pairs $(k, r)$ ordered by decreasing of $r$, where $r$ is the number of occurrences of the key $k$ in the array.
+\item[(2)] Construct an $O(n)$ algorithm for this problem (you can solve only this part of the problem).
+\end{itemize}
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+\begin{itemize}
+\item[(1)] Воспользуемся прошлой задачей, однако изменим insert, теперь, вместо назначения какого-то приоритета, мы будем увеличивать существующий на 1 (или приравнивать 1, если до этого по данному ключу был null)
+
+    Далее будем поочередно извлекать элемент с максимальным приоритетом(тем же методом, что и в прошлой задаче, сложность $O(n^2)$).
+\end{itemize}
+\end{proof}
