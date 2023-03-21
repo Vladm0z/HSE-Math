@@ -60,6 +60,14 @@
 - [Test week 4](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/Law/Tests/Week%204.pdf)
 - [Test week 5](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/Law/Tests/Week%205.pdf)
 - [Test week 6](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/Law/Tests/Week%206.pdf)
+- [Test week 7](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/Law/Tests/Week%207.pdf)
+- [Test week 8](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/Law/Tests/Week%208.pdf)
+- [Test week 9](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/Law/Tests/Week%209.pdf)
+- [Test week 10](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/Law/Tests/Week%2010.pdf)
+- [Test week 11](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/Law/Tests/Week%2011.pdf)
+- [Test week 12](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/Law/Tests/Week%2012.pdf)
+- [Test week 13](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/Law/Tests/Week%2013.pdf)
+- [Test week 14](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/Law/Tests/Week%2014.pdf)
 - [Материалы](https://drive.google.com/drive/folders/1ueTFSD69eYuHsRcKTMqyFOmoy8btWK9b?usp=sharing)
 
 
