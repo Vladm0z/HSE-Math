@@ -5,6 +5,20 @@
 - [Таблица 1](https://docs.google.com/spreadsheets/d/1PFKLBc5wA0VeiGLUdnD_NTabWlatYwStFjMnfti0_z0/edit#gid=0)
 - [Таблица 2](https://docs.google.com/spreadsheets/d/1h93DZ_7MfkVQIKj8kcEQIgRSFtmSEAchtj0xbwFMPLg/edit#gid=0)
 
+- [Книга курсов 22-23](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/course_book_22_23.pdf)
+- [Книга курсов 23-24](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/course_book_23_24.pdf)
+
+
+## Алгебраическая Геометрия
+- [HW 1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algebraic%20Geometry/HW/TeX%20HW/HW1.pdf)
+- [HW 2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algebraic%20Geometry/HW/TeX%20HW/HW2.pdf)
+- [HW 3](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algebraic%20Geometry/HW/TeX%20HW/HW3.pdf)
+- [HW 4](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algebraic%20Geometry/HW/TeX%20HW/HW4.pdf)
+- [HW 5](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algebraic%20Geometry/HW/TeX%20HW/HW5.pdf)
+- [HW 6](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algebraic%20Geometry/HW/TeX%20HW/HW6.pdf)
+- [HW 7](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algebraic%20Geometry/HW/TeX%20HW/HW7.pdf)
+
+- [Exam 2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algebraic%20Geometry/Exam/Final_221223.pdf)
 
 
 ## Алгебраическая Топология
@@ -13,6 +27,7 @@
 - [Семинары](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algebraic%20Topology/Aut_Sem/%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%D1%8B.pdf)
 - [Первая Контрольная](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algebraic%20Topology/Aut_Mid/AGmidterm2.pdf)
 - [Вторая Контрольная](https://docs.google.com/viewer?url=x-github-client://openRepo/https://github.com/Vladm0z/HSE-Math?branch=main&filepath=docs%2FElectives%2FAlgebraic%20Topology%2FAut_Fin%2F%D0%AD%D0%BA%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD_%D0%9C%D0%B5%D0%B4%D0%B2%D0%B5%D0%B4%D0%B5%D0%B2%D0%B0.pdf)
+
 
 ## Алгоритмы Huawei
 
@@ -29,6 +44,10 @@
 - [Лекция 3](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algorithms%20as%20Math%20Research/Lectures/Lecture_3.pdf)
 - [Лекция 4](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algorithms%20as%20Math%20Research/Lectures/Lecture_4.pdf)
 - [A. Shen - "Algorithms and Programming"](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algorithms%20as%20Math%20Research/Algorithms%20and%20Programming_%20Problems%20and%20Solutions%20(2nd%20ed.)%20%5BShen%202009-12-17%5D.pdf)
+
+
+## Аналитическая теория Дифференциальных уравнений
+- [Коллоквиум](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Analytical%20theory%20of%20differential%20equations/%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D1%82%D0%B5%D0%BE%D1%80%D0%B8%D1%8F%20%D0%B4%D0%B8%D1%84%D1%83%D1%80%D0%BE%D0%B2%20(%D0%BA%D0%BE%D0%BB%D0%BB%D0%BE%D0%BA).pdf)
 
 
 ## Основные приложения математики
@@ -57,6 +76,20 @@
 - [Лекция 8](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Discrete%20Optimization%20and%20Integer%20Programming/%D0%9F%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8/8%20Minimum%20Spanning%20Tree.pdf)
 
 
+## Дополнительные главы Дискретной математики
+- [Индивидуальное ДЗ 1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Discrete%20mathematics/iz_1_DM24.pdf)
+- [Индивидуальное ДЗ 2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Discrete%20mathematics/iz_2_DM24.pdf)
+
+- [Индивидуальное ДЗ 1 (решения)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Discrete%20mathematics/iz_1_DM24_sol.pdf)
+
+- [ДЗ 1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Discrete%20mathematics/z_DM24_1.pdf)
+- [ДЗ 2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Discrete%20mathematics/z_DM24_2.pdf)
+- [ДЗ 3](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Discrete%20mathematics/z_DM24_3a.pdf)
+- [ДЗ 4](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Discrete%20mathematics/z_DM24_4.pdf)
+- [ДЗ 5](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Discrete%20mathematics/z_DM24_5a.pdf)
+- [ДЗ 6](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Discrete%20mathematics/z_DM24_6.pdf)
+
+
 ## Функциональный Анализ
 
 #### Первый Модуль
@@ -83,6 +116,11 @@
 - [Задачи](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Functional%20analysis/4%20unit/fa_list_17-21.pdf)
 - [Контрольная](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Functional%20analysis/4%20unit/fa_exam_4.pdf)
 - [Контрольная (повторная)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Functional%20analysis/4%20unit/fa_exam_4bis.pdf)
+
+
+## Теория Галуа
+- [Задачи](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Galois%20theory/problems.pdf)
+- [Решения](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Galois%20theory/solutions.pdf)
 
 
 ## Геометрия и Группы
@@ -129,8 +167,14 @@
 - [Листок 2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Mathematics%20in%20Information%20Transmission/Problems/Listok2.pdf)
 
 
+## Преобразование Фурье и его использование: примеры дискретные и непрерывные
+- [Лекции](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/PracticalFourier/LectAll.pdf)
+- [Контрольная](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/PracticalFourier/CntrlAll24.pdf)
+- [Материалы для контрольной](https://github.com/Vladm0z/HSE-Math/tree/main/docs/Electives/PracticalFourier/Data)
+
+
 ## Римановы поверхности
-- [Лекции](https://docs.google.com/viewer?url=)
+- [Лекции](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Riemann%20Surfaces/Spr_Lect/RiemannSurfaces21Lectures_1-15.pdf)
 - [Семинары](https://docs.google.com/viewer?url=)
 - [Промежуточная Контрольная](https://docs.google.com/viewer?url=)
 - [Итоговая Контрольная](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Riemann%20Surfaces/Spr_Fin/%D0%9C%D0%BE%D0%B7%D0%B3%D0%BE%D0%B2%D0%BE%D0%B9%20%D0%A0%D0%B8%D0%BC%D0%B0%D0%BD%D0%BE%D0%B2%D1%8B%20%D0%BF%D0%BE%D0%B2%D0%B5%D1%80%D1%85%D0%BD%D0%BE%D1%81%D1%82%D0%B8.pdf)
@@ -149,8 +193,13 @@
 - [10 Семинар](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Projective%20Algebraic%20Geometry/Seminar_10.pdf)
 
 
-## Теория Представлений
+## Случайные процессы, случайные матрицы и интегрируемые модели
+- [Лекции](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Random%20matrices%20and%20processes/Random%20Matrices.pdf)
+- [Лист 1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Random%20matrices%20and%20processes/listok1_2024.pdf)
+- [Лист 2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Random%20matrices%20and%20processes/listok2_2024.pdf)
 
+
+## Теория Представлений
 - [Полезная литература](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Representation%20theory/repb.pdf)
 
 
