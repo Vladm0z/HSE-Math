@@ -1,0 +1,58 @@
+\documentclass[fleqn]{article} % Document class with left-aligned equations
+\usepackage[T2A,T1]{fontenc} % Font encoding for Cyrillic and Latin characters
+\usepackage[utf8]{inputenc} % Input encoding for Unicode characters
+\usepackage{lmodern} % Latin modern fonts that are scalable
+\usepackage{microtype} % Improves appearance and readability of text
+\usepackage{newtxtext,amsmath,amssymb,amsfonts,amsthm,ragged2e} % Packages for math symbols and styles, also newtxtext is used to get a Times like font
+\usepackage[left=2.5cm,right=1.5cm,top=2cm,bottom=2cm,bindingoffset=0cm,a4paper]{geometry} % Sets margins and paper size
+\usepackage[dvips]{graphicx} % Enables inclusion of graphics
+\usepackage{xcolor} % Allows to use colors
+\usepackage[english,russian]{babel} % Sets language to Russian and English
+%\selectlanguage{english}
+\usepackage[style=authoryear-icomp,sorting=anyt]{biblatex} % Citation and reference management
+\usepackage{lipsum,multicol,changepage} % Packages for generating dummy text and multicolumn layout
+\usepackage{tikz-cd} % Package for creating graphics
+\usepackage{hyperref} % Adds hyperlinks and clickable references
+\usepackage{algorithm2e}
+\usepackage{comment}
+
+\AtBeginDocument{\renewcommand\proofname{Доказательство}} % Renames "Proof" to "Доказательство"
+
+\graphicspath{{images/}} % Specifies paths for graphics files
+\DeclareGraphicsExtensions{.pdf,.png,.tif,.eps,.tiff,.psd,.jpg} % Supported graphics file formats
+
+%нумерация, названия и вот это все
+%\newtheorem{код LaTeX, который пишется в begin/end}[к какому элементу/группе привязать нумерацию]{отображающееся название}[к чему глобально привязать нумерацию]
+\theoremstyle{plain}
+\newtheorem{thm}{Теорема}[section]
+\newtheorem{lem}{Лемма}
+\newtheorem{prop}{Предложение}
+\newtheorem*{cor}{Следствие}
+\newtheorem{prob}{Задача}[section]
+
+\theoremstyle{definition}
+\newtheorem{defn}{Определение}[section]
+\newtheorem{conj}{Гипотеза}[section]
+\newtheorem{exmp}{Пример}[section]
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Замечание}
+\newtheorem*{note}{Отметим}
+
+
+\title{Algebraic Geometry \\ Problem List 7 \\ Vladislav Mozgovoy}
+\date{}
+
+\setlength\parindent{0pt}
+
+\begin{document}
+
+%\input{P1}
+%\input{P2}
+%\input{P3}
+%\input{P4}
+%\input{P5}
+%\input{P6}
+\input{P7}
+
+\end{document}

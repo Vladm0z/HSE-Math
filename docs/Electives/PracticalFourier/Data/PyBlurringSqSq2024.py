@@ -1,0 +1,71 @@
+import numpy as np
+import pylab
+
+# image size, square side length, number of squares
+ncols, nrows = 200, 200
+sq_size, nsq = 25, 1
+# The image array (0=background, 1=square) and boolean array of allowed places
+# to add a square so that it doesn't touch another or the image sides
+image = np.zeros((nrows, ncols))
+gmask = np.zeros((nrows, ncols))
+sq_locs = np.zeros((nrows, ncols), dtype=bool)
+sq_locs[1:-sq_size-1,1:-sq_size-1] = True
+
+def place_square():
+    """ Place a square at random on the image and update sq_locs. """
+    # valid_locs is an array of the indices of True entries in sq_locs
+    valid_locs = np.transpose(np.nonzero(sq_locs))
+    # pick one such entry at random, and add the square so its top left
+    # corner is there; then update sq_locs
+    i, j = valid_locs[np.random.randint(len(valid_locs))]
+    image[i:i+sq_size, j:j+sq_size] = 1
+    imin, jmin = max(0,i-sq_size-1), max(0, j-sq_size-1)
+    sq_locs[imin:i+sq_size+1, jmin:j+sq_size+1] = False
+
+
+for i in range(nsq):
+    place_square()
+pylab.imshow(image)
+pylab.show()
+
+# Take the 2-dimensional DFT and centre the frequencies
+ftimage = np.fft.fft2(image)
+ftimage = np.fft.fftshift(ftimage)
+
+pylab.imshow(np.log(np.abs(ftimage)))
+pylab.show()
+
+
+# Gaussian filter.
+sigmax, sigmay = 48, 48
+cy, cx = nrows/2, ncols/2
+x = np.linspace(0, nrows, nrows)
+y = np.linspace(0, ncols, ncols)
+X, Y = np.meshgrid(x, y)
+
+
+for ii in range(nrows):
+    for jj in range(ncols): 
+        gmask[ii,jj] = 0
+        RadX=abs((ii-cx)/sigmax)
+        RadY=abs((jj-cy)/sigmay)
+        if (RadX < 1  and  RadY < 1):
+            gmask[ii,jj] = 25 
+            
+                
+            #np.exp(-RadSq)  
+
+#gmask=np.exp(-(((X-cx)/sigmax)**2 + ((Y-cy)/sigmay)**2))
+pylab.imshow(np.abs(gmask))
+pylab.show()
+
+
+
+ftimagep = ftimage * gmask
+pylab.imshow(np.abs(ftimagep))
+pylab.show()
+
+
+imagep = np.fft.ifft2(ftimagep)
+pylab.imshow(np.abs(imagep))
+pylab.show()

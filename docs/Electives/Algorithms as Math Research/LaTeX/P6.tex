@@ -1,0 +1,236 @@
+\section{Problem List 6}
+
+\begin{prob}
+Give a counterexample to the conjecture that if a directed graph $G$ contains a path from $u$ to $v$, and if $s[u]<s[v]$ in a depth-first search of $G$, then $v$ is a descendant of $u$ in the depth-first forest produced.
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+Рассмотрим следующий ориентированный граф:
+$$
+G(V,E),\ V = \{ A,B,C,D \},\ Е = \{(A, B), (B, C), (C, D), (D, A) \}
+$$
+Предположим, мы начинаем поиск в глубину этого графа с вершины $A$. Поиск обнаруживает вершины в порядке $A,B,C,D$. Следовательно, $s[A]<s[B]<s[C]<s[D]$.
+\vskip 0.1in
+В графе есть путь из $A$ в $D$ ($A\to B \to C \to D$), но вершина $D$ не является потомком $A$ в лесе поиска в глубину. Вместо этого $D$ является потомком $C$.
+\end{proof}
+\vskip 0.6in
+
+\begin{comment}
+
+\end{comment}
+
+
+
+\begin{prob}
+You need to get out of the maze. You don't know its map and how many rooms it has. All corridors can be freely moved in both directions, all rooms and corridors look the same (rooms can differ only in the number of corridors). Let $m$ be the number of corridors between rooms. Suggest an algorithm that finds a way out of a maze (or proves that there is none) in $O(m)$ transitions between rooms. You have an unlimited number of coins at your disposal that you can leave in the rooms, and you know that apart from your coins, there are no others in the labyrinth, and you are alone in it.
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+\begin{itemize}
+\item[]
+\item[1] Начнем с любой комнаты и оставим в ней одну монету
+\item[2] Выберем любой коридор и перейдем в следующую комнату
+\item[3] Если мы уже посещали эту комнату (т.е. в комнате есть монета), возьмем монету и вернемся в предыдущую комнату по тому же коридору, так мы избежим возможный цикл
+\item[4] Если это новая комната, оставим в ней монету, выберем любой не посещенный коридор и перейдем в следующую комнату. Повторяем этот шаг, пока не дойдем до тупика (т.е. все комнаты, соседние с той где мы сейчас, уже будут с монетами)
+\item[5] Добравшись до тупика, соберем монеты в тупиковой комнате и вернемся в предыдущую комнату
+\end{itemize}
+Повторяем шаги 3-5 пока не дойдем до выхода/вернемся в изначльную комнату.
+\vskip 0.1in
+Если есть выход из лабиринта, этот алгоритм гарантированно его найдет, так как он исследует все возможные пути в лабиринте. Если выхода нет, алгоритм в вернется в исходную комнату и соберет все монеты, не выходя из лабиринта.
+\vskip 0.1in
+Алгоритм использует только $O(m)$ переходов между комнатами, потому мы посещаем каждый коридор не более двух раз (по одному разу в каждом направлении) и оставляет не более одной монеты в каждой комнате.
+\end{proof}
+\vskip 0.6in
+
+\begin{comment}
+Here is an algorithm that can find a way out of the maze (or determine that there is no way out) using $O(m)$ transitions between rooms:
+\begin{itemize}
+\item[1] Start in any room and leave one coin in that room.
+\item[2] Choose any corridor and move to the next room.
+\item[3] If you have been to this room before (i.e., you see a coin in the room), pick up the coin and return to the previous room using the same corridor. This ensures that you don't get stuck in a cycle.
+\item[4] If this is a new room, leave a coin in the room and choose any unvisited corridor and move to the next room. Repeat this step until you reach a dead end (i.e., all corridors have coins in their adjacent rooms).
+\item[5] Once you reach a dead end, pick up all the coins in the dead-end room and backtrack to the previous room.
+\item[6] Repeat steps 3-5 until you reach the starting room and all coins have been collected.
+\end{itemize}
+If there is a way out of the maze, this algorithm is guaranteed to find it, since it explores all possible paths in the maze. If there is no way out, the algorithm will eventually return to the starting room and collect all the coins without ever leaving the maze.
+\vskip 0.1in
+Note that the algorithm only takes $O(m)$ transitions between rooms because it visits each corridor at most twice (once in each direction) and leaves at most one coin in each room.
+\end{comment}
+
+
+
+\begin{prob}
+A directed graph $G(V, E)$ is semiconnected if, for all pairs of vertices $u, v \in V$, we have that $u$ is reachable from $v$ or $v$ is reachable from $u$. Give an efficient algorithm to determine whether or not $G$ is semiconnected. Prove that your algorithm is correct, and analyze its running time.
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+Мы можем решить эту проблему, используя вариант алгоритма Флойда-Уоршалла для всех пар кратчайших путей в ориентированном графе.
+\vskip 0.1in
+Пусть $G(V,E)$ — входной ориентированный граф с $n$ вершинами. Сначала мы вычисляем транзитивное замыкание графа $T$, используя алгоритм Флойда-Уоршалла. Транзитивное замыкание $T_{i,j}$ равно 1, если существует путь из вершины $i$ в вершину $j$, и 0 в противном случае.
+\vskip 0.1in
+После вычисления транзитивного замыкания мы проверяем полусвязность графа, перебирая все пары вершин $u$ и $v$. Для каждой пары мы проверяем, является ли $T_{u,v} = 1$ или $T_{v,u} = 1$. Если любое из этих условий выполняется, то $u$ достижим из $v$ или $v$ достижим из $u$, и граф полусвязен. В противном случае граф не является полусвязным.
+\vskip 0.1in
+Корректность алгоритма следует из того, что транзитивное замыкание $T$ графа содержит все пути длины 1 и более между вершинами. Если существует путь из $u$ в $v$ или из $v$ в $u$, то в $T_{u,v}$ или $T_{v,u}$ есть 1 соответственно. Если $T_{u,v} = 0$ и $T_{v,u} = 0$, то пути из $u$ в $v$ или из $v$ в $u$ нет, и граф не полусвязный.
+\vskip 0.1in
+Во времени работы алгоритма преобладает время, необходимое для вычисления транзитивного замыкания графа с использованием алгоритма Флойда-Уоршалла. Временная сложность алгоритма Флойда-Уоршалла составляет $O(n^3)$, поэтому общее время работы алгоритма равно $O(n^3)$.
+\end{proof}
+\vskip 0.6in
+
+\begin{comment}
+We can solve this problem using a variation of the Floyd-Warshall algorithm for all-pairs shortest paths in a directed graph. 
+\vskip 0.1in
+Let $G(V,E)$ be the input directed graph with $n$ vertices. We first compute the transitive closure of the graph, $T$, using the Floyd-Warshall algorithm. The transitive closure $T_{i,j}$ is 1 if there is a path from vertex $i$ to vertex $j$, and 0 otherwise.
+\vskip 0.1in
+After computing the transitive closure, we check whether the graph is semiconnected by iterating over all pairs of vertices $u$ and $v$. For each pair, we check whether $T_{u,v} = 1$ or $T_{v,u} = 1$. If either of these conditions is true, then $u$ is reachable from $v$ or $v$ is reachable from $u$, and the graph is semiconnected. Otherwise, the graph is not semiconnected.
+\vskip 0.1in
+The correctness of the algorithm follows from the fact that the transitive closure $T$ of the graph contains all paths of length 1 or more between vertices. If there is a path from $u$ to $v$ or from $v$ to $u$, then there is a 1 in $T_{u,v}$ or $T_{v,u}$, respectively. If $T_{u,v} = 0$ and $T_{v,u} = 0$, then there is no path from $u$ to $v$ or from $v$ to $u$, and the graph is not semiconnected.
+\vskip 0.1in
+The running time of the algorithm is dominated by the time it takes to compute the transitive closure of the graph using the Floyd-Warshall algorithm. The time complexity of the Floyd-Warshall algorithm is $O(n^3)$, so the overall running time of the algorithm is $O(n^3)$.
+\end{comment}
+
+
+
+\begin{prob}
+Let $G(V, E)$ be a directed graph in which each vertex $u \in V$ is labeled with a unique integer $L(u)$ from the set $\{1,2, \ldots,|V|\}$. For each vertex $u \in V$, let $R(u)=\{v \in V: u \rightsquigarrow v\}$ be the set of vertices that are reachable from $u$. Define $\min (u)$ to be the vertex in $R(u)$ whose label is minimum, i.e., $\min (u)$ is the vertex $v$ such that $L(v)=\min \{L(w): w \in R(u)\}$. Give an $O(|V|+|E|)$-time algorithm that computes $\min (u)$ for all vertices $u \in V$.
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+Выполним поиск в глубину графа, отслеживая минимальную метку, обнаруженную для каждого сильносвязного компонента. Мы можем использовать алгоритм Тарьяна для вычисления сильносвязных компонентов графа за линейное время.
+\vskip 0.1in
+Начнем с инициализации массива $minlabel$ размера $|V|$, заполнив его $+\infty$. Мы также инициализируем пустой стек $S$
+\vskip 0.1in
+Выполним поиск в глубину графа, начиная с каждой еще не посещенной вершины $u \in V$. Во время поиска в глубину для каждой посещаемой вершины $v$ мы делаем следующее:
+\begin{itemize}
+\item[1] Если $L(v) < \operatorname{minlabel}[SCC(v)]$, где $SCC(v)$ — индекс компоненты сильной связности, содержащей $v$, то обновляем $\operatorname{minlabel}[SCC(v)]$ в $L(v)$.
+\item[2] Для каждого исходящего ребра $(v,w) \in E$, если $w$ еще не было посещено, мы помещаем $w$ в стек $S$.
+\end{itemize}
+Продолжаем поиск в глубину до тех пор, пока не будут посещены все вершины. В конце поиска в глубину значение $min(u)$ для каждой вершины $u \in V$ определяется как $\operatorname{minlabel}[SCC(u)]$.
+\vskip 0.1in
+Время работы алгоритма $O(|V|+|E|)$, так как мы выполняем поиск в глубину графа и каждая вершина и ребро посещаются не более одного раза. Временная сложность алгоритма Тарьяна для вычисления компонент сильной связности также равна $O(|V|+|E|)$.
+\end{proof}
+\vskip 0.6in
+
+\begin{comment}
+We can solve this problem using a variation of depth-first search. The idea is to perform a depth-first search of the graph, keeping track of the minimum label seen so far for each strongly connected component. We can use Tarjan's algorithm to compute the strongly connected components of the graph in linear time.
+\vskip 0.1in
+We begin by initializing an array $minlabel$ of size $|V|$ to all $+\infty$. We also initialize a stack $S$ to be empty.
+\vskip 0.1in
+We then perform a depth-first search of the graph, starting from each vertex $u \in V$ that has not yet been visited. During the depth-first search, for each vertex $v$ that is visited, we do the following:
+\begin{itemize}
+\item[1] If $L(v) < \operatorname{minlabel}[SCC(v)]$, where $SCC(v)$ is the index of the strongly connected component containing $v$, then we update $\operatorname{minlabel}[SCC(v)]$ to $L(v)$.
+\item[2] For each outgoing edge $(v,w) \in E$, if $w$ has not been visited yet, we push $w$ onto the stack $S$.
+\end{itemize}
+We continue the depth-first search until all vertices have been visited. At the end of the depth-first search, the value of $min(u)$ for each vertex $u \in V$ is given by $\operatorname{minlabel}[SCC(u)]$.
+\vskip 0.1in
+The correctness of the algorithm follows from the fact that during the depth-first search, we are only updating the minimum label seen so far for each strongly connected component. Therefore, the value of $min(u)$ for each vertex $u \in V$ is correctly computed based on the minimum label within its strongly connected component.
+\vskip 0.1in
+The running time of the algorithm is $O(|V|+|E|)$, since we perform a depth-first search of the graph and each vertex and edge is visited at most once. The time complexity of Tarjan's algorithm for computing the strongly connected components is also $O(|V|+|E|)$.
+\end{comment}
+
+
+
+\begin{prob}
+Prove that every tournament on $n$ vertices contains a (simple) path of length $n-1$. Construct an algorithm that finds such a path in a tournament, and estimate its complexity.
+Recall that a directed graph is a tournament if it can be obtained from a complete undirected graph by setting directions of edges.
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+Чтобы доказать, что в каждом турнире по $n$ вершинам есть путь длины $n-1$, воспользуемся индукцией по $n$. Для базового случая $n=1$ граф состоит из одной вершины, и путь длины $n-1=0$ существует тривиально.
+\vskip 0.1in
+Теперь предположим, что утверждение верно для всех турниров по $n-1$ вершинам, и рассмотрим турнир $T$ по $n$ вершинам. Пусть $v$ — вершина с наибольшей исходящей степенью в $T$. Без ограничения общности предположим, что $v$ имеет исходную степень $k$. Пусть $S$ — множество из $k$ вершин, достижимых из $v$ направленным путем. Поскольку $v$ имеет наибольшую исходящую степень, $S$ содержит все вершины $T$, кроме $v$ и некоторого подмножества вершин, достижимых из $v$ направленным путем. Следовательно, $|S|=n-1$.
+\vskip 0.1in
+LПусть $T'$ — подграф в $T$, порожденный вершинами в $S$. По предположению индукции $T'$ содержит путь длины $n-2$. Пусть $u$ — конечная точка этого пути, недостижимая из $v$ в $T'$. Тогда существует направленное ребро из $v$ в $u$ в $T$, и мы можем добавить это ребро к пути в $T'$, чтобы получить путь длины $n-1$ в $T$. Это завершает шаг индукции, а значит, и доказательство.
+\vskip 0.1in
+Для построения алгоритма, находящего путь длины $n-1$ в турнире по $n$ вершинам, можно использовать следующий подход:
+\begin{itemize}
+\item[1] Инициализировать вершину $v$ любой вершиной графа.
+\item[2] Для $i$ от $1$ до $n-1$ выберите исходящее ребро $v$, ведущее к вершине с наибольшей меткой, которая еще не была посещена, и добавьте это ребро к пути .
+\item[3] Если все вершины были посещены, выведите путь. В противном случае пусть $v$ будет конечной точкой последнего ребра пути, и повторите с шага 2.
+\end{itemize}
+Корректность алгоритма следует из того, что на каждом шаге мы выбираем исходящее ребро $v$, ведущее к наибольшей непосещенной вершине. Следовательно, последняя вершина на пути гарантированно имеет наибольшую метку и, следовательно, достижима из всех остальных вершин. По приведенному выше доказательству отсюда следует, что путь имеет длину $n-1$.
+\vskip 0.1in
+Время работы алгоритма $O(n^2)$, так как на каждом шаге нам нужно найти наибольшую непосещенную вершину, что занимает $O(n)$ времени. Однако мы можем улучшить время выполнения до $O(n\log n)$, поддерживая список непосещенных вершин, отсортированных по меткам, и используя бинарный поиск для нахождения наибольшей непосещенной вершины на каждом шаге. Это снижает временную сложность каждого шага до $O(\log n)$, в результате чего общее время выполнения составляет $O(n\log n)$.
+\end{proof}
+\vskip 0.6in
+
+\begin{comment}
+To prove that every tournament on $n$ vertices contains a path of length $n-1$, we will use induction on $n$. For the base case $n=1$, the graph consists of a single vertex, and a path of length $n-1=0$ trivially exists.
+\vskip 0.1in
+Now assume that the statement is true for all tournaments on $n-1$ vertices, and consider a tournament $T$ on $n$ vertices. Let $v$ be a vertex with the largest outdegree in $T$. Without loss of generality, assume that $v$ has outdegree $k$. Let $S$ be the set of $k$ vertices that are reachable from $v$ by a directed path. Since $v$ has the largest outdegree, $S$ contains all vertices of $T$ except for $v$ and some subset of vertices reachable from $v$ by a directed path. Therefore, $|S|=n-1$.
+\vskip 0.1in
+Let $T'$ be the subgraph of $T$ induced by the vertices in $S$. By the induction hypothesis, $T'$ contains a path of length $n-2$. Let $u$ be the endpoint of this path that is not reachable from $v$ in $T'$. Then there is a directed edge from $v$ to $u$ in $T$, and we can append this edge to the path in $T'$ to obtain a path of length $n-1$ in $T$. This completes the induction step, and hence the proof.
+\vskip 0.1in
+To construct an algorithm that finds a path of length $n-1$ in a tournament on $n$ vertices, we can use the following approach:
+\begin{itemize}
+\item[1] Initialize a vertex $v$ to be any vertex in the graph.
+\item[2] For $i$ from $1$ to $n-1$, choose the outgoing edge of $v$ that leads to a vertex with the largest label that has not been visited yet, and append this edge to the path.
+\item[3] If all vertices have been visited, output the path. Otherwise, let $v$ be the endpoint of the last edge in the path, and repeat from step 2.
+\end{itemize}
+The correctness of the algorithm follows from the fact that at each step, we choose the outgoing edge of $v$ that leads to the largest unvisited vertex. Therefore, the last vertex on the path is guaranteed to have the largest label, and hence is reachable from all other vertices. By the above proof, this implies that the path has length $n-1$.
+\vskip 0.1in
+The running time of the algorithm is $O(n^2)$, since at each step we need to find the largest unvisited vertex, which takes $O(n)$ time. However, we can improve the running time to $O(n\log n)$ by maintaining a list of unvisited vertices sorted by label, and using binary search to find the largest unvisited vertex at each step. This reduces the time complexity of each step to $O(\log n)$, resulting in a total running time of $O(n\log n)$.
+\end{comment}
+
+
+
+\begin{prob}
+Given a digraph on n vertices (V = \{1, \ldots, n\}), which obtained from a path graph (an edge leading from i to i+1) by adding m arrows connecting arbitrary pairs of verticies.
+Find the number of strongly connected components in $O(m \log m)$
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+Чтобы найти количество компонентов сильной связи, мы можем использовать алгоритм Косараджу или алгоритм Тарьяна, оба из которых имеют временную сложность $O(n + m)$ в худшем случае. Однако мы можем оптимизировать это до $O(m \log m)$ в случае, когда входной граф представляет собой граф путей с дополнительными случайными ребрами.
+\vskip 0.1in
+Давайте рассмотрим слегка модифицированную версию входного графа, которую мы получим, перевернув все ребра в исходном графе. Этот модифицированный граф имеет те же компоненты сильной связности, что и исходный граф, но все ребра теперь направлены от вершин с более высокими номерами к вершинам с более низкими номерами.
+\vskip 0.1in
+Теперь давайте запустим алгоритм Косараджу на модифицированном графе. Алгоритм сначала выполняет поиск в глубину на графе, чтобы определить порядок, в котором должны обрабатываться вершины, а затем выполняет второй поиск в глубину в обратном порядке, чтобы идентифицировать сильно связанные компоненты.
+\vskip 0.1in
+В нашем случае порядок, в котором должны быть обработаны вершины, просто в порядке убывания их номеров вершин. Это можно получить за время $O(n)$ путем сортировки вершин. Кроме того, каждое дополнительное ребро, добавленное к исходному графу путей, может влиять только на сильно связанные компоненты, содержащие конечные точки ребра. Следовательно, мы можем отсортировать дополнительные ребра по их конечным точкам и обработать их по порядку. Для каждого дополнительного ребра $(u,v)$ мы удаляем его из модифицированного графа и добавляем обратно в исходной ориентации, если оно создает цикл. Мы можем определить, создает ли ребро цикл, проверив, находятся ли уже $u$ и $v$ в одной и той же компоненте сильной связности. Это можно сделать эффективно, используя структуру данных union-find, которая поддерживает операции объединения и поиска за время $O(\log m)$. Общая временная сложность обработки всех дополнительных ребер таким образом составляет $O(m \log m)$.
+\vskip 0.1in
+В нашем случае порядок, в котором должны быть обработаны вершины, просто в порядке убывания их номеров вершин. Это можно получить за время $O(n)$ путем сортировки вершин. Кроме того, каждое дополнительное ребро, добавленное к исходному графу путей, может влиять только на сильно связанные компоненты, содержащие конечные точки ребра. Следовательно, мы можем отсортировать дополнительные ребра по их конечным точкам и обработать их по порядку. Для каждого дополнительного ребра $(u,v)$ мы удаляем его из модифицированного графа и добавляем обратно в исходной ориентации, если оно создает цикл. Мы можем определить, создает ли ребро цикл, проверив, находятся ли уже $u$ и $v$ в одной и той же компоненте сильной связности. Это можно сделать эффективно, используя структуру данных union-find, которая поддерживает операции объединения и поиска за время $O(\log m)$. Общая временная сложность обработки всех дополнительных ребер таким образом составляет $O(m \log m)$.
+\vskip 0.1in
+Таким образом, общая временная сложность алгоритма составляет $O(m \log m)$.
+\end{proof}
+\vskip 0.6in
+
+\begin{comment}
+To find the number of strongly connected components, we can use Kosaraju's algorithm or Tarjan's algorithm, both of which have a time complexity of $O(n + m)$ in the worst case. However, we can optimize this to $O(m \log m)$ in the case where the input graph is a path graph with additional random edges.
+\vskip 0.1in
+First, observe that the input graph has at most $n$ strongly connected components, since the path graph itself has $n$ strongly connected components, and the additional edges can only merge these components together.
+\vskip 0.1in
+Let us consider a slightly modified version of the input graph, which we obtain by reversing all the edges in the original graph. This modified graph has the same strongly connected components as the original graph, but all the edges are now directed from higher-numbered vertices to lower-numbered vertices.
+\vskip 0.1in
+Now, let us run Kosaraju's algorithm on the modified graph. The algorithm first performs a depth-first search on the graph to determine the order in which the vertices should be processed, and then performs a second depth-first search in reverse order to identify the strongly connected components.
+\vskip 0.1in
+In our case, the order in which the vertices should be processed is simply in decreasing order of their vertex numbers. This can be obtained in $O(n)$ time by sorting the vertices. Furthermore, each additional edge that was added to the original path graph can only affect the strongly connected components that contain the endpoints of the edge. Therefore, we can sort the additional edges by their endpoints, and process them in order. For each additional edge $(u,v)$, we remove it from the modified graph, and add it back in the original orientation if it creates a cycle. We can detect whether an edge creates a cycle by checking whether $u$ and $v$ are already in the same strongly connected component. This can be done efficiently using a union-find data structure, which supports union and find operations in $O(\log m)$ time. The total time complexity of processing all the additional edges in this way is $O(m \log m)$.
+\vskip 0.1in
+After all the additional edges have been processed, we can run the second depth-first search in reverse order of the vertex numbers, as usual, to identify the strongly connected components. The total time complexity of this step is $O(n + m) = O(m)$.
+\vskip 0.1in
+Therefore, the overall time complexity of the algorithm is $O(m \log m)$.
+\end{comment}
+
+
+
+\begin{prob}
+Let $S$ be a set of $n$ disjoint (pairwise non intersecting) plane segments. For two segments, $s, s^{\prime} \in S$ we say that $s$ lies below $s^{\prime}$ denoted as $s \prec s^{\prime}$ if and only if there are points $p \in s, p^{\prime} \in s^{\prime}$ such that $p_x=p_{x^{\prime}}$ and $p_y<p_{y^{\prime}}$. For a set $S$ of disjoint segments consider the directed graph with $V=S$ and arrow $s \rightarrow s^{\prime}$ whenever $s \prec s^{\prime}$. Prove that this graph is a DAG.
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+Чтобы доказать, что ориентированный граф, определенный в задаче, является ориентированным ациклическим графом (DAG), нам нужно показать, что он не содержит ни одного ориентированного цикла.
+\vskip 0.1in
+Предположим, от противного, что в графе есть направленный цикл $s_1 \to s_2 \to \cdots \to s_k \to s_1$. По определению графа имеем $s_1 \prec s_2 \prec \cdots \prec s_k \prec s_1$.
+\vskip 0.1in
+Рассмотрим $x$-координаты отрезков $s_1, s_2, \ldots, s_k$. Поскольку $s_1 \prec s_2 \prec \cdots \prec s_k \prec s_1$, $x$-координаты их концов образуют цикл по часовой стрелке. Однако это невозможно, так как отрезки не пересекаются и, следовательно, их концы не могут образовывать цикл.
+\vskip 0.1in
+Следовательно, в графе нет направленного цикла, и отсюда следует, что граф является DAG.
+\end{proof}
+
+\begin{comment}
+To prove that the directed graph defined in the problem is a directed acyclic graph (DAG), we need to show that it does not contain any directed cycle.
+\vskip 0.1in
+Suppose, for the sake of contradiction, that there is a directed cycle $s_1 \to s_2 \to \cdots \to s_k \to s_1$ in the graph. By the definition of the graph, we have $s_1 \prec s_2 \prec \cdots \prec s_k \prec s_1$.
+\vskip 0.1in
+Consider the $x$-coordinates of the segments $s_1, s_2, \ldots, s_k$. Since $s_1 \prec s_2 \prec \cdots \prec s_k \prec s_1$, the $x$-coordinates of their endpoints form a cycle in the clockwise direction. However, this is impossible since the segments are disjoint and hence their endpoints cannot form a cycle.
+\vskip 0.1in
+Therefore, there is no directed cycle in the graph, and it follows that the graph is a DAG.
+\end{comment}

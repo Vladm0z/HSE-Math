@@ -1,0 +1,81 @@
+\section{ДЗ 1}
+
+\begin{prob}
+Докажите, что квазиаффинное многообразие $U=\left\{x \in \mathbb{A}_k^2 \mid f(x) \neq 0\right\}$ аффинно, т.е. есть взаимно обратные регулярные отображения между ним и некоторым замкнутым алгебраическим множеством (каким?).
+\end{prob}
+
+\begin{proof}
+Рассмотрим множество $U$, заметим, что его можно отобразить во вложение в $\mathbb{A}_k^3$ следующим образом: $(x,y) \mapsto \left(x, y, \frac{1}{f}\right)$ и обратно: $(x,y,z) \mapsto (x,y)$. Это отображение регулярное и нормально определено, так как $f$ нигде не $0$ (по условию).
+\end{proof}
+\begin{comment}
+Мы хотим показать, что $U$ аффинно, т.е. существуют взаимно обратные регулярные отображения между $U$ и некоторым замкнутым алгебраическим множеством.
+\vskip 0.1in
+Сначала заметим, что $U$ изоморфно открытому подмножеству $\left\{x \in \mathbb{A}_k^2 \mid x_1 \neq 0\right\}$ множества $\mathbb{A}_k^2$ через регулярное отображение $\varphi: U \to \mathbb{A}_k^2$, заданное выражением $\varphi(x,y) = (f(x,y),y)$ и обратное ему $\psi: \left\{x \in \mathbb{A}_k^2 \mid x_1 \neq 0\right\} \to U$ задается формулой $\psi(x,y) = (g(x,y),y)$, где $g(x,y)$ — любой корень многочлена $f(z,y) - x$ в $ z$. Чтобы убедиться, что $\psi$ вполне определен и регулярен, зная, что любой радикальный идеал в кольце многочленов над алгебраически замкнутым полем является пересечением содержащих его максимальных идеалов. В частности, это означает, что если $f(z,y) - x$ имеет корень в $z$ для некоторого $(x,y) \in k^2$, то он имеет корень в $z$ для всех $(x,y)$ в некотором непустом открытом подмножестве $k^2$. Так как $f(z,y) - x$ имеет корень из $z$ для всех $(x,y)$ таких, что $x \neq 0$, то существует полином $g(x,y) $ такой, что $f(g(x,y),y) = x$ для всех $(x,y)$ с $x \neq 0$. Более того, поскольку $g(x,y)$ получается решением полиномиального уравнения с одной переменной, она является рациональной функцией относительно $(x,y)$ и, следовательно, регулярной на открытом подмножестве, где она определена.
+\vskip 0.1in
+Теперь мы утверждаем, что открытое подмножество $\left\{x \in \mathbb{A}_k^2 \mid x_1 \neq 0\right\}$ множества $\mathbb{A}_k^2$ аффинно. Чтобы убедиться в этом, мы воспользуемся другим следствием, которое утверждает, что любое полевое расширение алгебраически замкнутого поля, которое конечно порождено как алгебра, также конечно порождено как поле. В частности, отсюда следует, что если $k$ — алгебраически замкнутое поле и $R$ — конечно порожденная $k$-алгебра, также являющаяся полем, то существует элемент $t \in R$ такой, что $R = k(t)$. Применяя это к координатному кольцу $\left\{x \in \mathbb{A}_k^2 \mid x_1 \neq 0\right\}$, что является локализацией $k[x,y]$ в мультипликативном множестве $\left\{x^n \mid n \geq 0\right\}$, мы видим, что существует элемент $t \in k[ x,y]_{(x)}$ такой, что $k[x,y]_{(x)} = k(t)$. Это означает, что существует обычная карта $\pi: \left\{x \in \mathbb{A}_k^2 \mid x_1 \neq 0\right\} \to \mathbb{A}_k^1$ заданное выражением $\pi(x,y) = t(x,y)$ и его обратным выражением $\sigma: \mathbb{A}_k^1 \to \left\{x \in \mathbb{A}_k^2 \mid x_1 \neq 0\right\}$ заданное $\sigma(t) = (u(t),v(t))$, где $u(t)$ и $v(t)$ — рациональные функции от $t$ такие, что $(u(t),v(t))$ удовлетворяет уравнению $t = t(u(t),v (т))$. Таким образом, мы показали, что $\left\{x \in \mathbb{A}_k^2 \mid x_1 \neq 0\right\}$ аффинно и изоморфно $\mathbb{A}_k^1$.
+\vskip 0.1in
+Объединяя приведенные выше результаты, приходим к выводу, что квазиаффинное многообразие $U=\left\{x \in \mathbb{A}_k^2 \mid f(x) \neq 0\right\}$ аффинно и изоморфно $\mathbb{A}_k^1$. Взаимно обратные регулярные отображения задаются композициями $\varphi \circ \sigma: \mathbb{A}_k^1 \to U$ и $\pi \circ \psi: U \to \mathbb{A}_k^1$.
+\end{comment}
+\vskip 0.6in
+
+
+
+
+\begin{prob}
+Если $k$ алгебраически замкнуто, докажите, что $V=\mathbb{A}_k^2-\{(0,0)\}$ не является аффинным (можно воспользоваться теоремой Гильберта о нулях).
+\end{prob}
+
+\begin{proof}
+Предположим, от противного, что $V$ аффинно. Тогда существует идеал $I$ группы $k[x,y]$ такой, что $V=Z(I)$. Пусть $p(x,y)=x+y$. Тогда $p(x,y)$ обращается в нуль на $(0,0)$, которого нет в $V$, поэтому он не обращается в нуль ни в одной точке $V$. Следовательно, по теореме Гильберта о нулях $p(x,y)$ не принадлежит $I$. Но это означает, что существует простой идеал $P$, содержащий $I$, такой, что $p(x,y)$ не принадлежит $P$. По соответствию между алгебраическими множествами и радикальными идеалами это означает, что существует неприводимое алгебраическое подмножество $W$ в $\mathbb{A}_k^2$ такое, что $V\subset W$ и $(0,0)\notin W$. Но это противоречит тому, что $\overline{V}=\mathbb{A}_k^2$, поскольку любое неприводимое подмножество, содержащее $V$, должно быть равно $\overline{V}$. Следовательно, наше предположение об аффинности $V$ оказалось ложным.
+\end{proof}
+\begin{comment}
+Suppose, for a contradiction, that $V$ is affine. Then there exists an ideal $I$ of $k[x,y]$ such that $V=Z(I)$. Let $p(x,y)=x+y$. Then $p(x,y)$ vanishes on $(0,0)$, which is not in $V$, so it does not vanish on any point of $V$. Therefore, by Hilbert's zero theorem, $p(x,y)$ does not belong to the radical of $I$. But this implies that there exists a prime ideal $P$ containing $I$ such that $p(x,y)$ is not in $P$. By the correspondence between algebraic sets and radical ideals², this means that there is an irreducible algebraic subset $W$ of $\mathbb{A}_k^2$ such that $V\subset W$ and $(0,0)\notin W$. But this contradicts the fact that $\overline{V}=\mathbb{A}_k^2$, since any irreducible subset containing $V$ must be equal to $\overline{V}$. Therefore, our assumption that $V$ is affine was false.
+\end{comment}
+\vskip 0.6in
+
+
+
+
+\begin{prob}
+Пусть $S$ мультипликативное подмножество в $A, A_S$ кольцо частных. Докажите, что отображение $\operatorname{Spec}\left(A_S\right) \rightarrow \operatorname{Spec}(A)$, индуцированное естественным $A \rightarrow A_S$, является гомеоморфизмом на подмножество идеалов $\operatorname{Spec}(A)$, не пересекающихся с $S$.
+\end{prob}
+
+\begin{proof}
+Пусть $\varphi: A \rightarrow A_S$ — отображение, переводящее $a$ в $a/1$. Тогда мы имеем непрерывное отображение $\operatorname{Spec} \varphi: \operatorname{Spec}\left(A_S\right) \rightarrow \operatorname{Spec} A$. Для простоты обозначим $\operatorname{Spec} \varphi$ как $h$. Пусть $\mathfrak{p}^{\prime}$ простой идеал в $A_S$. Тогда $\varphi^{-1} \mathfrak{p}^{\prime}$ является простым идеалом в $A$, таким что $\varphi^{-1}\left(\mathfrak{p}^{\prime}\right) \cap S=\emptyset$. Если нет, то существует $f \in \varphi^{-1}\left(\mathfrak{p}^{\prime}\right) \cap S$. Тогда $f \in S$ и $f / 1 \in \mathfrak{p}^{\prime}$. Так как $f \in S, 1 / f \in A_S$. Это означает, что $1 / 1 \in \mathfrak{p}^{\prime}$, то есть $A_S=\mathfrak{p}^{\prime}$ что неправда так как $\mathfrak{p}^{\prime}$ - простой идеал. Так как $\operatorname{Im} h \subset\{\mathfrak{p} \in \operatorname{Spec} A: S \cap \mathfrak{p}=\emptyset\}$. И наоборот, если $\mathfrak{p} \in\{\mathfrak{p} \in \operatorname{Spec} A: S \cap \mathfrak{p}=\emptyset\}$, то $\varphi(\mathfrak{p})=S^{-1} \mathfrak{p}$ является простым идеалом в $A_S$. Это связано с тем, что локализация области целостности является областью целостности и, следовательно, $A_S / S^{-1} \mathfrak{p} \cong S^{-1}(A / \mathfrak{p})$ является целостной областью. Более того, $\mathfrak{p}=\varphi^{-1}\left(S^{-1} \mathfrak{p}\right)$. Поэтому $\mathfrak{p} \in \operatorname{Im} h$. мы обнаружили $\operatorname{Im} h=\{\mathfrak{p} \in \operatorname{Spec} A: S \cap \mathfrak{p}=\emptyset\}$.
+\vskip 0.1in
+Пусть $h^{\prime}: \operatorname{Im} h \rightarrow \operatorname{Spec}\left(S^{-1} R\right)$, $\mathfrak{p} \rightarrow S^{-1} \mathfrak{p}$. Для $\mathfrak{p} \in \operatorname{Im} h, h \circ h^{\prime}(\mathfrak{p})=h\left(S^{-1} \mathfrak{p}\right)=$ $\varphi^{-1}\left(S^{-1} \mathfrak{p}\right)=\mathfrak{p}$ и для любого $\mathfrak{p}^{\prime}, h^{\prime} \circ h\left(\mathfrak{p}^{\prime}\right)=h^{\prime}\left(\varphi^{-1} \mathfrak{p}^{\prime}\right)=S^{-1}\left(\varphi^{-1} \mathfrak{p}^{\prime}\right)=\mathfrak{p}^{\prime}$ по определению. Следовательно $h^{\prime}$ является обратным к $h$. Теперь нам нужно только показать, что $h$ — открытое отображение.
+\vskip 0.1in
+Пусть $D(t / s)$ — стандартное открытое подмножество в $\operatorname{Spec}\left(A_S\right)$. Давайте покажем, что $h(D(t / s))=$ $D(t) \cap \operatorname{Im} h$. Предположим $\mathfrak{p} \in D(t) \cap \operatorname{Im} h$. Тогда $\mathfrak{p} \cap S=\emptyset$ и $t \notin \mathfrak{p}$. Тогда $t / s \notin \mathfrak{p}^{\prime}=\varphi(\mathfrak{p}){ }^1$ Это показывает, что $\mathfrak{p}^{\prime} \in D(t / s)$. Другими словами, $\left.\mathfrak{p}=h\left(\mathfrak{p}^{\prime}\right) \subset h(D(t / s))\right)$ Поэтому $D(t) \cap \operatorname{Im} h \subset$ $h(D(t / s))$. Предположим, что $\mathfrak{p} \in h(D(t / s))$. Затем $\mathfrak{p} \in \operatorname{Im} h$ и тогда $\mathfrak{p}^{\prime} \in D(t / s)$ так что $\mathfrak{p}=\varphi^{-1}\left(\mathfrak{p}^{\prime}\right)$. Следовательно $\mathfrak{p} \in \operatorname{Im} h, \mathfrak{p} \cap S=\emptyset$. Так как $\mathfrak{p}^{\prime} \in D(t / s), t / s \notin \mathfrak{p}^{\prime}$. Теперь мы хотим показать $\mathfrak{p} \in D(t)$. Предположим, противное. $t \in \mathfrak{p}$. Тогда $t / s \in \mathfrak{p}^{\prime}$ что приводит к противоречию, заключающемуся в том, что $t / s \notin \mathfrak{p}^{\prime}$. Следовательно, $t \notin \mathfrak{p}$ и, следовательно, $\mathfrak{p} \in D(t)$. Мы заключаем, что
+$$
+h(D(t / s))=D(t) \cap \operatorname{Im} h .
+$$
+То есть $h$ — открытое отображение.
+\end{proof}
+%https://www.math.ncku.edu.tw/~fjmliou/alg/locspec.pdf
+\vskip 0.6in
+
+
+\newpage
+
+\begin{prob}
+Каков образ отображения спектров, индуцированного гомоморфизмом колец $k[X, Y] \rightarrow k[X, Y, Z] /(X Z-Y)$ ?
+\end{prob}
+
+\begin{proof}
+Заметим, что в $k[X, Y, Z]$ простые идеалы -- 0, неприводимые многочлены и максимальные. Тогда, при факторе $(X Z-Y)$, 0 остается нулем, а неприводимые факторизуются, тем самым любой многочлен с $Y$ будет выражаться через $X, Z$. Тогда простые идеалы в фактор-кольце -- это все неприводимые по $X, Z$. Получаем, что отображение спектров биективно, ведь неприводимые многочлены двух переменных переходят в неприводимые,из чего следует, что в ядре лежит только $0$.
+\end{proof}
+\vskip 0.6in
+
+
+
+
+\begin{prob}
+Опишите простые идеалы $k[X, Y]$.
+\end{prob}
+
+\begin{proof}
+Простые идеалы $k[X,Y]$ — это $0$, максимальные, и $(P)$, где $P$ — любой неприводимый многочлен. Это связано с тем, что $k[X,Y]$ имеет размерность два и является факториальным кольцом.
+\end{proof}
+\begin{comment}
+The prime ideals of $k[X,Y]$ are $0$, the maximal ones, and $(P)$ where $P$ is any irreducible polynomial. This is because $k[X,Y]$ has dimension two, and is a UFD.
+\end{comment}

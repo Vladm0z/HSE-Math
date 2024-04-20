@@ -1,0 +1,219 @@
+\section{HW 3}
+
+\begin{prob}
+Докажите, что гомоморфизм пучков
+\begin{itemize}
+\item[]
+\item[(а)] инъективен тогда и только тогда, когда он инъективен послойно,
+\item[(б)] является изоморфизмом тогда и только тогда, когда он послойный изоморфизм.
+\end{itemize}
+(замечание: поскольку "образ" морфизма пучков $\phi: \mathcal{F} \rightarrow \mathcal{G}$, определенный по формуле $U \to i m(\mathcal{F}(U))$, в общем случае пучком не является, образом морфизма пучков обычно называется пучок, ассоциированный с этим предпучком, так что сюръективный морфизм пучков - это по определению морфизм, сюръективный послойно, при этом $F(U) \rightarrow G(U)$ не обязаны быть сюръекциями для всех $U$.)
+\end{prob}
+\begin{proof}
+\begin{itemize}
+\item[]
+\item[(a)]
+	$\varphi: F \to G$ - инъективен $\Leftrightarrow \varphi_p: F_p \rightarrow G_p$ инъективен
+	\begin{itemize}
+	\item[]
+	\item[(=>)]
+		$\varphi$ - injective $\Rightarrow \ker \phi$ - zero presheaf $\Rightarrow \forall U \subset X\quad (\ker \phi)_u = 0$ 0 - colim of a 0 diagram $\Rightarrow (\ker \phi)_p = 0$
+	\item[(<=)]
+		$\varphi_p$ - injective 
+		\begin{gather*}
+		\Rightarrow \forall p: \ker \varphi_p = 0\\
+		\Rightarrow (\ker \varphi)^+_u: U \to \bigsqcup_{p \in U} \ker \varphi_p\\
+		\Rightarrow (\ker \varphi)^+_u = 0\quad \forall U \subset X\quad \text{since } \ker \varphi \text{ - sheaf}\\
+		\Rightarrow \ker \varphi \cong (\ker \varphi)^+ \cong 0
+		\end{gather*}
+	\end{itemize}
+\item[(b)]
+	$\varphi: F \to G$ - isomorphism $\Leftightarrow \varphi_p: F_p \to G_p$ - isomorphism
+	\begin{itemize}
+	\item[]
+	\item[(=>)] $\varphi$ - isomorphism $\Rightarrow \exists \varphi^{-1} \Rightarrow (\varphi^{-1})_p = (\varphi_p)^{-1}$
+	\item[(<=)] $\forall U\ \varphi_u$ - isomorphism, injectivity follows from (a)
+		\begin{gather*}
+			\text{crop.} t \in G(U)\quad t_p \in G_p \Rightarrow \exists s_p \in F_p\quad \varphi(s_p) = t_p\\
+			\exists V'_p \subset X:\quad \exists s(p) \in F(V'_p)\quad s(p)\bigg|_p = s_p\\
+			\varphi(s(p)), t\bigg|_{V'_p} \in G(V'_p) \text{ - their stalks in p are equal}\\
+			\Rightarrow \exists V_p: \varphi(s(p))\bigg|_{V_p} = t\bigg|_{V_p}\\
+			U = \bigcup V_p\quad p,q \in U\quad s(p)\bigg|_{V_p \cap V_q},\ s(\varphi)\bigg|_{V_p \cap V_q} \in F(V_p \cap V_q)\\
+			\varphi(s(p)\bigg|_{V_p \cap V_q}) = s(q)\bigg|_{V_p \cap V_q} \text{ because F - sheaf}\\
+			\Rightarrow \exists s \in F(U)\quad \varphi(s)\bigg|_{V_p} = t\bigg|_{V_p}
+			\Rightarrow \varphi(s) = t
+		\end{gather*}
+	\end{itemize}
+\end{itemize}
+\end{proof}
+\begin{comment}
+https://math.stackexchange.com/questions/10136/monomorphisms-of-sheaves-gives-an-injection-of-stalks
+https://ocw.mit.edu/courses/18-726-algebraic-geometry-spring-2009/pages/lecture-notes/
+https://stacks.math.columbia.edu/tag/00WL
+\end{comment}
+\vskip 0.6in
+
+
+
+
+
+
+\begin{prob}
+Пусть $A$ кольцо и $M$ некоторый модуль. Проверьте, что определенный следующим образом $\tilde{M}$ :
+$$
+\tilde{M}(U)=\left\{s: U \rightarrow \sqcup_{p \in U} M_p \mid \forall p s(p) \in M_p, \forall p \exists D(f), p \in D(f), \forall q \in D(f) s=m / f^k\right\}
+$$
+является пучком, что его слой в точке $p$ - это $M_p$ и что $\tilde{M}(D(f))=M_f$.
+\end{prob}
+\begin{proof}
+\begin{gather*}
+U = \bigcup U_i\quad \sigma_1, \sigma_2 \in \tilde{M}(U)\qquad \forall U_i: \sigma_1|_{U_i} = \sigma_2|_{U_i}\\
+\text{If } \sigma_1 \neq \sigma_2 \Rightarrow \exists p \in U: \sigma_1(p) \neq \sigma_2(p)\\
+\exists U_i \text{ such that } p \in U_i \Rightarrow \sigma_1|_{U_i}(p) = \sigma_2|_{U_i}(p) \text{, but}\\
+\forall p \in U_i\quad \sigma_j|_{U_i}(p) = \sigma_j(p) \Rightarrow \sigma_1 = \sigma_2\\
+\\
+\text{Let } \sigma: U_i \cap U_j \Rightarrow \sigma(p) = \sigma_i(p) \text{ and } \sigma(p) = \sigma_j(p) \text{, but}\\
+\sigma_i(p) = \sigma_j(p) \text{, because } \sigma_i|_{U_i \cap U_j} = \sigma_j|_{U_i \cap U_j} \Rightarrow \tilde{M}(U) \text{ - sheaf}\\
+\varphi: \tilde{M}(p) \to M_p\quad s \to s(p)\quad \varphi \text{ - homomorphism}\quad \frac{a}{f} \in M_p\\
+\Rightarrow p \in D(f) \text{ - open neighbourhood}\quad s: D(f) \to \bigsqcup_{p \in D(f)} M_p\quad s(x) = \frac{a}{f}
+\Rightarrow \varphi \text{ - surjection}\\
+p \in U \text{ - neighborhood}\quad s,t \in \tilde{M}(U)\quad s(p) = t(p)\quad s = \frac{a}{f}\ t = \frac{b}{g}\quad \frac{a}{f}=\frac{b}{g} \text{ in } M_p\\
+\Rightarrow h(ga - fb) = 0 \text{ in } M
+\Rightarrow \frac{a}{f} = \frac{b}{g} \text{ in } M_q\quad \forall q,f,g,h \text{ such that}\\
+q \in D(f) \cap D(g) \cap D(h)\quad p \in D(f) \cap D(g) \cap D(h)
+\Rightarrow s=t
+\Rightarrow \varphi \text{ - isomorphism}
+\end{gather*}
+\end{proof}
+\begin{comment}
+https://www.math.utah.edu/~bertram/7800/Coherent.pdf
+https://direct.mit.edu/books/oa-monograph/5460/Sheaf-Theory-through-Examples
+\end{comment}
+\vskip 0.6in
+
+
+
+
+
+
+\begin{prob}
+Носитель $\operatorname{Supp}(M)$ модуля $M$ - это носитель пучка $\tilde{M}$, т е множество таких $p \in \operatorname{Spec}(A)$, что слой $M_p \neq 0$.
+\begin{itemize}
+\item[]
+\item[(а)] Пусть $M A$-модуль. Докажите, что если $M_p=$ 0 для любого простого идеала $p \subset A$, то $M=0$.
+\item[(б)] Если $M$ конечно порожден, докажите, что носитель $M$ замкнут (сначала можно рассмотреть случай циклического $M$ ). Верно ли это в случае произвольного $M$ ?
+\item[(в)] Докажите, что если $M$ является суммой своих подмодулей $M_1$ и $M_2$, то $\operatorname{Supp}(M)=\operatorname{Supp}\left(M_1\right) \cup \operatorname{Supp}\left(M_2\right)$ (воспользуйтесь точностью локализации, вспомнив, что это такое).
+\item[(г)] Докажите, что носитель тензорного произведения конечно порожденных модулей $M_1 \otimes M_2$ - это пересечение носителей $M_1$ и $M_2$ (вспомните лемму Накаямы, выведите из нее, что тензорное произведение к.п. модулей над локальным кольцом нулевое если и только если таков один из модулей).
+\end{itemize}
+\end{prob}
+\begin{proof}
+\begin{itemize}
+\item[]
+\item[(а)] 
+	\begin{gather*}
+		x \in M\quad x \neq 0\quad \forall p: M_p = 0
+		\Rightarrow \exists s \in A\quad sx = 0\\
+		\Rightarrow \operatorname{Ann}(x) \not\subset p\ \forall p \text{ but } \operatorname{Ann}(x) \text{ - ideal}
+		\Rightarrow \operatorname{Ann}(x) = A\ \forall x \in M
+	\end{gather*}
+\item[(б)] 
+	\begin{gather*}
+		(x_1, \ldots, x_n) = M\quad T = \operatorname{Spec} A \backslash \operatorname{Supp} M\\
+		T = \{p \in \operatorname{Spec}A\ |\ M_p = 0\}
+		\Rightarrow \exists t_i \in A \backslash p
+		\Rightarrow D(t) = \{p \in \operatorname{Spec} A\ |\ t \notin p\}\\
+		\Rightarrow D(t) \subset T
+		\Rightarrow T \text{ - open}
+	\end{gather*}
+\item[(в)]
+	\begin{gather*}
+		M = M_1 \oplus M_2\\
+		0 \to M_1 \to M \to M_2 \to 0\quad p \in \operatorname{Supp} M_1 \sqcup \operatorname{Supp} M_2\\
+		0 \to (M_1)_p \to M_p \to (M_2)_p \to 0 \text{ either } (M_1)_p \neq 0 \text{ either } (M_2)_p \neq 0\\
+		\Rightarrow M_p \neq 0
+		\Rightarrow p \in \operatorname{Supp} M 
+	\end{gather*}
+	similarly vice versa
+\item[(г)]
+	\begin{gather*}
+		M_1 \otimes M_2 = 0 \Leftrightarrow M_1 = 0 \text{ or } M_2 = 0\\
+		\Rightarrow p \notin \operatorname{Supp} M_1 \cap \operatornmae{Supp} M_2 \Rightarrow (M_1)_p = 0 \text{ or } (M_2)_p = 0\\
+		\Rightarrow (M_1)_p \otimes (M_2)_p = (M_1 \otimes M_2)_p = 0\\
+		p \in \operatorname{Supp}(M_1 \otimes M_2)
+		\Rightarrow (M_1 \otimes M_2)_p \neq 0
+		\Rightarrow (M_1)_p \neq 0,\ (M_2)_p \neq 0\\
+		\Rightarrow p \in \operatorname{Supp}(M_1) \cap \operatorname{Supp}(M_2)
+	\end{gather*}
+\end{itemize}
+\end{proof}
+\begin{comment}
+https://math.stackexchange.com/questions/1101681/tensor-product-of-two-finitely-generated-modules
+https://math.stackexchange.com/questions/3225239/tensor-product-of-modules-finitely-generated
+http://www.nou.ac.in/Online%20Resourses/08-6/Part%20one-%20paper%20-1-%20Advanced%20Abstract%20Alegebra-converted%20%281%29.pdf
+\end{comment}
+\vskip 0.6in
+
+
+
+
+
+
+\begin{prob}
+\begin{itemize}
+\item[]
+\item[(а)] Проверьте, что если $\left(X, \mathcal{O}_X\right)$ - схема и $U$ открыто в $X$, то $\left(U,\left(\mathcal{O}_X\right)\Big|_U\right)$ тоже схема (вместо $(\mathcal{O}_X)\bigg|_U$ будем писать просто $\mathcal{O}_U)$.
+\item[(б)] Пусть $\left(X_i, \mathcal{O}_{X_i}\right)$ схемы, а $U_{i j}$ открыты в $X_i$, причем для $i \neq j$ заданы морфизмы $\phi_{i j}:\left(U_{i j}, \mathcal{O}_{U_{i j}}\right) \rightarrow\left(U_{j i}, \mathcal{O}_{U_{j i}}\right)$ со свойством $\phi_{i j} \circ \phi_{j i}=i d$, $\phi_{i k}=\phi_{j k} \circ \phi_{i j}\left(\right.$ на $\left.U_{i j} \cap U_{i k}\right)$. Проверьте, что существует схема $\left(X, \mathcal{O}_X\right)$, ее открытое покрытие $U_i$ и изоморфизмы схем $f_i: X_i \rightarrow U_i$, такие, что $f_i\left(U_{i j}\right)=U_i \cap U_j$ и $f_i=f_j \phi_{i j}$.
+\end{itemize}
+\end{prob}
+\begin{proof}
+\begin{itemize}
+\item[]
+\item[(a)] $(X, O_x)$ - scheme\quad $X = \bigcup U_i$ - affine covering when $i \neq j$
+	\begin{gather*}
+		U \subset X \text{ - open}\quad U_i = \bigcup (U_i)_f = \bigcup\{x \in U_i\ |\ f(x) \neq 0\}\\
+		f \in \Gamma(U_i, O_{U_i})\quad (U_i)_f \text{ - affine scheme}\\
+		(U_i)_f \{ - a base for the topology\}
+		\Rightarrow U \cap U_i \text{ - also affine covering}
+	\end{gather*}
+\item[(b)]
+	$(X_i, O_{X_i}$ - scheme\quad $U_{ij} \subset X_i$ - open when $i \neq j$
+	\begin{gather*}
+		\varphi_{ij}: (U_{ij}, O_{U_{ij}}) \to (U_{ij}, O_{U_{ij}})\quad \varphi_{ij} \circ \varphi_{ji} = \operatorname{Id}\\
+		\varphi_{ik} = \varphi_{jk} \circ \varphi_{ij} \text{ ($U_{ij} \cap U_{ik}$) }
+		\Rightarrow \exists (X, O_X) \text{ - scheme}\\
+		X = \bigcup U_i\quad f_i: X_i \to U_i \text{ - isomorphism}\quad f_i(U_{ij}) = U_i \cap U_j\quad f_i = f_j \varphi_{ij}\\
+		X = \bigsqcup X_i \text{ - as a set}\\
+		\operatorname{Top}(X) = \{U \text{ - open, if } \forall i: U \cap X_i \text{ - open}\}
+	\end{gather*}
+\end{itemize}
+\end{proof}
+\begin{comment}
+
+\end{comment}
+\vskip 0.6in
+
+
+
+
+
+
+\begin{prob}
+Найдите $\mathcal{O}_{\mathbb{P}_K^n}\left(\mathbb{P}_K^n\right)$.
+\end{prob}
+\begin{proof}
+	Lets cover $\mathbb{P}^n_k$ with standart affine charts
+	\begin{gather*}
+		\operatorname{Spec}\left(k\left[\frac{x_1}{x_i},\ldots,\frac{x_n}{x_i}\right]\right) = U_i\\
+		y_1 = \frac{x_1}{x_i},\ldots, y_n = \frac{x_n}{x_i}\quad \frac{x_i}{x_j} = y_i \cdot \frac{1}{y_j}\\
+		\Rightarrow f \in \Gamma(U_i, O_{U_i})\quad g \in \Gamma(U_j, O_{U_j})\\
+		f\bigg|_{U_i \cap U_j} = g\bigg|_{U_i \cap U_j}
+		\Rightarrow f(y_1, \ldots, y_n) = y_j^{-m} g_m + \ldots + y_j^{-1} g_1 + g_0
+		\Rightarrow y_j^m(f - g_0) = g_1 y_j^{m-1} + \ldots + g_m\\
+		\Rightarrow f = g_0 = g
+		\Rightarrow \Gamma(\mathbb{P}^n_k, O_{\mathbb{P}^n_k}) = k
+	\end{gather*}
+\end{proof}
+\begin{comment}
+https://blag.nullteilerfrei.de/wp-content/uploads/2013/04/vector-bundles.pdf
+https://math.stackexchange.com/questions/2273224/two-definitions-of-mathcalo-mathbbpnl
+\end{comment}

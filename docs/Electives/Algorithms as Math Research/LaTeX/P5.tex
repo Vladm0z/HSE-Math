@@ -1,0 +1,273 @@
+\section{Problem List 5}
+
+\begin{prob}
+A graph can have several shortest paths between some vertices. Construct a linear-time algorithm that finds the number of vertices that lie on at least one shortest path from $s$ to $t$ in an undirected graph with unit edge weights.
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+Чтобы найти количество вершин, лежащих хотя бы на одном кратчайшем пути из s в t в неориентированном графе с единичными весами ребер, мы можем использовать алгоритм поиска в ширину (BFS). Начнем с обхода BFS, начиная с исходной вершины s. Во время этого обхода мы поддерживаем два массива: dist и cnt. dist отслеживает расстояние каждой вершины от исходной вершины, а cnt отслеживает количество кратчайших путей от исходной вершины до каждой вершины. Мы инициализируем $\operatorname{dist}[s] = 0$ и $\operatorname{cnt}[s] = 1$ и устанавливаем $\operatorname{dist}[v] = \infty$ и $\operatorname{cnt}[ v] = 0$ для всех остальных вершин $v$. Затем мы исследуем граф с помощью BFS, отслеживая расстояние и количество кратчайших путей в каждой вершине. Для каждой вершины v мы проверяем ее соседей. Если расстояние от s до соседа w через v равно текущему кратчайшему расстоянию до w (т. е. $\operatorname{dist}[v] + 1 = \operatorname{dist}[w]$), то мы добавляем $\operatorname{ cnt}[v]$ в $\operatorname{cnt}[w]$ (поскольку v лежит на кратчайшем пути из s в w) и добавить w в очередь. Если расстояние через v меньше текущего кратчайшего расстояния до w, мы обновляем $\operatorname{dist}[w]$ и устанавливаем $\operatorname{cnt}[w]$ в $\operatorname{cnt}[v]$ (поскольку v — единственная вершина, вносящая вклад в кратчайший путь из s в w через v). Если расстояние больше, мы ничего не делаем. После того, как мы закончим обход BFS, $\operatorname{cnt}[t]$ будет содержать количество кратчайших путей из s в t. Затем мы можем запустить еще один обход в глубину из s, чтобы подсчитать количество вершин, лежащих хотя бы на одном кратчайшем пути из s в t. Во время этого обхода DFS мы отслеживаем логический массив с именем посещенный, который отмечает, посетили ли мы вершину или нет. Начнем с того, что пометим Visit[s] = true и изучим его соседей. Для каждого соседа v, если $\operatorname{dist}[v] = \operatorname{dist}[s] + 1$ (т. е. v лежит на кратчайшем пути из s в t через s) и $\operatorname{visited} [v] = false$, мы отмечаем $\operatorname{visited}[v] = true$ и исследуем v. Когда мы достигнем t, количество вершин, помеченных как посещенные, даст нам ответ на задачу. Временная сложность этого алгоритма составляет $O(n + m)$, где n — количество вершин, а m — количество ребер в графе, поскольку обходы BFS и DFS занимают линейное время в зависимости от размера графа. .
+\end{proof}
+\vskip 0.6in
+
+\begin{comment}
+To find the number of vertices that lie on at least one shortest path from s to t in an undirected graph with unit edge weights, we can use Breadth-First Search (BFS) algorithm.
+\vskip 0.1in
+We start by performing a BFS traversal starting from the source vertex s. During this traversal, we maintain two arrays: dist and cnt. dist keeps track of the distance of each vertex from the source vertex, while cnt keeps track of the number of shortest paths from the source vertex to each vertex.
+\vskip 0.1in
+We initialize $\operatorname{dist}[s] = 0$ and $\operatorname{cnt}[s] = 1$ and set $\operatorname{dist}[v] = \infty$ and $\operatorname{cnt}[v] = 0$ for all other vertices $v$.
+\vskip 0.1in
+Then we explore the graph using BFS, keeping track of the distance and number of shortest paths at each vertex. For each vertex v, we examine its neighbors. If the distance from sto the neighbor wthrough vis the same as the current shortest distance to w(i.e. $\operatorname{dist}[v] + 1 = \operatorname{dist}[w]$), then we add $\operatorname{cnt}[v]$ to $\operatorname{cnt}[w]$ (as v lies on a shortest path from s to w), and add w to the queue. If the distance through v is shorter than the current shortest distance to w, we update $\operatorname{dist}[w]$ and set $\operatorname{cnt}[w]$ to $\operatorname{cnt}[v]$ (as v is the only vertex contributing to the shortest path from s to w through v). If the distance is longer, we do nothing.
+\vskip 0.1in
+After we finish the BFS traversal, $\operatorname{cnt}[t]$ will contain the number of shortest paths from s to t. We can then run another DFS traversal from s to count the number of vertices that lie on at least one shortest path from s to t.
+\vskip 0.1in
+During this DFS traversal, we keep track of a Boolean array called visited, which marks whether we have visited a vertex or not. We start by marking visited[s] = true and exploring its neighbors. For each neighbor v, if $\operatorname{dist}[v] = \operatorname{dist}[s] + 1$ (i.e. v lies on a shortest path from s to t through s), and $\operatorname{visited}[v] = false$, we mark $\operatorname{visited}[v] = true$ and explore v. When we reach t, the number of vertices marked as visited gives us the answer to the problem.
+\vskip 0.1in
+The time complexity of this algorithm is $O(n + m)$, where n is the number of vertices and m is the number of edges in the graph, as both the BFS and DFS traversals take linear time in the size of the graph.
+\end{comment}
+
+
+
+\begin{prob}
+Consider the following modification of Dijkstra's algorithm. During initialization, only vertex $s$ is in the priority queue. Vertex $v$ is added to the priority queue if, as a result of $\operatorname{Relax}(u, v)$ relaxation, the distance to $v$ has changed, and $v$ was not in the queue at that moment. The remaining steps of the algorithm remained unchanged.
+\begin{itemize}
+\item[1] Prove the correctness of the modified algorithm.
+\item[2] Prove that the modified algorithm works correctly even if there are edges of negative weight, but there is no cycle of negative weight. Estimate the running time of the algorithm on graphs of this kind and compare it with the running time of the Bellman-Ford algorithm.
+\item[3] Modify the algorithm so that it verifies existence of cycles of negative weight (and terminates with an error if such a cycle exist).
+\end{itemize}
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+\begin{itemize}
+\item[]
+\item[1] Пусть $s$ — исходная вершина, а $v$ — некоторая вершина в графе. Предположим, что кратчайший путь из $s$ в $v$ — это путь $p$, проходящий через вершины $v_1, v_2, \ldots, v_k$ в указанном порядке. Тогда для каждого $i$, $1\leq i\leq k$, в момент первой релаксации вершины $v_i$ она должна находиться в очереди с приоритетом, иначе в этот момент она бы не рассматривалась. Поскольку мы добавляем вершины в очередь с приоритетом только в том случае, если они прошли через релаксацию и в данный момент не находятся в очереди приоритетов, вершина $v_i$ должна быть добавлена в очередь с приоритетом в результате реклаксации некоторой другой вершины $u$. Более того, мы должны были релаксировать какую-то другую вершину $u'$ перед $u$, если вершина $v_i$ уже находилась в очереди с приоритетом в момент, когда мы релаксировали $u$. Следовательно, $u'$ должен находиться на кратчайшем пути из $s$ в $v$, и мы должны релаксировать $u'$ до $v_i$, что означает, что $v_i$ уже находилась в очереди с приоритетом в тот момент, когда $u'$ был релаксирован. Поэтому мы добавили в очередь с приоритетом только те вершины, которые находятся на кратчайшем пути из $s$ в некоторую вершину $v$.
+
+\item[2] Предположим, что есть ребра отрицательного веса, но нет цикла отрицательного веса. Поскольку приоритетная очередь содержит только релаксированные вершины, а мы релаксируем только те вершины, которые достижимы из $s$, мы будем релаксировать только те вершины, которые находятся на расстоянии не более $n-1$ ребер от $s$, где $n$ — количество вершин в графе. Поэтому мы будем ослаблять каждое ребро не более чем $n-1$ раз. Кроме того, поскольку мы добавляем вершины в очередь с приоритетом только в том случае, если они релаксированы и в данный момент не находятся в очередь с приоритетом, общее количество вставок и удалений в очереди с приоритетом не превышает $m$, количества ребер в графе. Таким образом, общее время работы модифицированного алгоритма составляет $O(m\log n)$. Это быстрее, чем время работы алгоритма Беллмана-Форда, которое составляет $O(nm)$.
+
+\item[3] Чтобы проверить существование циклов отрицательного веса, мы можем модифицировать алгоритм следующим образом. Помимо отслеживания расстояния до каждой вершины, мы также отслеживаем, сколько раз каждая вершина была релаксирована. Если вершина релаксируется $n$ раз, где $n$ — количество вершин в графе, то существует цикл отрицательного веса, содержащий эту вершину. Чтобы понять почему, предположим, что не существует цикла отрицательного веса, содержащего эту вершину. Тогда расстояние до этой вершины будет таким же после $n$ релаксаций, как и после $n-1$ релаксаций, а это означает, что она не была бы релаксирована на $n$ итерации. Поэтому, если мы встречаем вершину, которая релаксировалась $n$ раз, мы завершаем работу алгоритма и сообщаем о существовании цикла с отрицательным весом. Время работы этого модифицированного алгоритма по-прежнему составляет $O(m\log n)$, так как дополнительный учет не увеличивает количество вставок и удалений в очереди с приоритетом.
+\end{itemize}
+\end{proof}
+\vskip 0.6in
+
+\begin{comment}
+\begin{itemize}
+\item[1] Let $s$ be the source vertex and $v$ be some vertex in the graph. Suppose that the shortest path from $s$ to $v$ is a path $p$ that goes through vertices $v_1, v_2, \ldots, v_k$ in that order. Then for each $i$, $1\leq i\leq k$, at the moment when vertex $v_i$ is relaxed for the first time, it must be in the priority queue, otherwise it would not have been considered at that moment. Since we only add vertices to the priority queue if they are relaxed and not currently in the priority queue, vertex $v_i$ must have been added to the priority queue as a result of relaxing some other vertex $u$. Furthermore, we must have relaxed some other vertex $u'$ before $u$ if $v_i$ was already in the priority queue at the time when we relaxed $u$. Therefore, $u'$ must be on the shortest path from $s$ to $v$ and we must have already relaxed $u'$ before $v_i$, which implies that $v_i$ was already in the priority queue at the time when $u'$ was relaxed. Therefore, we have only added vertices to the priority queue that are on the shortest path from $s$ to some vertex $v$.
+
+\item[2] Suppose there are edges of negative weight, but there is no cycle of negative weight. Since the priority queue only contains vertices that have been relaxed, and we only relax vertices that are reachable from $s$, we will only relax vertices that are within a distance of at most $n-1$ edges from $s$, where $n$ is the number of vertices in the graph. Therefore, we will only relax each edge at most $n-1$ times. Furthermore, since we only add vertices to the priority queue if they are relaxed and not currently in the priority queue, the total number of priority queue insertions and deletions is at most $m$, the number of edges in the graph. Therefore, the total running time of the modified algorithm is $O(m\log n)$. This is faster than the running time of the Bellman-Ford algorithm, which is $O(nm)$, if $n$ is much larger than $m$.
+
+\item[3] To verify the existence of cycles of negative weight, we can modify the algorithm as follows. In addition to keeping track of the distance to each vertex, we also keep track of the number of times each vertex has been relaxed. If a vertex is relaxed $n$ times, where $n$ is the number of vertices in the graph, then there is a cycle of negative weight that contains that vertex. To see why, suppose that there is no cycle of negative weight that contains that vertex. Then the distance to that vertex would be the same after $n$ relaxations as it was after $n-1$ relaxations, which implies that it would not have been relaxed on the $n$th iteration. Therefore, if we encounter a vertex that has been relaxed $n$ times, we terminate the algorithm and report the existence of a negative weight cycle. The running time of this modified algorithm is still $O(m\log n)$, since the extra bookkeeping does not increase the number of priority queue insertions and deletions.
+\end{itemize}
+\end{comment}
+
+
+
+\begin{prob}
+The directed graph has edges of negative weight, but no cycles with negative weight. Construct an algorithm that finds for a given vertex the vertex from which it is the maximum distance away. Prove the correctness and estimate the complexity.
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+Рассмотри алгоритм Беллмана-Форда. Алгоритм итеративно релаксирует ребра, т.е. пытается обновить предварительные оценки расстояния для каждой вершины на основе расстояний до ранее посещенных вершин. Каждая итерация гарантирует, что для всех вершин вычисляется кратчайший путь длиной не более i ребер. Чтобы найти вершину, которая находится на максимальном расстоянии от заданной вершины, мы можем просто запустить алгоритм Беллмана-Форда из этой вершины и отслеживать наибольшую предварительную оценку расстояния, обнаруженную во время выполнения. Вершина, соответствующая этой наибольшей оценке, и есть та, которая нас интересует. Корректность алгоритма следует из того факта, что алгоритм Беллмана-Форда вычисляет расстояния до всех вершин в задаче поиска кратчайшего пути с одним источником с отрицательными весами. Следовательно, если вершина достижима из источника, ее оценка расстояния будет обновлена в какой-то момент, и наибольшая оценка, встречающаяся во время выполнения, должна соответствовать вершине, наиболее удаленной от источника. Временная сложность алгоритма Беллмана-Форда равна O(VE), где V — количество вершин, а E — количество ребер в графе. Это связано с тем, что число итерациий не более V-1,чтобы гарантировать вычисление всех кратчайших путей и релаксировать все ребра на каждой итерации. Однако известно, что в графе без циклов с отрицательным весом алгоритм завершается не более чем через V-1 итерацию, поэтому временная сложность в этом случае равна O(VE).
+\end{proof}
+\vskip 0.6in
+
+\begin{comment}
+This problem can be solved using the Bellman-Ford algorithm, which is a modification of the Dijkstra's algorithm that is suitable for graphs with negative weights. The algorithm iteratively relaxes the edges, i.e., it attempts to update the tentative distance estimates for each vertex based on the distances to the previously visited vertices. Each iteration guarantees that the shortest path of length at most i edges is computed for all vertices.
+\vskip 0.1in
+To find the vertex that is the maximum distance away from a given vertex, we can simply run the Bellman-Ford algorithm from that vertex and keep track of the largest tentative distance estimate encountered during the execution. The vertex that corresponds to this largest estimate is the one we are interested in.
+\vskip 0.1in
+The correctness of the algorithm follows from the fact that the Bellman-Ford algorithm computes the distances to all vertices in a single-source shortest-path problem with negative weights. Therefore, if a vertex is reachable from the source, its distance estimate will be updated at some point, and the largest estimate encountered during the execution must correspond to the vertex that is the furthest away from the source.
+\vskip 0.1in
+The time complexity of the Bellman-Ford algorithm is O(VE), where V is the number of vertices and E is the number of edges in the graph. This is because the algorithm needs to iterate at most V - 1 times (to guarantee that all shortest paths are computed) and relax all the edges in each iteration. However, in a graph with no negative weight cycles, it is known that the algorithm terminates after at most V - 1 iterations, and therefore the time complexity in this case is O(VE). Note that this worst-case time complexity is unavoidable in general, as there can be exponentially many shortest paths to compute in a general directed graph.
+\end{comment}
+
+
+
+\begin{prob}
+The light weight of the path $p$ is the sum of the weights of the edges of $p$ except for the edge of the maximum weight (when traveling between cities on a network of toll roads, you do not have to pay to travel on one road). Construct an algorithm that, given a weighted directed graph with positive edge weights, finds paths of the minimum lightweight weight from $s$ to all other vertices. Prove the correctness and estimate the complexity.
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+\begin{itemize}
+\item[]
+\item[1] Инициализируем очередь с приориетами $Q$ и массив расстояний $D$, где $D[v]$ — длина кратчайшего пути из $s$ в вершину $v$, минуя ребро максимального веса
+\item[2] Вставим $s$ в $Q$ с приоритетом $0$ и зафиксируем $D[s] = 0$.
+\item[3] Пока $Q$ не пусто, извлекаем вершину $u$ с наименьшим приоритетом и для каждого исходящего ребра $u$ в $v$:
+     \begin{itemize}
+        \item Если вес ребра $(u,v)$ равен максимальному весу ребра на пути из $s$ в $v$, пропустим это ребро.
+        \item Если $D[u] + w(u,v) < D[v]$, заменим $D[v]$ на $D[u] + w(u,v)$ и вставим $v$ в $Q$ с приоритетом $D[v]$.
+     \end{itemize}
+\end{itemize}
+
+В конце этого алгоритма $D[v]$ будет содержать длину кратчайшего пути из $s$ в $v$, минуя ребро максимального веса, для всех вершин $v$. Чтобы доказать правильность, нам нужно показать, что алгоритм вычисляет правильные расстояния. Пусть $d(u,v)$ — длина кратчайшего пути из $u$ в $v$, избегающего ребра максимального веса. Индукцией по количеству ребер в таком пути можно доказать, что $D[v] \leq d(s,v)$ для всех вершин $v$.
+\vskip 0.1in
+База: $v=s$, где $D[s]=d(s,s)=0$
+\vskip 0.1in
+Предположим, что $D[v] \leq d(s,v)$ для всех вершин $v$ таких, что $d(s,v) < k$ для некоторого $k$. Пусть $d(s,v)=k$. Заметим, что если $(u,v)$ является ребром максимального веса на пути длины $k$ из $s$ в $v$, то любой путь из $s$ в $v$, избегающий $(u,v)$ имеет длину не более $k-1$. Следовательно, $D[v] \leq k-1 < d(s,v)$. Теперь рассмотрим любой путь $p$ длины $k$ из $s$ в $v$, который не пересекает ребро $(u,v)$. Поскольку $d(s,v)=k$, $p$ должно содержать некоторое ребро $(w,v)$ такое, что $d(s,w) < k$. По предположению индукции $D[w] \leq d(s,w) < k$. Поскольку $D$ монотонно не убывает, имеем $D[v] \leq D[w] + w(w,v) \leq d(s,w) + w(w,v) = d(s, в) $. Следовательно, $D[v] \leq d(s,v)$ для всех $v$, и алгоритм вычисляет правильные расстояния.
+\vskip 0.1in
+Временная сложность алгоритма равна $O(|E|\log|V|)$, где $|E|$ — количество ребер, а $|V|$ — количество вершин в графе. Это следует из того, что каждое ребро рассматривается не более одного раза и каждая вершина вставляется в приоритетную очередь не более одного раза. Очередь с приоритетом поддерживает вставку и извлечение за время $O(\log |V|)$.
+\end{proof}
+\vskip 0.6in
+
+\begin{comment}
+\begin{itemize}
+\item[1] Initialize a priority queue $Q$ and a distance array $D$, where $D[v]$ is the length of the shortest path from $s$ to vertex $v$ that avoids the edge of maximum weight.
+\item[2] Insert $s$ into $Q$ with priority $0$ and set $D[s] = 0$.
+\item[3] While $Q$ is not empty, extract the vertex $u$ with the lowest priority and for each outgoing edge of $u$ to a vertex $v$, do the following:
+    \begin{itemize}
+       \item If the weight of the edge $(u,v)$ is equal to the maximum edge weight in the path from $s$ to $v$, skip this edge.
+       \item If $D[u] + w(u,v) < D[v]$, update $D[v]$ to $D[u] + w(u,v)$ and insert $v$ into $Q$ with priority $D[v]$.
+    \end{itemize}
+\end{itemize}
+
+At the end of this algorithm, $D[v]$ will contain the length of the shortest path from $s$ to $v$ that avoids the edge of maximum weight, for all vertices $v$.
+\vskip 0.1in
+To prove correctness, we need to show that the algorithm computes the correct distances. Let $d(u,v)$ be the length of the shortest path from $u$ to $v$ that avoids the maximum edge weight. We can prove by induction on the number of edges in such a path that $D[v] \leq d(s,v)$ for all vertices $v$. The base case is $v=s$, where $D[s]=d(s,s)=0$.
+\vskip 0.1in
+Suppose that $D[v] \leq d(s,v)$ for all vertices $v$ such that $d(s,v) < k$ for some $k$. Let $d(s,v)=k$. First, observe that if $(u,v)$ is an edge of maximum weight on a path of length $k$ from $s$ to $v$, then any path from $s$ to $v$ that avoids $(u,v)$ has length at most $k-1$. Therefore, $D[v] \leq k-1 < d(s,v)$. Now, consider any path $p$ of length $k$ from $s$ to $v$ that avoids the edge $(u,v)$. Since $d(s,v)=k$, $p$ must contain some edge $(w,v)$ such that $d(s,w) < k$. By the inductive hypothesis, $D[w] \leq d(s,w) < k$. Since $D$ is monotonically non-decreasing, we have $D[v] \leq D[w] + w(w,v) \leq d(s,w) + w(w,v) = d(s,v)$. Therefore, $D[v] \leq d(s,v)$ for all $v$, and the algorithm computes the correct distances.
+\vskip 0.1in
+The time complexity of the algorithm is $O(|E|\log|V|)$, where $|E|$ is the number of edges and $|V|$ is the number of vertices in the graph. This follows from the fact that each edge is considered at most once and each vertex is inserted into the priority queue at most once. The priority queue supports insertion and extraction in $O(\log |V|)$ time.
+\end{comment}
+
+
+
+\begin{prob}
+A directed weighted graph has exactly one edge $(u \rightarrow v)$ of negative weight. Describe an efficient algorithm for finding the shortest path between a given pair of vertices $(a, b)$ "problem input: weight matrix and vertices $a$ and $b$. Prove the correctness and estimate the complexity.
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+Одним из эффективных алгоритмов поиска кратчайшего пути между парой вершин $(a,b)$ в ориентированном взвешенном графе ровно с одним отрицательным ребром $(u \rightarrow v)$ является использование алгоритма Беллмана-Форда с корректировкой. Идея состоит в том, чтобы запустить алгоритм Беллмана-Форда с $u$ в качестве исходной вершины, а затем из полученного массива расстояний вычесть вес отрицательного ребра $(u \rightarrow v)$. Затем мы снова запускаем алгоритм Беллмана-Форда с $a$ в качестве исходной вершины и используем полученный скорректированный массив расстояний в качестве входных данных. Это дает нам кратчайший путь из $a$ во все остальные вершины графа. Затем мы можем вернуть расстояние до вершины $b$ из скорректированного массива расстояний. Корректность алгоритма можно доказать, показав, что шаг уравнивания не влияет на кратчайшие пути между другими вершинами, за исключением вершин, непосредственно связанных с ребром отрицательного веса. Это связано с тем, что любой путь, проходящий через ребро с отрицательным весом, будет иметь уменьшенный вес, а любой другой путь не будет затронут. Общая временная сложность алгоритма составляет $O(|V||E|)$, где $|V|$ и $|E|$ — количество вершин и ребер в графе соответственно. Это связано с тем, что алгоритм Беллмана-Форда используется дважды: один раз для нахождения кратчайшего пути из $u$ во все остальные вершины и один раз для нахождения кратчайшего пути из $a$ в $b$. Однако на практике алгоритм часто может завершиться досрочно, если обнаруживается отрицательный цикл.
+\end{proof}
+\vskip 0.6in
+
+\begin{comment}
+One efficient algorithm for finding the shortest path between a pair of vertices $(a,b)$ in a directed weighted graph with exactly one negative edge $(u \rightarrow v)$ is to use the Bellman-Ford algorithm with an adjustment.
+\vskip 0.1in
+The idea is to run the Bellman-Ford algorithm with $u$ as the source vertex, and then from the distance array obtained, subtract the weight of the negative edge $(u \rightarrow v)$. This adjustment effectively removes the effect of the negative weight edge when calculating shortest distances.
+\vskip 0.1in
+Then, we run the Bellman-Ford algorithm again with $a$ as the source vertex, and use the adjusted distance array obtained as the input. This gives us the shortest path from $a$ to all other vertices in the graph. We can then return the distance of vertex $b$ from the adjusted distance array.
+\vskip 0.1in
+The correctness of the algorithm can be proven by showing that the adjustment step does not affect the shortest paths between other vertices, except for the vertices that are directly connected to the negative weight edge. This is because any path that passes through the negative weight edge will have its weight reduced, and any other path will not be affected.
+\vskip 0.1in
+The overall time complexity of the algorithm is $O(|V||E|)$, where $|V|$ and $|E|$ are the number of vertices and edges in the graph, respectively. This is because the Bellman-Ford algorithm is used twice, once for finding the shortest path from $u$ to all other vertices, and once for finding the shortest path from $a$ to $b$. However, in practice, the algorithm can often terminate early if a negative cycle is detected.
+\end{comment}
+
+
+\begin{prob}
+The following statements may or may not be correct. In each case, either prove it (if it is correct) or give a counterexample (if it isn't correct). Always assume that the graph $G=(V, E)$ is undirected. Do not assume that edge weights are distinct unless this is specifically stated.
+\begin{itemize}
+\item[a] If the lightest edge in a graph is unique, then it must be part of every MST.
+\item[b] If $e$ is part of some MST of $G$, then it must be a lightest edge across some cut of $G$.
+\item[c] The shortest path between two nodes is necessarily part of some MST.
+\end{itemize}
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+\begin{itemize}
+\item[]
+\item[a] Утверждение верно.\\ \noindent
+    Пусть $G=(V, E)$ — связный граф, и предположим, что $e$ — самое легкое ребро в $G$. Пусть $T$ — произвольное MST группы $G$. Если $e$ принадлежит $T$, мы закончили. В противном случае пусть $T'$ будет деревом, полученным добавлением $e$ к $T$. Поскольку $T$ — дерево, оно содержит уникальный путь $P$ между любой парой узлов. Так как $e$ — самое легкое ребро в $G$, оно не лежит в $T$, а значит, $P$ не содержит $e$. Таким образом, $P$ имеет две конечные точки, скажем, $u$ и $v$, так что существует другой путь $P'$ между $u$ и $v$, включающий $e$. Тогда $T'$ содержит цикл, который можно получить, удалив $P$ из $T'$ и добавив $P'$. Поскольку $T$ является деревом, а $T'$ имеет на одно ребро больше, чем $T$, этот цикл должен содержать еще одно ребро, скажем, $f$, не принадлежащее $T$. Но тогда $T''=T'\backslash \{f\}$ — это дерево, содержащее $e$ и имеющее вес $w(T'')=w(T')-w(f)<w(T)$, что противоречит тому, что $T$ является MST.
+\item[b] Утверждение верно.\\ \noindent
+    Пусть $G=(V,E)$ — связный граф, а $T$ — MST графа $G$. Предположим, что $e$ является частью $T$. Пусть $S$ — множество узлов, находящихся в той же компоненте связности $T-e$, что и $e.u$ (пусть $e=\{u,v\}$). Тогда $S$ — это множество узлов, до которых можно добраться из $u$ по пути, включающему или не включающему $v$, но не включающему $e$. Поскольку $T$ является MST, должно быть так, что нет другого ребра $f\in E$ с весом $w(f)<w(e)$, пересекающего разрез $(S,V\backslash S )$. Следовательно, $e$ должно быть легчайшим ребром на этом разрезе.
+\item[c] Утверждение ложно.\\ \noindent
+    Рассмотрим граф $G=(V,E)$ с $V=\{a,b,c\}$ и $E=\{\{a,b\},\{b,c\},\{a,c\}\}$, где вес каждого ребра равен 1. Тогда в MST будут какие-то 2 ребра из этих трех, допустим $\{a,b\},\{a,c\}$ но тогда расстояние в MST между b и c будет 2, хотя в изначальном графе они соединены ребром длины 1.
+\end{itemize}
+\end{proof}
+\vskip 0.6in
+
+\begin{comment}
+\begin{itemize}
+\item[a] The statement is true.
+    Proof: Let $G=(V, E)$ be a connected graph and suppose that $e$ is the lightest edge in $G$. Let $T$ be an arbitrary MST of $G$. If $e$ belongs to $T$, we are done. Otherwise, let $T'$ be the tree obtained by adding $e$ to $T$. Since $T$ is a tree, it contains a unique path $P$ between any pair of nodes. Since $e$ is the lightest edge in $G$, it is not in $T$ and therefore, $P$ does not contain $e$. Thus, $P$ has two endpoints, say $u$ and $v$, such that there is another path $P'$ between $u$ and $v$ that includes $e$. Then, $T'$ contains a cycle, which can be obtained by deleting $P$ from $T'$ and adding $P'$. Since $T$ is a tree and $T'$ has one more edge than $T$, this cycle must contain another edge, say $f$, that is not in $T$. But then, $T''=T'\backslash \{f\}$ is a tree that contains $e$ and has weight $w(T'')=w(T')-w(f)<w(T)$, which contradicts the fact that $T$ is an MST.
+\item[b] The statement is true.
+    Proof: Let $G=(V,E)$ be a connected graph and let $T$ be an MST of $G$. Suppose that $e$ is part of $T$. Let $S$ be the set of nodes that are in the same connected component of $T-e$ as $e.u$ (let $e=\{u,v\}$). Then, $S$ is the set of nodes that can be reached from $u$ by a path that includes $v$ or not, but does not include $e$. Since $T$ is an MST, it must be the case that there is no other edge $f\in E$ with weight $w(f)<w(e)$ that crosses the cut $(S,V\backslash S)$. Therefore, $e$ must be a lightest edge across this cut.
+\item[c] The statement is false.
+    Counterexample: Consider the graph $G=(V,E)$ with $V=\{a,b,c\}$ and $E=\{\{a,b\},\{b,c\}\}$, where the weight of each edge is 1. Then, the shortest path between $a$ and $c$ is the path $P=\{a,b,c\}$, which has weight 2. However, the graph $G$ itself is already an MST of $G$, and contains no path between $a$ and $c$.
+\end{itemize}
+\end{comment}
+
+
+\begin{prob}
+Let $T$ be an MST of graph $G$. Given a connected subgraph $H$ of $G$, show that $T \cap H$ is contained in some MST of $H$.
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+Чтобы доказать, что $T \cap H$ содержится в некотором MST $H$, мы можем использовать свойство разреза.
+Во-первых, отметим, что $T \cap H$ является остовным деревом графа $H$, поскольку он является подграфом как $T$, так и $H$, а $T$ является остовным деревом графа $G$, большего графа, содержащего $H$. Теперь рассмотрим любое MST $M$ из $H$. Пусть $S$ — любой разрез в $H$, разделяющий $M$ на две компоненты связности. Мы хотим показать, что $T \cap H$ содержит ребро с минимальным весом в разрезе $S$. Поскольку $M$ является MST, $M$ должно иметь ребро $e$ минимального веса в разрезе $S$. Если $e \in T \cap H$, то мы закончили.
+В противном случае предположим, что $e \notin T \cap H$. Так как $T$ является MST для $G$, у него должно быть ребро $f$, пересекающее разрез $S$. Теперь рассмотрим граф $T' = T - \{f\} + \{e\}$ (то есть граф $T$ с удаленным ребром $f$ и добавленным ребром $e$). Так как $e$ имеет минимальный вес в разрезе $S$, то $T'$ также должно быть остовным деревом $G$, потому что если бы это было не так, то $T'$ также имело бы второе ребро, пересекающее разрез $С$. Более того, $T'$ также является остовным деревом графа $H$, поскольку $H$ является связным подграфом графа $G$. Это означает, что $T' \cap H$ является остовным деревом $H$. Теперь мы хотим показать, что $T' \cap H$ также является MST $H$. Предположим, что это не так, пусть $M'$ — MST $H$, которое содержит ребро $g$, не принадлежащее $T' \cap H$. Поскольку $T' \cap H$ является подграфом $T$, это означает, что $g$ также не принадлежит $T$. Однако, поскольку $T$ является MST $G$, у него также должно быть ребро, пересекающее разрез $S$, отличное от $f$. Это означает, что $T$ имеет цикл $C$, содержащий $f$ и $g$. Поскольку $H$ — связный подграф в $G$, цикл $C$ должен содержать хотя бы одно ребро $h$ в $H$. Это ребро образует разрез $S'$ в $H$, разделяющий $T \cap H$ на две компоненты связности. Заметим, что $e$ не может лежать в цикле $C$, так как имеет минимальный вес в разрезе $S$. Это означает, что $H$ имеет еще один разрез $S''$ с $e$ и $h$ по разные стороны, что означает, что $e$ имеет минимальный вес в $S''$. Но так как $M'$ является MST $H$ и $e$ имеет минимальный вес в разрезе $S$, мы приходим к противоречию. Следовательно, $T' \cap H$ должно быть MST $H$. Таким образом, мы показали, что $T \cap H$ содержится в некотором MST $H$.
+\end{proof}
+\vskip 0.6in
+
+\begin{comment}
+To prove that $T \cap H$ is contained in some MST of $H$, we can use the cut property. 
+\vskip 0.1in
+Firstly, note that $T \cap H$ is a spanning tree of $H$ since it is a subgraph of both $T$ and $H$, and $T$ is a spanning tree of $G$, the larger graph containing $H$. 
+\vskip 0.1in
+Now, consider any MST $M$ of $H$. Let $S$ be any cut in $H$ that separates $M$ into two connected components. We want to show that $T \cap H$ contains the edge with minimal weight in the cut $S$. 
+\vskip 0.1in
+Since $M$ is an MST, $M$ must have an edge $e$ with minimal weight in the cut $S$. If $e \in T \cap H$, then we are done. 
+\vskip 0.1in
+Otherwise, assume that $e \notin T \cap H$. Since $T$ is an MST of $G$, it must have an edge $f$ that crosses cut $S$. Now, consider the graph $T' = T - \{f\} + \{e\}$ (that is, $T$ with edge $f$ removed and edge $e$ added). Since $e$ has minimal weight in cut $S$, $T'$ must also be a spanning tree of $G$, because if it were not, then $T'$ would also have a second edge that crosses the cut $S$. 
+\vskip 0.1in
+Moreover, $T'$ is also a spanning tree of $H$, because $H$ is a connected subgraph of $G$. This means that $T' \cap H$ is a spanning tree of $H$. 
+\vskip 0.1in
+Now, we want to show that $T' \cap H$ is also an MST of $H$. Suppose not, and let $M'$ be an MST of $H$ that contains an edge $g$ not in $T' \cap H$. Since $T' \cap H$ is a subgraph of $T$, this means that $g$ does not belong to $T$ as well. However, since $T$ is an MST of $G$, it must also have an edge crossing the cut $S$ other than $f$. This means that $T$ has a cycle $C$ containing $f$ and $g$. 
+\vskip 0.1in
+Since $H$ is a connected subgraph of $G$, the cycle $C$ must contain at least one edge $h$ in $H$. This edge forms a cut $S'$ in $H$ that separates $T \cap H$ into two connected components. Note that $e$ cannot be in the cycle $C$ since it has minimal weight in cut $S$. This means that $H$ has another cut $S''$ with $e$ and $h$ on different sides, which implies that $e$ has minimal weight in $S''$. But since $M'$ is an MST of $H$ and $e$ has minimal weight in cut $S$, we arrive at a contradiction. Therefore, $T' \cap H$ must be an MST of $H$. 
+\vskip 0.1in
+Therefore, we have shown that $T \cap H$ is contained in some MST of $H$.
+
+\end{comment}
+
+
+\begin{prob}
+The input of the problem is an undirected weighted graph $G(V, E)$ and a subset of vertices $U \subseteq V$. It is necessary to construct a spanning tree that is minimal (by weight) among trees in which all vertices of $U$ are leaves (but there may be other leaves), or find that there are no such spanning trees. Construct an algorithm that solves the problem in $O(|E| \log |V|)$. Note that the tree you are looking for may not be a minimum spanning tree.
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+Для решения этой задачи мы можем использовать алгоритм Крускала с небольшой модификацией. Алгоритм Крускала строит минимальное остовное дерево для данного графа. Чтобы модифицировать его для этой задачи, нам нужно рассматривать только те ребра, которые соединяют вершины в $U\subseteq V$.
+\vskip 0.1in
+Измененный алгоритм:
+\begin{itemize}
+\item[1] Отсортируем ребра $G$ в порядке неубывания веса
+\item[2] Инициализируем пустое множество ребер $T$
+\item[3] Для каждого ребра $e$ в отсортированном списке выполним:
+	- Если добавление $e$ к $T$ не создает цикл, а концы $e$ содержат хотя бы одну вершину из $U$, добавим $e$ к $T$.
+\item[4] Если $T$ — дерево и все вершины $U$ — листья, выведем $T$.
+\end{itemize}
+
+Первый шаг $O(|E| \log |E|)$, так как ребра нужно отсортировать в порядке неубывания веса, а их $|E|$.
+\vskip 0.1in
+Второй - константа.
+\vskip 0.1in
+Третий шаг $O(|E|\alpha(|V|))$
+\vskip 0.1in
+Четвертый - константа
+\vskip 0.1in
+Таким образом, общее время работы алгоритма составляет $O(|E| \log |E| + |E|\alpha(|V|))$, что можно упростить до $O(|E| \log |V|)$, используя тот факт, что $|E| \leq O(|V|^2)$
+\end{proof}
+
+
+\begin{comment}
+To solve this problem, we can use Kruskal's algorithm with a slight modification. Kruskal's algorithm constructs a minimum spanning tree for a given graph. To modify it for this problem, we need to consider only the edges that connect vertices in $U\subseteq V$.
+
+Here's the modified algorithm:
+\begin{itemize}
+\item[1] Sort the edges of $G$ in non-decreasing order of weight.
+\item[2] Initialize an empty set $T$ of edges.
+\item[3] For each edge $e$ in the sorted list, do the following:
+   - If adding $e$ to $T$ does not create a cycle, and the endpoints of $e$ contain at least one vertex from $U$, add $e$ to $T$.
+\item[4] If $T$ is a tree and all vertices of $U$ are leaves, return $T$.
+\item[5] Otherwise, return that there is no such spanning tree.
+\end{itemize}
+
+The first step takes $O(|E| \log |E|)$, as the edges need to be sorted in non-decreasing order of weight, and there are $|E|$ of them.
+\vskip 0.1in
+The second step takes constant time.
+\vskip 0.1in
+The third step takes $O(|E|\alpha(|V|))$ time, where $\alpha$ is the inverse Ackermann function, which grows very slowly (essentially constant for all practical purposes). We can use a union-find data structure to check if adding an edge creates a cycle in constant time, and to keep track of which vertices are in the same connected component.
+\vskip 0.1in
+The fourth step takes constant time.
+\vskip 0.1in
+Therefore, the total running time of the algorithm is $O(|E| \log |E| + |E|\alpha(|V|))$, which can be simplified to $O(|E| \log |V|)$ using the fact that $|E| = O(|V|^2)$ in an undirected graph.
+\vskip 0.1in
+Thus, we have provided an algorithm that solves the given problem in the required complexity.
+\end{comment}

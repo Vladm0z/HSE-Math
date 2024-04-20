@@ -1,0 +1,200 @@
+\section{Problem List 4}
+
+\begin{prob}
+Construct an algorithm that convert a binary search tree into a linked list such that the linked list is ordered descending.
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+\begin{itemize}
+    \item[] 
+    \item[1] Совершим RNL обход двоичного дерева поиска
+    \item[2] Во время обхода, изменим указатель \texttt{LeftChild} на предыдущий узел в связанном списке, а \texttt{RightChild} на следующий
+    \item[3] Будем отслеживать положение начала и конца списка по мере обхода
+\end{itemize}
+
+\begin{lstlisting}[language=Python]
+def bst_to_list(root):
+    head = None
+    tail = None
+
+    def reverse_inorder(node):
+        nonlocal head, tail
+        if node:
+            reverse_inorder(node.right)
+            if tail:
+                tail.left = node
+                node.right = tail
+            else:
+                head = node
+            tail = node
+            reverse_inorder(node.left)
+
+    reverse_inorder(root)
+    return head
+\end{lstlisting}
+
+Узлы бинарного дерева поиска имеют указатели \texttt{LeftChild} и \texttt{RightChild}, а узлы связанного списка также имеют указатели \texttt{LeftChild} и \texttt{RightChild}. Указатель \texttt{LeftChild} узла связанного списка указывает на предыдущий узел в списке, а указатель \texttt{RightChild} указывает на следующий узел в списке.
+\end{proof}
+\vskip 0.6in
+
+
+
+\begin{prob}
+A concatenate operation takes two sets $S_1$ and $S_2$, where every key in $S_1$ is smaller than any key in $S_2$, and merges them together. Give an algorithm to concatenate two binary search trees into one binary search tree. The worst-case running time should be $O(h)$, where $h$ is the minimal height of the two trees; heights of the trees are known.
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+\begin{itemize}
+    \item[]
+    \item[1] Найдем самый большой ключ в первом дереве $S_1$, проходя по \texttt{RightChild} начиная от корня, пока это возможно. Назовем этот узел $x$.
+    \item[2] Удалим $x$ из $S_1$.
+    \item[3] Сделаем $x$ новым корнем объединенного дерева.
+    \item[4] Сделаем корень $S_1$ левым ребенком $x$ и корень $S_2$ павым ребенком $x$.
+\end{itemize}
+
+Этот алгоритм занимает $O(h)$ времени, так как поиск и удаление самого большого ключа в $S_1$ занимает $O(h)$, где $h$ — высота $S_1$. Создание $x$ нового корня и прикрепление корней $S_1$ и $S_2$ в качестве его детей занимает $O(1)$.
+\end{proof}
+\vskip 0.6in
+
+
+
+\begin{prob}
+Describe how to modify any balanced tree data structure such that search, insert, delete, minimum, and maximum still take $O(\log n)$ time each, but successor and predecessor now take $O(1)$ time each. Which operations have to be modified to support this?
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+Дополним вершины дерева указателями на прошлую и следующую вершины по порядку, и будем обновлять эти указатели при каждом изменении дерева (вставка, удаление)
+
+\begin{itemize}
+\item[]
+\item[search] Без изменений
+\item[insert] Обновим указатели на прошлую и следующую вершины (successor и predecessor) для всех узлов, затронутых операцией вставки. Для этого проведем обычную вставку, затем обновим указатели для всех вершин на пути от корня к новой вершине. $O(\log n)$ - время вставки и $O(\log n)$ - время обновления указателей
+    \begin{lstlisting}
+    function insert(node, value):
+        // Perform a standard insert operation
+        // ...
+        // Update successor and predecessor pointers
+        while node.parent is not null:
+            if (node.parent.successor is null or
+                    value < node.parent.successor.value):
+                node.parent.successor = node
+            if (node.parent.predecessor is null or
+                    value > node.parent.predecessor.value):
+                node.parent.predecessor = node
+            node = node.parent
+    \end{lstlisting}
+\item[delete] Обновим указатели на прошлую и следующую вершины (successor и predecessor) для всех узлов, затронутых операцией удаления. Для этого проведем обычное удаление, затем обновим указатели для всех вершин на пути от корня к новой вершине. $O(\log n)$ - время удаления и $O(\log n)$ - время обновления указателей
+    \begin{lstlisting}
+    function delete(node):
+        // Perform a standard delete operation
+        // to remove the node from the tree
+        // ...
+        // Update successor and predecessor pointers
+        if node.parent is not null:
+            if node.parent.successor == node:
+                node.parent.successor = node.successor
+            if node.parent.predecessor == node:
+                node.parent.predecessor = node.predecessor
+            node = node.parent
+            while node is not null:
+                if (node.successor == null or
+                        node.right.predecessor.value < node.successor.value):
+                    node.successor = node.right.predecessor
+                if (node.predecessor == null or
+                        node.left.successor.value > node.predecessor.value):
+                    node.predecessor = node.left.successor
+                node = node.parent
+    \end{lstlisting}
+
+\item[minimum] Без изменений
+\item[maximum] Без изменений
+\item[successor] Следуем указателю, $O(1)$
+    \begin{lstlisting}
+    function successor(node):
+        if node.successor is not null:
+            return node.successor
+        while node.parent is not null and node == node.parent.right:
+            node = node.parent
+        return node.parent
+    \end{lstlisting}
+\item[predecessor] Следуем указателю, $O(1)$
+    \begin{lstlisting}
+    function predecessor(node):
+        if node.predecessor is not null:
+            return node.predecessor
+        while node.parent is not null and node == node.parent.left:
+            node = node.parent
+        return node.parent
+    \end{lstlisting}
+\end{itemize}
+Дополняя вершины дерева указателями и обновляя эти указатели во время вставки и удаления, мы можем изменить любое дерево таким образом, что поиск, вставка, удаление, минимум и максимум работали $O(\log n)$
+\end{proof}
+\vskip 0.6in
+
+
+
+\begin{prob}
+The keys of the binary search tree had been written to the array according to the preorder traversal (NLR). So, for a tree from the picture, the array is $[4,2,1,3,5]$. The array for a tree is stored in RAM. Construct an $O(n)$ algorithm that gets on the input keys $u$ and $v$ and outputs whether $v$ is a descendent of $u$ in the original tree.
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+\begin{itemize}
+\item[]
+\item[1] Создадим хэш-таблицу для хранения индексов всех ключей
+\item[2] Найдем индексы ключей $u$ и $v$ в массиве с помощью хэш-таблицы
+\item[3] Если индекс $u$ больше индекса $v$, то $v$ не может быть потомком $u$
+\item[4] Найдем первый ключ в массиве, больший $u$ (назовем его $x$). Этот ключ - корень правого поддерева $u$
+\item[5] Если индекс $v$ меньше индекса $x$, то $v$ является потомком $u$, в противном случае это не так
+\end{itemize}
+
+При обходе NLR все потомки вершины будут записаны в массиве после расмматриваемой вершины и до следующей вершины, не являющейся потомком. Найдя первый элемент, больший $u$, мы можем определить диапазон индексов, которые принадлежащих поддереву с корнем $u$. Если индекс $v$ попадает в этот диапазон, то $v$ является потомком $u$.
+\vskip 0.1in
+Сложность $\mathcal{O}(n)$, так как для создания хэш-таблицы требуется $\mathcal{O}(n)$ и $\mathcal{O}(1)$ для каждого поиска в ней.
+\end{proof}
+\vskip 0.6in
+
+
+
+\begin{prob}
+An array of size $n$ contains elements from the range from 1 to $n-1$ (may be not all of them). Construct an algorithm that finds a duplicate satisfying the conditions (subproblems are separate)
+\begin{itemize}
+\item[]
+\item[1] Algorithm runs in $O(n)$
+\item[2] Algorithm runs in $O(n)$ and uses $O(1)$ RAM; the array is available in read-only mode. It is known that the array contains all numbers from 1 to $n-1$
+\item[3] Algorithm runs in $O(n)$ and uses $O(1)$ RAM; the array is available in read-only mode. You can solve only this subproblem
+\end{itemize}
+\end{prob}
+\vskip 0.2in
+\begin{proof}
+Можно рассматривать массив как связанный список, где значение в каждом индексе представляет следующий узел в списке. Мы начинаем с первого элемента и перемещаемся по элементам, пока не найдем цикл. Точкой входа в цикл является дублирующийся элемент
+\vskip 0.1in
+Для обнаружения цикла мы можем использовать два указателя - медленный и быстрый. Медленный указатель делает 1 шаг за раз, быстрый 2. Если есть цикл, быстрый указатель догонит медленный и они встретятся внутри цикла
+\vskip 0.1in
+Чтобы применить эту концепцию к массиву, мы можем использовать значения в массиве в качестве указателей на следующий элемент. В частности, для каждого значения в массиве мы можем рассматривать его как указатель на элемент с соответсвующим индексом. Например, если $\text{arr}[i] = j$, то элемент $i$ указывает на элемент $j$
+
+\begin{lstlisting}
+function find_duplicate(arr):
+    n = length(arr)
+    slow = arr[0]
+    fast = arr[arr[0]]
+
+    # Phase 1: Find the meeting point
+    while slow != fast:
+        slow = arr[slow]
+        fast = arr[arr[fast]]
+
+    # Phase 2: Find the entry point to the cycle
+    slow = 0
+    while slow != fast:
+        slow = arr[slow]
+        fast = arr[fast]
+
+    return slow
+\end{lstlisting}
+
+В фазе 1 мы используем медленный и быстрый указатели, чтобы найти точку встречи внутри цикла. Если цикла нет, быстрый указатель в конечном итоге достигнет конца массива и алгоритм завершится. В противном случае медленный и быстрый указатели в конечном итоге встретятся при некотором индексе k внутри цикла
+\vskip 0.1in
+Во 2 фазе мы сбрасываем медленный указатель в начало массива и перемещаем оба указателя в одном темпе, пока они не встретятся
+\vskip 0.1in
+Этот алгоритм работает $O(n)$ и использует $O(1)$ памяти, так как мы используем только 2 указателя
+\end{proof}

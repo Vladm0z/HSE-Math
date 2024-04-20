@@ -1,0 +1,192 @@
+\section{HW 6}
+
+\begin{prob}
+Пусть $f: \operatorname{Spec}(B) \rightarrow \operatorname{Spec}(A)$ открытое вложение аффинных схем, докажите, что $B$ конечно порожденная $A$-алгебра.
+\end{prob}
+\begin{proof}
+$f: \operatorname{Spec}(B) \rightarrow \operatorname{Spec}(A)$ - открытое вложение $\Rightarrow$ отождествим $\operatorname{Spec} B$ с откр $f^{\#} A \rightarrow B$ подсх и в $\operatorname{Spec} A$. $\operatorname{Spec} B = \bigcup_{i = 1}^{N} \operatorname{Spec} B_{g_i}$ $\Rightarrow$ $\operatorname{Spec} B_{g_i}$ - гл. вв $\operatorname{Spec} A$ $\Rightarrow$ $B_{g_i} = A \left[\frac{a_{ij}}{g_{i}}\right]$. $\operatorname{Spec} B = \bigcup \operatorname{Spec} B_{g_i}$ $\Rightarrow$ $1 = \sum g_i b_i$. Пусть $C = A[a_{ij}, g_i, b_i]$ и $C' = A[a_{ij}, g_i]$. $C'_{g_i} = B_{g_i}$ $\Rightarrow$ $\forall b \in B\hspace{0.5em} \exists k\hspace{0.5em} g_i^k b = g_i^k c_i\hspace{0.5em} c_i \in C'$, так как $i$ конечное число $\Rightarrow$ $k$ можно взять одно $\Rightarrow$ для достаточно большого $k:\hspace{0.5em} 1 = \sum \lambda_i f_i^k\hspace{0.5em} \lambda_i \in C$ $\Rightarrow$ $b = \sum b \lambda_i f_i^k = \sum c_i \lambda_i f_i^m \in C$ $\Rightarrow$ $B = C$
+\end{proof}
+\begin{comment}
+\end{comment}
+\vskip 0.6in
+
+
+
+
+
+\begin{prob}
+Пусть $f: X \rightarrow Y, g: Y \rightarrow Z$ морфизмы схем, докажите, что если $g f$ локально конечного типа, то $f$ тоже. А как насчет $g$ ?
+\end{prob}
+\begin{proof}
+$f: X \to Y\hspace{0.5em} \forall U = \operatorname{Spec} B \subset Y\hspace{1em} g(U) = \bigcup W_i = \bigcup \operatorname{Spec} A_i\hspace{0.5em} \exists V_i = \operatorname{Spec} C_i \subset X:\hspace{0.25em} C_i$ - алг кон типа над $A_i$. $U = \bigcup g^{-1} (W_i)$ $g^{-1}(W_i) = \bigcup U_{ij} = \bigcup \operatorname{Spec} B_{ij}$, $B_{ij}$ - алг кон типа над $B$. $V_i \supset f^{-1} (U_{ij})$ $\Rightarrow$ $f^{-1} (U_{ij}) = \bigcup U_{ijk} = \bigcup \operatorname{Spec} C_{ijk}$. $C_{ijk}$ - алг кон типа над $C_i$, а следовательно и над $A_i$, то есть мы свели задачу к аффинному случаю. $\operatorname{Spec} A \rightarrow \operatorname{Spec} B \rightarrow \operatorname{Spec} C\hspace{0.5em}$ $C \xrightarrow{f^{\#}} B \xrightarrow{g^{\#}} A$. $A$ - алг кон типа над $C$, откуда $\exists a_1, \ldots, a)n \in A$, такие что $\forall a \in A\hspace{1em} a = \sum c_i a_i = \sum g^{\#}(f^{\#}(c_i)) a_i = \{f^{\#}(c_i) = b_i\} = \sum g^{\#}(b_i) a_i = \sum b_i a_i$ $\Rightarrow$ $A = \langle a_1, \ldots, a_n \rangle$ - как $B$ - алг $\Rightarrow$ $A$ - алг кон типа над $B$. $f$ может не быть морфизмом лок кон типа, например $\operatorname{Spec} k \xrightarrow{f} \operatorname{Spek} k [xy, xy^2, xy^3, \ldots] \xrightarrow{g} \operatorname{Spec} k[x,y]$. $(gf)$ - морфизм лок кон типа, но $f$ нет.
+\end{proof}
+\begin{comment}
+\end{comment}
+\vskip 0.6in
+
+
+
+
+
+\begin{prob}
+\begin{itemize}
+\item[]
+\item[(а)] Пусть $f: X \rightarrow Y$ конечный морфизм, являющийся сюрьекцией топологических пространств. Докажите, что размерности $X$ и $Y$ равны.
+\item[(б)] Верно ли это без предноложения о сюръективности $f$ ? а с более слабым предположением доминантности $f$ (т. е. что $f(X)$ плотно в $Y)$ ?
+\end{itemize}
+\end{prob}
+\begin{proof}
+$f: X \to Y$ - конечный сюръективный морфизм
+\begin{gather*}
+    Y = \bigcup U_i = \bigcup \operatorname{Spec} A_i\hspace{1em} \text{- афф покр}
+    X = \bigcup f^{-1} (U_i) = \bigcup \operatorname{Spec} B_i\hspace{1em} \text{- афф покр}
+\end{gather*}
+$f$ - сюръекция $\Rightarrow$ $ff^{-1}(U_i) = U_i$ $\Rightarrow$ $f\big|_{f^{-1}(U_i)}: f^{-1}(U_i)$ то есть $U_i$ корр опр. $\dim Y = \max(\dim(U_i))$, возбмем $i$ с макс размерн $\Rightarrow$ задача сводится к aff случаю $f: \operatorname{Spec} B \rightarrow \operatorname{Spec} A$ - конечный сюръективный морфизм $\rightarrow$ $B$ - к.п. $A$ - модуль, $f$ - сюръекция $\Rightarrow$ $f$ - домин $\Rightarrow$ $f^{\#}: A \to B$ - инъекция $\Rightarrow$ $f^{\#} A \to B$ - целое расширение колец $\Rightarrow$ $\forall q, q'\in \operatorname{Spec} B$ таких что $(f^{\#})^{-1}(q) = (f^{\#})^{-1})(q') = p$, тогда $q \not\subset q'$ и $q'\not\subset q$ $\Rightarrow$ $q_0 \subset \ldots \subset q_n \subset B$ - цепочка простых, таких что $\dim B = n$ $\Rightarrow$ $p_i = (f^{\#})^{-1}(q_i)$ $p_0 \subset \ldots \subset p_n \subset A\hspace{1em} \forall i p_i \in \operatorname{Spec} A$ и $p_i \ne p_{i+1}$ (иначе $q_i \not\subset q_{i+1}$) $\Rightarrow$ $\dim A \geqslant n \Rightarrow \dim A \geqslant \dim B$. $f$ - целое расширение $\Rightarrow$ $f^{\#}$ удовлетворяет "lying over prop" $\Rightarrow \forall p \in \operatorname{Spec} A\hspace{0.5em} \exists q \in \operatorname{Spec} B$ такое что $q \cap A = p$ $\Rightarrow$ $\forall p_0 \subset \ldots \subset p_n \subset A\hspace{0.5em} \exists q_0 \subset \ldots \subset q_n \subset B$ $\Rightarrow$ $\dim A \leqslant \dim B$ $\Rightarrow$ $\dim A = \dim B$
+
+Если $f$ не доминантый морфизм (в том числе не сюръекция), то это не всегда правда, например $\operatorname{Spec} \mathbb{Q} \to \operatorname{Spec} \mathbb{Z}$ ($\operatorname{pt} \to (0)$) - конечный морфизм
+\end{proof}
+\begin{comment}
+\end{comment}
+\newpage
+
+
+
+
+
+\begin{prob}
+Пусть $f: X \rightarrow Y$ морфизм схем, $x \in X \times_Y X, p, q$ две ироекции $X \times_Y X$ на $X, \Delta: X \rightarrow X \times_Y X$ диагональный морфизм. Верно ли, тто если $x \in \Delta(X)$, то $p(x)=q(x)$ ? Верно ли, тто если $p(x)=q(x)$, то $x \in \Delta(X) ?$
+\end{prob}
+\begin{proof}
+\begin{itemize}
+\item[]
+\end{itemize}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBpiBdUkANwEMAbAVxiRAA0ACAHW7wFt4AfWC96AJzQALLAF9O7ELNLpMufIRQAmclVqMWbRctXY8BImS176zVog5KVIDGY1Ed16rcMOxdSRknU3ULFAAGUnCbA3tHWT0YKABzeCJQADNxCH4kABZqHAgkMn07Nl4INBhxOiLxMDpBYABJKFlgkCyc-MLixB0y3xBK6tr6xua2jpMu7NzEApAipEihuIBBTu6FtZXEUp84gEdt+dW+pEGjtjQznoPLxABmb1i2DPuFwf3X9Y+lBRZEA
+%\arrow[bend left=20,swap]{rrd}{\psi}
+\begin{tikzcd}
+X \arrow[bend left=20,swap]{rrd}{\operatorname{Id}} \arrow[bend right=20,swap]{rdd}{\operatorname{Id}} \arrow{rd}{A} & & \\
+& X \times_{\varphi} X \arrow{r}{q} \arrow{d}{p} & X \arrow{d}{f} \\
+& X \arrow{r}{f} & \varphi
+\end{tikzcd}
+
+\begin{gather*}
+    x \in X \times_Y X\hspace{0.5em} x \in \Delta(X)
+    \Rightarrow \exists y \in X\hspace{0.5em} \Delta(y) = X
+    \Rightarrow p(x) = p(\Delta(y)) = \operatorname{id}(y)
+    = q(\Delta(y)) = q(x)
+\end{gather*}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12I0YAnOnBF5g6AWxjAAyjwDGAXwAEACk6iBACwBGm4AGFFnCHnFwA+sFUbtwAEpyD7NTi079AShBzS6TLnyEUAEZyKlpGFjZDHn5BYTEJaRh5S2drfU9vEAxsPAIiMkDQ+mZWRA4uaIEhEXEpWTkUlz05DJ8c-yJgwupiiLKoviq42sTkxysdO09QmCgAc3giUAAzXghRJDIQQSRArxW1jcRg7YgkAGZ9kFX1zeodxAAmK5ujx-uzxEuKOSA
+\begin{tikzcd}
+\operatorname{Spec} (\mathbb{C} \otimes_{\mathbb{R}} \mathbb{C}) \arrow[r] \arrow[d] & \operatorname{Spec}\mathbb{C} \arrow[d] \\
+\operatorname{Spec}\mathbb{C} \arrow[r]                                              & \operatorname{Spec}\mathbb{R}          
+\end{tikzcd}
+
+\begin{gather*}
+    \mathbb{C} \otimes_{\mathbb{R}} \mathbb{C}
+    = \mathbb{C} \otimes_{\mathbb{R}} \frac{\mathbb{R}[x]}{x^2+1}
+    = \frac{\mathbb{C}[x]}{x^2+1}
+    = \frac{\mathbb{C}[x]}{(x+i)(x-i)}
+    = \frac{\mathbb{C}[x]}{x+i} \times \frac{\mathbb{C}[x]}{x-i}
+    = \mathbb{C} \times \mathbb{C}\\
+    \Rightarrow \operatorname{Spec} \mathbb{C} \otimes_{\mathbb{R}} \mathbb{C}
+    = \{\operatorname{pt}\} \bigsqcup \{\operatorname{pt}\}
+    = \{a,b\}\\
+    \Delta(\operatorname{Spec} \mathbb{C}) = \{a\}
+    \hspace{0.5em} p(b) = q(b) = \{\operatorname{pt}\}
+    \hspace{0.5em} \text{но} \hspace{0.5em}
+    \Delta(\{\operatorname{pt}\}) \ne \{b\}
+\end{gather*}
+\end{proof}
+\begin{comment}
+\end{comment}
+\vskip 0.6in
+
+
+
+
+
+\begin{prob}
+Докажите, что свойство отделимости сохраняется при замене базы.
+\end{prob}
+\begin{proof}
+\begin{itemize}
+\item[]
+\end{itemize}
+$f$ - отделим, то есть $\Delta_{X\slash Y}$ - замкнутое вложение
+Без ограничения общности $X \times_Y (X \times_Y K) \simeq (X \times_Y X) \times_Y K$
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQAtEAX1PU1z5CKcqWLU6TVuwAaAAgA6CvAFt4AfWBKGAJzQALLNzkAKeUtUatC3QaNyA0gEoefEBmx4CRAExiJDCxsiCAyFlhqcJra9HqGxg6u-J5CRADM-jSB0iGJvMmC3ihkPgFSwaFJ7gJewsiipVnlslUehXV+aWVB7DFxWDwSMFAA5vBEoABmOhAqSKIgOBBIZJI9IUpMBvRV07PzNEtIfms5IEoj9CoqO-kge3OIC0eIAKxN6+c2sXYgNIz0ABGMEYAAUaqkQjosCN9DhdjNHs9logACwfM5KNDYP4gAHAsEQop4mCTeF3B4HRYojKnCpKAAq+hgOFubkpb0OKIAbBiKpMEfs0VykLy6ewBRTEccRcLxRsFGgsOpiILHicXrTsvTFcqfGqVrL3vL3CqDYhaS8xdr2CNzasXicbSE0Op9dxKNwgA
+\begin{tikzcd}
+& Z \arrow[bend right=20,swap]{ld}{\alpha} \arrow{rd}{\gamma} \arrow[bend left=35,swap]{ldd}{\varphi} \arrow{dd}{\psi} \arrow[bend left=20,swap]{rrd}{\Theta} & & \\
+X \times_{\varphi} (X \times_{\varphi} K) \arrow{d}{p_1} \arrow{rr}{p_2} & & X\times_{\varphi} K \arrow{ld}{\pi_1} \arrow{r}{\pi_2} & K \arrow[bend left=20,swap]{ldd}{g} \\
+X \arrow[bend right=20,swap]{rrd}{f} & X \arrow{rd}{f} & & \\
+& & \varphi & 
+\end{tikzcd}
+\begin{gather*}
+    f \varphi = f \psi = g \Theta \Rightarrow \exists ! \gamma: Z \to X \times_Y K\\
+    \psi - \pi_1 \gamma\quad \Theta = \pi_2 \gamma\\
+    f \pi_1 \gamma = g \pi_2 \gamma = f \varphi\\
+    \Rightarrow \exists! \alpha: Z \to X \times_Y (X \times_Y K)\quad p_2 \alpha = \gamma\quad p_1 \alpha = \varphi\\
+    \Rightarrow \pi_2 p_2 \alpha = \Theta\quad \pi_1 p_2 \alpha = \psi\quad p_1 \alpha = \varphi
+\end{gather*}
+При пост-композиции с $\pi_1$ и $\pi_2$ может пропасть единственность $\alpha$.\\
+Пусть $\exists \beta: Z \to X \times_Y (X \times K)$, такое что $\beta \ne \alpha$, тогда
+\begin{gather*}
+    \pi_2 p_2 \beta = \Theta\quad \pi_1 p_2 \beta = \psi\quad p_1 \beta = \varphi\\
+    \Rightarrow \text{из единственности $gamma$ следует} p_2 \beta = \gamma \quad p_1 \beta = \varphi\\
+    \Rightarrow \beta = \alpha
+    \Rightarrow X \times_Y (X \times_Y K) \text{ предел диаграммы}
+\end{gather*}
+Аналогично доказывается что $(X \times_Y X) \times_Y K$ предел этой диаграммы, откуда $(X \times_Y X) \times_Y K \simeq X \times_Y (X \times_Y K)$\\
+Без ограничения общности
+\begin{gather*}
+    \frac{\Delta X \times_Y K}{K}: X \times_Y K \to X \times_Y K \times_K X \times_Y K \text{ -- замкнутое вложение}\\
+    X \times_Y K \times_K X \times_Y K \simeq X \times_Y (X \times_Y K) \simeq (X \times_Y X) \times_Y K
+\end{gather*}
+
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0ACAHW7wFt4AfWBdeA4QE1O7AL6cAFGL5ZBcIdPYBKHirUbOAaS0hZpdJlz5CKAIzkqtRizbtT5kBmx4CRMrcd6ZlZEECVdCXVNHXFVKSN3C29rInsA6iCXUOVIgzczJKtfO1IAJkDnEI5Ez0sfGxIyiuDXCLiohNlHGCgAc3giUAAzACcIfiQyEBwIJFKMyrZeUboAY2BeABEYBhw6GTb9aUNZYBOa0fHJ6hmkWwKQS4nEe2nZxABmBZbQ5ZG1jbcba7fZyYCSWQXMbPeZvJBfJw-TxCWxQq6IWG3RAAVm+WWRpTRzwRWIALHiqrw0FgUUSkLi4YhSV1ZEA
+\begin{tikzcd}
+X \times_{X \times_Y X} (X \times_Y X) \times_Y K \arrow{d}{\frac{\Delta X \times_Y K}{K}} \arrow{r} & X \arrow{d}{\frac{\Delta X}{Y}} \\
+(X \times_Y X) \times_Y K \arrow{r}{p_1} \arrow{d}{p_2} & X \times_Y X \arrow{d}{\pi_1} \\
+X \times_Y K \arrow{r} & X                                
+\end{tikzcd}\\
+Нижний квадрат декартов, $\operatorname{id} = p_2 \circ \frac{\Delta X \times_y K}{K}$, $\operatorname{id} = \pi_1 \times \frac{\Delta X}{Y}$, то есть\\
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0ACAHW7wFt4AfQCanANIgAvqXSZc+QigCM5KrUYs27abJAZseAkVXL19Zq0Qddcw4qJkz1C1utdeA4WMlT1MKABzeCJQADMAJwh+JDIQHAgkZRlwqJjEVXjExAAmFJBI6NjqBKQAZnzC9LKS7LyKKSA
+\begin{tikzcd}
+X \times_Y K \arrow{r} \arrow{d} & X \arrow{d} \\
+X \times_Y K \arrow{r}           & X          
+\end{tikzcd}\\
+ тоже декартов, откуда и верххний квадрат декартов\\
+ $\frac{\Delta X \times_Y K}{K}$ - замкнутое вложение, так как замкнутое влодение стабильно относительно смены базы
+\end{proof}
+\begin{comment}
+\end{comment}
+\vskip 0.6in
+
+
+
+
+
+\begin{prob}
+Докажите, что если $g f$ отделим, то $f$ отделим.
+\end{prob}
+\begin{proof}
+\begin{itemize}
+\item[]
+\end{itemize}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0ACAHW7wFt4AfQCandiAC+pdJlz5CKAIzkqtRizZdeA4QC1xUmSAzY8BImSVr6zVohAijsswqIrr1W5odidWQTghAydJNRgoAHN4IlAAMwAnCH4kMhAcCCQlaXiklMQVdMzEAGYckETk1OoMpAAmcsr8uprisopJIA
+\begin{tikzcd}
+X \times_Y X \arrow{r} \arrow{d} & X \times_Z X \arrow{d} \\
+Y \arrow{r} & Y \times_Z Y       
+\end{tikzcd}
+-- декартов квадрат\\
+\vspace{0.2in}
+$Y \to Y \times_Z Y$ - вложение $\Rightarrow$ $X \times_Y X \to X \times_Z X$ - вложение\\
+\vspace{0.1in}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0QBfU9TXfIRQBGclVqMWbdgB0ZeALbwA+sABaXTjz7Y8BImWHj6zVog4ACOYpXA59AE5oAFli4Wt4mFADm8IqAAZg4QCkhkIDgQSKISpmxyACIwDDh0VjLBdADGwAAeXMAAXlzcvCDBoeHUUUgATNQmUuZJKWkZWbkFdjKOLm4g1Ax0AEYpAAr8ekIgDlg+zjhlQSFhiA2R0YixTWYgzoMgw2MMk7qCbHMLS1wUXEA
+\begin{tikzcd}
+X \arrow{r}{\Delta \frac{x}{z}} \arrow{d}{\Delta \frac{x}{y}} & X\times_{Z}X \\
+X \times_{Y} X \arrow{ru}{h} & 
+\end{tikzcd}\\
+$\Delta \frac{x}{z} (X)$ - замкн $\Rightarrow$ $\Delta \frac{x}{y}(X)$ - замкн
+\end{proof}
+\begin{comment}
+\end{comment}

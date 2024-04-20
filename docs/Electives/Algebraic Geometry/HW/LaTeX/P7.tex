@@ -1,0 +1,173 @@
+\section{HW 7}
+
+\begin{prob}
+Пусть $X$ схема, $f \in \mathcal{O}_X(X), X_f$ подмножество точек $X$, где $f$ не обращается в нуль (т е образ $f$ не лежит в максимальном идеале соответствующего локального кольца). Предположим, что $X$ нетерова, или же отделима и квазикомпактна. Покажите, что $X_f$ открыто и гомоморфизм ограничения индуцирует изоморфизм $\mathcal{O}_X(X)_f$ и $\mathcal{O}_X\left(X_f\right)$.
+\end{prob}
+\begin{proof}
+$O_X$ - квазикомпактный пучок $\Rightarrow$ $\exists U_i = \operatorname{Spec} A_i$
+\begin{gather*}
+    O_X(U_i) = \tilde{A_i}\quad
+    \bigcup_{i = 1}^{N} U_i = X \text{ $X$ - нетерово или квазикоспактное}\\
+    V_{ii} = U_i \cap X_f = D(f_I) \text{, где $f_i$ ограничение $f$ на $U_i$}
+    \text{так как} (f_i)_p = f_p \Rightarrow V_i \text{ - открытое}\\
+    x_f = \bigcup V_i \Rightarrow X_f \text{ - открытое}\\
+    O_X(V_i) \simeq O_X(U_i)_f = (A_i)_f\\
+    O_X \text{ - пучок} \Rightarrow \exists \text{s.e.s}\\
+    0 \to O_X(X) \to \oplus O_X(U_i) \to \oplus O_X(U_i \cap U_j)
+\end{gather*}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRGJAF9T1Nd9CKMgEYqtRizYduvbHgJFh5MfWatEIAPIB9ABoAKXQEptAMy48QGOQMWlR1VZI06Dus0Yuz+ClACZlRwl1EAAdUIg0ZjgAAld9AFVtLBNzGSs+eUFkAIdxNTZwyOi4vX0ANWTPdOsfbIBmQPznMIioplj4pKwY8IBjOjQYpIArVK8Mm19kRrynEKL2zrLKnv7BmMqxrjEYKABzeCJQUwAnCABbJDIQHAgkP3Szy6QlW-vEeqfzq8QA96QABYggUNPsJs9fsCAYgAGwgloACwhPyQjRhAFYESF9gByFEvRBYmEAdmxbER+O+hP+dzR5I04UYaERdAJUOodKJDNaACMYDg2dQGFgwCE4BARVAQNRETA6NLEGAmAwGJy6FgGGxIGL2Uh4aSeeF9nQLhc2ZwKJwgA
+\begin{tikzcd}
+0 \arrow{r} & O_X(X)_f \arrow{r}{g} \arrow{d}{\alpha} & \oplus O_X(U_i)_f \arrow{r}{h} \arrow{d}{\beta} & \oplus O_X(U_i \cap U_j)_f \arrow{d}{\gamma} \\
+0 \arrow{r} & O_X(X_f) \arrow{r}{g'} & \oplus O_X(V_i) \arrow{r}{h'} & \oplus O_X(V_i \cap V_j)
+\end{tikzcd}
+$\beta$ - ихоморфизм, $\alpha$ - инъекция, так как $g, \beta, g'$ - инъекции\\
+\noindent
+так как $U_i \cap U_j$ - афф, если $X$ - отделима или покрыта конечным числом афф., если $X$ - нетерова $\Rightarrow$ либо $\gamma$ - изоморфизм, либо $\gamma$ - инъекция по той же причине, что и $\alpha$ $\Rightarrow$ $\gamma$ как минимум инъекция $\Rightarrow$ по лемме о гомоморфизме $\alpha$ - сюръекция, а следовательно изомофизм
+\end{proof}
+\vskip 0.6in
+
+
+
+
+
+\begin{prob}
+Пусть $X$ схема и $f_1, \ldots, f_k$ порождают $\mathcal{O}_X(X)$. Предположим, что $X_{f_i}$ аффинны, докажите, что $X$ тоже аффинно.
+\end{prob}
+\begin{proof}
+\begin{gather*}
+    \varphi: X \to \operatorname{Spec}(\Gamma (X, O_X))\\
+    \varphi_{f_i}: X_{f_i} \to \operatorname{Spec}(\Gamma(X, O_X)_{f_i}) \simeq \operatorname{Spec}(\Gamma(X_{f_i}, O_X))
+    \quad\text{так как}
+    \quad X_{f_i} - \operatorname{aff}
+    \Rightarrow \varphi \text{ - изоморфизм}\\
+    O_X = \langle f_1, \ldots, f_k \rangle
+    \Rightarrow X = \bigcup X_{f_i}\\
+    \operatorname{Spec}(\Gamma(X, O_X)) = \bigcup \operatorname{Spec}(\Gamma(X, O_X)_{f_i})
+\end{gather*}
+то есть $\varphi$ - изоморфизм на базе $\Rightarrow$ $\varphi$ - изоморфизм
+\end{proof}
+\vskip 0.6in
+
+
+
+
+
+\begin{prob}
+Выведите отсюда, что аффинность морфизма $f: X \rightarrow Y$ можно проверять на покрытии, то есть следующие условия равносильны:
+\begin{itemize}
+\item[(a)] $f$ аффинный, то есть прообраз любого аффинного открытого подмножества тоже аффинный
+\item[(b)] существует открытое аффинное покрытие $U_i$ схемы $Y$, такое, что все $f^{-1}\left(U_i\right)$ аффинны.
+\end{itemize}
+\end{prob}
+\begin{proof}
+\begin{itemize}
+\item[]
+\item[$(a) \Rightarrow (b)$] -- очевидно 
+\item[$(b) \Rightarrow (a)$]
+    \begin{gather*}
+        U \subset Y - \text{aff}\qquad
+        U = \operatorname{Spec} A
+        \quad Y = \bigcup U_i = \bigcup \operatorname{Spec} A_i\\
+        U \cap U_i = \bigcup U_{i,j}\\
+        \Rightarrow U_{i,j} = (\operatorname{Spec} A_i)_{g_j} = (\operatorname{Spec} A)_{h_{i,j}}\\
+        f^{-1}(U_i) = V_i = \operatorname{Spec} B_i\\
+        f^{-1}(U_{i,j}) = (\operatorname{Spec} B_i)_{f^{\#}(g_j)}\\
+        (f^{-1}(U))_{f^{\#}(h_{i,j})} = (\operatorname{Spec} B_i)_{f^{\#}(g_j)}\\
+        O_X(f^{-1}(U)) = \langle f^{\#}(h_{i,j}) \rangle\\
+        \Rightarrow f^{-1}(U) \text{ -- aff (по 2)} 
+    \end{gather*}
+\end{itemize}
+\end{proof}
+\vskip 0.6in
+
+
+
+
+
+\begin{prob}
+Докажите, что конечность морфизма можно проверять на покрытии.
+\end{prob}
+\begin{proof}
+Тут также $(a) \Rightarrow (b)$ -- очев, $(b) \Rightarrow (a)$ по прошлой задаче: $f^{-1}(U)$ -- aff. Факт из коммутативной алгебры, если $R = \langle f_1, \ldots, f_n \rangle$, (*) $g: R \to S$, $R_{f_i} \to S_{g(f_i)}$ - конечно $\Rightarrow$ $g$ - конечно; $O_y(U)_{h_{i,j}} \to O_X(f^{-1}(U))_{f^{\#}(h_{i,j})}$ - конечно $\Rightarrow$ $f^{-1}(U) \to U$ - конечно
+\vskip 0.2in \noindent
+(*): $g: R \to S$ - конечно $\Rightleftarrow$ $g$ - целый морфизм и $S$ - $R$-алгебра кон. типа\\
+Зафиксируем $s \in S\quad I \subset R[x]\quad \forall p \in T\quad p(s) = 0$\\
+$J \subset R$ - коэфф. при старших степенях у элем. $I$
+\begin{gather*}
+    s \in S
+    \Rightarrow \frac{s}{1} \in S_{f_i}
+    \Rightarrow \exists p_i \in R_{f_i}[x]:\ p_i(\frac{s}{1}) = 0\\
+    \exists n_i: (f_i^{n_i} p_i) \in R[x]
+    \Rightarrow f_i^{n_i} p_i \in I
+\end{gather*}
+так как $1 = \sum a_i f_i$ то $\exists N$ - достаточно большой что: $1 = 1^N = (\sum a_i f_i)^N \in J$ $\Rightarrow$ $g$-целый\\
+\begin{gather*}
+    S_{f_i} = \langle s_{i1}, \ldots, s_{in} \rangle \text{ - как } R_{f_i} \text{ - алг}\\
+    \Rightarrow \frac{s}{1} = \sum_{i = 1}^{n} a_{ij} s_{ij}
+    \Rightarrow \exists n_i: \frac{f_i^{n_i} s}{1} = \sum_{i=1}^{n} f_i^{n_i} a_{ij} s_{ij} \in S\\
+    \Rightarrow s = 1 \cdot s
+    = 1^{N} \cdot s
+    = (\sum b_i f_i)^N s
+    = (\sum b_i f_i)^N \sum a_{ij} s_{ij} \in S
+\end{gather*}
+\end{proof}
+\vskip 0.6in
+
+
+
+
+
+\begin{prob}
+Пусть $X$ схема и $\mathcal{F}$ пучок $\mathcal{O}_X$-модулей. Докажите что $\mathcal{F}$ квазикогерентный тогда и только тогда, когда у любой точки есть окрестность $U$ и точная последовательность пучков $\mathcal{O}_X$-модулей
+$$
+\mathcal{O}_U^{\oplus I} \rightarrow \mathcal{O}_U^{\oplus J} \rightarrow \mathcal{F}\big|_U \rightarrow 0 .
+$$
+Здесь $I, J$ - некоторые множества индексов.
+\end{prob}
+\begin{proof}
+\begin{itemize}
+\item[]
+\item[($\Rightarrow$)]
+\begin{gather*}
+    \mathcal{F}\big|_{U_i} = \tilde{M}_i\qquad
+    O_x \big|_{U_i} = U_{U_i} = \tilde{A_i}\\
+    X = \cup U_i = \cup \operatorname{Spec} A_i\\
+    M_i \text{ - модуль над } A_i \Rightarrow
+    \exists \text{точная последовательность}\\
+    A_i^{\oplus J} \to A_i^{\oplus I} \to M \to 0
+    \text{, где } |I| \text{ - количество порождающих у } M\\ \text{ и } |J| \text{ - количество соотношений на эти порождающие}\\
+    \Rightarrow \forall q \in U_i = \operatorname{A_i}\\
+    (A_i^{\oplus J})_q \simeq (A_i)^{\oplus J}_q \to (A_i^{\oplus I})_q \to M_q \to 0 \text{ - точная последовательность}\\
+    \Rightarrow (\tilde{A}_i)^{\oplus J}_q \simeq  (O_{U_i})^{\oplus J}_q \to (\tilde{A}_i)^{\oplus I}_q \simeq (O_{U_i})^{\oplus I}_q \to \tilde{M}_q \simeq (\mathcal{F}\big|_{U_i})_q \to 0\\
+    \text{точная последовательноть } \forall U_i\\
+    \Rightarrow O_{U_i}^{\oplus J} \to O_{U_i}^{\oplus I} \to \mathcal{F}\big|_{U_i} \to 0 \text{ - точная последовательность}
+\end{gather*}
+\item[($\Leftarrow$)]
+\begin{gather*}
+    \text{зафиксируем} x \in X
+    \quad \exists U^x \ni x
+    \quad O^J_U \to O^I_U \to \mathcal{F}\big|_U \to 0\\
+    \exists U^x_i:\ U^x = \cup U_i^x = \cup \operatorname{Spec} A_i\quad \text{без ограничения общности} x \in U^x_1\\
+    O^J_{U^x_1} \to O^I_{U^x_1} \to \mathcal{F}\big|+{U^x_1} \to 0\quad \text{точная}\\
+    M = \operatorname{coker} f_{U^x_1} = \frac{A^I_1}{f(A^J_1)}\quad \forall p \in U^x_1\\
+    M_p = \left(\frac{A^I_1}{f(A^J_1)}\right)_p
+    = \frac{(A^I_1)_p}{f(A^J_1)_p}
+    = \frac{(A_1)^I_p}{f((A_1)^J_p)}
+    = \operatorname{coker} f_p = \mathcal{F}_p\\
+    \Rightarrow \mathcal{F}\big|_{U^x_1} \simeq \tilde{M}
+\end{gather*}
+этот процесс не зависит от выбора $x$ $\Rightarrow$ у них есть аффинное покрытие $X = \cup U^x_1$ и $\mathcal{F}$ огранич. на $\forall U^x_1 = \operatorname{Spec} A^x_1$ - это модуль над $A^x_1$
+\end{itemize}
+\end{proof}
+\vskip 0.6in
+
+
+
+
+
+\begin{prob}
+Пусть $f: X \rightarrow Y$ аффинный морфизм, проверьте, что для квазикогерентного $\mathcal{F}$ на $X$ и $\mathcal{G}$ на $Y$ верно $f_*\left(\mathcal{F} \otimes f^* \mathcal{G}\right)=f_* \mathcal{F} \otimes \mathcal{G}$.
+\end{prob}
+\begin{proof}
+
+\end{proof}

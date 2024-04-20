@@ -1,0 +1,180 @@
+\section{HW 5}
+
+\begin{prob}
+Покажите, что если $U=D(f)$ главное открытое подмножество в $X=\operatorname{Spec}(A)$, а $V$ главное открытое подмножество в $U$, то $V$ главное открытое подмножество и в $X$, выведите отсюда, что пересечение двух открытых аффинных подмножеств произвольной схемы можно покрыть открытыми подмножествами, главными в них обоих.
+\end{prob}
+\begin{proof}
+\begin{gather*}
+	X = \operatorname{Spec} A\quad
+	X_f = U \subset X
+	\Rightarrow U \simeq (\operatorname{Spec} A)_f \simeq \operatorname{Spec}(A_f)\\
+	U_g = V \subset U \Rightarrow V \simeq (\operatorname{Spec} A_f)_g \simeq \operatorname{Spec}((A_f)_g)\\
+	\simeq \operatorname{Spec} A_{fg} \simeq (\operatorname{Spec} A)_{fg} \Rightarrow V = X_{fg}\\
+	U_1 = \operatorname{Spec} A_1\quad U_2 = \operatorname{Spec} A_2 \subset X\\
+	U_1 \cap U_2 = \operatorname{Spec} A_2 \subset X\\
+	\operatorname{Spec} A_{f_1} = \bigcup \operatorname{Spec} B_{h_i}\\
+	\operatorname{Spec} B_{h_1} \hookrightarrow \operatorname{Spec} A_{f_1}
+	\Rightarrow A_{f_1} \to B_{h_1}\\
+	\operatorname{Spec} A_f \hookrightarrow \operatorname{Spec} B
+	\Rightarrow B \to A_{f_1}
+	\Rightarrow B_{h_1} \to (A_{f_1})_{\lambda_1}
+\end{gather*}
+$B_{h_1}$ - функции $\ne 0$ в $h_1$ на $B$\\
+$(A_{f_1})_{\lambda_1}$ - функции $\ne 0$ в $h_1$ на $A_{f_1}$\\
+$\operatorname{Spec} B_{h_1} \subset \operatorname{Spec} A_{f_1} \Rightarrow (A_{f_1})_{\lambda_1} = B_{h_1}$ и так $\forall f_i, h_j$ 
+\end{proof}
+\begin{comment}
+\end{comment}
+\vskip 0.6in
+
+
+
+
+
+\begin{prob}
+Пусть $X$ схема с открытым аффинным покрытием $U_i=S \sec \left(A_i\right)$. Докажите, что $\operatorname{Spec}\left(A_i / N\left(A_i\right)\right)$, где $N$ обозначает нильрадикал, тоже склеиваются в схему (замечание: она совпадает со схемой $X_{\text {red }}$, определенной на лекциях - т. е. со структурным пучком $\mathcal{O}_X / \mathcal{N}$, где $\mathcal{N}(U)$ состоит из сечений, нильпотентных в любой точке $U$ ).
+\end{prob}
+\begin{proof}
+$X = \bigcup U_i = \bigcup \operatorname{Spec} A_i$\\
+$(\operatorname{Spec} \frac{A_i}{N(A_i)}, \frac{A_i}{N(A_i)})$ - аффинная схема\\
+$\operatorname{Spec} \frac{A_i}{N(A_i)} \simeq \operatorname{Spec} A_i$ - как топологические пространства\\
+$U_{ij} = \operatorname{Spec} \frac{A_i}{N(A_i)} \cap \operatorname{Spec} \frac{A_j}{N(A_j)} \simeq \operatorname{Spec} A_i \cap \operatorname{Spec} A_j$\\
+$f: (U_{ij}, O_{U_{ij}}) \to (U_{ji}, O_{U_{ji}})$, $f$ - тождеств. как отображения на топологическом пространстве.
+\begin{gather*}
+	\varphi_{ji}^{\star}: O_x(U_{ji}) \simeq O_x(U_{ij})\quad
+	\varphi_{ji}^{\star}(N(U_{ji})) = N(U_{ij})\\
+	\Rightarrow \exists f_{ji}^{\star}: \frac{O_x(U_{ji})}{N(U_{ji})} \to \frac{O_x(U_{ji})}{N(U_{ji})}\\
+	\Rightarrow f_{ji}^{\star} \circ f_{ij}^{\star} = \operatorname{id}\quad \text{и }
+	f_{ik}^{\star} = f_{jk}^{\star} \circ f_{ij}^{\star}
+\end{gather*}
+\end{proof}
+\begin{comment}
+
+\end{comment}
+\newpage
+
+
+
+
+\begin{prob}
+Пусть $X, Y S$-схемы, а $Z Y$-схема (в частности, $Z$ тоже $S$-схема). Проверьте, что $\left(X \times_S Y\right) \times_Y Z$ изоморфна $X \times_S Z$.
+\end{prob}
+\begin{proof}
+\begin{equation*}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAHUQBfU9TXfIRQBGUsKq1GLNgA0ABAB0FeALbwA+gGU5ATUXKsauOoCecgFrdeIDNjwEiAJjET6zVohCWefO4KKijq5SHiDySqoa2jpWvgIOKM5B1G7SnjE+Nvz2QsiiAMzB7rKxWX4JyM6FKSFsmtwSMFAA5vBEoABmAE4QKkiiIDgQSM6SxZ5KAApY6o6l3b391ENI+TXjIFMzwvM9fYijK4gALOtpIM27i4hrg8MnZ6Fos1f7t0cArI9szzuZC-tTnckAA2b6eDqvJBfYGIMFjc4ACyhiDIsIGqSeKLRR1GmLYSjQ2Gxy3ut3xEwUjDQiLoJNhMIpmwU9C6NKwDS4QA
+\begin{tikzcd}
+W \arrow{rd}{\beta} \arrow[bend left=20,swap]{rrd}{\psi} \arrow[bend right=15,swap]{rdd}{\alpha} \arrow[bend right=30,swap]{rddd}{\varphi} & & \\
+& X \times_S Y \times_Y Z \arrow{r}{\Pi_2} \arrow{d}{\Pi_1} & Z \arrow{d}{g} \\
+& X \times_S Y \arrow{r}{p_2} \arrow{d}{p_1}                & Y \arrow{d}{f} \\
+& X \arrow{r}{h}                                            & S
+\end{tikzcd}
+\end{equation*}
+\begin{gather*}
+\varphi: W \to X\\
+\psi: W \to Z\\
+fg \psi = h \varphi
+\Rightarrow \exists ! \alpha: W \to X \times_S Y \text{, такое что}
+p_1 \circ \alpha = \varphi\quad p_2 \circ \alpha = g \psi\\
+\Rightarrow \exists ! \beta: W \to X \times_S Y \times_Y Z \text{, такое что}
+\Pi_2 \circ \beta = \psi\quad \Pi_1 \circ \beta = \alpha\\
+\Rightarrow p_1 \circ \Pi_1 \circ \beta = \varphi\quad \Pi_2 \circ \beta = \psi
+\end{gather*}
+При пост композиции с $p_1$ могла потеряться единственность\\
+Пусть $\exists x: W \to X \times_S Y \times_Y Z$, такое что $p_1 \circ \Pi_1 \circ \gamma = \varphi\quad \Pi_2 \circ \gamma = \psi$ $p_2 \circ \Pi_1 \circ \gamma = g \circ \Pi_2 \circ \gamma = g \psi$ $\Rightarrow \Pi_1 \circ \gamma = \alpha$ (из-за единственности $\alpha$) $\Pi_2 \circ \gamma = \psi \Rightarrow \gamma = \beta$ из-за единственности $\beta$
+\end{proof}
+\begin{comment}
+
+\begin{tikzcd}[sep=large]
+W \arrow[bend left=20,swap]{rrd}{\psi} \arrow[bend right=30,swap]{rdd}{\varphi} & & \\
+& X \times_S Z \arrow{r}{p_2}  \arrow{d}{p_1}  & Z \arrow{d}{f} \\
+& X \times_S Y \arrow{r}{p'_2} \arrow{d}{p'_1} & Y \arrow{d}{g} \\
+& X \arrow{r}{h} & S                           
+\end{tikzcd}
+\end{comment}
+\vskip 0.6in
+
+
+
+
+
+\begin{prob}
+\begin{itemize}
+\item[]
+\item[(а)] Пусть $X$ приведенная схема над полем $k$ и $L$ сепарабельное алгебраическое расширение $k$. Докажите, что $X_L=X \otimes_k L$ тоже приведена.
+\item[(б)] Приведите пример схемы, которая приведена, но не геометрически приведена.
+\end{itemize}
+\end{prob}
+\begin{proof}
+\begin{itemize}
+\item[]
+\item[(а)] $X$ - привед. следовательно $X = \bigcup U_i = \bigcup \operatorname{Spec} A_i$, $A_i$ - привед.\\
+    без потери общности $X = \operatorname{Spec} A$, привед. локальное свойство $\Rightarrow$ без потери общности $D(f) \subset \operatorname{Spec}(A \otimes L)$. Рассмотрим $D(f)\quad f = \sum a'\otimes b'$ $A'= \langle a'\rangle$\\ $\Rightarrow$ без потери общности $\operatorname{Spec} A'\otimes L'$ то есть $A'$ - нечет, тогда в нем кон. количество минимальных простых $A' \hookrightarrow \prod\limits_{p_i \in \operatorname{Spec} min} = \bigoplus \frac{A}{p_i}$, тогда без потери общности $A = \bigoplus Q(\frac{A}{p_i}) = \bigoplus F_i$\\
+    $(\bigoplus F_i) \otimes L = \bigoplus (F_i \otimes_k L)$. Аналогично без потери общности $L = k(b_1, \ldots, b_i, \ldots)$ - кон. сеп. $\Rightarrow L = k(\alpha_1) \Rightarrow A \otimes_k L = A(\alpha_1)$ - привед. 
+\item[(б)] 
+    \begin{gather*}
+        F_p(t^{\frac{1}{p}}) \otimes F_p(t^{\frac{1}{p}}) = \frac{F_p(t)[x][y]}{(x^p-t)(y^p-t)} \text{ - не привед, так как}\\
+        x \neq y \Rightarrow x-y \ne 0\qquad (x-y)^p = x^p - y^p = t - t = 0\\
+        F_p(t^{\frac{1}{p}}) = L\qquad \operatorname{Spec} L \times_{\operatorname{Spec} k} \operatorname{Spec} L \text{ - не привед сх}\\
+        \text{но } \operatorname{Spec} L \text{ - спектр поля} \Rightarrow \text{привед сх}  
+    \end{gather*}
+\end{itemize}
+\end{proof}
+\begin{comment}
+
+\end{comment}
+\vskip 0.6in
+
+
+
+
+
+\begin{prob}
+Пусть $X, Y$ целые схемы. Говорят, что морфизм $f: X \rightarrow Y$ доминантный, если образ топологического пространства $X$ плотен в $Y$.
+Докажите, что следующие условия эквивалетны:
+\begin{itemize}
+\item[]
+\item[(a)] $f$ доминантный
+\item[(b)] общая точка $X$ отображается в общую точку $Y$
+\item[(c)] гомоморфизм пучков $f^{\#}$ инъективен.
+\end{itemize}
+\end{prob}
+\begin{proof}
+\begin{itemize}
+\item[]
+\item[$(a \Rightarrow b)$] $y$ - общая точка $Y$, $x$ - общая точка $X$\\
+    $\overline{\{x\}} = X\quad Y = \overline{f(X)} = \overline{f(\overline{\{x\}})} = \overline{f(\{x\})} \Rightarrow f(\{x\}) = \{y\}$
+\item[$(b \Rightarrow a)$] $f(\{x\}) = \{y\} \Rightarrow \overline{f(\{x\})} = \overline{f(\overline{\{x\}})} = \overline{\{y\}} = Y$
+\item[$(a \Rightarrow c)$] $0 \ne U \subset X$ - афф откр $f(U) \subset U \subset Y$ - афф откр,
+    $U = \operatorname{Spec} A\quad U = \operatorname{Spec} B$ $A, B$ - области $\Rightarrow$ $f|_{U}: U \to V \to \varphi: B \to A$. $f$ переводит общую точку в общую точку $\Leftrightarrow$ $\varphi^{-1}((0)) = (0)$ $\Leftrightarrow$ $f^{\star}$ - инъ, любое его ограничение на откр. инъ.
+\item[$(c \Rightarrow a)$]
+    $f^{\star}$ - инъ, $\forall  = \operatorname{Spec} A \subset X\quad V = \operatorname{Spec} B \subset Y\quad f(U)$ $f|_{U}: U \to V \to \varphi: B \to A$ - инъ $\Rightarrow$ $\varphi((0)) = (0)$ $\Rightarrow$ $f|_{U}$ переводит общую точку $U$ в общую точку $V$ и так $\forall U, V\quad f(U) \subset V$ - афф $\Rightarrow$ $f$ переводит общую точку $X$ в общую точку $Y$
+\end{itemize}
+\end{proof}
+\begin{comment}
+
+\end{comment}
+\vskip 0.6in
+
+
+
+
+
+\begin{prob}
+\begin{itemize}
+\item[]
+\item[(а)] Проверьте, что морфизм $\phi_{n, m}: \mathbb{A}_k^n \times_k \mathbb{A}_k^m \rightarrow \mathbb{A}_k^{m n+n+m}$, заданный формулой $\left(x_1, \ldots, x_n, y_1, \ldots, y_m\right) \mapsto\left(x_1, \ldots, x_n, y_1, \ldots, y_m, x_1 y_1, x_1 y_2, \ldots, x_n y_m\right) $ - замкнутое вложение, и опишите его образ.
+\item[(б)] Проверьте, что формула $\left(\left(X_0: \cdots: X_n\right),\left(Y_0: \cdots: Y_m\right)\right) \mapsto\left(X_0 Y_0: X_0 Y_1: \cdots: X_n Y_m\right)$ задает замкнутое вложение $S_{n, m}: \mathbb{P}_k^n \times_k \mathbb{P}_k^m$ в $\mathbb{P}_k^{m n+m+n}$.
+\item[(в)] Вычислите степень получившейся замкнутой подсхемы в $\mathbb{P}_k^{m n+m+n}$. Указание: пусть $P$ ее многочлен Гильберта, тогда $P(d)$ при больших $d$ размерность пространства многочленов от $X_0, \ldots, Y_m$, однородных степени $d$ как по $X_i$, так и по $Y_j$.
+\end{itemize}
+\end{prob}
+\begin{proof}
+\begin{itemize}
+\item[]
+\item[(а)] 
+\item[(б)] 
+\item[(в)] 
+\end{itemize}
+\end{proof}
+\begin{comment}
+
+\end{comment}

@@ -1,0 +1,203 @@
+\section{ДЗ 2}
+
+\begin{prob}
+Постройте конечный морфизм из гиперболы в прямую: представьте $k[X, Y] /(X Y-1)$ как целое расширение $k[T]$ для некоторого $T$.
+\end{prob}
+\begin{proof}
+
+\end{proof}
+\begin{comment}
+https://math.stackexchange.com/questions/3570300/how-to-construct-the-intersection-of-an-hyperbola-with-a-line
+
+\end{comment}
+\vskip 0.6in
+
+
+
+
+
+\begin{prob}
+\begin{itemize}
+\item[]
+\item[(а)] Докажите, что спектр произведения двух колец несвязен.
+\item[(б)] обратно, докажите, что если спектр $A$ несвязен, то $A \cong B \times C$.
+\end{itemize}
+\end{prob}
+\begin{proof}
+\begin{itemize}
+\item[]
+\item[(a)]
+Идеал $R_1 \times R_2$ имеет вид $I_1 \times I_2$, где $I_1$ - идеал $R_1$, а $I_2$ - идеал $R_2$. Пусть $P_1 \times P_2$ - простой идеал $R_1 \times R_2$. Тогда факторкольцо $R_1/P_1\times R_2/P_1$ должно быть областью целостности, но произведение двух областей целостности не является областью целостности. Поэтому либо $P_1$, либо $P_2$ является простым идеалом, а другой равен соответствующему ему кольцу.
+
+\item[(b)]
+Для начала докажем этот факт в предположении что нет нильпотентов.
+Поскольку $\operatorname{Spec}(R)=X \sqcup Y$, то $X \cap Y=\emptyset$ и $X \cup Y=\operatorname{Spec}(R)$. Из замкнутости $X$ и $Y$ получим $X=V(I)$ и $Y=V(J)$ для идеалов $I$ и $J$ в $R$. Следовательно
+$$
+X \cap Y=V(I) \cap V(J)=V(I+J)=\emptyset=V(R)
+$$
+и
+$$
+X \cup Y=V(I) \cup V(J)=V(I J)=\operatorname{Spec}(R)=V(0)
+$$
+Тогда $I+J=R$. 
+Теперь мы можем применить китайскую теорему об остатках, чтобы увидеть
+$$
+R /(I J) \cong R / I \times R / J
+$$
+Если в $R$ нет нильпотентных элементов, то $\sqrt{0}=(0)$ и, следовательно, $I J=0$, то
+$$
+R /(0) \cong R \cong R / I \times R / J
+$$
+\vskip 0.2in
+Вернемся к основной задаче
+Если $\operatorname{Spec}(R)$ несвязно, то $\operatorname{Spec}(R / \sqrt{0})$ также несвязно. Поскольку каждый нильпотент в $\sqrt{R}$ отображается в $0$ в $R/\sqrt{0}$, кольцо $R/\sqrt{0}$ не содержит нильпотентов. Применяя вышедоказанный факт к $R / \sqrt{0}$, получаем $R / \sqrt{0}=S \times T$ для некоторых колец $S$ и $T$. Поскольку $R / \sqrt{0}$ — произведение колец, оно содержит нетривиальные идемпотенты. $R$ содержит нетривиальные идемпотенты если $R / \sqrt{0}$ содержит нетривиальные идемпотенты, поэтому $R=S^{\prime} \times T^{\prime}$ также является произведением колец.
+\end{itemize}
+\end{proof}
+\begin{comment}
+https://math.stackexchange.com/questions/2389534/when-do-we-say-specr-is-disconnected
+https://math.stackexchange.com/questions/326452/if-operatornamespec-a-is-not-connected-then-there-is-a-nontrivial-idempoten
+\end{comment}
+\vskip 0.6in
+
+
+
+
+
+\begin{prob}
+Выведите из предыдущей задачи формулу для размерности произведения колец.
+\end{prob}
+\begin{proof}
+$\operatorname{dim}(R \times S)$ - максимум $R$ и $S$.
+Заметим, что все идеалы $R \times S$ имеют вид $I \times J$, где $I \subset R, J \subset S$ - идеалы (если $(a, b)$ в идеале, то $(a, 0)$ и $(b, 0)$ тоже при умножении на $(1,0)$ и $(0,1))$.
+
+При этом простые идеалы $R \times S$ имеют вид $R \times P$ или $Q \times S$, где $P \subset S, Q \subset R$ простые. Если $I \times J$ - простые, то $(1,0)(0,1)=(0,0)$ находится в идеале, поэтому либо $I$ или $J$ содержит 1. То есть другой должен быть простым.
+
+Любая цепочка простых идеалов в $R \times S$ возникает либо из цепочки простых идеалов в $R$, либо из $S$. Самая длинная цепочка произведения получается из самой длинной цепочки в $R$ или $S$ (в зависимости от того, какая цепочка длиннее), поэтому $\operatorname{dim}(R \times S)=\max (\operatorname{dim}(R), \operatorname{dim}(S))$.
+\end{proof}
+\begin{comment}
+https://math.stackexchange.com/questions/191667/dimension-of-a-tensor-product-of-affine-rings#:~:text=Let%20A%2C%20B%20A%2C%20B%20be%20affine%20rings,k%20B%20%3D%20dim%20A%20%2B%20dim%20B.
+https://dept.math.lsa.umich.edu/~hochster/615W10/supNoeth.pdf
+https://www.math.toronto.edu/undergrad/projects-undergrad/Presentation1byBai_HilPol_Dim2016S.pdf
+\end{comment}
+\vskip 0.6in
+
+
+
+
+
+\begin{prob}
+\begin{itemize}
+\item[]
+\item[(а)] Докажите, что если элемент $f$ обращается в нуль на неприводимой компоненте $\operatorname{Spec}(A)$, то он является делителем нуля, и что для $A$ без нильпотентов верно и обратное.
+\item[(б)] Постройте пример, показывающий, что в общем случае обратное неверно.
+\end{itemize}
+\end{prob}
+\begin{proof}
+\begin{itemize}
+\item[]
+\item[(а)] Предположим, что $f$ обращается в нуль на неприводимой компоненте $\operatorname{Spec}(A)$. Тогда существует минимальный простой идеал $\mathfrak{p}$ группы $A$ такой, что $f \in \mathfrak{p}$. Поскольку $\mathfrak{p}$ минимален, он содержится в каждом простом идеале $A$, поэтому множество $D(f) = \{\mathfrak{q} \in \operatorname{Spec}(A) \mid f \notin \mathfrak{q}\}$ пуст. В силу основного свойства открытого покрытия аффинных схем это означает, что $f$ нильпотент, т.е. существует некоторое целое положительное число $n$ такое, что $f^n = 0$. Тогда $f$ — делитель нуля.
+
+Предположим, что $A$ не имеет нильпотентнов и $f$ делитель нуля. Тогда существует ненулевой элемент $g \in A$ такой, что $fg = 0$. Рассмотрим множество $V(f) = \{\mathfrak{p} \in \operatorname{Spec}(A) \mid f \in \mathfrak{p}\}$. Это замкнутое подмножество $\operatorname{Spec}(A)$, и оно непусто, так как содержит идеал $\operatorname{Ann}(g) = \{a \in A \mid ag = 0\} $, которое является простым, поскольку $A/\operatorname{Ann}(g)$ - область целостности (являющаяся подкольцом поля частных $A/gA$). Более того, $V(f)$ неприводимо, поскольку если бы это было объединение двух собственных замкнутых подмножеств, скажем $V(f) = V(I) \cup V(J)$ для некоторых идеалов $I$ и $J $ $A$, то $(I + J)/fA = (I/fA + J/fA)/fA = (0/fA + 0/fA)/fA = 0/fA$, откуда следует что $I + J = fA$, что противоречит тому, что $f$ необратим. Следовательно, $V(f)$ - неприводимая компонента $\operatorname{Spec}(A)$, и $f$ на ней обращается в нуль.
+
+\item[(б)] Рассмотрим $A=k[x,y]\/(x^2,xy)$. Тогда $Nil(A)=(x)$ — простое число, поэтому $Spec(A)$ неприводимо. Но $y$ — делитель нуля, который не является нильпотентом.
+\end{itemize}
+\end{proof}
+\begin{comment}
+https://math.stackexchange.com/questions/2141558/irreducible-spectrum-implies-zero-divisors-are-nilpotent
+https://ocw.mit.edu/courses/18-726-algebraic-geometry-spring-2009/3723a99e97b581828fd782b9ffd83921_MIT18_726s09_lec11_more_schemes.pdf
+\end{comment}
+\vskip 0.6in
+
+
+
+
+
+\begin{prob}
+\begin{itemize}
+\item[]
+\item[(а)] Пусть $A$ - $k$-алгебра, конечно порожденная как $k$-модуль (говорят, что $A$ конечная $k$-алгебра). Докажите, что любой простой идеал в ней максимален, и что максимальных идеалов конечное число (здесь можно воспользоваться подходящей версией китайской теоремы об остатках).
+\item[(б)] Пусть теперь $A$ произвольно, а кольцо $B$ конечная $A$-алгебра. Докажите, что все слои отображения $\operatorname{Spec}(B) \rightarrow \operatorname{Spec}(A)$, индуцированного естественным гомоморфизмом из $A$ в $B$ - конечные множества (сначала докажите конечность прообраза максимального идеала в $A$, потом общий случай локализацией).
+\end{itemize}
+\end{prob}
+\begin{proof}
+\begin{itemize}
+\item[]
+\item[(а)] Начнем с максимальности. Рассмотрим нетривиальный простой идеал $\mathfrak{p}$ группы $R$. Если $x \notin \mathfrak{p}$ фиксирован, то с учетом $\bmod \mathfrak{p}$ сокращений $1, x, \ldots, x^{\operatorname{dim}_K(R)}=x^m$ имеем линейную зависимость по конечномерности $R$. А поскольку $R / \mathfrak{p}$ - область целостности, мы знаем, что это алгебраическое соотношение
+$$
+c_0+c_1 x+\ldots+c_m x^m
+$$
+$c_0 \neq 0$, иначе $\bar{x} \in R / \mathfrak{p}$ был бы делителем нуля, так что $\overline{1} \in R / \mathfrak{p }$ удовлетворяет
+$$
+\overline{1}=c_0^{-1}\left(-c_m \bar{x}^m-\ldots-c_1 \bar{x}\right)
+$$
+проверим существование обратного для $x \bmod \mathfrak{p}$, поскольку
+$$
+\overline{1}=\bar{x} \cdot\left(-c_0^{-1}\left(c_m \bar{x}^{m-1}+c_{m-1} \bar{x}^{m-2}+\ldots+c_2 \bar{x}+c_1\right)\right)
+$$
+Если существует не более $\operatorname{dim}_K(R)$ простых идеалов, доказательство окончено, поэтому предположим противное. Возьмем коллекцию $\left\{\mathfrak{p}_1, \ldots, \mathfrak{p}_n\right\}$, состоящую из $n=\operatorname{dim}_K(R)+1$ различных простых идеалов $R$. Поскольку все простые идеалы максимальны, $\mathfrak{p}_i+\mathfrak{p}_j=R$, когда $i \neq j$. Тогда мы можем найти $x_1, \ldots, x_n$ такие, что
+$$
+x_k \equiv \delta_{i k} \quad \bmod \mathfrak{p}_i, \quad 1 \leq k \leq n
+$$
+$x_i$ покрывает факторную $K$-алгебру
+$$
+R /\left(\mathfrak{p}_1 \cdot \ldots \cdot \mathfrak{p}_n\right) \cong R / \mathfrak{p}_1 \oplus \ldots \oplus R / \mathfrak{p}_n
+$$
+рассматривается как векторное пространство, имеющее размерность не менее $\operatorname{dim}_K(R)+1$, а это означает, что существует сюръективный гомоморфизм $K$-алгебры из $K^m \rightarrow K^M$ для некоторого $m < M$. Однако гомоморфизмы алгебр также являются линейными отображениями, а это означает, что у нас есть векторное пространство меньшей размерности, отображаемое в пространство более высокой размерности. Следовательно, существует не более $\operatorname{dim}_K(R)$ простых идеалов, т.е. конечное число.
+
+\item[(б)]
+Докажем несколько вспомогательных теорем
+(Atiyah, 5.13) Пусть $G$ — конечная группа автоморфизмов кольца $A$, и пусть $A^G$ подкольцо $G$-инвариантов, то есть всех $x \in A$ таких, что $\sigma(x)=x$ для всех $\sigma\in G$. Пусть $\mathfrak{p}$ — простой идеал $A^G$, и пусть $P$ — множество простых идеалов $A$, сужение которых равно $p$. Докажите, что $G$ действует транзитивно на $P$. В частности, $P$ конечен.
+
+Пусть $\mathfrak{p}_1, \mathfrak{p}_2 \in P$ и пусть $x \in \mathfrak{p}_1$. Затем,
+$$
+\prod_{\sigma \in G} \sigma(x) \in\left(\mathfrak{p}_1 \cap A^G\right)=\mathfrak{p},
+$$
+поскольку $id \in G$ и $\prod_\sigma \sigma(x)$ инвариантен относительно $G$, следовательно, $\sigma(x) \in \mathfrak{p}_2$ для некоторого $\sigma \in G $. Поэтому,
+$$
+\mathfrak{p}_1 \subseteq \bigcup_{\sigma \in G} \sigma\left(\mathfrak{p}_2\right),
+$$
+откуда следует, что $\mathfrak{p}_1 \subseteq \sigma\left(\mathfrak{p}_2\right)$ для некоторого $\sigma \in G$ (поскольку $\sigma\left(\mathfrak{p }_2\right)$ являются простыми). Но поскольку $A$ является целым по $A^G$ (согласно предыдущему упражнению) и $\mathfrak{p}_1, \sigma\left(\mathfrak{p}_2\right)$ оба сужаются до $\mathfrak{p}$, они должны совпадать. Это означает, что $G$ действует точно, как и хотелось.
+В частности, множество идеалов, стягивающихся к $\mathfrak{p}$, конечно.
+\vskip 0.2in
+
+(Atiyah, 5.14) Пусть $A$ — целозамкнутая область, $K$ — её поле частных и $L$ — конечное нормальное сепарабельное расширение $K$. Пусть $G$ — группа Галуа $L$ над $K$ и $B$ — целое замыкание $A$ в $L$. Докажите, что $\sigma(B)=B$ для всех $\sigma \in G$ и что $A=B^a$.
+
+Прежде всего заметим, что $G$ — конечная группа (ее порядок равен степени расширения $L/K$). Очевидно, что $B \subseteq \sigma(B)$, поскольку $id \in G$. Обратно, если $b \in B$, то $\sigma(b) \in B$, поскольку $\sigma(b) \in L$ обязательно цело над $A$ (поскольку это тождество на $K$, по определению группы Галуа). Следовательно, $\sigma(B)=B$.
+Теперь очевидно, что $A \subseteq B^G$, и если $b \in B^G$, то $b$ удовлетворяет следующему моническому многочлену от $K[x]$:
+$$
+\prod_{\sigma \in G}(x-\sigma(b)),
+$$
+откуда следует, что $b$ является целым в $K$ над $A$, отсюда $B^G \subseteq A$, следовательно, два множества равны, как и хотелось.
+\vskip 0.2in
+
+Основная задача (Atiyah, 5.15)
+Рассмотрим 2 случая. Если $L$ — сепарабельное расширение над $K$, то мы можем вложить его в конечное нормальное сепарабельное расширение $N$ поля $K$. В этом случае из $K \subseteq L \subseteq N$ мы получаем простые идеалы $\mathfrak{q}$ из $B$, которые сужаются до $\mathfrak{p}$ в $B^G = A$ (последнее равенство верно в силу (5.14)), конечного в силу (5.13). В случае, когда $L$ неотделима над $K$, то любой идеал $\mathfrak{q}$ из $B$ такой, что $\mathfrak{q} \cap A=\mathfrak{p}$ фактически равен множеству $\left\{x \in B: x^{p^m} \in \mathfrak{p} \text{для некоторого} m \geq 0\right\}$. Поскольку $\mathfrak{q}$ в этом случае определена однозначно, мы видим, что индуцированное отображение биективно. Следовательно, все слои имеют один элемент.
+\end{itemize}
+\end{proof}
+\begin{comment}
+https://math.stackexchange.com/questions/1108108/whats-the-real-reason-a-finite-map-has-finite-fibers
+\end{comment}
+\vskip 0.6in
+
+
+
+
+
+\begin{prob}
+Опишите минимальные простые идеалы кольца $k[x, y, z] /(x y, x z)$. Покажите, что в этом кольце есть максимальные идеалы разной высоты.
+\end{prob}
+\begin{proof}
+Минимальные простые идеалы кольца $k[x,y,z]/(xy,xz)$ — это $(x,y)$ и $(x,z)$
+
+Рассмотрим идеалы $m_1 = (X-1,Y,Z)$ и $m_2 = (X,Y-1,Z)$. Заметим, что идеалы максимальны в силу соответствия идеалов из $R$ и идеалов из $\mathbb{C}[X, Y, Z]$, содержащих $(X Y, X Z)$. Кроме того, заметим, что $(X Y, X Z)=(X) \cap(Y, Z)$ в кольце $\mathbb{C}[X, Y, Z]$ и, следовательно, каждый простой идеал $R$ соответствует простому идеалу в $\mathbb{C}[X, Y, Z]$, содержащему $(X)$ или $(Y, Z)$.
+
+Рассмотрим цепочку простых идеалов $\mathfrak{m}_1=(X-1, Y, Z) \supsetneq(Y, Z)$. Каждый простой идеал $\mathfrak{p} \subset \mathfrak{m}_1$ должен содержать $(Y, Z)$, поскольку $X \notin \mathfrak{m}_1$. Более того, между $\mathfrak{m}_1$ и $(Y, Z)$ не существует простого идеала, поскольку каждый $f \in \mathfrak{m}_1 \backslash(Y, Z)$ должен делиться на $(X-1)$, скажем $f=a(X-1)$ для некоторого $a \in R \backslash(Y, Z)$. Если $(X-1)$ содержится в идеале, то всё готово, если нет, то $a \in \mathfrak{m}_1$ и можно использовать индукцию по степени. Следовательно, цепочка максимальна, $\mathrm{ht}\left(m_1\right)=1$.
+
+Рассмотрим цепочку простых идеалов $\mathrm{m}_2=(X, Y-1, Z) \supsetneq(X, Z) \supsetneq(X)$. Делаем вывод, что $\mathrm{ht}\left(\mathrm{m}_2\right) \geqslant 2$. Поскольку $Y \notin \mathrm{m}_2$, заключаем, что каждый простой идеал $R$, содержащийся в $\mathfrak{m}_2$, соответствует простому идеалу в $\mathbb{C}[X, Y, Z ]$, который содержит $X$. Таким образом, $\mathrm{ht}\left(\mathfrak{m}_2\right) \leqslant \operatorname{dim}(R /(X))=\operatorname{dim}(\mathbb{C}[Y, Z])=2$ . Следовательно, $\mathrm{ht}\left(\mathfrak{m}_2\right)=2$.
+
+Так мы нашли 2 максимальных идеала разной высоты
+\end{proof}
+\begin{comment}
+https://metaphor.ethz.ch/x/2017/hs/401-3132-00L/ex/Sol9.pdf
+https://math.stackexchange.com/questions/493672/proof-that-the-ideal-xy-xz-in-mathbba3-is-radical-but-not-prime
+\end{comment}
