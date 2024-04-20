@@ -41,14 +41,15 @@
 
 
 ## Механика, Логика и Алгоритмы
-
 - [Механика](https://vladm0z.github.io/HSE-Math/Mechanics)
 - [Логика и Алгоритмы](https://vladm0z.github.io/HSE-Math/Logic)
 
 
+## Анализ Данных
+- [Коллоквиум 1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/Data%20Analysis/DA_Col1.pdf)
+
 
 ## Экономика
-
 - [Материалы](https://drive.google.com/drive/folders/1aHOf7m23X1zjFWjhg1fHmT31C_DV4eQ1?usp=sharing)
 
 
