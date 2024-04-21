@@ -3,7 +3,7 @@
 ## Алгебра
 
 #### Осень
-- [Лекции](https://docs.google.com/viewer?url=)
+- [Лекции](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Algebra/Aut_Lect.pdf)
 - [Задачи Семинаров](https://docs.google.com/viewer?url=)
 - [Домашние задания](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Algebra/Aut_HW/Algebra.pdf)
 - [Первая контрольная](https://docs.google.com/viewer?url=)
@@ -12,9 +12,14 @@
 - [Лекции](https://docs.google.com/viewer?url=)
 - [Задачи Семинаров](https://docs.google.com/viewer?url=)
 - [Домашние задания](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Algebra/Spr_HW/Algebra.pdf)
-- [Вторая Контрольная](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Algebra/Spr_Tests/B2_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F.pdf)
-- [Третья Контрольная](https://docs.google.com/viewer?url=)
+- [Вторая Кр вариант A1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Algebra/Spr_Tests/%D0%9A%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%D0%901.pdf)
+- [Вторая Кр вариант A2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Algebra/Spr_Tests/%D0%9A%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%D0%902.pdf)
+- [Вторая Кр вариант B1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Algebra/Spr_Tests/%D0%9A%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82B1.pdf)
+- [Вторая Кр вариант B2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Algebra/Spr_Tests/%D0%9A%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82B2.pdf)
+- [Вторая Кр Вариант B2 решения](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Algebra/Spr_Tests/B2_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F.pdf)
+- [Третья Контрольная](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Algebra/Spr_Fin/ekz_30mar2021_var1.pdf)
 
+- [Еще какие-то Лекции](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Algebra/Alg_Lect19.pdf)
 
 ## Матанализ
 
@@ -31,16 +36,21 @@
 - [Вторая Контрольная](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Calculus/Spr_Mid/%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%9A%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20%E2%84%961.pdf) и [условия](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Calculus/Spr_Mid/%D0%92%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%820.pdf)
 - [Третья Контрольная](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Calculus/Spr_Fin/Mozgovoy-Vladislav-Romanovich-VI-math-ma2.pdf)
 
+- [Еще какие-то Лекции](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Calculus/Calc_Lect.pdf)
+
 
 ## Гладкие Многообразия
 - [Лекции (модуль 1)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Differentiable%20Manifolds/Aut_Lect_unit1.pdf)
 - [Лекции (модуль 2)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Differentiable%20Manifolds/Aut_Lect_unit2.pdf)
+- [Лекции 2019](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Differentiable%20Manifolds/DiffManif_Lect19.pdf)
+- [Лекции 2020](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Differentiable%20Manifolds/DiffManif_Lect20.pdf)
 - [Задачи Первый Листок](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Differentiable%20Manifolds/Aut_Prb/%D0%93%D0%BB%D0%B0%D0%B4%D0%BA%D0%B8%D0%B5_1.pdf)
 - [Задачи Второй Листок](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Differentiable%20Manifolds/Aut_Prb/%D0%93%D0%BB%D0%B0%D0%B4%D0%BA%D0%B8%D0%B5_2.pdf)
 - [Задачи Третий Листок](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Differentiable%20Manifolds/Aut_Prb/%D0%93%D0%BB%D0%B0%D0%B4%D0%BA%D0%B8%D0%B5_3.pdf)
 - [Задачи Четвертый Листок](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Differentiable%20Manifolds/Aut_Prb/%D0%93%D0%BB%D0%B0%D0%B4%D0%BA%D0%B8%D0%B5_4.pdf)
 - [Контрольная](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Differentiable%20Manifolds/Aut_Tests/DifTst.pdf)
-- [Коллокивум](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Differentiable%20Manifolds/Aut_Mid/DifManCol.pdf)
+- [Коллоквиум 2019](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Differentiable%20Manifolds/DiffManif_Col19.pdf)
+- [Коллоквиум](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Differentiable%20Manifolds/Aut_Mid/DifManCol.pdf)
 - [Экзамен](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/2nd%20term/Differentiable%20Manifolds/Aut_Fin/Tasks/exam_prog_2020.pdf)
 
 ## Дифференциаьные Уравнения
