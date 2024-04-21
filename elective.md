@@ -10,6 +10,8 @@
 
 
 ## Алгебраическая Геометрия
+- [Лекции (старые)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algebraic%20Geometry/Algem_Lect19.pdf)
+
 - [HW 1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algebraic%20Geometry/HW/TeX%20HW/HW1.pdf)
 - [HW 2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algebraic%20Geometry/HW/TeX%20HW/HW2.pdf)
 - [HW 3](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Algebraic%20Geometry/HW/TeX%20HW/HW3.pdf)
@@ -55,9 +57,18 @@
 Приглашенные лекторы читают 1-2 лекции, после чего вы должны выбрать какого-то одного и получить у него зачет (обычно небольшой листок с задачами/что-то аналогичное) 
 
 
+## Коммутативная Алгебра
+- [Лекции](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Commutative%20Algebra/CommAlg_Lect.pdf)
+
+
 ## Криптография
 
 - [Экзамен](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Crypto/Crypto_Exam.pdf)
+
+
+## Дифференциальная Геометрия
+- [Лекции 1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Differential%20Geometry/Difgem_Lect1.pdf)
+- [Лекции 2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Differential%20Geometry/Difgem_Lect2.pdf)
 
 
 ## Discrete Optimization and Integer Programming
