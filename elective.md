@@ -92,6 +92,7 @@
 - [Индивидуальное ДЗ 2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Discrete%20mathematics/iz_2_DM24.pdf)
 
 - [Индивидуальное ДЗ 1 (решения)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Discrete%20mathematics/iz_1_DM24_sol.pdf)
+- [Индивидуальное ДЗ 2 (решения)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/Discrete%20mathematics/iz_2_DM24_sol.pdf)
 
 - [ДЗ 1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Discrete%20mathematics/z_DM24_1.pdf)
 - [ДЗ 2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Discrete%20mathematics/z_DM24_2.pdf)
