@@ -46,7 +46,17 @@
 
 
 ## Анализ Данных
-- [Коллоквиум 1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/Data%20Analysis/DA_Col1.pdf)
+- [Коллоквиум 1 Билеты](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/Data%20Analysis/DA_Col1_Q.pdf)
+- [Коллоквиум 1 Билеты расписанные](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/Data%20Analysis/DA_Col1.pdf)
+- [Коллоквиум 2 Билеты расписанные](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/Data%20Analysis/DA_Col2.pdf)
+  
+- [Домашнее Задание 1 (условие)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/3rd%20term/Data%20Analysis/Task1_student.pdf)
+- [Домашнее Задание 1 (ipynb)](https://github.com/Vladm0z/HSE-Math/blob/main/docs/3rd%20term/Data%20Analysis/Task1_example.ipynb)
+- [Домашнее Задание 1 (colab)](https://colab.research.google.com/drive/1sKdvu9VySD3tOCeR-_fAfcWn_3Bl6rs_?usp=sharing)
+  
+- [Домашнее Задание 2 (условие)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/3rd%20term/Data%20Analysis/Task2_student.pdf)
+- [Домашнее Задание 2 (ipynb)](https://github.com/Vladm0z/HSE-Math/blob/main/docs/3rd%20term/Data%20Analysis/Task2_example.ipynb)
+- [Домашнее Задание 2 (colab)](https://colab.research.google.com/drive/1ff_N391HOIyX9djD6-WzycPaRuV1HKd2?usp=sharing)
 
 
 ## Экономика
