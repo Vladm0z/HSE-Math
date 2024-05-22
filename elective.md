@@ -209,6 +209,7 @@
 - [Лекции](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Random%20matrices%20and%20processes/Random%20Matrices.pdf)
 - [Лист 1](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Random%20matrices%20and%20processes/listok1_2024.pdf)
 - [Лист 2](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Random%20matrices%20and%20processes/listok2_2024.pdf)
+- [Лист 2, часть решений](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/blob/main/docs/Electives/Random%20matrices%20and%20processes/listok2_2024_sol.pdf)
 
 
 ## Теория Представлений
