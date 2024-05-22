@@ -2,10 +2,12 @@
 
 На данной странице расположены различные материалы (конспекты лекций, подсказки к решениям и задачи прошлых лет) оп математика
 
-- [Расписание](https://docs.google.com/spreadsheets/d/19CPvqW1vCcw9r6oVsR4Mk-WiBZIBr6Ix-q-DLxIttaQ/edit)
+- [Расписание](https://docs.google.com/spreadsheets/d/1Jc48XhjWLTDTRY180h2IY2x87Nqp2qmmYbVs3o40Nqo/edit?usp=sharing)
 - [Курсы по выбору и НИСы 2022-2023](https://math.hse.ru/topics2223)
-- [Описания курсов](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/course_book_22_23.pdf)
-- [Книги](https://libgen.is/)
+- [Курсы по выбору и НИСы 2023-2024](https://math.hse.ru/topics2324)
+- [Курсы по выбору и НИСы 2024-2025](https://math.hse.ru/topics2425)
+- [Официальные материалы по курсам](https://math.hse.ru/teaching)
+- [Описания курсов](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/course_book_23_24.pdf)
 
 ### Материалы
 
