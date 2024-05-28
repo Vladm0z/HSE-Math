@@ -7,7 +7,9 @@
 - [Курсы по выбору и НИСы 2023-2024](https://math.hse.ru/topics2324)
 - [Курсы по выбору и НИСы 2024-2025](https://math.hse.ru/topics2425)
 - [Официальные материалы по курсам](https://math.hse.ru/teaching)
-- [Описания курсов](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/course_book_23_24.pdf)
+- [Описания курсов (22-23)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/course_book_22_23.pdf)
+- [Описания курсов (23-24)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/course_book_23_24.pdf)
+- [Описания курсов (24-25)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/Electives/course_book_24_25.pdf)
 
 ### Материалы
 
