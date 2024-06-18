@@ -87,4 +87,6 @@
 - [Все билеты и решения большей части задач](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/%D0%93%D0%BE%D1%81%D1%8B/backup_090622.pdf)
 - [Список задач](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/%D0%93%D0%BE%D1%81%D1%8B/mfexam_problems.pdf)
 - [Альтернативные решения задач](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/%D0%93%D0%BE%D1%81%D1%8B/mfexam_mysolutio.pdf)
+- [Теория (от руки)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/%D0%93%D0%BE%D1%81%D1%8B/theory(handwritten).pdf)
+- [Задачи (от руки)](https://docs.google.com/viewer?url=https://github.com/Vladm0z/HSE-Math/raw/main/docs/3rd%20term/%D0%93%D0%BE%D1%81%D1%8B/problems(handwritten).pdf)
 - [Диск с книгами к госам](https://drive.google.com/drive/folders/1lXE3N--dFLRcSeqYfsRBnqyeT8NqiINY?usp=sharing)
